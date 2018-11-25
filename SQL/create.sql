@@ -1,98 +1,98 @@
 /* ------------------------TDA------------------------ */
 
 Create or Replace type Datos_persona_de_contacto as Object(
-    Nombre Varchar2(20) Not Null,
-    Apellido Varchar2(20) Not Null,
-    Cargo Varchar2(20) Not Null,
+    Nombre Varchar2(20),
+    Apellido Varchar2(20),
+    Cargo Varchar2(20),
     Email Varchar2(50)
 );
 
 Create or Replace type Datos_telefono as Object(
-    Codigo_area Number(5) Not Null,
-    Codigo_internacional Number(5) Not Null,
-    Numero Number(10) Not Null
+    Codigo_area Number(5),
+    Codigo_internacional Number(5),
+    Numero Number(10)
 );
 
 Create or Replace type Datos_direccion as Object(
-    Calle Varchar2(20) Not Null,
-    Avenida Varchar2(20) Not Null,
-    Codigo_postal Number(10) Not Null,
+    Calle Varchar2(20),
+    Avenida Varchar2(20),
+    Codigo_postal Number(10),
     Urbanizacion Varchar2(50),
-    Ciudad Varchar2(20) Not Null
+    Ciudad Varchar2(20)
 );
 
 Create or Replace type Lugar as Object(
-    Pais Varchar2(20) Not Null,
-    Ciudad Varchar2(20) Not Null
+    Pais Varchar2(20),
+    Ciudad Varchar2(20)
 );
 
 Create or Replace type Hechos_hist as Object(
-    Año Date Not Null,
-    Hechos Varchar2(50) Not Null
+    Año Date,
+    Hechos Varchar2(50)
 );
 
 Create or Replace type Tipo_valor as Object(
-    Año Date Not Null,
-    Valor Number(10) Not Null
+    Año Date,
+    Valor Number(10)
 );
 
 Create or Replace type Valoracion as Object(
-    Nombreelemento Varchar2(20) Not Null,
-    Valor Number(10) Not Null,
+    Nombreelemento Varchar2(20),
+    Valor Number(10),
     Obsercion Varchar2(50)
 );
 
 Create or Replace type Costo as Object(
-    Cantmuestras Number(10) Not Null,
-    Valor Number(10) Not Null,
-    Pais Varchar2(20) Not Null
+    Cantmuestras Number(10),
+    Valor Number(10),
+    Pais Varchar2(20)
 );
 
 Create or Replace type Premio as Object(
-    Nombre Varchar2(20) Not Null,
+    Nombre Varchar2(20),
     Descripcion Varchar2(50),
-    Tipo Varchar2(20) Not Null,
-    Premioenmoneda Number(10) Not Null,
-    Posicion Number(10) Not Null
+    Tipo Varchar2(20),
+    Premioenmoneda Number(10),
+    Posicion Number(10)
 );
 
 Create or Replace type Datos_contacto_telefono_nt as table of Datos_telefono;
 Create or Replace type personal_contacto_va as varray(5) of Datos_persona_de_contacto;
 
 Create or Replace type Datos_contacto as Object(
-    Direccion Datos_direccion Not Null,
+    Direccion Datos_direccion,
     Correo_electronico Varchar2(50),
     Pagina_web Varchar2(50),
-    Telefonos  Datos_contacto_telefono_nt Not Null,
+    Telefonos Datos_contacto_telefono_nt,
     Pesonal_contacto personal_contacto_va
 );
 
 Create or Replace type Distribucion_exp as Object(
-    Tipo_valor Tipo_valor Not Null,
-    Pais Varchar2(50) Not Null
+    Tipovalor Tipo_valor,
+    Pais Varchar2(50)
 );
 
 Create or Replace type Calificacion as Object(
-    Nombrecritica Varchar2(50) Not Null,
-    Tipo_valor Tipo_valor Not Null
+    Nombrecritica Varchar2(50),
+    Tipovalor Tipo_valor
 );
 
 Create or Replace type Escala as Object(
-    Elemento Varchar2(50) Not Null,
-    Valorini Number(10) Not Null,
-    Valorfin Number(10) Not Null,
-    Calificacion Calificacion Not Null
+    Elemento Varchar2(50),
+    Valorini Number(10),
+    Valorfin Number(10),
+    Calificacion_escala Calificacion
 );
 
 Create or Replace type Unidadmonetaria as Object(
-    Nombre Varchar2(20) Not Null,
-    Simbolo Varchar2(5) Not Null
+    Nombre Varchar2(20),
+    Simbolo Varchar2(5)
 );
 
-Create or Replace type Superficie_ocupada_vinedo_pais_productor_nt as table of Tipo_valor;
-Create or Replace type Produccionanual_pais_productor_nt as table of Tipo_valor;
-Create or Replace type Exportacionanual_pais_productor_nt as table of Distribucion_exp;
-Create or Replace type Unidadmonetaria_pais_productor_nt as table of Unidadmonetaria;
+Create or Replace type Superficie_ocupada_pais_nt as table of Tipo_valor;
+Create or Replace type Produccionanual_pais_nt as table of Tipo_valor;
+Create or Replace type Exportacionanual_pais_nt as table of Distribucion_exp;
+Create or Replace type Unidadmonetaria_pais_nt as table of Unidadmonetaria;
 
 Create or Replace type Premio_concurso_nt as table of Premio;
 Create or Replace type Escala_concurso_nt as table of Escala;
@@ -105,21 +105,21 @@ Create or Replace type Calificacion_marca_nt as table of Calificacion;
 Create or Replace type Tipo_valor_marca_nt as table of Tipo_valor;
 Create or Replace type Distribucion_exp_marca_nt as table of Distribucion_exp;
 
-Create or Replace type Porcentaje_vol_clasificacion_va as varray(5) of Number(10);
+Create or Replace type Porcentajevol_clasificacion_va as varray(5) of Number(10);
 
 Create or Replace type Curricula_catador_experto_nt as table of Hechos_hist;
-Create or Replace type Publicaciones_catador_experto_va as varray(5) of Varchar2(100);
+Create or Replace type Publicaciones_catador_exp_va as varray(5) of Varchar2(100);
 
 Create or Replace type Curricula_catador_aprendiz_nt as table of Hechos_hist;
-Create or Replace type Publicaciones_catador_aprendiz_va as varray(5) of Varchar2(100);
+Create or Replace type Publicaciones_catador_apr_va as varray(5) of Varchar2(100);
 
 Create or Replace type Costo_calendario_nt as table of Costo;
 
 Create or Replace type Unidadmonetaria_calendario_nt as table of Unidadmonetaria;
 
-Create or Replace type Valoracion_cata_valoracion_muestra_marca_nt as table of Valoracion;
+Create or Replace type Valor_cata_valor_muestra_m_nt as table of Valoracion;
 
-Create or Replace type Valoracion_cata_valor_aprendiz_nt as table of Valoracion;
+Create or Replace type Valoracion_cata_valor_apr_nt as table of Valoracion;
 
 Create or Replace type Premio_inscripcion_nt as table of Premio;
 
@@ -130,85 +130,97 @@ Create or Replace type Nombre_variedad_uva_va as varray(5) of Varchar2(50);
 /* ---------------------FIN TDA---------------------- */
 
 Create Table Pais_productor (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Nombre Varchar2(20) Not Null,
-    Superficie_ocupada_vinedo Superficie_ocupada_vinedo_pais_productor_nt Not Null,
-    Produccioanual Produccionanual_pais_productor_nt Not Null,
-    Exportacionanual Exportacionanual_pais_productor_nt Not Null,
-    Unidadmonetaria Unidadmonetaria_pais_productor_nt Not Null,
+    Superficie_ocupada_vinedo Superficie_ocupada_pais_nt ,
+    Produccioanual Produccionanual_pais_nt ,
+    Exportacionanual Exportacionanual_pais_nt ,
+    Unidadmonetaria Unidadmonetaria_pais_nt ,
     Continente Varchar2(20) Not Null,
     Mapasregiones Varchar2(20) Not Null,
-    Desscripcion Varchar2(50) Not Null,
-    Constraint pk_pais_productor PRIMARY KEY(Id)
-);
+    Descripcion Varchar2(50) Not Null,
+    Constraint pk_pais_productor PRIMARY KEY(Clave)
+)
+    Nested Table Superficie_ocupada_vinedo store as Sup_ocupada_pais_nt
+    Nested Table Produccioanual store as Producanual_pais_nt
+    Nested Table Exportacionanual store as Expanual_pais_nt
+    Nested Table Unidadmonetaria store as Unidmonetaria_pais_nt
+;
 
 Create Table Region (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Nombre Varchar2(20) Not Null,
     Descripcion Varchar2(100),
-    Id_pais_productor Integer Not Null,
-    Constraint pk_region PRIMARY KEY(Id)
+    Clave_pais_productor Raw(25) Not Null,
+    Constraint pk_region PRIMARY KEY(Clave)
 );
 
 Create Table Denominacion_origen (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Nombre Varchar2(20) Not Null,
     Descripcion Varchar2(100),
-    Id_region Integer Not Null,
-    Id_variedad_uva Integer Not Null,
-    Constraint pk_denominacion_origen PRIMARY KEY(Id)
+    Clave_region Raw(25) Not Null,
+    Clave_variedad_uva Raw(25) Not Null,
+    Constraint pk_denominacion_origen PRIMARY KEY(Clave)
 );
 
 Create Table Organizador (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Nombre Varchar2(20) Not Null,
     Descripcion Varchar2(100),
-    Constraint pk_organizador PRIMARY KEY(Id)
+    Constraint pk_organizador PRIMARY KEY(Clave)
 );
 
 Create Table Organizador_concurso (
-    Id_propio Raw(25) DEFAULT SYS_GUID(),
-    Id_organizador Integer Not Null,
-    Id_concurso Integer Not Null,
-    Constraint pk_organizador_concurso PRIMARY KEY(Id_propio)
+    Clave_propio Raw(25) DEFAULT SYS_GUID(),
+    Clave_organizador Raw(25) Not Null,
+    Clave_concurso Raw(25) Not Null,
+    Constraint pk_organizador_concurso PRIMARY KEY(Clave_propio)
 );
 
 Create Table Organizador_pais (
-    Id_propio Raw(25) DEFAULT SYS_GUID(),
-    Id_organizador Integer Not Null,
-    Id_pais_productor Integer Not Null,
-    Constraint pk_organizador_pais PRIMARY KEY(Id_propio)
+    Clave_propio Raw(25) DEFAULT SYS_GUID(),
+    Clave_organizador Raw(25) Not Null,
+    Clave_pais_productor Raw(25) Not Null,
+    Constraint pk_organizador_pais PRIMARY KEY(Clave_propio)
 );
 
 Create Table Concurso (
-    Id Raw(25) DEFAULT SYS_GUID(),
-    Nombre Integer Not Null,
+    Clave Raw(25) DEFAULT SYS_GUID(),
+    Nombre Varchar2(20) Not Null,
     Tipoconcurso Varchar2(20) Not Null,
     Tipocata Varchar2(20),
     Nacional Varchar2(1) Not Null,
     Caracteristicas Varchar2(50) Not Null,
-    Premios Premio_concurso_nt Not Null,
-    Escalas Escala_concurso_nt Not Null,
-    Constraint pk_organizador_pais PRIMARY KEY(Id_propio)
-);
+    Premios Premio_concurso_nt ,
+    Escalas Escala_concurso_nt ,
+    Constraint pk_concurso PRIMARY KEY(Clave)
+)
+    Nested Table Premios store as Premios_concurso_nt
+    Nested Table Escalas store as Escalas_concurso_nt
+;
 
 Create Table Bodega (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Nombre Varchar2(20) Not Null,
-    Historia Hechos_hist_bodega_nt Not Null,
+    Historia Hechos_hist_bodega_nt,
     Fechafundacion Date Not Null,
     Mision Varchar2(50) Not Null,
     Descripcion_vinos Varchar2(100) Not Null,
-    Datos_contacto Datos_contacto Not Null,
-    Produccioanual Tipo_valor_bodega_nt Not Null,
-    Exportacionanual Distribucion_exp_bodega_nt Not Null,
-    Id_dueño Integer Not Null,
-    Id_pais_productor Integer Not Null,
-    Constraint pk_bodega PRIMARY KEY(Id)
-);
+    Datoscontacto Datos_contacto ,
+    Produccioanual Tipo_valor_bodega_nt ,
+    Exportacionanual Distribucion_exp_bodega_nt ,
+    Clave_dueño Raw(25) Not Null,
+    Clave_pais_productor Raw(25) Not Null,
+    Constraint pk_bodega PRIMARY KEY(Clave)
+)
+    Nested Table Historia store as Hechos_hist_bodegas_nt
+    Nested Table Produccioanual store as Tipo_valor_bodegas_nt
+    Nested Table Exportacionanual store as Distribucion_exp_bodegas_nt
+;   
 
 Create Table Marca (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Nombre Varchar2(20) Not Null,
     Elaboracion Varchar2(100) Not Null,
     Cata_propia Varchar2(100) Not Null,
@@ -223,163 +235,179 @@ Create Table Marca (
     Imagen Blob,
     Contacto_madera Varchar2(1) Not Null,
     Tipo_tapon Varchar2(20) Not Null,
-    Criticas Calificacion_marca_nt Not Null,
-    Produccionaño Tipo_valor_marca_nt Not Null,
-    Exportacionaño Distribucion_exp_marca_nt Not Null,
+    Criticas Calificacion_marca_nt ,
+    Produccionaño Tipo_valor_marca_nt ,
+    Exportacionaño Distribucion_exp_marca_nt ,
     Tiempomaduracionmeses Number(5) Not Null,
-    Id_bodega Integer Not Null,
-    Id_clasificacion Integer Not Null,
-    Constraint pk_marca PRIMARY KEY(Id)
-);
+    Clave_bodega Raw(25) Not Null,
+    Clave_clasificacion Raw(25) Not Null,
+    Constraint pk_marca PRIMARY KEY(Clave)
+)
+    Nested Table Criticas store as Calificacion_marcas_nt
+    Nested Table Produccionaño store as Tipo_valor_marcas_nt  
+    Nested Table Exportacionaño store as Distribucion_exp_marcas_nt 
+;
 
 Create Table Clasificacion (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Nombre Varchar2(20) Not Null,
     Nivel Varchar2(20) Not Null,
-    Porcentaje_vol  Porcentaje_vol_clasificacion_va Not Null,
-    Id_clasificacion Integer Not Null,
-    Constraint pk_clasificacion PRIMARY KEY(Id)
+    Porcentaje_vol  Porcentajevol_clasificacion_va ,
+    Clave_clasificacion Raw(25) Not Null,
+    Constraint pk_clasificacion PRIMARY KEY(Clave)
 );
 
 Create Table Presentacion (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Tipo Varchar2(50) Not Null,
-    Unidadesencaja Integer,
-    Id_marca Integer Not Null,
-    Constraint pk_presentacion PRIMARY KEY(Id)
+    Unidadesencaja Number(10),
+    Clave_marca Raw(25) Not Null,
+    Constraint pk_presentacion PRIMARY KEY(Clave)
 );
 
 Create Table Historico_precio (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Año Date Not Null,
     Precio Float Not Null,
-    Id_presentacion Integer Not Null,
-    Id_cosecha Integer Not Null,
-    Constraint pk_historico_precio PRIMARY KEY(Id)
+    Clave_presentacion Raw(25) Not Null,
+    Clave_cosecha Raw(25) Not Null,
+    Constraint pk_historico_precio PRIMARY KEY(Clave)
 );
 
 Create Table Cosecha (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Año Date Not Null,
     Clasificacion Varchar2(20) Not Null,
-    Id_vinedo Integer Not Null,
-    Constraint pk_cosecha PRIMARY KEY(Id)
+    Clave_vinedo Raw(25) Not Null,
+    Constraint pk_cosecha PRIMARY KEY(Clave)
 );
 
 Create Table Catador_experto (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Primer_nombre Varchar2(20) Not Null,
     Segundo_nombre Varchar2(20) Not Null,
     Primer_apellido Varchar2(20) Not Null,
     Segundo_apellido Varchar2(20) Not Null,
     Fecha_nacimiento Date Not Null,
-    Lugar_realizada Lugar Not Null,
+    Lugar_realizada Lugar,
     Genero Varchar2(10) Not Null,
-    Datos_contacto Datos_contacto Not Null,
-    Curricula Curricula_catador_experto_nt,
-    Publicacion Publicaciones_catador_experto_va,
-    Id_pais_productor Integer Not Null,
-    Constraint pk_catador_experto PRIMARY KEY(Id)
+    Datoscontacto Datos_contacto,
+    Publicacion Publicaciones_catador_exp_va,
+    Clave_pais_productor Raw(25) Not Null,
+    Constraint pk_catador_experto PRIMARY KEY(Clave)
 );
 
 Create Table Catador_aprendiz (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Primer_nombre Varchar2(20) Not Null,
     Segundo_nombre Varchar2(20) Not Null,
     Primer_apellido Varchar2(20) Not Null,
     Segundo_apellido Varchar2(20) Not Null,
     Fecha_nacimiento Date Not Null,
-    Lugar_realizada Lugar Not Null,
+    Lugar_realizada Lugar ,
     Genero Varchar2(10) Not Null,
-    Datos_contacto Datos_contacto Not Null,
+    Datoscontacto Datos_contacto ,
     Curricula Curricula_catador_aprendiz_nt,
-    Publicacion Publicaciones_catador_aprendiz_va,
-    Id_pais_productor Integer Not Null,
-    Constraint pk_catador_aprendiz PRIMARY KEY(Id)
-);
+    Publicacion Publicaciones_catador_apr_va,
+    Clave_pais_productor Raw(25) Not Null,
+    Constraint pk_catador_aprendiz PRIMARY KEY(Clave)
+)
+    Nested Table Curricula store as Curriculas_catador_aprendiz_nt
+;
 
 Create Table Calendario (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Fechai Date Not Null,
     Fechaf Date Not Null,
     Fechaliminscripcion Date Not Null,
     Fechalimmuestra Date Not Null,
     Emailenvioinscripcion Varchar2(50) Not Null,
-    Direcionenviomuestras Datos_direccion Not Null,
-    Lugar_realizada Lugar Not Null,
-    Costo Costo_calendario_nt Not Null,
+    Direcionenviomuestras Datos_direccion ,
+    Lugar_realizada Lugar ,
+    Costo Costo_calendario_nt ,
     Condiciondepago Varchar2(20),
-    Unidadmonetaria Unidadmonetaria_calendario_nt Not Null,
-    Id_concurso Integer Not Null,
-    Constraint pk_calendario PRIMARY KEY(Id)
-);
+    Unidadmonetaria Unidadmonetaria_calendario_nt ,
+    Clave_concurso Raw(25) Not Null,
+    Constraint pk_calendario PRIMARY KEY(Clave)
+)
+    Nested Table Costo store as Costo_calendarios_nt
+    Nested Table Unidadmonetaria store as Unidadmonetaria_calendarios_nt
+;
 
 Create Table Jueces (
-    Id Raw(25) DEFAULT SYS_GUID(),
-    Id_calendario Integer Not Null,
-    Id_catador_experto Integer Not Null,
-    Constraint pk_jueces PRIMARY KEY(Id)
+    Clave Raw(25) DEFAULT SYS_GUID(),
+    Clave_calendario Raw(25) Not Null,
+    Clave_catador_experto Raw(25) Not Null,
+    Constraint pk_jueces PRIMARY KEY(Clave)
 );
 
 Create Table Cata_valoracion_muestra_marca (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Fecha Date Not Null,
-    Valoracion Valoracion_cata_valoracion_muestra_marca_nt Not Null,
+    Valoracion Valor_cata_valor_muestra_m_nt ,
     Sumatoria Number(10) Not Null,
-    Id_jueces Integer Not Null,
-    Id_muestra_compite Integer Not Null,
-    Constraint pk_cata_valoracion_muestra_marca PRIMARY KEY(Id)
-);
+    Clave_jueces Raw(25) Not Null,
+    Clave_muestra_compite Raw(25) Not Null,
+    Constraint pk_cata_valor_muestra_m PRIMARY KEY(Clave)
+)
+    Nested Table Valoracion store as Valor_cata_valor_muestra_ms_nt
+;
 
 Create Table Cata_valor_aprendiz (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Fecha Date Not Null,
-    Valoracion Valoracion_cata_valor_aprendiz_nt Not Null,
+    Valoracion Valoracion_cata_valor_apr_nt ,
     Sumatoria Number(10) Not Null,
-    Id_inscripcion Integer Not Null,
-    Id_muestra_catador Integer Not Null,
-    Constraint pk_cata_valor_aprediz PRIMARY KEY(Id)
-);
+    Clave_inscripcion Raw(25) Not Null,
+    Clave_muestra_catador Raw(25) Not Null,
+    Constraint pk_cata_valor_aprediz PRIMARY KEY(Clave)
+)
+    Nested Table Valoracion store as Valoracion_cata_valor_aprs_nt
+;
 
 Create Table Inscripcion (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Fecha_inscripcion Date Not Null,
     Premio Premio_inscripcion_nt,
-    Id_bodega Integer Not Null,
-    Id_catador_aprendiz Integer Not Null,
-    Id_calendario Integer Not Null,
-    Constraint pk_inscripcion PRIMARY KEY(Id)
-);
+    Clave_bodega Raw(25) Not Null,
+    Clave_catador_aprendiz Raw(25) Not Null,
+    Clave_calendario Raw(25) Not Null,
+    Constraint pk_inscripcion PRIMARY KEY(Clave)
+)
+    Nested Table Premio store as Premio_inscripciones_nt
+;
 
 Create Table Muestra_compite (
-    Id Raw(25) DEFAULT SYS_GUID(),
+    Clave Raw(25) DEFAULT SYS_GUID(),
     Añada Date Not Null,
     Premio Premio_muestra_compite_nt,
-    Id_marca Integer Not Null,
-    Id_inscripcion Integer Not Null,
-    Constraint pk_muestra_compite PRIMARY KEY(Id)
-);
+    Clave_marca Raw(25) Not Null,
+    Clave_inscripcion Raw(25) Not Null,
+    Constraint pk_muestra_compite PRIMARY KEY(Clave)
+)
+    Nested Table Premio store as Premio_muestra_compites_nt
+;
 
 Create Table Muestra_catador (
     Añada Date Not Null,
-    Sumatoriaexperto Integer Not Null,
-    Id_marca Integer Not Null,
-    Id_jueces Integer Not Null,
+    Sumatoriaexperto Number(10) Not Null,
+    Clave_marca Raw(25) Not Null,
+    Clave_jueces Raw(25) Not Null,
     Constraint pk_muestra_catador PRIMARY KEY(Añada)
 );
 
 Create Table Variedad_uva (
-    Id Raw(25) DEFAULT SYS_GUID(),
-    Nombre Nombre_variedad_uva_va Not Null,
+    Clave Raw(25) DEFAULT SYS_GUID(),
+    Nombre Nombre_variedad_uva_va ,
     Descripcion Varchar2(50) Not Null,
     Tipodeuva Varchar2(50) Not Null,
-    Id_vinedo Integer Not Null,
-    Constraint pk_variedad_uva PRIMARY KEY(Id)
+    Clave_vinedo Raw(25) Not Null,
+    Constraint pk_variedad_uva PRIMARY KEY(Clave)
 );
 
 Create Table Vinedo (
-    Id_propio Raw(25) DEFAULT SYS_GUID(),
-    Id_denominacion_origen Integer Not Null,
-    Id_bodega Integer Not Null,
-    Constraint pk_vinedo PRIMARY KEY(Id_propio)
+    Clave_propio Raw(25) DEFAULT SYS_GUID(),
+    Clave_denominacion_origen Raw(25) Not Null,
+    Clave_bodega Raw(25) Not Null,
+    Constraint pk_vinedo PRIMARY KEY(Clave_propio)
 ); 
