@@ -56,14 +56,14 @@ Create or Replace type Premio as Object(
     Posicion Number(10)
 );
 
-Create or Replace type Datos_contacto_telefono_nt as table of Datos_telefono;
+Create or Replace type Datos_contacto_telefono_va as varray(3) of Datos_telefono;
 Create or Replace type personal_contacto_va as varray(5) of Datos_persona_de_contacto;
 
 Create or Replace type Datos_contacto as Object(
     Direccion Datos_direccion,
     Correo_electronico Varchar2(50),
     Pagina_web Varchar2(50),
-    Telefonos Datos_contacto_telefono_nt,
+    Telefonos Datos_contacto_telefono_va,
     Pesonal_contacto personal_contacto_va
 );
 
@@ -161,6 +161,7 @@ Create Table Denominacion_origen (
     Descripcion Varchar2(100),
     Clave_region Raw(25) Not Null,
     Clave_variedad_uva Raw(25) Not Null,
+    Clave_vinedo Raw(25) Not Null,
     Constraint pk_denominacion_origen PRIMARY KEY(Clave)
 );
 
@@ -207,9 +208,9 @@ Create Table Bodega (
     Fechafundacion Date Not Null,
     Mision Varchar2(50) Not Null,
     Descripcion_vinos Varchar2(100) Not Null,
-    Datoscontacto Datos_contacto ,
-    Produccioanual Tipo_valor_bodega_nt ,
-    Exportacionanual Distribucion_exp_bodega_nt ,
+    Datoscontacto Datos_contacto,
+    Produccioanual Tipo_valor_bodega_nt,
+    Exportacionanual Distribucion_exp_bodega_nt,
     Clave_dueño Raw(25) Not Null,
     Clave_pais_productor Raw(25) Not Null,
     Constraint pk_bodega PRIMARY KEY(Clave)
@@ -407,7 +408,6 @@ Create Table Variedad_uva (
 
 Create Table Vinedo (
     Clave_propio Raw(25) DEFAULT SYS_GUID(),
-    Clave_denominacion_origen Raw(25) Not Null,
     Clave_bodega Raw(25) Not Null,
     Constraint pk_vinedo PRIMARY KEY(Clave_propio)
 ); 
