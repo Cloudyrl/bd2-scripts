@@ -1,17 +1,19 @@
 /* ------------------------TDA------------------------ */
-
+/
 Create or Replace type Datos_persona_de_contacto as Object(
     Nombre Varchar2(20),
     Apellido Varchar2(20),
     Cargo Varchar2(20),
     Email Varchar2(50)
-);
+)
+/
 
 Create or Replace type Datos_telefono as Object(
     Codigo_area Number(5),
     Codigo_internacional Number(5),
     Numero Number(10)
-);
+)
+/
 
 Create or Replace type Datos_direccion as Object(
     Calle Varchar2(20),
@@ -19,34 +21,40 @@ Create or Replace type Datos_direccion as Object(
     Codigo_postal Number(10),
     Urbanizacion Varchar2(50),
     Ciudad Varchar2(20)
-);
+)
+/
 
 Create or Replace type Lugar as Object(
     Pais Varchar2(20),
     Ciudad Varchar2(20)
-);
+)
+/
 
 Create or Replace type Hechos_hist as Object(
     Año Date,
     Hechos Varchar2(50)
-);
+)
+/
 
 Create or Replace type Tipo_valor as Object(
     Año Date,
     Valor Number(10)
-);
+)
+/
 
 Create or Replace type Valoracion as Object(
     Nombreelemento Varchar2(20),
     Valor Number(10),
     Obsercion Varchar2(50)
-);
+)
+/
 
 Create or Replace type Costo as Object(
     Cantmuestras Number(10),
     Valor Number(10),
     Pais Varchar2(20)
-);
+)
+/
 
 Create or Replace type Premio as Object(
     Nombre Varchar2(20),
@@ -54,10 +62,13 @@ Create or Replace type Premio as Object(
     Tipo Varchar2(20),
     Premioenmoneda Number(10),
     Posicion Number(10)
-);
+)
+/
 
-Create or Replace type Datos_contacto_telefono_va as varray(3) of Datos_telefono;
-Create or Replace type personal_contacto_va as varray(5) of Datos_persona_de_contacto;
+Create or Replace type Datos_contacto_telefono_va as varray(3) of Datos_telefono
+/
+Create or Replace type personal_contacto_va as varray(5) of Datos_persona_de_contacto
+/
 
 Create or Replace type Datos_contacto as Object(
     Direccion Datos_direccion,
@@ -65,67 +76,96 @@ Create or Replace type Datos_contacto as Object(
     Pagina_web Varchar2(50),
     Telefonos Datos_contacto_telefono_va,
     Pesonal_contacto personal_contacto_va
-);
+)
+/
 
 Create or Replace type Distribucion_exp as Object(
     Tipovalor Tipo_valor,
     Pais Varchar2(50)
-);
+)
+/
 
 Create or Replace type Calificacion as Object(
     Nombrecritica Varchar2(50),
     Tipovalor Tipo_valor
-);
+)
+/
 
 Create or Replace type Escala as Object(
     Elemento Varchar2(50),
     Valorini Number(10),
     Valorfin Number(10),
     Calificacion_escala Calificacion
-);
+)
+/
 
 Create or Replace type Unidadmonetaria as Object(
     Nombre Varchar2(20),
     Simbolo Varchar2(5)
-);
+)
+/
 
-Create or Replace type Superficie_ocupada_pais_nt as table of Tipo_valor;
-Create or Replace type Produccionanual_pais_nt as table of Tipo_valor;
-Create or Replace type Exportacionanual_pais_nt as table of Distribucion_exp;
-Create or Replace type Unidadmonetaria_pais_nt as table of Unidadmonetaria;
+Create or Replace type Superficie_ocupada_pais_nt as table of Tipo_valor
+/
+Create or Replace type Produccionanual_pais_nt as table of Tipo_valor
+/
+Create or Replace type Exportacionanual_pais_nt as table of Distribucion_exp
+/
+Create or Replace type Unidadmonetaria_pais_nt as table of Unidadmonetaria
+/
 
-Create or Replace type Premio_concurso_nt as table of Premio;
-Create or Replace type Escala_concurso_nt as table of Escala;
+Create or Replace type Premio_concurso_nt as table of Premio
+/
+Create or Replace type Escala_concurso_nt as table of Escala
+/
 
-Create or Replace type Hechos_hist_bodega_nt as table of Hechos_hist;
-Create or Replace type Tipo_valor_bodega_nt as table of Tipo_valor;
-Create or Replace type Distribucion_exp_bodega_nt as table of Distribucion_exp;
+Create or Replace type Hechos_hist_bodega_nt as table of Hechos_hist
+/
+Create or Replace type Tipo_valor_bodega_nt as table of Tipo_valor
+/
+Create or Replace type Distribucion_exp_bodega_nt as table of Distribucion_exp
+/
 
-Create or Replace type Calificacion_marca_nt as table of Calificacion;
-Create or Replace type Tipo_valor_marca_nt as table of Tipo_valor;
-Create or Replace type Distribucion_exp_marca_nt as table of Distribucion_exp;
+Create or Replace type Calificacion_marca_nt as table of Calificacion
+/
+Create or Replace type Tipo_valor_marca_nt as table of Tipo_valor
+/
+Create or Replace type Distribucion_exp_marca_nt as table of Distribucion_exp
+/
 
-Create or Replace type Porcentajevol_clasificacion_va as varray(5) of Number(10);
+Create or Replace type Porcentajevol_clasificacion_va as varray(5) of Number(10)
+/
 
-Create or Replace type Curricula_catador_experto_nt as table of Hechos_hist;
-Create or Replace type Publicaciones_catador_exp_va as varray(5) of Varchar2(100);
+Create or Replace type Curricula_catador_experto_nt as table of Hechos_hist
+/
+Create or Replace type Publicaciones_catador_exp_va as varray(5) of Varchar2(100)
+/
 
-Create or Replace type Curricula_catador_aprendiz_nt as table of Hechos_hist;
-Create or Replace type Publicaciones_catador_apr_va as varray(5) of Varchar2(100);
+Create or Replace type Curricula_catador_aprendiz_nt as table of Hechos_hist
+/
+Create or Replace type Publicaciones_catador_apr_va as varray(5) of Varchar2(100)
+/
 
-Create or Replace type Costo_calendario_nt as table of Costo;
+Create or Replace type Costo_calendario_nt as table of Costo
+/
 
-Create or Replace type Unidadmonetaria_calendario_nt as table of Unidadmonetaria;
+Create or Replace type Unidadmonetaria_calendario_nt as table of Unidadmonetaria
+/
 
-Create or Replace type Valor_cata_valor_muestra_m_nt as table of Valoracion;
+Create or Replace type Valor_cata_valor_muestra_m_nt as table of Valoracion
+/
 
-Create or Replace type Valoracion_cata_valor_apr_nt as table of Valoracion;
+Create or Replace type Valoracion_cata_valor_apr_nt as table of Valoracion
+/
 
-Create or Replace type Premio_inscripcion_nt as table of Premio;
+Create or Replace type Premio_inscripcion_nt as table of Premio
+/
 
-Create or Replace type Premio_muestra_compite_nt as table of Premio;
+Create or Replace type Premio_muestra_compite_nt as table of Premio
+/
 
-Create or Replace type Nombre_variedad_uva_va as varray(5) of Varchar2(50);
+Create or Replace type Nombre_variedad_uva_va as varray(5) of Varchar2(50)
+/
 
 /* ---------------------FIN TDA---------------------- */
 
