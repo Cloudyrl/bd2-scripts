@@ -135,7 +135,7 @@ Create or Replace type Tipo_valor_marca_nt as table of Tipo_valor
 Create or Replace type Distribucion_exp_marca_nt as table of Distribucion_exp
 /
 
-Create or Replace type Porcentajevol_clasificacion_va as varray(5) of Number(10)
+Create or Replace type Porcentajevol_clasificacion_va as varray(15) of Number(15)
 /
 
 Create or Replace type Curricula_catador_experto_nt as table of Hechos_hist
@@ -265,9 +265,9 @@ Create Table Bodega (
 Create Table Marca (
     Clave Integer Not Null,
     Nombre Varchar2(50) Not Null,
-    Elaboracion Varchar2(500) Not Null,
-    Cata_propia Varchar2(500) Not Null,
-    Maridaje Varchar2(500) Not Null,
+    Elaboracion Varchar2(1000) Not Null,
+    Cata_propia Varchar2(1000) Not Null,
+    Maridaje Varchar2(1000) Not Null,
     Temperatura Number(10) Not Null,
     Unidad_temperatura Varchar2(5) Not Null,
     Ventana_de_cosumo Number(10) Not Null,
@@ -293,10 +293,10 @@ Create Table Marca (
 
 Create Table Clasificacion (
     Clave Integer Not Null,
-    Nombre Varchar2(50) Not Null,
+    Nombre Varchar2(100) Not Null,
     Nivel Varchar2(50) Not Null,
     Porcentaje_vol  Porcentajevol_clasificacion_va ,
-    Clave_clasificacion Integer Not Null,
+    Clave_clasificacion Integer,
     Constraint pk_clasificacion PRIMARY KEY(Clave)
 );
 

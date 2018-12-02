@@ -48,41 +48,48 @@ Insert into Pais_productor values (
 
 Insert into Region values (
     1,
-    'Mendoza',
+    'Cuyo',
     NULL,
     1
 );
 
 Insert into Region values (
     2,
-    'Nouvelle-Aquitaine ',
+    'Suroeste de Francia',
     NULL,
     2
 );
 
 Insert into Region values (
     3,
+    'Nouvelle-Aquitaine',
+    NULL,
+    2
+);
+
+Insert into Region values (
+    4,
     'South Australia',
     NULL,
     3
 );
 
 Insert into Region values (
-    4,
+    5,
     'Navarra',
     NULL,
     4
 );
 
 Insert into Region values (
-    5,
+    6,
     'Valladolid',
     NULL,
     4
 );
 
 Insert into Region values (
-    6,
+    7,
     'Valdepeñas',
     NULL,
     4
@@ -481,6 +488,7 @@ Insert into Denominacion_origen values (
 'Mendoza',
 NULL,
 1,
+1,
 1
 );
 
@@ -488,6 +496,7 @@ Insert into Denominacion_origen values (
 2,
 'Mendoza',
 NULL,
+1,
 2,
 1
 );
@@ -496,7 +505,17 @@ Insert into Denominacion_origen values (
 3,
 'Mendoza',
 NULL,
+1,
 3,
+3
+);
+
+Insert into Denominacion_origen values (
+4,
+'Mendoza',
+NULL,
+1,
+4,
 3
 );
 
@@ -504,6 +523,7 @@ Insert into Denominacion_origen values (
 5,
 'Mendoza',
 NULL,
+1,
 5,
 2
 );
@@ -512,6 +532,7 @@ Insert into Denominacion_origen values (
 6,
 'Pauillac',
 NULL,
+2,
 6,
 7
 );
@@ -520,6 +541,7 @@ Insert into Denominacion_origen values (
 7,
 'Pauillac',
 NULL,
+2,
 7,
 7
 );
@@ -528,6 +550,7 @@ Insert into Denominacion_origen values (
 8,
 'Bordeaux',
 NULL,
+3,
 8,
 9
 );
@@ -536,6 +559,7 @@ Insert into Denominacion_origen values (
 9,
 'Pauillac',
 NULL,
+2,
 9,
 9
 );
@@ -544,46 +568,52 @@ Insert into Denominacion_origen values (
 10,
 'Saint-Emillion',
 NULL,
+3,
 10,
 8
 );
 
 Insert into Denominacion_origen values (
 11,
-'Barossa Valley',
+'Barossa',
 NULL,
+4,
 11,
 4
 );
 
 Insert into Denominacion_origen values (
 12,
-'Barossa Valley',
+'Barossa',
 NULL,
+4,
 12,
 4
 );
 
 Insert into Denominacion_origen values (
 13,
-'Barossa Valley',
+'Barossa',
 NULL,
+4,
 13,
 5
 );
 
 Insert into Denominacion_origen values (
 14,
-'Barossa Valley',
+'Barossa',
 NULL,
+4,
 14,
 5
 );
 
 Insert into Denominacion_origen values (
 15,
-'Yarra Valley',
+'Yarra',
 NULL,
+4,
 15,
 6
 );
@@ -592,6 +622,7 @@ Insert into Denominacion_origen values (
 16,
 'Rioja',
 NULL,
+5,
 16,
 10
 );
@@ -600,6 +631,7 @@ Insert into Denominacion_origen values (
 17,
 'Rioja',
 NULL,
+5,
 17,
 10
 );
@@ -608,6 +640,7 @@ Insert into Denominacion_origen values (
 18,
 'Rueda',
 NULL,
+6,
 18,
 11
 );
@@ -616,6 +649,7 @@ Insert into Denominacion_origen values (
 19,
 'Rueda',
 NULL,
+6,
 19,
 11
 );
@@ -624,20 +658,623 @@ Insert into Denominacion_origen values (
 20,
 'Tierra de Castilla',
 NULL,
+7,
 20,
 12
 );
 
+Insert into Clasificacion values (
+    1,
+    'Blanco',
+    'Nivel 1',
+    NULL,
+    NULL
+);
+
+Insert into Clasificacion values (
+    2,
+    'Tinto',
+    'Nivel 1',
+    NULL,
+    NULL
+);
+
+Insert into Clasificacion values (
+    3,
+    'Ligeros y Secos',
+    'Nivel 2',
+    Porcentajevol_clasificacion_va(9,10,11,12),
+    1
+);
+
+Insert into Clasificacion values (
+    4,
+    'Secos y Amplios',
+    'Nivel 2',
+    Porcentajevol_clasificacion_va(10,11,12,13),
+    1
+);
+
+Insert into Clasificacion values (
+    5,
+    'Secos y Concentrados',
+    'Nivel 2',
+    Porcentajevol_clasificacion_va(11,12,13,14),
+    1
+);
+
+Insert into Clasificacion values (
+    6,
+    'Aromaticos',
+    'Nivel 2',
+    Porcentajevol_clasificacion_va(12,13),
+    1
+);
+
+Insert into Clasificacion values (
+    7,
+    'Semi-Secos',
+    'Nivel 2',
+    Porcentajevol_clasificacion_va(6,7,8,9,10,11,12,13,14),
+    1
+);
+
+Insert into Clasificacion values (
+    8,
+    'Dulces y Licorosos',
+    'Nivel 2',
+    Porcentajevol_clasificacion_va(9,10,11,12,13,14,15,16,17,18),
+    1
+);
+
+Insert into Clasificacion values (
+    9,
+    'Rosados',
+    'Nivel 2',
+    Porcentajevol_clasificacion_va(10,11,12,13,14),
+    2
+);
+
+Insert into Clasificacion values (
+    10,
+    'Ligeros, Afrutados, No Envejecidos',
+    'Nivel 2',
+    Porcentajevol_clasificacion_va(10,11,12),
+    2
+);
+
+Insert into Clasificacion values (
+    11,
+    'De Cuerpo Medio',
+    'Nivel 2',
+    Porcentajevol_clasificacion_va(12,13),
+    2
+);
+
+Insert into Clasificacion values (
+    12,
+    'Concentrados, Intensos',
+    'Nivel 2',
+    Porcentajevol_clasificacion_va(12,13,14),
+    2
+);
+
+Insert into Clasificacion values (
+    13,
+    'De Guardia',
+    'Nivel 2',
+    Porcentajevol_clasificacion_va(12,13),
+    2
+);
+
+Insert into Clasificacion values (
+    14,
+    'Especiales',
+    'Nivel 2',
+    Porcentajevol_clasificacion_va(14,15,16,17),
+    2
+);
+
+Insert into Clasificacion values (
+    15,
+    'Secos',
+    'Nivel 3',
+    NULL,
+    14
+);
+
+Insert into Clasificacion values (
+    16,
+    'Semi-Secos',
+    'Nivel 3',
+    NULL,
+    14
+);
+
+Insert into Clasificacion values (
+    17,
+    'Dulces',
+    'Nivel 3',
+    NULL,
+    14
+);
+
 Insert into Marca values (
-1, 'Structura',
-'',
-'',
-'',
-18,'C',120,14.5,5.5,3.5,'Tinto',
+1, 
+'Structura',
+'Cosecha manual a horas tempranas de la mañana. Fermentación: En recipientes de acero inoxidable a bajas temperaturas. La fermentación se realizó por separado en lotes reducidos para cada varietal, y luego se hizo una maceración prolongada.',
+'Color rojo oscuro y profundo. Aromas y sabores a ciruelas, guindas confitadas, moras, trufas, grafito y especias. Vino complejo de mucho cuerpo y taninos redondos que aportan una textura sedosa. Gran equilibrio entre alcohol, acidez y fruta. Final muy prolongado.',
+'Vinos tintos complejos con mucho cuerpo y taninos firmes combinan bien con platos ricos en proteínas. Algunos de estos platos pueden ser pierna de cordero asada, carnes rojas asadas y carnes de caza. Los vinos complejos tendrán mayor oportunidad de lucirse cuando se combinan con platos de similar complejidad que también tengan diferentes capas de aromas y sabores',
+18,
+'C',
+120,
+14.5,
+5.5,
+3.5,
+'Tinto',
 empty_blob(),
-'S','Corcho',
-Calificacion_marca_nt(Calificacion('James Suckling', Tipo_valor('01-01-2018', 95))),
-null,
-null,
-10,1,1
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('James Suckling', Tipo_valor('01-01-2018', 95)), Calificacion('Tim Atkin',Tipo_valor('01-01-2017', 93)),Calificacion('Stephen Tanzer',Tipo_valor('01-01-2017', 90))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',1000),Tipo_valor('01-01-2016',1345),Tipo_valor('01-01-2017',2600)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 200),Tipo_valor('01-01-2016', 200),Tipo_valor('01-01-2017', 250)),'Uruguay'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 200),Tipo_valor('01-01-2016', 200),Tipo_valor('01-01-2017', 250)),'Japon'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 190),Tipo_valor('01-01-2016', 200),Tipo_valor('01-01-2017', 250)),'Hungria')),
+10,
+1,
+2
+);
+
+Insert into Marca values (
+2, 
+'Colección Privada',
+'Se elabora con tres tipos de uvas: Cabernet sauvignon que le aporta cuerpo y estructura; Malbec que le otorga dulzura; Merlot que le da un final elegante. Cosecha manual. Fermentación: En tanques de acero inoxidable a bajas temperaturas.',
+'De color rojo intenso. Sabores a moras, membrillo y especias. De cuerpo medio y taninos sedosos. Frutado y de larga persistencia en boca.',
+'Acompaña bien cordero, carnes de cerdo con salsas intensas y quesos maduros.',
+18,
+'C',
+48,
+13.9,
+4.3,
+2.9,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('James Suckling', Tipo_valor('01-01-2018', 91)), Calificacion('Tim Atkin',Tipo_valor('01-01-2017', 90))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',1000),Tipo_valor('01-01-2016',1500),Tipo_valor('01-01-2017',1250)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 100),Tipo_valor('01-01-2016', 100),Tipo_valor('01-01-2017', 25)),'Holanda'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 100),Tipo_valor('01-01-2016', 100),Tipo_valor('01-01-2017', 75)),'Mexico'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 100),Tipo_valor('01-01-2016', 90),Tipo_valor('01-01-2017', 0)),'Hungria')),
+12,
+1,
+2
+);
+
+Insert into Marca values (
+3, 
+'Medalla ',
+'Elaborado con uvas cosechadas a mano, de gran estructura y complejidad.',
+'Este vino posee un color rojo intenso con tonos violetas. Expresa aromas complejos con notas de mermelada de ciruela, pimientos verdes, pasas de uva, tabaco y un delicado toque de roble. De sabor redondo, en boca es muy persistente, con taninos suaves y maduros.',
+'Excelente combinacion con carnes rojas.',
+18,
+'C',
+120,
+14,
+3.6,
+2.7,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('Robert Parker', Tipo_valor('01-01-2016', 92)), Calificacion('Campbell Mattinson',Tipo_valor('01-01-2017', 90))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',1000),Tipo_valor('01-01-2016',1690),Tipo_valor('01-01-2017',2000)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 250),Tipo_valor('01-01-2016', 200),Tipo_valor('01-01-2017', 300)),'Holanda'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 100),Tipo_valor('01-01-2016', 200),Tipo_valor('01-01-2017',300)),'Mexico'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 50),Tipo_valor('01-01-2016', 300),Tipo_valor('01-01-2017', 200)),'Uruguay')),
+18,
+3,
+2
+);
+
+Insert into Marca values (
+4, 
+'Alaris',
+'Alaris Chardonnay es un monovarietal elaborado con viñedos de Cruz de Piedra, plantados a una altitud de 720 m.s.n.m, con más de 90 años de antigüedad.',
+'De color amarillo brillante con tintes verdosos, este vino entrega aromas frutales de manzanas rojas y ananá maduro. En boca su sabor es suave, con una fresca acidez y un prolongado final.',
+'Perfecto para combinar con todo tipo de mariscos, y pastas con salsas suaves.',
+12,
+'C',
+120,
+12.5,
+3.2,
+2.4,
+'Blanco',
+empty_blob(),
+'N',
+'Corcho',
+Calificacion_marca_nt(Calificacion('Tyson Stelzer', Tipo_valor('01-01-2016', 93)), Calificacion('Huon Hooke',Tipo_valor('01-01-2017', 92))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',600),Tipo_valor('01-01-2016',720),Tipo_valor('01-01-2017',600)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 30),Tipo_valor('01-01-2016', 50),Tipo_valor('01-01-2017', 100)),'Uruguay'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 100),Tipo_valor('01-01-2016', 200),Tipo_valor('01-01-2017',100)),'Japon'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 100),Tipo_valor('01-01-2016', 200),Tipo_valor('01-01-2017', 100)),'Uruguay')),
+16,
+3,
+1
+);
+
+Insert into Marca values (
+5, 
+'Luis Mora',
+'Despalillado y presionado de los granos con descarga por desnivel sobre boca de pileta, tendiente a un tratamiento cuidadoso de las uvas. Se utilizan piletas de pequeño tamaño (150 HLTS), para lograr una intensa maceración de los orujos. La fermentación alcohólica se realiza a temperaturas que oscilan entre 24° y 28°C, con levaduras seleccionadas, para asegurar una fermentación efectiva y controlada. El tiempo total de contacto con los orujos oscila entre 15 a 20 días, tiempos que se deciden por degustación, buscando extraer colores intensos y taninos dulces poco agresivos.',
+'Rojo bordó intenso. Aroma a frutos rojos maduros, mermelada de ciruelas, y toques de pasas de uva, con notas vainilla y tabaco aportadas por el roble.  Entrada en boca dulce, cuerpo intenso, se percibe un perfecto equilibrio entre la fruta y el roble, dejando un agradable y persistente final en boca.',
+'Ideal para acompañar carnes rojas, pastas y quesos.',
+18,
+'C',
+180,
+14.7,
+5.7,
+3.2,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('Nick Stock', Tipo_valor('01-01-2016', 90)), Calificacion('Jeremy Oliver',Tipo_valor('01-01-2017', 90))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',450),Tipo_valor('01-01-2016',400),Tipo_valor('01-01-2017',490)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 20),Tipo_valor('01-01-2016', 37),Tipo_valor('01-01-2017', 25)),'Uruguay'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 20),Tipo_valor('01-01-2016', 30),Tipo_valor('01-01-2017',35)),'Mexico'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 40),Tipo_valor('01-01-2016', 30),Tipo_valor('01-01-2017', 40)),'Hungria')),
+12,
+2,
+2
+);
+
+Insert into Marca values (
+6, 
+'Les Tourelles de Longueville',
+'30% en barriles nuevos, 70% en barriles de una cosecha durante 12 meses.',
+'El Tourelles de Longueville ofrece un color rubí fino fino. La nariz está marcada por las bayas de grosella, cereza negra, fresa silvestre y especias suaves. El ataque es fresco, elegante y sutil. La estructura se despliega y crece en poder. El final es armonioso, completo y bien equilibrado. Este vino está lleno de encanto y gracia.',
+'Con asados, guisos, aves y quesos fuertes',
+16,
+'C',
+360,
+13,
+5.6,
+3.4,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('Robert Parker', Tipo_valor('01-01-2012', 93)), Calificacion('Jeremy Oliver',Tipo_valor('01-01-2015', 91))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',20000),Tipo_valor('01-01-2016',21000),Tipo_valor('01-01-2017',19000)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 3000),Tipo_valor('01-01-2016', 2600),Tipo_valor('01-01-2017', 2900)),'Holanda'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 1000),Tipo_valor('01-01-2016', 1150),Tipo_valor('01-01-2017',1100)),'Mexico'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 815),Tipo_valor('01-01-2016', 895),Tipo_valor('01-01-2017', 908)),'Hungria')),
+12,
+7,
+2
+);
+
+Insert into Marca values (
+7, 
+'Les Griffon Pichon Baron',
+'40% en barriles nuevos, 60% en barriles de una cosecha durante 12 meses.',
+'El color es oscuro; Un granate rojo intenso. La nariz está realzada por fruta fresca, crema de grosella negra y Arándanos con una elegante nota a roble. En boca es suave y aterciopelado con taninos delicados y precisos.',
+'Con asados, guisos, aves y quesos fuertes',
+18,
+'C',
+240,
+13,
+5.8,
+2.7,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('Nick Stock', Tipo_valor('01-01-2016', 92)), Calificacion('Jeremy Oliver',Tipo_valor('01-01-2017', 91))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',13500),Tipo_valor('01-01-2016',13500),Tipo_valor('01-01-2017',13500)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 700),Tipo_valor('01-01-2016', 720),Tipo_valor('01-01-2017', 690)),'Holanda'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 356),Tipo_valor('01-01-2016', 325),Tipo_valor('01-01-2017',315)),'Japon'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 310),Tipo_valor('01-01-2016', 352),Tipo_valor('01-01-2017', 380)),'Hungria')),
+18,
+7,
+2
+);
+
+Insert into Marca values (
+8, 
+'Legende Bordeaux Rougue',
+'Objeto de los mayores cuidados por parte de los viñateros, el viñedo bordelés concita unanimidad absoluta respecto de un punto: produce vinos frescos y elegantes que, si bien son testimonio de una gran cultura y una civilización única, se beben con especial agrado. ',
+'Nariz: intensa y muy expresiva, con predominancia de aromas de fruta fresca (grosella y frambuesa) que se mezclan con leves notas de madera. Boca: estructurada, redonda y agradable, con un suave dejo de madera, taninos firmes pero aterciopelados y un largo final fresco y frutal',
+'Con asados, guisos, aves y quesos fuertes',
+18,
+'C',
+240,
+12.5,
+3.37,
+3.27,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('Nick Stock', Tipo_valor('01-01-2016', 93)), Calificacion('Robert Parker',Tipo_valor('01-01-2017', 91))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',13060),Tipo_valor('01-01-2016',14000),Tipo_valor('01-01-2017',13670)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 900),Tipo_valor('01-01-2016', 820),Tipo_valor('01-01-2017', 890)),'Uruguay'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 750),Tipo_valor('01-01-2016', 825),Tipo_valor('01-01-2017',815)),'Japon'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 1010),Tipo_valor('01-01-2016', 1520),Tipo_valor('01-01-2017', 1580)),'Hungria')),
+20,
+9,
+2
+);
+
+Insert into Marca values (
+9, 
+'Carruades de Lafite',
+'Objeto de los mayores cuidados por parte de los viñateros, el viñedo bordelés concita unanimidad absoluta respecto de un punto: produce vinos frescos y elegantes que, si bien son testimonio de una gran cultura y una civilización única, se beben con especial agrado. ',
+'De color rubí, con reflejos ciruela. En nariz aromas de grosella y notas de vainilla. En boca de cuerpo medio, notas de suelo y de frutas.',
+'Se recomienda acompañar con carnes rojas, de caza y platillos condimentados',
+17,
+'C',
+240,
+12.5,
+3.8,
+3.57,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('Robert Parker',Tipo_valor('01-01-2017', 91))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',18000),Tipo_valor('01-01-2016',18000),Tipo_valor('01-01-2017',18200)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 1000),Tipo_valor('01-01-2016', 1020),Tipo_valor('01-01-2017', 1090)),'Holanda'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 2700),Tipo_valor('01-01-2016', 2850),Tipo_valor('01-01-2017',2815)),'Mexico'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 1010),Tipo_valor('01-01-2016', 1520),Tipo_valor('01-01-2017', 1580)),'Hungria')),
+20,
+9,
+2
+);
+
+Insert into Marca values (
+10, 
+'L Excellence',
+'Viticultura integrada, adelgazamiento de las hojas realizado por mano, cosecha verde. Fermentación maloláctica en barricas de roble francés. Vinificación en cubas de hormigón termo regulado',
+'Este Saint-Emilion es un trato absoluto con su sutil Mezcla de Merlot y Cabernet. L Excellence Clos des Menuts es un buen mantenimiento bien equilibrado y afrutado. Vino, con sutiles taninos.',
+'Va maravillosamente bien con todas las carnes y quesos.',
+15,
+'C',
+120,
+14.5,
+4.8,
+2.89,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('Tyson Stelzer', Tipo_valor('01-01-2016', 93)), Calificacion('Huon Hooke',Tipo_valor('01-01-2017', 92))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',14000),Tipo_valor('01-01-2016',14500),Tipo_valor('01-01-2017',14200)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 1800),Tipo_valor('01-01-2016', 1820),Tipo_valor('01-01-2017', 2000)),'Uruguay'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 2200),Tipo_valor('01-01-2016', 2350),Tipo_valor('01-01-2017',2315)),'Mexico'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 1050),Tipo_valor('01-01-2016', 1120),Tipo_valor('01-01-2017', 1180)),'Hungria')),
+18,
+8,
+2
+);
+
+Insert into Marca values (
+11, 
+'Plexux',
+'Fermentación con tapa sumergida y pequeños fermentadores abiertos de acero inoxidable.',
+'Un poco más de cuerpo medio, con un núcleo oscuro de Frutos concentrados, maduros, rojos y negros. Amplia Estructura proporcionada por taninos finos y suaves. Acidez brillante. Acabados largos y picantes',
+'Vinos tintos complejos con mucho cuerpo y taninos firmes combinan bien con platos ricos en proteínas. Los vinos complejos tendrán mayor oportunidad de lucirse cuando se combinan con platos de similar complejidad que también tengan diferentes capas de aromas y sabores.',
+17,
+'C',
+84,
+14.5,
+6.1,
+3.55,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('James Halliday', Tipo_valor('01-01-2017', 95)), Calificacion('Huon Hooke',Tipo_valor('01-01-2017', 92)), Calificacion('Mike Bennie',Tipo_valor('01-01-2016', 93))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',600),Tipo_valor('01-01-2016',900),Tipo_valor('01-01-2017',950)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 100),Tipo_valor('01-01-2016', 100),Tipo_valor('01-01-2017', 100)),'Uruguay'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 50),Tipo_valor('01-01-2016', 150),Tipo_valor('01-01-2017',150)),'Japon'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 100),Tipo_valor('01-01-2016', 100),Tipo_valor('01-01-2017', 100)),'Hungria')),
+15,
+4,
+2
+);
+
+Insert into Marca values (
+12, 
+'Entity Shiraz',
+'Fermentación con tapa sumergida y pequeños fermentadores abiertos de acero inoxidable.',
+'De cuerpo completo y con una gran variedad de frutos oscuros concentrados. Suculenta, equilibrada y largo sabor en la boca.',
+'Vinos tintos complejos con mucho cuerpo y taninos firmes combinan bien con platos ricos en proteínas. Los vinos complejos tendrán mayor oportunidad de lucirse cuando se combinan con platos de similar complejidad que también tengan diferentes capas de aromas y sabores.',
+16,
+'C',
+120,
+14.5,
+6.2,
+3.57,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('James Halliday', Tipo_valor('01-01-2017', 97)), Calificacion('Campbell Mattinson',Tipo_valor('01-01-2017', 95)), Calificacion('Tim White',Tipo_valor('01-01-2016', 96))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',2500),Tipo_valor('01-01-2016',2700),Tipo_valor('01-01-2017',3500)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 300),Tipo_valor('01-01-2016', 350),Tipo_valor('01-01-2017', 400)),'Holanda'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 240),Tipo_valor('01-01-2016', 370),Tipo_valor('01-01-2017',375)),'Mexico'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 430),Tipo_valor('01-01-2016', 450),Tipo_valor('01-01-2017', 430)),'Hungria')),
+15,
+4,
+2
+);
+
+Insert into Marca values (
+13, 
+'Grand Tokay',
+'Como los componentes vintage de Tokay se maduran por separado en barriles de roble viejos, la mezcla final DP57 es el resultado de un riguroso programa de selección.',
+'Como néctar, con viscosidad de relleno bucal, caramelo y especias exóticas.',
+'Vinos tintos complejos con mucho cuerpo y taninos firmes combinan bien con platos ricos en proteínas. Los vinos complejos tendrán mayor oportunidad de lucirse cuando se combinan con platos de similar complejidad que también tengan diferentes capas de aromas y sabores.',
+17,
+'C',
+120,
+17,
+5.8,
+4.06,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('James Halliday', Tipo_valor('01-01-2017', 97))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',5100),Tipo_valor('01-01-2016',5050),Tipo_valor('01-01-2017',6120)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 900),Tipo_valor('01-01-2016', 850),Tipo_valor('01-01-2017', 870)),'Holanda'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 940),Tipo_valor('01-01-2016', 970),Tipo_valor('01-01-2017',840)),'Mexico'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 430),Tipo_valor('01-01-2016', 450),Tipo_valor('01-01-2017', 470)),'Hungria')),
+18,
+5,
+2
+);
+
+Insert into Marca values (
+14, 
+'Master Muscat',
+'Como los componentes vintage de Muscat se maduran por separado en barriles de roble viejos, la mezcla final DP63 es el resultado de un riguroso programa de selección.',
+'Como néctar, con viscosidad de relleno bucal, caramelo y especias exóticas.',
+'Vinos tintos complejos con mucho cuerpo y taninos firmes combinan bien con platos ricos en proteínas. Los vinos complejos tendrán mayor oportunidad de lucirse cuando se combinan con platos de similar complejidad que también tengan diferentes capas de aromas y sabores.',
+16,
+'C',
+120,
+17,
+6.4,
+3.55,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('Lisa Perrotti-Brown', Tipo_valor('01-01-2017', 97)),Calificacion('Joe Czerwinsk', Tipo_valor('01-01-2017', 95))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',1100),Tipo_valor('01-01-2016',1100),Tipo_valor('01-01-2017',1200)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 100),Tipo_valor('01-01-2016', 90),Tipo_valor('01-01-2017', 110)),'Holanda'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 340),Tipo_valor('01-01-2016', 370),Tipo_valor('01-01-2017',340)),'Mexico'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 10),Tipo_valor('01-01-2016', 50),Tipo_valor('01-01-2017', 40)),'Hungria')),
+21,
+5,
+2
+);
+
+Insert into Marca values (
+15, 
+'Noble One',
+'Cada uno de los viñedos especialmente seleccionados se cosechó, fermentó y maduró por separado, y cada viñedo proporcionó su propio carácter único, lo que contribuyó a la riqueza y complejidad de este vino. Madurado en 37% de barricas nuevas de roble francés, 62% en barricas de uno y dos años y 25% sin cocción para conservar los sabores de frutas jóvenes en la mezcla.',
+'Brillante medio dorado. Aromas gloriosos de membrillo, nectarina, ralladura de naranja y nuez de roble vanilense. Un banquete sensual de ricas frutas de hueso blanco, cítricos, un toque de mermelada y roble bellamente integrado. Una espiga picante de acidez equilibra la dulzura de este vino dando un toque de frescura al final.',
+'Vinos tintos complejos con mucho cuerpo y taninos firmes combinan bien con platos ricos en proteínas. Los vinos complejos tendrán mayor oportunidad de lucirse cuando se combinan con platos de similar complejidad que también tengan diferentes capas de aromas y sabores.',
+16,
+'C',
+120,
+11,
+9.6,
+3.49,
+'Blanco',
+empty_blob(),
+'N',
+'Corcho',
+Calificacion_marca_nt(Calificacion('Nick Stock', Tipo_valor('01-01-2017', 97)),Calificacion('James Halliday', Tipo_valor('01-01-2017', 95))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',10500),Tipo_valor('01-01-2016',11000),Tipo_valor('01-01-2017',11500)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 900),Tipo_valor('01-01-2016', 1100),Tipo_valor('01-01-2017', 1150)),'Uruguay'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 1340),Tipo_valor('01-01-2016', 1370),Tipo_valor('01-01-2017',1340)),'Mexico'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 1110),Tipo_valor('01-01-2016', 1150),Tipo_valor('01-01-2017', 1140)),'Hungria')),
+21,
+6,
+1
+);
+
+Insert into Marca values (
+16, 
+'Crianza',
+'Fermentación alcohólica durante 10 días, seguida de maceración por contacto con la piel durante 18 días. La fermentación se realizó a 28ºC con malolácticos en depósitos de acero inoxidable.',
+'En boca es sedoso, agradable y envolvente, largo, equilibrado, con muy buenos taninos.',
+'Vinos tintos complejos con mucho cuerpo y taninos firmes combinan bien con platos ricos en proteínas. Los vinos complejos tendrán mayor oportunidad de lucirse cuando se combinan con platos de similar complejidad que también tengan diferentes capas de aromas y sabores.',
+18,
+'C',
+144,
+13.5,
+6.6,
+3.57,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('Huon Hooke', Tipo_valor('01-01-2017', 95)),Calificacion('Chris Shanahan', Tipo_valor('01-01-2017', 92))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',4400),Tipo_valor('01-01-2016',4600),Tipo_valor('01-01-2017',5000)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 300),Tipo_valor('01-01-2016', 100),Tipo_valor('01-01-2017', 250)),'Holanda'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 340),Tipo_valor('01-01-2016', 370),Tipo_valor('01-01-2017',340)),'Mexico'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 110),Tipo_valor('01-01-2016', 150),Tipo_valor('01-01-2017', 140)),'Hungria')),
+17,
+10,
+2
+);
+
+Insert into Marca values (
+17, 
+'Reserva',
+'Fermentación alcohólica durante 10 días a 28ºC, con maceración por contacto con la piel durante 20 días. Fermentación maloláctica en depósitos de acero inoxidable a 18ºC.',
+'Untuoso, aterciopelado y equilibrado en boca, con una buena estructura tánica de alta calidad.',
+'Vinos tintos complejos con mucho cuerpo y taninos firmes combinan bien con platos ricos en proteínas. Los vinos complejos tendrán mayor oportunidad de lucirse cuando se combinan con platos de similar complejidad que también tengan diferentes capas de aromas y sabores.',
+18,
+'C',
+132,
+13.5,
+5.8,
+3.7,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('Robert Parker', Tipo_valor('01-01-2017', 91)),Calificacion('Michael Apstein', Tipo_valor('01-01-2017', 93))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',2300),Tipo_valor('01-01-2016',2600),Tipo_valor('01-01-2017',2600)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 100),Tipo_valor('01-01-2016', 50),Tipo_valor('01-01-2017', 70)),'Holanda'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 70),Tipo_valor('01-01-2016', 90),Tipo_valor('01-01-2017',100)),'Mexico'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 110),Tipo_valor('01-01-2016', 90),Tipo_valor('01-01-2017', 100)),'Uruguay')),
+15,
+10,
+2
+);
+
+Insert into Marca values (
+18, 
+'Reserva',
+'Cosecha nocturna. Maceración por contacto con la piel de 4/5 horas a 10 ºC. Fermentación a 13.5 ºC.',
+'Muy fresco, con buena acidez, sabroso, afrutado, bien equilibrado, complejo, con un final largo y retrogusto ligeramente amargo.',
+'Vinos tintos complejos con mucho cuerpo y taninos firmes combinan bien con platos ricos en proteínas. Los vinos complejos tendrán mayor oportunidad de lucirse cuando se combinan con platos de similar complejidad que también tengan diferentes capas de aromas y sabores.',
+10,
+'C',
+120,
+12.5,
+5.7,
+3.7,
+'Blanco',
+empty_blob(),
+'N',
+'Corcho',
+Calificacion_marca_nt(Calificacion('Mike Bennie', Tipo_valor('01-01-2017', 93)),Calificacion('Tyson Stelzer', Tipo_valor('01-01-2017', 91))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',2200),Tipo_valor('01-01-2016',2400),Tipo_valor('01-01-2017',2400)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 50),Tipo_valor('01-01-2016', 100),Tipo_valor('01-01-2017', 70)),'Holanda'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 70),Tipo_valor('01-01-2016', 100),Tipo_valor('01-01-2017',90)),'Mexico'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 100),Tipo_valor('01-01-2016', 90),Tipo_valor('01-01-2017', 110)),'Uruguay')),
+15,
+11,
+1
+);
+
+Insert into Marca values (
+19, 
+'Roble',
+'Cosecha manual en cajas de 20 kg. Tabla de clasificación. Maceración por contacto con la piel y fermentación durante 15 días a 24 ºC.',
+'Sabroso, afrutado, tostado con taninos redondos y buen final.',
+'Vinos tintos complejos con mucho cuerpo y taninos firmes combinan bien con platos ricos en proteínas. Los vinos complejos tendrán mayor oportunidad de lucirse cuando se combinan con platos de similar complejidad que también tengan diferentes capas de aromas y sabores.',
+16,
+'C',
+120,
+14.5,
+5.3,
+3.55,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('Nick Stock', Tipo_valor('01-01-2017', 94)),Calificacion('Josh Raynolds', Tipo_valor('01-01-2017', 93))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',2200),Tipo_valor('01-01-2016',2400),Tipo_valor('01-01-2017',2400)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 50),Tipo_valor('01-01-2016', 70),Tipo_valor('01-01-2017', 100)),'Holanda'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 100),Tipo_valor('01-01-2016', 70),Tipo_valor('01-01-2017',90)),'Mexico'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 100),Tipo_valor('01-01-2016', 90),Tipo_valor('01-01-2017', 110)),'Hungria')),
+15,
+11,
+2
+);
+
+Insert into Marca values (
+20, 
+'Vega Ibor Viura',
+'Recolección en un momento óptimo de madurez. Maceración en frío durante 10 horas, tras dicha maceración se realiza el prensado y se separan las diferentes fracciones del mismo, siendo el mosto yema el que se utiliza para la elaboración de este vino',
+'Aroma franco, fresco, balsámico, aromas cítricos, de lima, con gran carga de fruta tropical y sensaciones florales. Una acidez marcada, con recuerdos cítricos vinculados a las sensaciones aromáticas.',
+'Arroces y platos a base de pasta. Mariscos y pescados blancos cocidos o a la plancha.',
+17,
+'C',
+120,
+13.5,
+6.2,
+4.3,
+'Tinto',
+empty_blob(),
+'Y',
+'Corcho',
+Calificacion_marca_nt(Calificacion('Jeremy Oliver', Tipo_valor('01-01-2017', 91))),
+Tipo_valor_marca_nt(Tipo_valor('01-01-2015',3500),Tipo_valor('01-01-2016',3500),Tipo_valor('01-01-2017',3900)),
+Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 150),Tipo_valor('01-01-2016', 70),Tipo_valor('01-01-2017', 90)),'Holanda'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 100),Tipo_valor('01-01-2016', 70),Tipo_valor('01-01-2017',190)),'Mexico'),Distribucion_exp(Tipo_valor_distribucion_exp(Tipo_valor('01-01-2015', 110),Tipo_valor('01-01-2016', 100),Tipo_valor('01-01-2017', 110)),'Hungria')),
+12,
+12,
+2
 );
