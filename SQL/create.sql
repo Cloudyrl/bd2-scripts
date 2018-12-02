@@ -4,7 +4,7 @@ Create or Replace type Datos_persona_de_contacto as Object(
     Nombre Varchar2(50),
     Apellido Varchar2(50),
     Cargo Varchar2(50),
-    Email Varchar2(50)
+    Email Varchar2(500)
 )
 /
 
@@ -16,10 +16,10 @@ Create or Replace type Datos_telefono as Object(
 /
 
 Create or Replace type Datos_direccion as Object(
-    Calle Varchar2(50),
-    Avenida Varchar2(50),
+    Calle Varchar2(500),
+    Avenida Varchar2(500),
     Codigo_postal Number(10),
-    Urbanizacion Varchar2(50),
+    Urbanizacion Varchar2(500),
     Ciudad Varchar2(50)
 )
 /
@@ -45,7 +45,7 @@ Create or Replace type Tipo_valor as Object(
 Create or Replace type Valoracion as Object(
     Nombreelemento Varchar2(50),
     Valor Number(10),
-    Obsercion Varchar2(50)
+    Observacion Varchar2(500)
 )
 /
 
@@ -58,7 +58,7 @@ Create or Replace type Costo as Object(
 
 Create or Replace type Premio as Object(
     Nombre Varchar2(50),
-    Descripcion Varchar2(100),
+    Descripcion Varchar2(500),
     Tipo Varchar2(50),
     Premioenmoneda Number(10),
     Posicion Number(10)
@@ -74,8 +74,8 @@ Create or Replace type Tipo_valor_distribucion_exp as varray(5) of Tipo_valor
 
 Create or Replace type Datos_contacto as Object(
     Direccion Datos_direccion,
-    Correo_electronico Varchar2(50),
-    Pagina_web Varchar2(50),
+    Correo_electronico Varchar2(500),
+    Pagina_web Varchar2(500),
     Telefonos Datos_contacto_telefono_va,
     Pesonal_contacto Personal_contacto_va
 )
@@ -97,7 +97,7 @@ Create or Replace type Escala as Object(
     Elemento Varchar2(50),
     Valorini Number(10),
     Valorfin Number(10),
-    Calificacion_escala Calificacion
+    Clasificacion Varchar2(50)
 )
 /
 
@@ -210,7 +210,7 @@ Create Table Denominacion_origen (
 Create Table Organizador (
     Clave Integer Not Null,
     Nombre Varchar2(50) Not Null,
-    Descripcion Varchar2(100),
+    Descripcion Varchar2(500),
     Constraint pk_organizador PRIMARY KEY(Clave)
 );
 
@@ -234,7 +234,7 @@ Create Table Concurso (
     Tipoconcurso Varchar2(50) Not Null,
     Tipocata Varchar2(50),
     Nacional Varchar2(1) Not Null,
-    Caracteristicas Varchar2(50) Not Null,
+    Caracteristicas Varchar2(500) Not Null,
     Premios Premio_concurso_nt ,
     Escalas Escala_concurso_nt ,
     Constraint pk_concurso PRIMARY KEY(Clave)
@@ -328,17 +328,20 @@ Create Table Cosecha (
 Create Table Catador_experto (
     Clave Integer Not Null,
     Primer_nombre Varchar2(50) Not Null,
-    Segundo_nombre Varchar2(50) Not Null,
+    Segundo_nombre Varchar2(50),
     Primer_apellido Varchar2(50) Not Null,
-    Segundo_apellido Varchar2(50) Not Null,
+    Segundo_apellido Varchar2(50),
     Fecha_nacimiento Date Not Null,
     Lugar_realizada Lugar,
     Genero Varchar2(10) Not Null,
     Datoscontacto Datos_contacto,
+    Curricula Curricula_catador_experto_nt,
     Publicacion Publicaciones_catador_exp_va,
     Clave_pais_productor Integer Not Null,
     Constraint pk_catador_experto PRIMARY KEY(Clave)
-);
+)
+    Nested Table Curricula store as Curriculas_catador_experto_nt
+;
 
 Create Table Catador_aprendiz (
     Clave Integer Not Null,
@@ -364,7 +367,7 @@ Create Table Calendario (
     Fechaf Date Not Null,
     Fechaliminscripcion Date Not Null,
     Fechalimmuestra Date Not Null,
-    Emailenvioinscripcion Varchar2(50) Not Null,
+    Emailenvioinscripcion Varchar2(500) Not Null,
     Direcionenviomuestras Datos_direccion ,
     Lugar_realizada Lugar ,
     Costo Costo_calendario_nt ,
