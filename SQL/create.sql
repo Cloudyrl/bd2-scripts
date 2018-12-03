@@ -279,7 +279,7 @@ Create Table Marca (
     Contacto_madera Varchar2(1) Not Null,
     Tipo_tapon Varchar2(50) Not Null,
     Criticas Calificacion_marca_nt ,
-    Produccionaño Tipo_valor_marca_nt ,
+    Produccionaño Tipo_valor_marca_nt,
     Exportacionaño Distribucion_exp_marca_nt ,
     Tiempomaduracionmeses Number(5) Not Null,
     Clave_bodega Integer Not Null,
