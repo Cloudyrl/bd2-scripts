@@ -82,7 +82,7 @@ Create or Replace type Datos_contacto as Object(
 /
 
 Create or Replace type Distribucion_exp as Object(
-    Tipovalor Tipo_valor_distribucion_exp,
+    Tipovalor Tipo_valor,
     Pais Varchar2(50)
 )
 /
@@ -177,16 +177,15 @@ Create Table Pais_productor (
     Superficie_ocupada_vinedo Superficie_ocupada_pais_nt ,
     Produccioanual Produccionanual_pais_nt ,
     Exportacionanual Exportacionanual_pais_nt ,
-    Unidadmonetaria Unidadmonetaria_pais_nt ,
+    Unidadmonetaria Unidadmonetaria ,
     Continente Varchar2(50) Not Null,
-    Mapasregiones Varchar2(50) Not Null,
+    Mapasregiones Blob,
     Descripcion Varchar2(500),
     Constraint pk_pais_productor PRIMARY KEY(Clave)
 )
     Nested Table Superficie_ocupada_vinedo store as Sup_ocupada_pais_nt
     Nested Table Produccioanual store as Producanual_pais_nt
     Nested Table Exportacionanual store as Expanual_pais_nt
-    Nested Table Unidadmonetaria store as Unidmonetaria_pais_nt
 ;
 
 Create Table Region (
@@ -270,10 +269,10 @@ Create Table Marca (
     Maridaje Varchar2(1000) Not Null,
     Temperatura Number(10) Not Null,
     Unidad_temperatura Varchar2(5) Not Null,
-    Ventana_de_cosumo Number(10) Not Null,
-    Grado_de_alcohol Number(5) Not Null,
-    Acidez_total Number(5) Not Null,
-    Ph Number(5) Not Null,
+    Ventana_de_consumo Number(10) Not Null,
+    Grado_de_alcohol Float Not Null,
+    Acidez_total Float Not Null,
+    Ph Float Not Null,
     Color Varchar2(50) Not Null,
     Imagen Blob,
     Contacto_madera Varchar2(1) Not Null,
