@@ -511,23 +511,9 @@ Insert into Jueces values(
 
 Insert into Muestra_catador values (
     '01-01-2015',
-    90,
-    1,
-    3
-);
-
-Insert into Muestra_catador values (
-    '01-01-2015',
     91,
     18,
     10
-);
-
-Insert into Muestra_catador values (
-    '01-01-2015',
-    93,
-    15,
-    6
 );
 
 Insert into Muestra_catador values (
@@ -538,38 +524,10 @@ Insert into Muestra_catador values (
 );
 
 Insert into Muestra_catador values (
-    '01-01-2016',
-    92,
-    11,
-    4
-);
-
-Insert into Muestra_catador values (
-    '01-01-2016',
-    90,
-    7,
-    5
-);
-
-Insert into Muestra_catador values (
-    '01-01-2017',
-    92,
-    8,
-    3
-);
-
-Insert into Muestra_catador values (
     '01-01-2017',
     93,
     12,
     2
-);
-
-Insert into Muestra_catador values (
-    '01-01-2017',
-    91,
-    20,
-    9
 );
 
 Insert into Organizador values (
