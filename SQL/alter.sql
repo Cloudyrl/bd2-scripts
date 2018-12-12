@@ -78,3 +78,4 @@ Alter Table Presentacion ADD Constraint ck_presentacion_tipo CHECK (Tipo in ('Bo
 /* ---------------------------------------------------Alter Date--------------------------------------------------------------------- */
 
 ALTER session set NLS_DATE_FORMAT='DD/MM/YYYY';
+ALTER session set NLS_NUMERIC_CHARACTERS = ',.';
