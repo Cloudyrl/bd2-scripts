@@ -18,5 +18,8 @@
     accept v_tiempo_maduracion prompt "Ingresa el tiempo de maduracion: ";
     accept v_bodega char prompt "Ingresa el nombre de la bodega: ";
     accept v_clasificacion char prompt "Ingresa la clasificacion: ";
+    accept v_presentacion char prompt "Ingrese el nombre de la presentacion: ";
 
-exec pr_insertar_marca('&v_nombre', '&v_elaboracion', '&v_cata_propia', '&v_maridaje', &v_temperatura, '&v_unidad_temperatura', &v_ventana_de_consumo, '&v_grado_de_alcohol', '&v_acidez_total', '&v_ph', '&v_color', '&v_contacto_madera', '&v_tipo_tapon', &v_tiempo_maduracion, '&v_bodega', '&v_clasificacion');
+
+    exec pr_insertar_marca('&v_nombre', '&v_elaboracion', '&v_cata_propia', '&v_maridaje', &v_temperatura, '&v_unidad_temperatura', &v_ventana_de_consumo, '&v_grado_de_alcohol', '&v_acidez_total', '&v_ph', '&v_color', '&v_contacto_madera', '&v_tipo_tapon', &v_tiempo_maduracion, '&v_bodega', '&v_clasificacion', '&v_presentacion');
+    

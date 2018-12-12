@@ -14,10 +14,12 @@ Create or Replace PROCEDURE pr_insertar_marca
     v_tipo_tapon in Varchar2,
     v_tiempo_maduracion in Number,
     v_bodega in Varchar2,
-    v_clasificacion in Varchar2)
+    v_clasificacion in Varchar2,
+    v_presentacion in Varchar2)
 IS
     v_clave_bodega Number;
     v_clave_clasificacion Number;
+    v_clave_marca Number;
 BEGIN
     
     Select b.clave  into v_clave_bodega From Bodega b Where b.nombre = v_bodega;
@@ -44,5 +46,12 @@ BEGIN
         v_tiempo_maduracion,
         v_clave_bodega,
         v_clave_clasificacion);
+        
+    Select m.clave into v_clave_marca From Marca m Where m.nombre = v_nombre;    
+    Insert into presentacion values (
+        (select count(*)+1 from presentacion),
+        v_presentacion,
+        NULL,
+        v_clave_marca);
 
 END pr_insertar_marca;
