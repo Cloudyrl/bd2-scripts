@@ -414,8 +414,8 @@ Create Table Inscripcion (
     Clave Integer Not Null,
     Fecha_inscripcion Date Not Null,
     Premio Premio_inscripcion_nt,
-    Clave_bodega Integer Not Null,
-    Clave_catador_aprendiz Integer Not Null,
+    Clave_bodega Integer,
+    Clave_catador_aprendiz Integer,
     Clave_calendario Integer Not Null,
     Constraint pk_inscripcion PRIMARY KEY(Clave)
 )
