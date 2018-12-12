@@ -78,166 +78,6 @@ Insert into Concurso values (
     )
 );
 
-Insert into Concurso values (
-    5,
-    'Mundus Vini',
-    'Vino',
-    'Varietal',
-    'Y',
-    'Mundus vini se caracteriza por confrontar vinos unicamente de la misma variedad de uva.',
-    Premio_concurso_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1),
-                       Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2),
-                       Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)
-    ),
-    Escala_concurso_nt(Escala(NULL,20,24,'Excelente'),
-                       Escala(NULL,45,50,'Muy Bien'),
-                       Escala(NULL,60,69,'Bien'),
-                       Escala(NULL,75,84,'Correcto'),
-                       Escala(NULL,90,99,'Regular'),
-                       Escala(NULL,105,114,'Defectuoso')
-    )
-);
-
-Insert into Concurso values (
-    6,
-    'Matter of Taste',
-    'Catadores',
-    NULL,
-    'Y',
-    'Este es un concurso en donde varios catadores aprendices o aficionados se enfrentarán para determinar quien se acerca más a las críticas de los catadores expertos con respecto a un vino en común.',
-    Premio_concurso_nt(Premio('Grand Gold Medal','El premio Grand Gold Medal, lo recibirá el catador aprendiz que cuyas calificaciones a un vino sean iguales o muy cerca del puntaje que le dio un catador experto al mismo vino.','Trofeo',1500,1),
-                       Premio('Gold Medal','Gold Medal es el premio que será entregado al catador aprendiz cuyo puntaje hacia un vino sea muy parecido al que le dio un catador experto.','Medalla',1000,2),
-                       Premio('Gold','El premio Gold se le entregará  a un catador aprendiz cuya calificación a un vino se encuentre dentro del rango que le dio un catador experto al mismo vino.','Certificado',500,3)
-    ),
-    Escala_concurso_nt(Escala(NULL,20,24,'Excelente'),
-                       Escala(NULL,45,50,'Muy Bien'),
-                       Escala(NULL,60,69,'Bien'),
-                       Escala(NULL,75,84,'Correcto'),
-                       Escala(NULL,90,99,'Regular'),
-                       Escala(NULL,105,114,'Defectuoso')
-    )
-);
-
-Insert into Concurso values (
-    7,
-    'Wine Challenge',
-    'Vino',
-    'A ciegas',
-    'N',
-    'Sin saber la marca o cualquier dato que ayude a saber cual es el vino que se está catando y relacionándolo con los demás vinos de los que tampoco se sabe la marca, es por lo que se caracteriza el concurso Wine Challenge.',
-    Premio_concurso_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1),
-                       Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2),
-                       Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)
-    ),
-    Escala_concurso_nt(Escala(NULL,0,4,'Excelente'),
-                       Escala(NULL,20,25,'Muy Bien'),
-                       Escala(NULL,40,49,'Bien'),
-                       Escala(NULL,60,69,'Correcto'),
-                       Escala(NULL,80,89,'Regular'),
-                       Escala(NULL,100,109,'Defectuoso')
-    )
-);
-
-Insert into Concurso values (
-    8,
-    'The Wine Advocate',
-    'Catadores',
-    NULL,
-    'N',
-    'Este es un concurso en donde varios catadores aprendices o aficionados se enfrentarán para determinar quien se acerca más a las críticas de los catadores expertos con respecto a un vino en común.',
-    Premio_concurso_nt(Premio('Grand Gold Medal','El premio Grand Gold Medal, lo recibirá el catador aprendiz que cuyas calificaciones a un vino sean iguales o muy cerca del puntaje que le dio un catador experto al mismo vino.','Trofeo',1500,1),
-                       Premio('Gold Medal','Gold Medal es el premio que será entregado al catador aprendiz cuyo puntaje hacia un vino sea muy parecido al que le dio un catador experto.','Medalla',1000,2),
-                       Premio('Gold','El premio Gold se le entregará  a un catador aprendiz cuya calificación a un vino se encuentre dentro del rango que le dio un catador experto al mismo vino.','Certificado',500,3)
-    ),
-    Escala_concurso_nt(Escala(NULL,0,4,'Excelente'),
-                       Escala(NULL,20,25,'Muy Bien'),
-                       Escala(NULL,40,49,'Bien'),
-                       Escala(NULL,60,69,'Correcto'),
-                       Escala(NULL,80,89,'Regular'),
-                       Escala(NULL,100,109,'Defectuoso')
-    )
-);
-
-Insert into Concurso values (
-    9,
-    'Selection Mondiales Des Vins',
-    'Vino',
-    'Vertical',
-    'Y',
-    'El concurso Selection Mondiales Des Vins es conocido porque los catadores comparan y califican un vino con respecto a las distintas añadas que se tienen del mismo tipo de vino.',
-    Premio_concurso_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1),
-                       Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2),
-                       Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)
-    ),
-    Escala_concurso_nt(Escala(NULL,104,108,'Excelente'),
-                       Escala(NULL,95,100,'Muy Bien'),
-                       Escala(NULL,89,98,'Bien'),
-                       Escala(NULL,79,88,'Correcto'),
-                       Escala(NULL,69,78,'Regular'),
-                       Escala(NULL,59,68,'Defectuoso')
-    )
-);
-
-Insert into Concurso values (
-    10,
-    'Fine-Wine',
-    'Catadores',
-    NULL,
-    'Y',
-    'Este es un concurso en donde varios catadores aprendices o aficionados se enfrentarán para determinar quien se acerca más a las críticas de los catadores expertos con respecto a un vino en común.',
-    Premio_concurso_nt(Premio('Grand Gold Medal','El premio Grand Gold Medal, lo recibirá el catador aprendiz que cuyas calificaciones a un vino sean iguales o muy cerca del puntaje que le dio un catador experto al mismo vino.','Trofeo',1500,1),
-                       Premio('Gold Medal','Gold Medal es el premio que será entregado al catador aprendiz cuyo puntaje hacia un vino sea muy parecido al que le dio un catador experto.','Medalla',1000,2),
-                       Premio('Gold','El premio Gold se le entregará  a un catador aprendiz cuya calificación a un vino se encuentre dentro del rango que le dio un catador experto al mismo vino.','Certificado',500,3)
-    ),
-    Escala_concurso_nt(Escala(NULL,104,108,'Excelente'),
-                       Escala(NULL,95,100,'Muy Bien'),
-                       Escala(NULL,89,98,'Bien'),
-                       Escala(NULL,79,88,'Correcto'),
-                       Escala(NULL,69,78,'Regular'),
-                       Escala(NULL,59,68,'Defectuoso')
-    )
-);
-
-Insert into Concurso values (
-    11,
-    'The Drinks Business',
-    'Vino',
-    'Comparativo',
-    'N',
-    'The drinks business es un concurso donde se calificara uno o más vinos relacionándolos con una gran variedad de otros vinos.',
-    Premio_concurso_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1),
-                       Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2),
-                       Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)
-    ),
-    Escala_concurso_nt(Escala(NULL,50,54,'Excelente'),
-                       Escala(NULL,40,45,'Muy Bien'),
-                       Escala(NULL,30,39,'Bien'),
-                       Escala(NULL,20,29,'Correcto'),
-                       Escala(NULL,10,19,'Regular'),
-                       Escala(NULL,0,9,'Defectuoso')
-    )
-);
-
-Insert into Concurso values (
-    12,
-    'Big Wine',
-    'Catadores',
-    NULL,
-    'N',
-    'Este es un concurso en donde varios catadores aprendices o aficionados se enfrentarán para determinar quien se acerca más a las críticas de los catadores expertos con respecto a un vino en común.',
-    Premio_concurso_nt(Premio('Grand Gold Medal','El premio Grand Gold Medal, lo recibirá el catador aprendiz que cuyas calificaciones a un vino sean iguales o muy cerca del puntaje que le dio un catador experto al mismo vino.','Trofeo',1500,1),
-                       Premio('Gold Medal','Gold Medal es el premio que será entregado al catador aprendiz cuyo puntaje hacia un vino sea muy parecido al que le dio un catador experto.','Medalla',1000,2),
-                       Premio('Gold','El premio Gold se le entregará  a un catador aprendiz cuya calificación a un vino se encuentre dentro del rango que le dio un catador experto al mismo vino.','Certificado',500,3)
-    ),
-    Escala_concurso_nt(Escala(NULL,50,54,'Excelente'),
-                       Escala(NULL,40,45,'Muy Bien'),
-                       Escala(NULL,30,39,'Bien'),
-                       Escala(NULL,20,29,'Correcto'),
-                       Escala(NULL,10,19,'Regular'),
-                       Escala(NULL,0,9,'Defectuoso')
-    )
-);
-
 Insert into Catador_experto values (
     1,
     'Tyson',
@@ -537,186 +377,305 @@ Insert into Catador_experto values (
     4
 );
 
-Insert into Catador_experto values (
-    13,
-    'Tim',
+Insert into Calendario values(
+    1,
+    '01-05-2015',
+    '01-06-2015',
+    '05-04-2015',
+    '09-04-2015',
+    'info@descorchados.com',
+    Datos_direccion('Alboraya 23',NULL,46010,NULL,'Valencia'),
+    Lugar('España','Valencia'),
+    Costo_calendario_nt(Costo(3,350,'España')),
     NULL,
-    'Atkin',
-    NULL,
-    '08-11-1966',
-    Lugar('Inglaterra','Canterbury'),
-    'Masculino',
-    Datos_contacto(Datos_Direccion('Dato 21','Paseo Eduardo',28010,'Bajo Derecho','Madrid'),
-                  'tim@timatkin.com',
-                  'timatkin.com',
-                  Datos_contacto_telefono_va(Datos_telefono(02,07,3441000)),
-                  NULL
-    ),
-    Curricula_catador_experto_nt(Hechos_hist('01-01-1988','Glenfiddich Wine Writer of the Year.'),
-                                 Hechos_hist('01-01-1991','UK Wine Guild Wine Correspondent of the Year.'),
-                                 Hechos_hist('01-01-1994','Wines of France Award.'),
-                                 Hechos_hist('01-01-1995','The Bunch Award for Wine Journalism.'),
-                                 Hechos_hist('01-01-1995','Waterford Crystal Wine Correspondent of the Year'),
-                                 Hechos_hist('01-01-2004','Lanson Black Label Award.'),
-                                 Hechos_hist('01-01-2005','Wines of Portugal Award.'),
-                                 Hechos_hist('01-01-2007','World Food Media Awards Best Drink Journalis.'),
-                                 Hechos_hist('01-01-2009','Louis Roederer International Wine Columnist of the Year.'),
-                                 Hechos_hist('01-01-2011','Born Digital Award for www.timatkin.com and Louis Roederer Wine Website of the Year.')
-    ),
-    Publicaciones_catador_exp_va('Off License News','The World of Fine Wine','Gourmet Traveler','The Economists Intelligent Life','Wine-Searcher'),
-    'Falta FK'
+    Unidadmonetaria_calendario_nt(Unidadmonetaria('Euros','€')),
+    1
 );
 
-Insert into Catador_experto values (
-    14,
-    'Stephen',
+Insert into Calendario values(
+    2,
+    '20-07-2016',
+    '20-08-2016',
+    '28-06-2016',
+    '01-07-2016',
+    'info@decanter.com',
+    Datos_direccion(NULL,'Rivadavia',3060,NULL,'Buenos Aires'),
+    Lugar('Argentina','Buenos Aires'),
+    Costo_calendario_nt(Costo(NULL,300,'Argentina')),
     NULL,
-    'Tanzer',
-    NULL,
-    '17-01-1943',
-    Lugar('Estados Unidos','Phoenix'),
-    'Masculino',
-    Datos_contacto(Datos_Direccion('200 West Washington Street',NULL,85003,NULL,'Phoenix'),
-                  'help@wineaccess.com',
-                  'wineaccess.com',
-                  Datos_contacto_telefono_va(Datos_telefono(1,866,9463923)),
-                  NULL
-    ),
-    Curricula_catador_experto_nt(Hechos_hist('01-01-1985','Editor bimestral de International Wine Cellar.'),
-                                 Hechos_hist('01-01-2010','Se unio a Vinous.'),
-                                 Hechos_hist('01-01-2014','Lanzó el sitio web "Winophilia" en formato de blog de vinos.')
-    ),
-    Publicaciones_catador_exp_va('Food & Wine','Forbes FYI','Guía del comprador de WineAccess','Guía oficial de vinos de la revista Food and Wine Magazine'),
-    'Falta FK'
+    Unidadmonetaria_calendario_nt(Unidadmonetaria('Pesos','$')),
+    2
 );
 
-Insert into Catador_experto values (
-    15,
-    'Steven',
+Insert into Calendario values(
+    3,
+    '15-08-2017',
+    '15-09-2017',
+    '27-07-2017',
+    '01-07-2017',
+    'support@vinus.com',
+    Datos_direccion(NULL,'Grande Bretagne',31300,NULL,'Toulouse'),
+    Lugar('Francia','Toulouse'),
+    Costo_calendario_nt(Costo(3,400,'Francia')),
     NULL,
-    'Spurrier',
-    NULL,
-    '09-07-1941',
-    Lugar('Inglaterra','Manchester'),
-    'Masculino',
-    Datos_contacto(Datos_Direccion(),
-                  'memberservices@thewinesocietyofindia.com',
-                  'thewinesofsociety.com',
-                  Datos_contacto_telefono_va(Datos_telefono(02,24,3459100)),
-                  NULL
-    ),
-    Curricula_catador_experto_nt(Hechos_hist('01-01-1971','Dirigió la tienda de vinos Les Caves de la Madeleine, donde se alentaba a los clientes a degustar los vinos antes de comprarlos.'),
-                                 Hechos_hist('01-01-1973','Fundó LAcademie du Vin, la primera escuela privada de vinos de Francia.'), 
-                                 Hechos_hist('01-01-1976','Organizó la cata de vinos de París, que inesperadamente elevó el status del vino de California.'),
-                                 Hechos_hist('01-01-1976','Pasó a presentar el influyente "Juicio de París", cuando un Chardonnay y un Cabernet Sauvignon de California fueron clasificados por encima de algunos de los vinos más prestigiosos de Borgoña y Burdeos.'),
-                                 Hechos_hist('01-01-1988','Convirtió en un consultor y periodista de vinos.'),
-                                 Hechos_hist('01-01-2001','Fue galardonado con el Gran Premio de la Academia Internacional de Vin y el Premio Maestro en honor a Andre Tchelistcheff'),
-                                 Hechos_hist('01-01-2001','Fue nombrado Le Personalite de l’Annee (Enología) por sus servicios al vino francés.')
-    ),
-    Publicaciones_catador_exp_va('The Academie Du Vin Concise Guide to French Country Wines','How to Buy Fine Wines','Academie Du Vin Wine Course with Michel Dovaz','Clarke & Spurrier’s Fine Wine Guide with Oz Clarke'),
-    'FALTA FK'
+    Unidadmonetaria_calendario_nt(Unidadmonetaria('Euros','€')),
+    3
 );
 
-Insert into Catador_experto values (
-    16,
-    'Christopher',
+Insert into Calendario values(
+    4,
+    '22-08-2015',
+    '22-09-2015',
+    '04-08-2015',
+    '10-08-2015',
+    'wineawards@gmail.com',
+    Datos_direccion('86 Ugoa',NULL,2424,NULL,'Sydney'),
+    Lugar('Australia','Sydney'),
+    Costo_calendario_nt(Costo(NULL,230,'Australia')),
     NULL,
-    'Shanahan',
-    NULL,
-    '18-09-1960',
-    Lugar('Inglaterra','Liverpool'),
-    'Masculino',
-    Datos_contacto(NULL,
-                  NULL,
-                  'chrisshanahan.com',
-                  NULL,
-                  NULL
-    ),
-    Curricula_catador_experto_nt(Hechos_hist('01-01-1976','Se unio a Farmer Bros Wine & Spirit Merchants.'),
-                                 Hechos_hist('01-01-1981','Ganó la división profesional del Premio Vin de Champagne.'), 
-                                 Hechos_hist('01-01-1986','Comenzó su popular función semanal de vinos para The Canberra Times.'),
-                                 Hechos_hist('01-01-1995','Se unió a la división de licores de Coles Myer y disfrutó de varios puestos de consultoría de vinos, creativos, de marketing y comunicaciones.'),
-                                 Hechos_hist('01-01-2004','Se convirtió en un escritor independiente y consultor de marketing. Sigue juzgando en espectáculos de vino y cerveza.'),
-                                 Hechos_hist('01-01-2005','Agregó una columna de cerveza semanal.')
-    ),
-    Publicaciones_catador_exp_va('The Australian Financial Review','Vintage Cellar','The Canberra Times'),
-    'FALTA FK'
+    Unidadmonetaria_calendario_nt(Unidadmonetaria('Dolares','$')),
+    4
 );
 
-Insert into Catador_experto values (
-    17,
-    'Joe',
-    NULL,
-    'Czerwinski',
-    NULL,
-    '02-03-1954',
-    Lugar('Estados Unidos','New York'),
-    'Masculino',
-    Datos_contacto(Datos_Direccion(NULL,'855 Bordeaux Way',94558,'Suite 200','California'),
-                  'support@robertparker.com',
-                  'robertparker.com',
-                  NULL,
-                  NULL
-    ),
-    Curricula_catador_experto_nt(Hechos_hist('01-01-1999','Se unió al personal de Wine Enthusiast como editor asociado.'),
-                                 Hechos_hist('01-01-2000','Fue juez de los Air New Zealand Wine Awards y Marlborough Wine Show.'), 
-                                 Hechos_hist('01-01-2006','Joe comenzó a revisar los vinos de Rhône para Wine Enthusiast.'),
-                                 Hechos_hist('01-01-2010','Participó en la última edición de Penfolds Rewards of Patience, degustando cada cosecha de Grange jamás producida, y siguió con una vertical completa de la Colina de la Gracia de Henschke.')
-    ),
-    Publicaciones_catador_exp_va('Australia: South Australian Straggler','France: Still More from the Southern Rhone','New Zealand: Latest Releases','France: Languedoc and Roussillon - Great Wines at Great Prices'),
-    'FALTA FK'
+Insert into Jueces values(
+    1,
+    2,
+    1
 );
 
-Insert into Catador_experto values (
+Insert into Jueces values(
+    2,
+    2,
+    6
+);
+
+Insert into Jueces values(
+    3,
+    2,
+    9
+);
+
+Insert into Jueces values(
+    4,
+    3,
+    4
+);
+
+Insert into Jueces values(
+    5,
+    3,
+    9
+);
+
+Insert into Jueces values(
+    6,
+    3,
+    10
+);
+
+Insert into Jueces values(
+    7,
+    4,
+    6
+);
+
+Insert into Jueces values(
+    8,
+    4,
+    3
+);
+
+Insert into Jueces values(
+    9,
+    4,
+    10
+);
+
+Insert into Jueces values(
+    10,
+    1,
+    11
+);
+
+Insert into Jueces values(
+    11,
+    1,
+    2
+);
+
+Insert into Jueces values(
+    12,
+    1,
+    5
+);
+
+Insert into Muestra_catador values (
+    '01-01-2015',
+    90,
+    1,
+    3
+);
+
+Insert into Muestra_catador values (
+    '01-01-2015',
+    91,
     18,
-    'Lisa',
-    NULL,
-    'Perrotti',
-    'Brown',
-    '22-10-1985',
-    Lugar('Estados Unidos','Maine'),
-    'Femenino',
-    Datos_contacto(Datos_Direccion('Kirtling Street','6 Riverlight Quay',11,NULL,'London'),
-                  'info@mastersofwine.org',
-                  'robertparker.com',
-                  Datos_contacto_telefono_va(Datos_telefono(44,20,3839130)),
-                  NULL
-    ),
-    Curricula_catador_experto_nt(Hechos_hist('01-01-2002','Trabajo como compradora de vinos para uno de los principales importadores de vinos finos de Japón.'),
-                                 Hechos_hist('01-01-2002','Educadora de vinos en la Academia de Vin de Tokio.'), 
-                                 Hechos_hist('01-01-2008','Comenzó a escribir una columna para el sitio web de Robert Parker.'),
-                                 Hechos_hist('01-01-2008','Obtuvo su título de Master of Wine (MW) y la Medalla Madame Bollinger por su excelencia en la cata de vinos.'),
-                                 Hechos_hist('01-01-2013','Se convirtió en la jefa de redacción de Robert Parker Wine Advocate y RobertParker.com.'),
-                                 Hechos_hist('01-01-2013','Se convirtió en la jefa de redacción de Robert Parker Wine Advocate y RobertParker.com.')
-    ),
-    Publicaciones_catador_exp_va('Taste Like a Wine Critic: A Guide to Understanding Wine Quality','RobertParker.com'),
-    'FALTA FK'
+    10
 );
 
-Insert into Catador_experto values (
+Insert into Muestra_catador values (
+    '01-01-2015',
+    93,
+    15,
+    6
+);
+
+Insert into Muestra_catador values (
+    '01-01-2016',
+    93,
     19,
-    'Robert',
-    NULL,
-    'McDowell',
-    'Parker',
-    '23-07-1947',
-    Lugar('Estados Unidos','Baltimore'),
-    'Femenino',
-    Datos_contacto(Datos_Direccion(NULL,'855 Bordeaux Way',94558,'Suite 200','Napa'),
-                  'support@robertparker.com',
-                  'robertparker.com',
-                  Datos_contacto_telefono_va(Datos_telefono(1,07,2555337)),
-                  NULL
-    ),
-    Curricula_catador_experto_nt(Hechos_hist('01-01-1993','El fallecido presidente François Mitterrand convirtió a Robert M. Parker, Jr. en un Chevalier dans l’Ordre National du Mérite.'),
-                                 Hechos_hist('01-01-1999','Fue condecorado directamente por el presidente Jacques Chirac en una ceremonia en el Palacio Elíseo.'), 
-                                 Hechos_hist('01-01-2002','Parker fue nombrado Comendador (Comandante) en la orden Nacional del Mérito de Italia.'),
-                                 Hechos_hist('01-01-2002','Fundó el sitio web numero uno en visitas de vino según datos registrados.'),
-                                 Hechos_hist('01-01-2006','Su alma mater le otorgo el Distinguished Alumnus Award.'),
-                                 Hechos_hist('01-01-2010','Se convirtió en uno de lo 63 graduados de la universidad Maryland'),
-                                 Hechos_hist('01-01-2011','Se convirtió en el primer escritor/crítico de vinos en recibir la Gran Cruz de la Orden del Mérito Civil.'),
-                                 Hechos_hist('01-01-2013','Se convirtió en el primer crítico de vinos incluido en el Salón de la Fama de los Vinters del Culinary Institute Of America en Napa Valley.')
-    ),
-    Publicaciones_catador_exp_va('The Wine Advocate','Parkton, Maryland','Food and Wine Magazine','Business Week','L’Express'),
-    'FALTA FK'
+    1
+);
+
+Insert into Muestra_catador values (
+    '01-01-2016',
+    92,
+    11,
+    4
+);
+
+Insert into Muestra_catador values (
+    '01-01-2016',
+    90,
+    7,
+    5
+);
+
+Insert into Muestra_catador values (
+    '01-01-2017',
+    92,
+    8,
+    3
+);
+
+Insert into Muestra_catador values (
+    '01-01-2017',
+    93,
+    12,
+    2
+);
+
+Insert into Muestra_catador values (
+    '01-01-2017',
+    91,
+    20,
+    9
+);
+
+Insert into Organizador values (
+    1,
+    'Vinos y Asociados',
+    'Concurso de vinos donde cada catador experto probara un vino, segun el tipo de cata del respectivo concurso'
+);
+
+Insert into Organizador values (
+    2,
+    'Corporacion de vinos de Argentina',
+    'Concurso de catadores donde se compararan las sumatorias del catador experto, en este caso el juez, con las del catador aprendiz y ganara el que mas se acerque'
+);
+
+Insert into Organizador values (
+    3,
+    'Corporacion de vinos de Australia',
+    'Concurso de catadores donde se compararan las sumatorias del catador experto, en este caso el juez, con las del catador aprendiz y ganara el que mas se acerque'
+);
+
+Insert into Organizador values (
+    4,
+    'Asociacion de vinos y catadores',
+    'Concurso de vinos donde cada catador experto probara un vino, segun el tipo de cata del respectivo concurso'
+);
+
+Insert into Organizador values (
+    5,
+    'Vinos y Asociados',
+    'Concurso de vinos donde cada catador experto probara un vino, segun el tipo de cata del respectivo concurso'
+);
+
+Insert into Organizador values (
+    6,
+    'Asociacion de Vinos y Catadores',
+    'Concurso de catadores donde se compararan las sumatorias del catador experto, en este caso el juez, con las del catador aprendiz y ganara el que mas se acerque'
+);
+
+Insert into Organizador_pais values(
+    1,
+    1,
+    4
+);
+
+Insert into Organizador_pais values(
+    2,
+    2,
+    1
+);
+
+Insert into Organizador_pais values(
+    3,
+    3,
+    2
+);
+
+Insert into Organizador_pais values(
+    4,
+    6,
+    3
+);
+
+Insert into Organizador_pais values(
+    5,
+    4,
+    2
+);
+
+Insert into Organizador_pais values(
+    6,
+    5,
+    4
+);
+
+Insert into Organizador_concurso values(
+    1,
+    1,
+    1
+);
+
+Insert into Organizador_concurso values(
+    2,
+    2,
+    2
+);
+
+Insert into Organizador_concurso values(
+    3,
+    2,
+    4
+);
+
+Insert into Organizador_concurso values(
+    4,
+    5,
+    3
+);
+
+Insert into Organizador_concurso values(
+    5,
+    1,
+    3
+);
+
+Insert into Organizador_concurso values(
+    6,
+    6,
+    4
 );
