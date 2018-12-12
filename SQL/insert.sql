@@ -1,3 +1,317 @@
+/*presentaciones*/
+
+insert into presentacion 
+         values (1,
+                 'Caja',
+                 6,
+                 1
+);
+insert into presentacion 
+         values (2,
+                 'Botella 750 ml',
+                 NULL,
+                 1
+);
+insert into presentacion 
+         values (3,
+                 'Caja',
+                 6,
+                 2
+);
+
+insert into presentacion 
+         values (4,
+                 'Botella 750 ml',
+                 NULL,
+                 2
+);
+
+
+insert into presentacion 
+         values (6,
+                 'Caja',
+                 6,
+                 3
+);
+
+insert into presentacion 
+         values (7,
+                 'Botella 750 ml',
+                 NULL,
+                 3
+);
+
+insert into presentacion 
+         values (8,
+                 'Caja',
+                 6,
+                 4
+);
+
+insert into presentacion 
+         values (9,
+                 'Botella 750 ml',
+                 NULL,
+                 4
+);
+
+insert into presentacion 
+         values (10,
+                 'Caja',
+                 6,
+                 5
+);
+
+insert into presentacion 
+         values (11,
+                 'Botella 750 ml',
+                 NULL,
+                 5
+);
+
+insert into presentacion 
+         values (12,
+                 'Botella 750 ml',
+                 NULL,
+                 6
+);
+
+insert into presentacion 
+         values (13,
+                 'Botella 750 ml',
+                 NULL,
+                 7
+);
+
+insert into presentacion 
+         values (14,
+                 'Botella 750 ml',
+                 NULL,
+                 8
+);
+
+insert into presentacion 
+         values (15,
+                 'Botella 750 ml',
+                 NULL,
+                 9
+);
+
+insert into presentacion 
+         values (16,
+                 'Botella 750 ml',
+                 NULL,
+                 10
+);
+
+insert into presentacion 
+         values (17,
+                 'Caja',
+                 12,
+                 11
+);
+
+insert into presentacion 
+         values (18,
+                 'Caja',
+                 6,
+                 11
+);
+
+insert into presentacion 
+         values (19,
+                 'Botella 750 ml',
+                 NULL,
+                 11
+);
+
+insert into presentacion 
+         values (20,
+                 'Caja',
+                 12,
+                 12
+);
+
+insert into presentacion 
+         values (21,
+                 'Caja',
+                 6,
+                 12
+);
+
+insert into presentacion 
+         values (22,
+                 'Botella 750 ml',
+                 NULL,
+                 12
+);
+
+insert into presentacion 
+         values (23,
+                 'Caja',
+                 6,
+                 13
+);
+
+insert into presentacion 
+         values (24,
+                 'Botella 750 ml',
+                 NULL,
+                 13
+);
+
+insert into presentacion 
+         values (25,
+                 'Caja',
+                 12,
+                 14
+);
+
+insert into presentacion 
+         values (26,
+                 'Caja',
+                 6,
+                 14
+);
+
+insert into presentacion 
+         values (27,
+                 'Botella 500 ml',
+                 NULL,
+                 14
+);
+
+insert into presentacion 
+         values (28,
+                 'Caja',
+                 6,
+                 15
+);
+
+insert into presentacion 
+         values (29,
+                 'Botella 500 ml',
+                 NULL,
+                 15
+);
+
+insert into presentacion 
+         values (30,
+                 'Botella 375 ml',
+                 NULL,
+                 15
+);
+
+insert into presentacion 
+         values (31,
+                 'Botella 750 ml',
+                 NULL,
+                 15
+);
+
+insert into presentacion 
+         values (32,
+                 'Caja',
+                 6,
+                 16
+);
+
+insert into presentacion 
+         values (33,
+                 'Botella 750 ml',
+                 NULL,
+                 16
+);
+
+insert into presentacion 
+         values (34,
+                 'Caja',
+                 6,
+                 17
+);
+
+insert into presentacion 
+         values (35,
+                 'Botella 750 ml',
+                 NULL,
+                 17
+);
+
+insert into presentacion 
+         values (36,
+                 'Caja',
+                 12,
+                 18
+);
+
+insert into presentacion 
+         values (37,
+                 'Caja',
+                 6,
+                 18
+);
+
+insert into presentacion 
+         values (38,
+                 'Botella 750 ml',
+                 NULL,
+                 18
+);
+
+insert into presentacion 
+         values (39,
+                 'Caja',
+                 12,
+                 19
+);
+
+insert into presentacion 
+         values (40,
+                 'Caja',
+                 6,
+                 19
+);
+
+insert into presentacion 
+         values (41,
+                 'Botella 750 ml',
+                 NULL,
+                 19
+);
+
+insert into presentacion 
+         values (42,
+                 'Caja',
+                 6,
+                 19
+);
+
+insert into presentacion 
+         values (43,
+                 'Botella 750 ml',
+                 NULL,
+                 19
+);
+/*terminan las presentaciones*/
+
+/*cosechas*/
+
+insert into cosecha values(1,'01-01-2017','B',1); 
+insert into cosecha values(2,'01-01-2017','B',2); 
+insert into cosecha values(3,'01-01-2017','MB',3); 
+insert into cosecha values(4,'01-01-2017','MB',4); 
+insert into cosecha values(5,'01-01-2017','E',5); 
+insert into cosecha values(6,'01-01-2017','E',6); 
+insert into cosecha values(7,'01-01-2017','E',7); 
+insert into cosecha values(8,'01-01-2017','B',8); 
+insert into cosecha values(9,'01-01-2017','B',9); 
+insert into cosecha values(10,'01-01-2017','MB',10); 
+insert into cosecha values(11,'01-01-2017','MB',11); 
+insert into cosecha values(12,'01-01-2017','B',12); 
+
+/*terminan las cosechas*/
+
+
 insert into catador_aprendiz values  (
                               1,
                               'Clovis',
