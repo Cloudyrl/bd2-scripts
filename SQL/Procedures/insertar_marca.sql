@@ -1,4 +1,4 @@
-Create or Replace PROCEDURE pr_insertar_marca
+create or replace PROCEDURE pr_insertar_marca
     (v_nombre in Varchar2,
     v_elaboracion in Varchar2,
     v_cata_propia in Varchar2,
@@ -12,6 +12,14 @@ Create or Replace PROCEDURE pr_insertar_marca
     v_color in Varchar2,
     v_contacto_madera in Varchar2,
     v_tipo_tapon in Varchar2,
+    v_nombre_critica in Varchar2,
+    v_fecha_critica in Varchar2,
+    v_puntos_critica in Number,
+    v_fecha_produccion in Varchar2,
+    v_cantidad_produccion in Number,
+    v_fecha_exportacion in Varchar2,
+    v_cantidad_exportacion in Number,
+    v_pais_exportacion in Varchar2,
     v_tiempo_maduracion in Number,
     v_bodega in Varchar2,
     v_clasificacion in Varchar2,
@@ -40,9 +48,9 @@ BEGIN
         empty_blob(),
         v_contacto_madera,
         v_tipo_tapon,
-        Calificacion_marca_nt(Calificacion('James Halliday', Tipo_valor('01-01-2017', 95)), Calificacion('Huon Hooke',Tipo_valor('01-01-2017', 92)), Calificacion('Mike Bennie',Tipo_valor('01-01-2016', 93))),
-        Tipo_valor_marca_nt(Tipo_valor('01-01-2015',600),Tipo_valor('01-01-2016',900),Tipo_valor('01-01-2017',950)),
-        Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 100),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2016', 100), 'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2017', 100),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2015', 50),'Japon'),Distribucion_exp(Tipo_valor('01-01-2016', 150),'Japon'),Distribucion_exp(Tipo_valor('01-01-2017', 150),'Japon'),Distribucion_exp(Tipo_valor('01-01-2015', 190),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 100),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 100),'Hungria')),
+        Calificacion_marca_nt(Calificacion(v_nombre_critica, Tipo_valor(v_fecha_critica, v_puntos_critica))),
+        Tipo_valor_marca_nt(Tipo_valor(v_fecha_produccion, v_cantidad_produccion)),
+        Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor(v_fecha_exportacion, v_cantidad_exportacion), v_pais_exportacion)),
         v_tiempo_maduracion,
         v_clave_bodega,
         v_clave_clasificacion);
