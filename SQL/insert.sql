@@ -652,3 +652,11 @@ insert into cata_valoracion_muestra_compite
                 5
                );
 /*termina cata_valoracion_vino para las muestras del calendario 1 del concurso 1*/
+
+insert into historico_precio values (
+        1,
+        '01-01-2017',
+        1350,
+        1,
+        1
+);
