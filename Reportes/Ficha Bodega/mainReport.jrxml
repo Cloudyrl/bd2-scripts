@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mainReport" pageWidth="595" pageHeight="2000" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eb624563-8f04-4ab7-bcc9-731113b2e4b8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="Pais" class="java.lang.String"/>
+	<parameter name="Bodega" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[Select b.nombre, to_char(b.fechafundacion, 'YYYY') as Fundacion, b.mision, b.descripcion_vinos
+From bodega b, pais_productor p
+where p.nombre = $P{Pais} and
+p.clave = b.clave_pais_productor and 
+b.nombre = $P{Bodega} ]]>
+	</queryString>
+	<field name="NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
+	</field>
+	<field name="FUNDACION" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FUNDACION"/>
+	</field>
+	<field name="MISION" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="MISION"/>
+	</field>
+	<field name="DESCRIPCION_VINOS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DESCRIPCION_VINOS"/>
+	</field>
+	<variable name="MISION1" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{MISION}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="65" splitType="Stretch">
+			<textField>
+				<reportElement x="202" y="12" width="149" height="30" uuid="db9319e6-4229-4710-a6df-937448dd1e86"/>
+				<textElement textAlignment="Center">
+					<font fontName="Ink Free" size="19" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="-20" y="0" width="149" height="55" uuid="1003d963-bb38-428e-92a9-00b693815535"/>
+				<subreportParameter name="Bodega">
+					<subreportParameterExpression><![CDATA[$P{Bodega}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["denominacion.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<detail>
+		<band splitType="Stretch"/>
+		<band height="80">
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="-20" y="0" width="595" height="80" isPrintInFirstWholeBand="true" uuid="3e5178aa-a1ba-469b-80ee-b02c55b28c21"/>
+				<subreportParameter name="Bodega">
+					<subreportParameterExpression><![CDATA[$P{Bodega}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["historia.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="82">
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="106" y="10" width="445" height="70" uuid="366cb1f9-9378-4492-92f6-46d4c7602d18">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e876571b-945b-40de-a81c-0340eddf6ef8"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MISION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" x="55" y="10" width="51" height="30" isPrintInFirstWholeBand="true" uuid="bdf2dde5-a422-4d17-8740-e606648c8753"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Misíon:]]></text>
+			</staticText>
+		</band>
+		<band height="78">
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="107" y="10" width="444" height="68" uuid="dbdb8768-fe3b-45e3-92b2-290478e214bc"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DESCRIPCION_VINOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" x="-11" y="10" width="118" height="40" isPrintInFirstWholeBand="true" uuid="44779c68-2f62-4f1a-863b-7e79b81750d9"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripcíon vinos:]]></text>
+			</staticText>
+		</band>
+		<band height="150">
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="0" y="0" width="575" height="150" uuid="c32efc6b-efee-4e44-8d76-b5e7cc394f92"/>
+				<subreportParameter name="Bodega">
+					<subreportParameterExpression><![CDATA[$P{Bodega}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["datosContacto.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="50"/>
+	</detail>
+	<columnFooter>
+		<band height="49" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="48" splitType="Stretch"/>
+	</summary>
+</jasperReport>
