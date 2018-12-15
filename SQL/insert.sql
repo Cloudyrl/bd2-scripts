@@ -103,7 +103,7 @@ Insert into Bodega values (
     'Continuar con la tradición familiar de hacerlo cada vez mejor, nos encontramos permanente en la búsqueda de nuevas expresiones, seleccionando las regiones con microclimas y suelos más destacados de la provincia de Mendoza.',
     'Nuestros vinos se producen con las mejores uvas cosechadas en Mendoza, Argentina y con técnicas probadas por más de 100 años.',
     Datos_contacto(Datos_direccion('San Francisco del Monte 1555.',NULL,5501,NULL,'Godoy Cruz'),'navarrocorreas@navarrocorreas.com','www.navarrocorreas.com',Datos_contacto_telefono_va(Datos_telefono(54,261,5776294)),Personal_contacto_va(Datos_persona_de_contacto('Gaspar','Roby','Director de Operaciones','gasparoby@navarrocorreas.com'))),
-    Tipo_valor_bodega_nt(Tipo_valor('01-01-2015',13700),Tipo_valor('01-01-2016',14200),Tipo_valor('01-01-2017',814500)),
+    Tipo_valor_bodega_nt(Tipo_valor('01-01-2015',13700),Tipo_valor('01-01-2016',14200),Tipo_valor('01-01-2017',81500)),
     Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2015', 6300),NULL),Distribucion_exp(Tipo_valor('01-01-2016', 6500), NULL),Distribucion_exp(Tipo_valor('01-01-2017', 6900),NULL)),
     NULL,
     1 
