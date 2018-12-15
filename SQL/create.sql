@@ -455,3 +455,8 @@ Create Table Vinedo (
     Clave_bodega Integer Not Null,
     Constraint pk_vinedo PRIMARY KEY(Clave_propio)
 ); 
+
+CREATE OR REPLACE directory image_dir AS 'C:\Users\Annemarie\Documents\UCAB\7mo Semestre UCAB\Base de Datos II\Proyecto\Entrega 2\Imagenes Vinos';
+--Para correrlo si les dice "insufficient privileges" corran los siguientes comando en SQLplus 
+--"connect system/manager as SYSDBA;" y "grant create any directory to hr;" vuelven a correr el 
+--crear directorio y se los deberia crear
