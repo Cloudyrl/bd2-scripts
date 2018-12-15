@@ -12,14 +12,22 @@
     accept v_grado_de_alcohol prompt "Ingrese el grado de alcohol: ";
     accept v_acidez_total prompt "Ingrese la acidez total: ";
     accept v_ph prompt "Ingrese el ph: ";
-    accept v_color char prompt "Ingresar el color: ";
-    accept v_contacto_madera char prompt "Ingresar si tiene contacto con madera (Y,N): ";
-    accept v_tipo_tapon char prompt "Ingresar el tipo de tapon: ";
-    accept v_tiempo_maduracion prompt "Ingresa el tiempo de maduracion: ";
-    accept v_bodega char prompt "Ingresa el nombre de la bodega: ";
-    accept v_clasificacion char prompt "Ingresa la clasificacion: ";
+    accept v_color char prompt "Ingrese el color: ";
+    accept v_contacto_madera char prompt "Ingrese si tiene contacto con madera (Y,N): ";
+    accept v_tipo_tapon char prompt "Ingrese el tipo de tapon: ";
+    accept v_nombre_critica char prompt "Ingrese el nombre de la critica: ";
+    accept v_fecha_critica date prompt "Ingrese la fecha de la critica 'dd-mm-yyy': ";
+    accept v_puntos_critica prompt "Ingrese el puntaje de la critica: ";
+    accept v_fecha_produccion date prompt "Ingrese la fecha de la produccion 'dd-mm-yyy': ";
+    accept v_cantidad_produccion prompt "Ingrese la produccion(Hectolitros): ";
+    accept v_fecha_exportacion date prompt "Ingrese la fecha de la exportacion 'dd-mm-yyy': ";
+    accept v_cantidad_exportacion prompt "Ingrese la exportacion(Hectolitros): ";
+    accept v_pais char prompt "Ingrese pais donde exporta:"
+    accept v_tiempo_maduracion prompt "Ingrese el tiempo de maduracion: ";
+    accept v_bodega char prompt "Ingrese el nombre de la bodega: ";
+    accept v_clasificacion char prompt "Ingrese la clasificacion: ";
     accept v_presentacion char prompt "Ingrese el nombre de la presentacion: ";
 
 
-    exec pr_insertar_marca('&v_nombre', '&v_elaboracion', '&v_cata_propia', '&v_maridaje', &v_temperatura, '&v_unidad_temperatura', &v_ventana_de_consumo, '&v_grado_de_alcohol', '&v_acidez_total', '&v_ph', '&v_color', '&v_contacto_madera', '&v_tipo_tapon', &v_tiempo_maduracion, '&v_bodega', '&v_clasificacion', '&v_presentacion');
+    exec pr_insertar_marca('&v_nombre', '&v_elaboracion', '&v_cata_propia', '&v_maridaje', &v_temperatura, '&v_unidad_temperatura', &v_ventana_de_consumo, '&v_grado_de_alcohol', '&v_acidez_total', '&v_ph', '&v_color', '&v_contacto_madera', '&v_tipo_tapon', '&v_nombre_critica', '&v_fecha_critica', &v_puntos_critica, '&v_fecha_produccion', &v_cantidad_produccion, '&v_fecha_exportacion', &v_cantidad_exportacion, '&v_pais',  &v_tiempo_maduracion, '&v_bodega', '&v_clasificacion', '&v_presentacion');
     

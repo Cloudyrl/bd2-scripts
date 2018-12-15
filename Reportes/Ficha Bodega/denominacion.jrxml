@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Bodega" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select do.nombre as do
+From bodega b, vinedo v, denominacion_origen do
+where b.nombre = $P{Bodega} and 
+v.clave_bodega = b.clave and
+v.clave_propio = do.clave_vinedo]]>
+	</queryString>
+	<field name="DO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DO"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="20" width="100" height="17" uuid="31f465e4-bfdd-46fd-89e0-b5c3094e51b6"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="10" y="0" width="80" height="20" isPrintInFirstWholeBand="true" uuid="5f1e811c-6744-49ed-9341-8b3b629acc1b"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DO's:]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

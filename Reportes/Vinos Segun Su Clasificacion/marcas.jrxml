@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Clasificacion" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select m.nombre, m.grado_de_alcohol
+From Marca m, Clasificacion c
+Where c.nombre = $P{Clasificacion} and
+c.clave = m.clave_clasificacion
+Order by m.grado_de_alcohol]]>
+	</queryString>
+	<field name="NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
+	</field>
+	<field name="GRADO_DE_ALCOHOL" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="GRADO_DE_ALCOHOL"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="300" y="0" width="60" height="30" uuid="747138b1-a38c-4c81-92ae-9af106a2212e"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GRADO_DE_ALCOHOL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="170" height="30" uuid="f4206fd7-1fee-439d-8273-767e204fe890"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" x="0" y="0" width="110" height="30" isPrintInFirstWholeBand="true" uuid="d15fe49c-fae7-4d69-aee7-de8ab8a93d16"/>
+				<textElement>
+					<font fontName="&#xD;&#xA;Ink Free" size="22"/>
+				</textElement>
+				<text><![CDATA[Marcas:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

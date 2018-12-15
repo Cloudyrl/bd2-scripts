@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="640"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="346"/>
+	<parameter name="Pais" class="java.lang.String"/>
+	<parameter name="Bodega" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select m.nombre
+From Marca m, bodega b, pais_productor p
+Where b.nombre = $P{Bodega} and
+b.clave = m.clave_bodega and 
+b.clave_pais_productor = p.clave and 
+p.nombre = $P{Pais}]]>
+	</queryString>
+	<field name="NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="120" y="0" width="300" height="20" uuid="6b8262b6-f16b-4f32-91ae-cb97aefb0bb0"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="40" y="0" width="60" height="20" isPrintInFirstWholeBand="true" uuid="f47e2afb-c8c7-42fd-8688-47d7fcc94dc2"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marcas:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mainReport" pageWidth="595" pageHeight="2300" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eb624563-8f04-4ab7-bcc9-731113b2e4b8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<parameter name="Pais" class="java.lang.String"/>
+	<parameter name="Año" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[Select p.nombre, p.descripcion
+From pais_productor p
+where p.nombre = $P{Pais}]]>
+	</queryString>
+	<field name="DESCRIPCION" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DESCRIPCION"/>
+	</field>
+	<field name="NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="-20" width="595" height="83" backcolor="#4DA4A3" uuid="c0354436-281b-4633-8364-37147972a9fe"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="140" y="0" width="270" height="42" uuid="db9319e6-4229-4710-a6df-937448dd1e86"/>
+				<textElement textAlignment="Center">
+					<font fontName="Ink Free" size="29" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-10" y="-16" width="100" height="30" uuid="91460780-f093-4152-b866-ce8de99840b9"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pais Productor]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band splitType="Stretch"/>
+		<band height="50">
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="80" y="0" width="495" height="50" uuid="774a05c2-d0b9-4306-bc18-e053ea427775"/>
+				<subreportParameter name="Pais">
+					<subreportParameterExpression><![CDATA[$P{Pais}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Año">
+					<subreportParameterExpression><![CDATA[$P{Año}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["produccionAno.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="50">
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="70" y="0" width="499" height="50" uuid="f5d04c98-d09a-4e6c-8cfe-92efa4b72297"/>
+				<subreportParameter name="Pais">
+					<subreportParameterExpression><![CDATA[$P{Pais}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Año">
+					<subreportParameterExpression><![CDATA[$P{Año}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["exportacionAno.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="50">
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="80" y="0" width="493" height="50" uuid="6672fb8d-c103-4371-8399-c1ae77d3f3ab"/>
+				<subreportParameter name="Pais">
+					<subreportParameterExpression><![CDATA[$P{Pais}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Año">
+					<subreportParameterExpression><![CDATA[$P{Año}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["consumointerno.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="83">
+			<rectangle>
+				<reportElement x="-20" y="0" width="595" height="83" backcolor="#4DA4A3" uuid="1c9526e2-a6ec-4d38-ad3a-f3e4063f9145"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="123" y="22" width="328" height="47" uuid="2aa3c822-0129-4882-bc56-20615ff55904"/>
+				<textElement>
+					<font fontName="Ink Free" size="33" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bodegas Destacadas]]></text>
+			</staticText>
+		</band>
+		<band height="130">
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="-20" y="0" width="595" height="130" uuid="4518d77f-7f6e-432e-9e04-fb56fb412a7e"/>
+				<subreportParameter name="Pais">
+					<subreportParameterExpression><![CDATA[$P{Pais}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Año">
+					<subreportParameterExpression><![CDATA[$P{Año}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["bodegas.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="83">
+			<rectangle>
+				<reportElement x="-20" y="0" width="595" height="83" backcolor="#4DA4A3" uuid="b1e2b19e-6f87-4fe4-872b-14c806a8d18a"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="215" y="18" width="167" height="47" uuid="2532db4b-22ac-47bd-956d-cc88f331ca39"/>
+				<textElement>
+					<font fontName="Ink Free" size="33" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marcas]]></text>
+			</staticText>
+		</band>
+		<band height="130">
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="-20" y="0" width="595" height="130" uuid="79d48def-21d8-4b17-85c5-9d17828158c4"/>
+				<subreportParameter name="Pais">
+					<subreportParameterExpression><![CDATA[$P{Pais}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Año">
+					<subreportParameterExpression><![CDATA[$P{Año}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["marcas.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="134">
+			<image>
+				<reportElement x="200" y="0" width="139" height="134" uuid="abd064f9-eae1-4302-883c-f57cf42e8da7"/>
+				<imageExpression><![CDATA["file:/C:/Users/Pedro%20Alejandro/JaspersoftWorkspace/Ficha%20Bodega/Images/vino.png"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

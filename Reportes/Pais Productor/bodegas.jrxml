@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Pais" class="java.lang.String"/>
+	<parameter name="Año" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select b.nombre, pd.valor, ex.tipovalor.valor, (pd.valor - ex.tipovalor.valor)
+From bodega b, pais_productor p,
+table (b.produccioanual)pd,
+table (b.exportacionanual)ex
+where pd.año = ex.tipovalor.año and 
+to_char(pd.año,'YYYY') = $P{Año} and 
+p.nombre = $P{Pais} and
+p.clave = b.clave_pais_productor]]>
+	</queryString>
+	<field name="NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
+	</field>
+	<field name="VALOR" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="VALOR"/>
+	</field>
+	<field name="TIPOVALOR.VALOR" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="TIPOVALOR.VALOR"/>
+	</field>
+	<field name="(PD.VALOR-EX.TIPOVALOR.VALOR)" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="(PD.VALOR-EX.TIPOVALOR.VALOR)"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="155" splitType="Stretch">
+			<textField>
+				<reportElement x="60" y="0" width="110" height="28" uuid="31f465e4-bfdd-46fd-89e0-b5c3094e51b6"/>
+				<textElement>
+					<font fontName="Ink Free" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="30" width="80" height="17" uuid="b641c42f-59be-436e-a031-2765ff603429"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Año}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="30" width="80" height="17" uuid="47d84445-b0fb-4253-bff4-9c57ccb37bc1"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VALOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="64" width="80" height="17" uuid="32cdce0b-7132-4536-8394-e8561857191a"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Año}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="322" y="64" width="80" height="17" uuid="13b3c109-6766-4b1a-bbe6-94784ece3bbe"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TIPOVALOR.VALOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="102" width="80" height="17" uuid="0534d497-0d56-42af-b095-2f9ccb4b57e3"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Año}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="322" y="102" width="80" height="17" uuid="c97fede3-6670-4b2f-943f-1bdd52b8364b"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{(PD.VALOR-EX.TIPOVALOR.VALOR)}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="130" y="30" width="110" height="20" uuid="89f2f5c9-f4d5-437f-9ef9-2facd29dd890"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<text><![CDATA[Producción anual:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="63" width="120" height="27" uuid="8291966b-ea46-4a1f-831c-a15d96f4573d"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<text><![CDATA[Exportación anual:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="100" width="120" height="27" uuid="747fee61-7bf9-4519-a729-0cb46e34e84c"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<text><![CDATA[Consumo interno:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="28" width="110" height="20" uuid="84a7c88e-18c0-4e99-afa1-53208aac934a"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<text><![CDATA[hectolitros]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="61" width="110" height="20" uuid="905af42c-b52e-433c-a46c-2edc9e6f6126"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<text><![CDATA[hectolitros]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="100" width="110" height="20" uuid="4fdd7843-0d96-47ba-b32b-6fa473996175"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<text><![CDATA[hectolitros]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

@@ -23,12 +23,22 @@ create or replace PROCEDURE pr_insertar_bodega
     v_produccion in Number,
     v_año_exportacion in Varchar2,
     v_exportacion in Number,
-    v_pais in Varchar2)
+    v_pais in Varchar2,
+    v_region in Varchar2,
+    v_variedad_uva in Varchar2,
+    v_tipo_uva in Varchar2,
+    v_nombre_denomina in Varchar2)
 IS
     v_clave_pais Number;
+    v_clave_bodega Number;
+    v_clave_vinedo Number;
+    v_clave_variedad Number;
+    v_clave_region Number;
 BEGIN
     
     Select p.clave  into v_clave_pais From Pais_productor p Where p.nombre = v_pais;
+    Select b.clave into v_clave_bodega From Bodega b Where b.nombre = v_nombre;
+    
     Insert into Bodega values (
         (Select count(*)+1 From Bodega),
         v_nombre,
@@ -41,6 +51,40 @@ BEGIN
         Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor(v_año_exportacion, v_exportacion), Null)),
         NULL,
         v_clave_pais 
+    );
+    
+    Insert into Region values (
+        (Select count(*)+1 From Region),
+        v_region,
+        NULL,
+        v_clave_pais
+    );
+    
+    Insert into Vinedo values (
+        (Select count(*)+1 From Vinedo),
+        v_clave_bodega
+    );
+    
+    Select v.clave_propio into v_clave_vinedo From Vinedo v Where v.clave_bodega = v_clave_bodega;
+    
+    Insert into Variedad_uva values (
+        (Select count(*)+1 From Variedad_uva),
+        Nombre_variedad_uva_va(v_variedad_uva),
+        NULL,
+        v_tipo_uva,
+        v_clave_vinedo
+    );
+    
+    Select vu.clave into v_clave_variedad From variedad_uva vu where rownum = 1 order by vu.clave desc;
+    Select r.clave into v_clave_region From Region r Where r.nombre = v_region;
+    
+    Insert into Denominacion_origen values (
+        (Select count(*)+1 From Denominacion_origen),
+        v_nombre_denomina,
+        NULL,
+        v_clave_region,
+        v_clave_variedad,
+        v_clave_vinedo
     );
 
 END pr_insertar_bodega;

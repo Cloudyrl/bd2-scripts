@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Pais" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select distinct pd.pais, to_char(pd.tipovalor.año, 'YYYY') as Año, pd.tipovalor.valor
+From pais_productor p,
+table (p.exportacionanual) pd
+Where p.nombre = $P{Pais}
+order by to_char(pd.tipovalor.año, 'YYYY'), pd.tipovalor.valor desc]]>
+	</queryString>
+	<field name="PAIS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PAIS"/>
+	</field>
+	<field name="AÑO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="AÑO"/>
+	</field>
+	<field name="TIPOVALOR.VALOR" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="TIPOVALOR.VALOR"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="130" y="3" width="110" height="20" uuid="d9bd1c79-9c54-4646-a695-e31fe3861958"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAIS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="3" width="80" height="17" uuid="0acd27ed-1922-4abf-9a03-7180002807b5"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AÑO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="3" width="80" height="17" uuid="e58309f7-6160-48e5-945b-7b4cbaeee81e"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TIPOVALOR.VALOR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="390" y="1" width="110" height="20" uuid="8b26259e-56a5-48b0-ae31-77035fa5cadb"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<text><![CDATA[hectolitros]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

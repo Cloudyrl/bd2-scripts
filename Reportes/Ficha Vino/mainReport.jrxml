@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mainReport" pageWidth="595" pageHeight="1400" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eb624563-8f04-4ab7-bcc9-731113b2e4b8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<parameter name="Vino" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[Select m.nombre, m.elaboracion, m.cata_propia, m.maridaje, m.temperatura, m.unidad_temperatura, m.grado_de_alcohol, m.acidez_total, m.ph, m.imagen
+From marca m
+where m.nombre = $P{Vino}]]>
+	</queryString>
+	<field name="NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
+	</field>
+	<field name="ELABORACION" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ELABORACION"/>
+	</field>
+	<field name="CATA_PROPIA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CATA_PROPIA"/>
+	</field>
+	<field name="MARIDAJE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="MARIDAJE"/>
+	</field>
+	<field name="TEMPERATURA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="TEMPERATURA"/>
+	</field>
+	<field name="UNIDAD_TEMPERATURA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="UNIDAD_TEMPERATURA"/>
+	</field>
+	<field name="GRADO_DE_ALCOHOL" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="GRADO_DE_ALCOHOL"/>
+	</field>
+	<field name="ACIDEZ_TOTAL" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="ACIDEZ_TOTAL"/>
+	</field>
+	<field name="PH" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="PH"/>
+	</field>
+	<field name="IMAGEN" class="java.awt.Image">
+		<property name="com.jaspersoft.studio.field.label" value="IMAGEN"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="-20" width="595" height="83" backcolor="#4DA4A3" uuid="c0354436-281b-4633-8364-37147972a9fe"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="165" y="-3" width="230" height="52" uuid="db9319e6-4229-4710-a6df-937448dd1e86"/>
+				<textElement textAlignment="Center">
+					<font fontName="Ink Free" size="29" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band splitType="Stretch"/>
+		<band height="80"/>
+		<band height="82">
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="106" y="10" width="445" height="70" uuid="366cb1f9-9378-4492-92f6-46d4c7602d18">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e876571b-945b-40de-a81c-0340eddf6ef8"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ELABORACION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" x="32" y="10" width="74" height="40" isPrintInFirstWholeBand="true" uuid="bdf2dde5-a422-4d17-8740-e606648c8753"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Elaboración y crianza:]]></text>
+			</staticText>
+		</band>
+		<band height="78">
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="107" y="10" width="444" height="68" uuid="dbdb8768-fe3b-45e3-92b2-290478e214bc"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CATA_PROPIA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" x="65" y="10" width="41" height="40" isPrintInFirstWholeBand="true" uuid="44779c68-2f62-4f1a-863b-7e79b81750d9"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cata:]]></text>
+			</staticText>
+		</band>
+		<band height="78">
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="107" y="10" width="444" height="68" uuid="fcc207ef-336d-48f0-bf02-fd5212c49ecf"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MARIDAJE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" x="40" y="10" width="66" height="40" isPrintInFirstWholeBand="true" uuid="38d58231-4b00-4fb3-a5a3-41dd404de2ac"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Maridaje:]]></text>
+			</staticText>
+		</band>
+		<band height="84"/>
+		<band height="40">
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="107" y="10" width="33" height="30" uuid="c788e723-071e-41c0-badf-a3fd5a5fc505"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TEMPERATURA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" x="7" y="10" width="106" height="30" isPrintInFirstWholeBand="true" uuid="f2cf4b66-1cef-43a1-b42e-9db9c148e816"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Temperatura:]]></text>
+			</staticText>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="131" y="10" width="33" height="30" uuid="79d5ac31-1480-428e-9daa-d547850ae6ed"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{UNIDAD_TEMPERATURA}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="172">
+			<image>
+				<reportElement x="29" y="10" width="157" height="162" uuid="69e4a852-bfcb-4ae3-acc2-ee622bfc6f10"/>
+				<imageExpression><![CDATA[$F{IMAGEN}]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="200" y="32" width="251" height="111" uuid="7e78c5f6-3edf-46c7-8b8a-0f1c6e87caec"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="200" y="37" width="251" height="101" uuid="47b1e961-77c1-46d7-87b0-19a8290f32c1"/>
+			</rectangle>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="300" y="49" width="140" height="30" uuid="ade0bd8c-c6f7-4c53-a4e3-9b5bb905979e"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GRADO_DE_ALCOHOL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" x="210" y="49" width="60" height="30" isPrintInFirstWholeBand="true" uuid="bcaa0f3e-7735-4353-8749-c53c6975ac4b"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" x="210" y="80" width="90" height="30" isPrintInFirstWholeBand="true" uuid="2f845f86-94c0-4205-b52f-339ef9dbd4fb"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Acidez Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" x="210" y="109" width="90" height="30" isPrintInFirstWholeBand="true" uuid="90718217-a4d5-415d-b8bb-5da5c5ec6759"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PH:]]></text>
+			</staticText>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="300" y="79" width="140" height="30" uuid="1c7f0e55-c5ec-4e81-92f1-fed4163a4b14"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ACIDEZ_TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="300" y="109" width="140" height="30" uuid="4372b239-2115-474d-b168-7a1da2a9e5e9"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PH}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

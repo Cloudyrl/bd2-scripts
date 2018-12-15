@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Pais" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select to_char(s.año, 'YYYY') as Año, s.valor
+From pais_productor p,
+table (p.Superficie_ocupada_vinedo)s
+Where p.nombre = $P{Pais}]]>
+	</queryString>
+	<field name="AÑO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="AÑO"/>
+	</field>
+	<field name="VALOR" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="VALOR"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="260" y="0" width="80" height="30" uuid="0497b929-35a9-424f-b990-0c407bbfb9ff"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AÑO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="40" y="0" width="220" height="30" isPrintInFirstWholeBand="true" uuid="45033b42-2bbc-482a-9e77-f448675821cb"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Superficie Ocupada por Viñedos:]]></text>
+			</staticText>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="340" y="3" width="120" height="27" uuid="999ac72e-4a58-41f3-b323-74cd5a8c1373"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VALOR}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
