@@ -201,7 +201,7 @@ Create Table Denominacion_origen (
     Nombre Varchar2(50) Not Null,
     Descripcion Varchar2(500),
     Clave_region Integer Not Null,
-    Clave_variedad_uva Integer Not Null,
+    Clave_variedad_uva Integer,
     Clave_vinedo Integer Not Null,
     Constraint pk_denominacion_origen PRIMARY KEY(Clave)
 );
@@ -443,7 +443,7 @@ Create Table Muestra_catador (
 
 Create Table Variedad_uva (
     Clave Integer Not Null,
-    Nombre Nombre_variedad_uva_va ,
+    Nombre Nombre_variedad_uva_va,
     Descripcion Varchar2(50),
     Tipodeuva Varchar2(50) Not Null,
     Clave_vinedo Integer Not Null,

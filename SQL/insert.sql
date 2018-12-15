@@ -550,7 +550,7 @@ Insert into Denominacion_origen values (
 8,
 'Bordeaux',
 NULL,
-3,
+2,
 8,
 9
 );
@@ -568,7 +568,7 @@ Insert into Denominacion_origen values (
 10,
 'Saint-Emillion',
 NULL,
-3,
+2,
 10,
 8
 );
@@ -577,7 +577,7 @@ Insert into Denominacion_origen values (
 11,
 'Barossa',
 NULL,
-4,
+3,
 11,
 4
 );
@@ -586,7 +586,7 @@ Insert into Denominacion_origen values (
 12,
 'Barossa',
 NULL,
-4,
+3,
 12,
 4
 );
@@ -595,7 +595,7 @@ Insert into Denominacion_origen values (
 13,
 'Barossa',
 NULL,
-4,
+3,
 13,
 5
 );
@@ -604,7 +604,7 @@ Insert into Denominacion_origen values (
 14,
 'Barossa',
 NULL,
-4,
+3,
 14,
 5
 );
@@ -613,7 +613,7 @@ Insert into Denominacion_origen values (
 15,
 'Yarra',
 NULL,
-4,
+3,
 15,
 6
 );
@@ -622,7 +622,7 @@ Insert into Denominacion_origen values (
 16,
 'Rioja',
 NULL,
-5,
+4,
 16,
 10
 );
@@ -631,7 +631,7 @@ Insert into Denominacion_origen values (
 17,
 'Rioja',
 NULL,
-5,
+4,
 17,
 10
 );
@@ -640,7 +640,7 @@ Insert into Denominacion_origen values (
 18,
 'Rueda',
 NULL,
-6,
+4,
 18,
 11
 );
@@ -649,7 +649,7 @@ Insert into Denominacion_origen values (
 19,
 'Rueda',
 NULL,
-6,
+4,
 19,
 11
 );
@@ -658,7 +658,7 @@ Insert into Denominacion_origen values (
 20,
 'Tierra de Castilla',
 NULL,
-7,
+4,
 20,
 12
 );
