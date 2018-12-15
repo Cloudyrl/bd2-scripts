@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Bodega" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select b.datoscontacto.direccion.calle as Calle, b.datoscontacto.direccion.avenida as avenida, b.datoscontacto.direccion.codigo_postal as codPostal, b.datoscontacto.direccion.urbanizacion as Urbanizacion, b.datoscontacto.direccion.ciudad as ciudad, b.datoscontacto.correo_electronico as email, b.datoscontacto.pagina_web as web, t.codigo_area as numarea,t.codigo_internacional as numInt, t.numero as num, h.nombre as pnombre, h.apellido as papellido, h.cargo as pcargo, h.email as pemail
+From Bodega b cross join table(b.datoscontacto.telefonos) t cross join table(b.datoscontacto.Pesonal_contacto) h
+where b.nombre = $P{Bodega}]]>
+	</queryString>
+	<field name="CALLE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CALLE"/>
+	</field>
+	<field name="AVENIDA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="AVENIDA"/>
+	</field>
+	<field name="CODPOSTAL" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="CODPOSTAL"/>
+	</field>
+	<field name="URBANIZACION" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="URBANIZACION"/>
+	</field>
+	<field name="CIUDAD" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CIUDAD"/>
+	</field>
+	<field name="EMAIL" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="EMAIL"/>
+	</field>
+	<field name="WEB" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="WEB"/>
+	</field>
+	<field name="NUMAREA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="NUMAREA"/>
+	</field>
+	<field name="NUMINT" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="NUMINT"/>
+	</field>
+	<field name="NUM" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="NUM"/>
+	</field>
+	<field name="PNOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PNOMBRE"/>
+	</field>
+	<field name="PAPELLIDO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PAPELLIDO"/>
+	</field>
+	<field name="PCARGO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PCARGO"/>
+	</field>
+	<field name="PEMAIL" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PEMAIL"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="290" splitType="Stretch">
+			<staticText>
+				<reportElement x="-2" y="0" width="110" height="41" uuid="a93946bf-df5c-49a8-b10d-0fcd92bc0e0a"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Datos Contacto:]]></text>
+			</staticText>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="110" y="0" width="160" height="30" uuid="3ed845e1-afd9-4098-bae7-9537047f5b1b"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CALLE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="270" y="0" width="130" height="30" uuid="f3a76522-a7c2-444b-9daa-b8850d9988c3"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AVENIDA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="110" y="30" width="100" height="30" uuid="f7f2dfb8-51f0-48ad-b374-758861c0c33a"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CODPOSTAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="210" y="30" width="130" height="30" uuid="4cd5b5a2-f91d-464d-9712-ca88377488b6"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{URBANIZACION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="110" y="60" width="150" height="30" uuid="e27395ff-dde8-41c0-a231-6820121d6f7d"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CIUDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="110" y="90" width="290" height="30" uuid="703a883e-aa9d-4241-a600-76be193c72e0"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EMAIL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="110" y="120" width="290" height="30" uuid="3a0aee90-bdb6-416e-aa09-4d59341c0445"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{WEB}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-13" y="210" width="120" height="41" uuid="8519caa6-56df-47e5-a4a1-8a21838fb1e0"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Persona Contacto:]]></text>
+			</staticText>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="113" y="210" width="70" height="30" uuid="fc01abd8-6856-4bd5-98b4-442f0d164cba"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PNOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="183" y="210" width="130" height="30" uuid="009f61df-ea27-4394-a2b0-ccc608a8f7e1"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAPELLIDO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="110" y="240" width="290" height="30" uuid="3b72c0e0-0517-4fec-a29c-844ff81c7f93"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PCARGO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="110" y="270" width="290" height="20" uuid="22b5147a-c2e6-47d1-807e-70bfc800d57f"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PEMAIL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="110" y="150" width="60" height="30" uuid="65cb0758-42bb-4fd7-88e8-4acae215e065"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NUMAREA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="170" y="150" width="60" height="30" uuid="51162058-6318-48df-b595-856c959fe78d"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NUMINT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="230" y="150" width="110" height="30" uuid="3d79c8ac-9c8d-480a-998a-cf9cef371238"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NUM}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

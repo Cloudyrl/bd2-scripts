@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="640"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="346"/>
+	<parameter name="Concurso" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select e.valorini, e.valorfin, e.clasificacion
+from concurso c,
+table(c.escalas) e
+where c.nombre = $P{Concurso}]]>
+	</queryString>
+	<field name="VALORINI" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VALORINI"/>
+	</field>
+	<field name="VALORFIN" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VALORFIN"/>
+	</field>
+	<field name="CLASIFICACION" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CLASIFICACION"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="120" y="0" width="120" height="20" uuid="6b8262b6-f16b-4f32-91ae-cb97aefb0bb0"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CLASIFICACION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="40" y="0" width="60" height="20" isPrintInFirstWholeBand="true" uuid="f47e2afb-c8c7-42fd-8688-47d7fcc94dc2"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Escalas:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="360" y="0" width="120" height="20" uuid="00141007-0c56-40b7-99ab-939ba70e57e9"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VALORFIN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="0" width="120" height="20" uuid="5461f26f-408c-4d3d-ba16-5eb9b3ab4f7f"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VALORINI}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="310" y="0" width="20" height="20" uuid="c10dd99b-230d-4d69-a531-ef8550ad5a26"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

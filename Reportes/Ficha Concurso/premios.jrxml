@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Concurso" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select e.nombre, e.descripcion, e.posicion
+from concurso c,
+table(c.premios) e
+where c.nombre = $P{Concurso}]]>
+	</queryString>
+	<field name="NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
+	</field>
+	<field name="DESCRIPCION" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DESCRIPCION"/>
+	</field>
+	<field name="POSICION" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="POSICION"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="71" splitType="Stretch">
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="110" y="1" width="332" height="20" uuid="013cbcb0-a199-4352-91d4-2f1d754d3ef1"/>
+				<textElement>
+					<font fontName="Ink Free" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="40" y="0" width="70" height="20" isPrintInFirstWholeBand="true" uuid="beb9aadf-c693-4cce-87e4-7b5f044ccfeb"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Premios:]]></text>
+			</staticText>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="110" y="21" width="332" height="30" uuid="4757af6d-01dc-49ca-986b-e31a9cb95106"/>
+				<textElement>
+					<font fontName="Ink Free" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DESCRIPCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="110" y="50" width="30" height="20" uuid="f01bd0da-6145-4acf-a884-3217a3c3445f"/>
+				<textElement>
+					<font fontName="Ink Free" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{POSICION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="115" y="51" width="100" height="20" uuid="390792c9-cf11-4680-b4ac-71bb7de4f0f3"/>
+				<textElement>
+					<font fontName="&#xD;&#xA;Ink Free"/>
+				</textElement>
+				<text><![CDATA[° posición]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
