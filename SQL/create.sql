@@ -4,7 +4,7 @@ Create or Replace type Datos_persona_de_contacto as Object(
     Nombre Varchar2(50),
     Apellido Varchar2(50),
     Cargo Varchar2(50),
-    Email Varchar2(50)
+    Email Varchar2(500)
 )
 /
 
@@ -16,10 +16,10 @@ Create or Replace type Datos_telefono as Object(
 /
 
 Create or Replace type Datos_direccion as Object(
-    Calle Varchar2(50),
-    Avenida Varchar2(50),
+    Calle Varchar2(500),
+    Avenida Varchar2(500),
     Codigo_postal Number(10),
-    Urbanizacion Varchar2(50),
+    Urbanizacion Varchar2(500),
     Ciudad Varchar2(50)
 )
 /
@@ -45,7 +45,7 @@ Create or Replace type Tipo_valor as Object(
 Create or Replace type Valoracion as Object(
     Nombreelemento Varchar2(50),
     Valor Number(10),
-    Obsercion Varchar2(50)
+    Observacion Varchar2(500)
 )
 /
 
@@ -58,7 +58,7 @@ Create or Replace type Costo as Object(
 
 Create or Replace type Premio as Object(
     Nombre Varchar2(50),
-    Descripcion Varchar2(100),
+    Descripcion Varchar2(500),
     Tipo Varchar2(50),
     Premioenmoneda Number(10),
     Posicion Number(10)
@@ -74,15 +74,15 @@ Create or Replace type Tipo_valor_distribucion_exp as varray(5) of Tipo_valor
 
 Create or Replace type Datos_contacto as Object(
     Direccion Datos_direccion,
-    Correo_electronico Varchar2(50),
-    Pagina_web Varchar2(50),
+    Correo_electronico Varchar2(500),
+    Pagina_web Varchar2(500),
     Telefonos Datos_contacto_telefono_va,
     Pesonal_contacto Personal_contacto_va
 )
 /
 
 Create or Replace type Distribucion_exp as Object(
-    Tipovalor Tipo_valor_distribucion_exp,
+    Tipovalor Tipo_valor,
     Pais Varchar2(50)
 )
 /
@@ -97,7 +97,7 @@ Create or Replace type Escala as Object(
     Elemento Varchar2(50),
     Valorini Number(10),
     Valorfin Number(10),
-    Calificacion_escala Calificacion
+    Clasificacion Varchar2(50)
 )
 /
 
@@ -135,7 +135,7 @@ Create or Replace type Tipo_valor_marca_nt as table of Tipo_valor
 Create or Replace type Distribucion_exp_marca_nt as table of Distribucion_exp
 /
 
-Create or Replace type Porcentajevol_clasificacion_va as varray(5) of Number(10)
+Create or Replace type Porcentajevol_clasificacion_va as varray(15) of Number(15)
 /
 
 Create or Replace type Curricula_catador_experto_nt as table of Hechos_hist
@@ -177,16 +177,15 @@ Create Table Pais_productor (
     Superficie_ocupada_vinedo Superficie_ocupada_pais_nt ,
     Produccioanual Produccionanual_pais_nt ,
     Exportacionanual Exportacionanual_pais_nt ,
-    Unidadmonetaria Unidadmonetaria_pais_nt ,
+    Unidadmonetaria Unidadmonetaria ,
     Continente Varchar2(50) Not Null,
-    Mapasregiones Varchar2(50) Not Null,
+    Mapasregiones Blob,
     Descripcion Varchar2(500),
     Constraint pk_pais_productor PRIMARY KEY(Clave)
 )
     Nested Table Superficie_ocupada_vinedo store as Sup_ocupada_pais_nt
     Nested Table Produccioanual store as Producanual_pais_nt
     Nested Table Exportacionanual store as Expanual_pais_nt
-    Nested Table Unidadmonetaria store as Unidmonetaria_pais_nt
 ;
 
 Create Table Region (
@@ -210,7 +209,7 @@ Create Table Denominacion_origen (
 Create Table Organizador (
     Clave Integer Not Null,
     Nombre Varchar2(50) Not Null,
-    Descripcion Varchar2(100),
+    Descripcion Varchar2(500),
     Constraint pk_organizador PRIMARY KEY(Clave)
 );
 
@@ -234,7 +233,7 @@ Create Table Concurso (
     Tipoconcurso Varchar2(50) Not Null,
     Tipocata Varchar2(50),
     Nacional Varchar2(1) Not Null,
-    Caracteristicas Varchar2(50) Not Null,
+    Caracteristicas Varchar2(500) Not Null,
     Premios Premio_concurso_nt ,
     Escalas Escala_concurso_nt ,
     Constraint pk_concurso PRIMARY KEY(Clave)
@@ -265,21 +264,21 @@ Create Table Bodega (
 Create Table Marca (
     Clave Integer Not Null,
     Nombre Varchar2(50) Not Null,
-    Elaboracion Varchar2(500) Not Null,
-    Cata_propia Varchar2(500) Not Null,
-    Maridaje Varchar2(500) Not Null,
+    Elaboracion Varchar2(1000) Not Null,
+    Cata_propia Varchar2(1000) Not Null,
+    Maridaje Varchar2(1000) Not Null,
     Temperatura Number(10) Not Null,
     Unidad_temperatura Varchar2(5) Not Null,
-    Ventana_de_cosumo Number(10) Not Null,
-    Grado_de_alcohol Number(5) Not Null,
-    Acidez_total Number(5) Not Null,
-    Ph Number(5) Not Null,
+    Ventana_de_consumo Number(10) Not Null,
+    Grado_de_alcohol Float Not Null,
+    Acidez_total Float Not Null,
+    Ph Float Not Null,
     Color Varchar2(50) Not Null,
     Imagen Blob,
     Contacto_madera Varchar2(1) Not Null,
     Tipo_tapon Varchar2(50) Not Null,
     Criticas Calificacion_marca_nt ,
-    Produccionaño Tipo_valor_marca_nt ,
+    Produccionaño Tipo_valor_marca_nt,
     Exportacionaño Distribucion_exp_marca_nt ,
     Tiempomaduracionmeses Number(5) Not Null,
     Clave_bodega Integer Not Null,
@@ -293,10 +292,10 @@ Create Table Marca (
 
 Create Table Clasificacion (
     Clave Integer Not Null,
-    Nombre Varchar2(50) Not Null,
+    Nombre Varchar2(100) Not Null,
     Nivel Varchar2(50) Not Null,
     Porcentaje_vol  Porcentajevol_clasificacion_va ,
-    Clave_clasificacion Integer Not Null,
+    Clave_clasificacion Integer,
     Constraint pk_clasificacion PRIMARY KEY(Clave)
 );
 
@@ -328,17 +327,20 @@ Create Table Cosecha (
 Create Table Catador_experto (
     Clave Integer Not Null,
     Primer_nombre Varchar2(50) Not Null,
-    Segundo_nombre Varchar2(50) Not Null,
+    Segundo_nombre Varchar2(50),
     Primer_apellido Varchar2(50) Not Null,
-    Segundo_apellido Varchar2(50) Not Null,
+    Segundo_apellido Varchar2(50),
     Fecha_nacimiento Date Not Null,
     Lugar_realizada Lugar,
     Genero Varchar2(10) Not Null,
     Datoscontacto Datos_contacto,
+    Curricula Curricula_catador_experto_nt,
     Publicacion Publicaciones_catador_exp_va,
     Clave_pais_productor Integer Not Null,
     Constraint pk_catador_experto PRIMARY KEY(Clave)
-);
+)
+    Nested Table Curricula store as Curriculas_catador_experto_nt
+;
 
 Create Table Catador_aprendiz (
     Clave Integer Not Null,
@@ -364,7 +366,7 @@ Create Table Calendario (
     Fechaf Date Not Null,
     Fechaliminscripcion Date Not Null,
     Fechalimmuestra Date Not Null,
-    Emailenvioinscripcion Varchar2(50) Not Null,
+    Emailenvioinscripcion Varchar2(500) Not Null,
     Direcionenviomuestras Datos_direccion ,
     Lugar_realizada Lugar ,
     Costo Costo_calendario_nt ,

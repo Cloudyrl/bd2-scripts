@@ -74,3 +74,8 @@ Alter Table Marca ADD Constraint ck_marca_tipo_tapon CHECK (Tipo_tapon in('Corch
 Alter Table Marca ADD Constraint ck_marca_contacto_madera CHECK (Contacto_madera in('Y', 'N'));
 
 Alter Table Presentacion ADD Constraint ck_presentacion_tipo CHECK (Tipo in ('Botella', 'Caja'));
+
+/* ---------------------------------------------------Alter Date--------------------------------------------------------------------- */
+
+ALTER session set NLS_DATE_FORMAT='DD/MM/YYYY';
+ALTER session set NLS_NUMERIC_CHARACTERS = ',.';
