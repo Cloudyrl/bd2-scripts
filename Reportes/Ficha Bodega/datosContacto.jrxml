@@ -55,7 +55,7 @@ where b.nombre = $P{Bodega}]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="330" splitType="Stretch">
+		<band height="290" splitType="Stretch">
 			<staticText>
 				<reportElement x="-2" y="0" width="110" height="41" uuid="a93946bf-df5c-49a8-b10d-0fcd92bc0e0a"/>
 				<textElement>
@@ -141,7 +141,7 @@ where b.nombre = $P{Bodega}]]>
 				<textFieldExpression><![CDATA[$F{PCARGO}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement isPrintRepeatedValues="false" x="110" y="270" width="290" height="30" uuid="22b5147a-c2e6-47d1-807e-70bfc800d57f"/>
+				<reportElement isPrintRepeatedValues="false" x="110" y="270" width="290" height="20" uuid="22b5147a-c2e6-47d1-807e-70bfc800d57f"/>
 				<textElement>
 					<font fontName="Ink Free" size="12"/>
 				</textElement>

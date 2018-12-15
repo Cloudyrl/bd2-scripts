@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mainReport" pageWidth="595" pageHeight="2000" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eb624563-8f04-4ab7-bcc9-731113b2e4b8">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mainReport" pageWidth="595" pageHeight="1400" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eb624563-8f04-4ab7-bcc9-731113b2e4b8">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
-	<property name="com.jaspersoft.studio.unit." value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<parameter name="Pais" class="java.lang.String"/>
 	<parameter name="Bodega" class="java.lang.String"/>
+	<parameter name="Año" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[Select b.nombre, to_char(b.fechafundacion, 'YYYY') as Fundacion, b.mision, b.descripcion_vinos
 From bodega b, pais_productor p
 where p.nombre = $P{Pais} and
 p.clave = b.clave_pais_productor and 
-b.nombre = $P{Bodega} ]]>
+b.nombre = $P{Bodega}]]>
 	</queryString>
 	<field name="NOMBRE" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
@@ -40,7 +32,13 @@ b.nombre = $P{Bodega} ]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="65" splitType="Stretch">
+		<band height="63" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="-20" width="595" height="83" backcolor="#4DA4A3" uuid="c0354436-281b-4633-8364-37147972a9fe"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
 			<textField>
 				<reportElement x="202" y="12" width="149" height="30" uuid="db9319e6-4229-4710-a6df-937448dd1e86"/>
 				<textElement textAlignment="Center">
@@ -49,7 +47,7 @@ b.nombre = $P{Bodega} ]]>
 				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
 			</textField>
 			<subreport>
-				<reportElement x="-20" y="0" width="149" height="55" uuid="1003d963-bb38-428e-92a9-00b693815535"/>
+				<reportElement x="-20" y="-13" width="149" height="55" uuid="1003d963-bb38-428e-92a9-00b693815535"/>
 				<subreportParameter name="Bodega">
 					<subreportParameterExpression><![CDATA[$P{Bodega}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -113,16 +111,61 @@ b.nombre = $P{Bodega} ]]>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA["datosContacto.jasper"]]></subreportExpression>
 			</subreport>
+			<image>
+				<reportElement x="390" y="10" width="140" height="140" uuid="5354830c-becb-4ae1-9a36-9b8e7c078012"/>
+				<imageExpression><![CDATA["Images/barriles.png"]]></imageExpression>
+			</image>
 		</band>
-		<band height="50"/>
+		<band height="30">
+			<subreport>
+				<reportElement x="-20" y="0" width="595" height="30" uuid="0bc2336f-f46b-4ed3-9351-bf48b36f4281"/>
+				<subreportParameter name="Pais">
+					<subreportParameterExpression><![CDATA[$P{Pais}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Bodega">
+					<subreportParameterExpression><![CDATA[$P{Bodega}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Año">
+					<subreportParameterExpression><![CDATA[$P{Año}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["produccionAno.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="30">
+			<subreport>
+				<reportElement x="-20" y="0" width="595" height="30" uuid="560a5640-01c3-4825-8d73-8469fd19b903"/>
+				<subreportParameter name="Pais">
+					<subreportParameterExpression><![CDATA[$P{Pais}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Bodega">
+					<subreportParameterExpression><![CDATA[$P{Bodega}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Año">
+					<subreportParameterExpression><![CDATA[$P{Año}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["exportacionAno.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="30">
+			<subreport>
+				<reportElement x="-20" y="0" width="595" height="30" uuid="f77184de-d0ff-4c92-9bce-f03d3cf9b83a"/>
+				<subreportParameter name="Pais">
+					<subreportParameterExpression><![CDATA[$P{Pais}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Bodega">
+					<subreportParameterExpression><![CDATA[$P{Bodega}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["marcas.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="120">
+			<image>
+				<reportElement x="220" y="0" width="120" height="120" uuid="3217c453-0463-419f-86e8-1f9e7fe9d4ae"/>
+				<imageExpression><![CDATA["Images/vino.png"]]></imageExpression>
+			</image>
+		</band>
 	</detail>
-	<columnFooter>
-		<band height="49" splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="54" splitType="Stretch"/>
-	</pageFooter>
-	<summary>
-		<band height="48" splitType="Stretch"/>
-	</summary>
 </jasperReport>
