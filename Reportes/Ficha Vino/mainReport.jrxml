@@ -5,7 +5,7 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
 	<parameter name="Vino" class="java.lang.String"/>
 	<queryString language="SQL">
-		<![CDATA[Select m.nombre, m.elaboracion, m.cata_propia, m.maridaje, m.temperatura, m.unidad_temperatura, m.grado_de_alcohol, m.acidez_total, m.ph
+		<![CDATA[Select m.nombre, m.elaboracion, m.cata_propia, m.maridaje, m.temperatura, m.unidad_temperatura, m.grado_de_alcohol, m.acidez_total, m.ph, m.imagen
 From marca m
 where m.nombre = $P{Vino}]]>
 	</queryString>
@@ -35,6 +35,9 @@ where m.nombre = $P{Vino}]]>
 	</field>
 	<field name="PH" class="java.lang.Double">
 		<property name="com.jaspersoft.studio.field.label" value="PH"/>
+	</field>
+	<field name="IMAGEN" class="java.awt.Image">
+		<property name="com.jaspersoft.studio.field.label" value="IMAGEN"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -131,6 +134,60 @@ where m.nombre = $P{Vino}]]>
 					<font fontName="Ink Free" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{UNIDAD_TEMPERATURA}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="172">
+			<image>
+				<reportElement x="29" y="10" width="157" height="162" uuid="69e4a852-bfcb-4ae3-acc2-ee622bfc6f10"/>
+				<imageExpression><![CDATA[$F{IMAGEN}]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="200" y="32" width="251" height="111" uuid="7e78c5f6-3edf-46c7-8b8a-0f1c6e87caec"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="200" y="37" width="251" height="101" uuid="47b1e961-77c1-46d7-87b0-19a8290f32c1"/>
+			</rectangle>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="300" y="49" width="140" height="30" uuid="ade0bd8c-c6f7-4c53-a4e3-9b5bb905979e"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GRADO_DE_ALCOHOL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" x="210" y="49" width="60" height="30" isPrintInFirstWholeBand="true" uuid="bcaa0f3e-7735-4353-8749-c53c6975ac4b"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" x="210" y="80" width="90" height="30" isPrintInFirstWholeBand="true" uuid="2f845f86-94c0-4205-b52f-339ef9dbd4fb"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Acidez Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" x="210" y="109" width="90" height="30" isPrintInFirstWholeBand="true" uuid="90718217-a4d5-415d-b8bb-5da5c5ec6759"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PH:]]></text>
+			</staticText>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="300" y="79" width="140" height="30" uuid="1c7f0e55-c5ec-4e81-92f1-fed4163a4b14"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ACIDEZ_TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="300" y="109" width="140" height="30" uuid="4372b239-2115-474d-b168-7a1da2a9e5e9"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PH}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
