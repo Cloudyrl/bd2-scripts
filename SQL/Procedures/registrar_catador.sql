@@ -14,3 +14,4 @@
     accept v_email char  prompt "inserte el email : ";
 
     exec pr_inscripcionapr('&v_nombre','&v_segundo','&v_primer_apellido','&v_segundo_apellido','&v_fecha_nacimiento','&v_genero','&v_Pais','&v_ciudad','&v_calle',&v_codigo_postal,&v_telefono,'&v_email');
+    @inscripcion_catadorapr

@@ -114,3 +114,30 @@ end pr_inscripcionapr;
 
 /
 
+create or replace procedure pr_actualizar_premio_bodega(
+         v_premio in varchar2,
+         v_muestra in number
+)is 
+ v_nombre varchar2(50);
+ v_descripcion varchar2(500);
+ v_tipo varchar2(50);
+ v_premioenmoneda number;
+ v_posicion number;
+ v_x number;
+begin
+    select p.nombre, p.descripcion, p.tipo, p.premioenmoneda, p.posicion into v_nombre,v_descripcion,v_tipo,v_premioenmoneda,v_posicion from muestra_compite m, inscripcion i , calendario ca , concurso c , table (c.premios) p where m.clave = v_muestra and i.clave = m.clave_inscripcion and ca.clave = i.clave_calendario and ca.clave_concurso = c.clave and v_premio in p.nombre;
+     select count(p.nombre) into v_x from muestra_compite m, table (m.premio) p where m.clave = v_muestra;
+    if(v_x = 0) then  
+     update muestra_compite  
+     set premio = premio_muestra_compite_nt(Premio(v_nombre,v_descripcion,v_tipo,v_premioenmoneda,v_posicion)) where clave = v_muestra;
+     else
+     update muestra_compite  
+     set premio = premio
+                  MULTISET UNION ALL 
+                  premio_muestra_compite_nt(Premio(v_nombre,v_descripcion,v_tipo,v_premioenmoneda,v_posicion)) where clave = v_muestra;
+     end if;
+     exception
+     when no_data_found then
+     raise_application_error(-20000, 'El premio ingresado no existe');
+end pr_actualizar_premio_bodega;
+/
