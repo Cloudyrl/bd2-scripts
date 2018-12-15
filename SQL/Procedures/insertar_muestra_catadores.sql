@@ -1,0 +1,8 @@
+
+      accept v_catador prompt "ingrese el id del catador : ";
+      select distinct i.clave as ClaveInscripcion,c.nombre as NombreConcurso, i.fecha_inscripcion as FechaInscipcion from catador_aprendiz apr, concurso c, calendario ca, inscripcion i where &v_catador = i.clave_catador_aprendiz and i.clave_calendario = ca.clave and c.clave = ca.clave_concurso;
+      accept v_inscripcion prompt "ingrese el id de la inscripcion : ";
+      select distinct m.clave,m.nombre from marca m , bodega b where m.clave_bodega = &v_bodega order by m.clave asc;
+      accept v_marca prompt "ingrese el id de la marca : ";
+      accept v_anada date prompt "ingrese la anada : ";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+      exec pr_insertar_muestra('&v_anada',&v_marca,&v_inscripcion);
