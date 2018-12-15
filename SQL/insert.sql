@@ -1920,8 +1920,6 @@ Insert into Organizador_concurso values(
     4
   
  );
->>>>>>> f68e1cb555f04a49f6d2aae586e1ac48d0a6a03a
-<<<<<<< HEAD
 /*presentaciones*/
 
 insert into presentacion 
@@ -1932,7 +1930,7 @@ insert into presentacion
 );
 insert into presentacion 
          values (2,
-                 'Botella 750 ml',
+                 'Botella',
                  NULL,
                  1
 );
@@ -1945,277 +1943,257 @@ insert into presentacion
 
 insert into presentacion 
          values (4,
-                 'Botella 750 ml',
+                 'Botella',
                  NULL,
                  2
 );
 
 
 insert into presentacion 
-         values (6,
+         values (5,
                  'Caja',
                  6,
+                 3
+);
+
+insert into presentacion 
+         values (6,
+                 'Botella',
+                 NULL,
                  3
 );
 
 insert into presentacion 
          values (7,
-                 'Botella 750 ml',
-                 NULL,
-                 3
+                 'Caja',
+                 6,
+                 4
 );
 
 insert into presentacion 
          values (8,
-                 'Caja',
-                 6,
+                 'Botella',
+                 NULL,
                  4
 );
 
 insert into presentacion 
          values (9,
-                 'Botella 750 ml',
-                 NULL,
-                 4
+                 'Caja',
+                 6,
+                 5
 );
 
 insert into presentacion 
          values (10,
-                 'Caja',
-                 6,
+                 'Botella',
+                 NULL,
                  5
 );
 
 insert into presentacion 
          values (11,
-                 'Botella 750 ml',
-                 NULL,
-                 5
-);
-
-insert into presentacion 
-         values (12,
-                 'Botella 750 ml',
+                 'Botella',
                  NULL,
                  6
 );
 
 insert into presentacion 
-         values (13,
-                 'Botella 750 ml',
+         values (12,
+                 'Botella',
                  NULL,
                  7
 );
 
 insert into presentacion 
-         values (14,
-                 'Botella 750 ml',
+         values (13,
+                 'Botella',
                  NULL,
                  8
 );
 
 insert into presentacion 
-         values (15,
-                 'Botella 750 ml',
+         values (14,
+                 'Botella',
                  NULL,
                  9
 );
 
 insert into presentacion 
-         values (16,
-                 'Botella 750 ml',
+         values (15,
+                 'Botella',
                  NULL,
                  10
 );
 
 insert into presentacion 
-         values (17,
+         values (16,
                  'Caja',
                  12,
+                 11
+);
+
+insert into presentacion 
+         values (17,
+                 'Caja',
+                 6,
                  11
 );
 
 insert into presentacion 
          values (18,
-                 'Caja',
-                 6,
+                 'Botella',
+                 NULL,
                  11
 );
 
 insert into presentacion 
          values (19,
-                 'Botella 750 ml',
-                 NULL,
-                 11
+                 'Caja',
+                 12,
+                 12
 );
 
 insert into presentacion 
          values (20,
                  'Caja',
-                 12,
+                 6,
                  12
 );
 
 insert into presentacion 
          values (21,
-                 'Caja',
-                 6,
+                 'Botella',
+                 NULL,
                  12
 );
 
 insert into presentacion 
          values (22,
-                 'Botella 750 ml',
-                 NULL,
-                 12
-);
-
-insert into presentacion 
-         values (23,
                  'Caja',
                  6,
                  13
 );
 
 insert into presentacion 
-         values (24,
-                 'Botella 750 ml',
+         values (23,
+                 'Botella',
                  NULL,
                  13
 );
 
 insert into presentacion 
-         values (25,
+         values (24,
                  'Caja',
                  12,
                  14
 );
 
 insert into presentacion 
-         values (26,
+         values (25,
                  'Caja',
                  6,
+                 14
+);
+
+insert into presentacion 
+         values (26,
+                 'Botella',
+                 NULL,
                  14
 );
 
 insert into presentacion 
          values (27,
-                 'Botella 500 ml',
-                 NULL,
-                 14
+                 'Caja',
+                 6,
+                 15
 );
 
 insert into presentacion 
          values (28,
-                 'Caja',
-                 6,
+                 'Botella',
+                 NULL,
                  15
 );
 
 insert into presentacion 
          values (29,
-                 'Botella 500 ml',
-                 NULL,
-                 15
-);
-
-insert into presentacion 
-         values (30,
-                 'Botella 375 ml',
-                 NULL,
-                 15
-);
-
-insert into presentacion 
-         values (31,
-                 'Botella 750 ml',
-                 NULL,
-                 15
-);
-
-insert into presentacion 
-         values (32,
                  'Caja',
                  6,
                  16
 );
 
 insert into presentacion 
-         values (33,
-                 'Botella 750 ml',
+         values (30,
+                 'Botella',
                  NULL,
                  16
+);
+
+insert into presentacion 
+         values (31,
+                 'Caja',
+                 6,
+                 17
+);
+
+insert into presentacion 
+         values (32,
+                 'Botella',
+                 NULL,
+                 17
+);
+
+insert into presentacion 
+         values (33,
+                 'Caja',
+                 12,
+                 18
 );
 
 insert into presentacion 
          values (34,
                  'Caja',
                  6,
-                 17
+                 18
 );
 
 insert into presentacion 
          values (35,
-                 'Botella 750 ml',
+                 'Botella',
                  NULL,
-                 17
+                 18
 );
 
 insert into presentacion 
          values (36,
                  'Caja',
                  12,
-                 18
+                 19
 );
 
 insert into presentacion 
          values (37,
                  'Caja',
                  6,
-                 18
+                 19
 );
 
 insert into presentacion 
          values (38,
-                 'Botella 750 ml',
+                 'Botella',
                  NULL,
-                 18
+                 19
 );
 
 insert into presentacion 
          values (39,
                  'Caja',
-                 12,
-                 19
-);
-
-insert into presentacion 
-         values (40,
-                 'Caja',
                  6,
                  19
 );
 
-insert into presentacion 
-         values (41,
-                 'Botella 750 ml',
-                 NULL,
-                 19
-);
-
-insert into presentacion 
-         values (42,
-                 'Caja',
-                 6,
-                 19
-);
-
-insert into presentacion 
-         values (43,
-                 'Botella 750 ml',
-                 NULL,
-                 19
-);
 /*terminan las presentaciones*/
 
 /*cosechas*/
@@ -2331,7 +2309,7 @@ insert into catador_aprendiz
                               Lugar('Australia','Sidney'),
                               'Masculino',
                               Datos_Contacto(Datos_direccion('1','Snape',2031,'Malabar','Sidney'),'ClarkSmith@gmail.com','ClarkSmith.com',Datos_contacto_telefono_va(Datos_telefono(011,61,244573486)),NULL),
-                              Curricula_catador_aprendiz_nt(Hechos_hist(TO_DATE('53/04/2011', 'DD/MM/YYYY'),'Participa y gana su primer concurso como catador aprediz'),
+                              Curricula_catador_aprendiz_nt(Hechos_hist(TO_DATE('13/04/2011', 'DD/MM/YYYY'),'Participa y gana su primer concurso como catador aprediz'),
                               Hechos_hist(TO_DATE('15/01/2012', 'DD/MM/YYYY'),'Publica su primera coleccion de catas a vinos australianos')
                               ),
                               Publicaciones_catador_apr_va('Australian Wines'),
@@ -2347,7 +2325,7 @@ insert into catador_aprendiz
                               Lugar('Argentina','Buenos Aires'),
                               'Masculino',
                               Datos_Contacto(Datos_direccion('1','Cordoba',1016,'Recoleta','Buenos Aires'),'Lucas999@gmail.com','LucasLopez.com',Datos_contacto_telefono_va(Datos_telefono(54,223,34634763)),NULL),
-                              Curricula_catador_aprendiz_nt(Hechos_hist(TO_DATE('53/04/2015', 'DD/MM/YYYY'),'Participa en su primer concurso como catador aprendiz, no logra ningun lugar relevante.'),
+                              Curricula_catador_aprendiz_nt(Hechos_hist(TO_DATE('23/05/2015', 'DD/MM/YYYY'),'Participa en su primer concurso como catador aprendiz, no logra ningun lugar relevante.'),
                               Hechos_hist(TO_DATE('15/01/2017', 'DD/MM/YYYY'),'Publica su primera coleccion de catas a vinos varios')
                               ),
                               Publicaciones_catador_apr_va('Mi amor por el vino','Coleccion de catas'),
@@ -2488,7 +2466,7 @@ insert into inscripcion
 /*termina la inscripcion al calendario 1 del concurso 1*/
 
 /*Muestras para las incripciones del concurso 1 en el calendario 1*/
-insert into muestra 
+insert into muestra_compite 
          values (1,
                  '01-01-2017',
                  premio_muestra_compite_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
@@ -2496,7 +2474,7 @@ insert into muestra
                  1
                  );
 
-insert into muestra 
+insert into muestra_compite
          values (2,
                  '01-01-2017',
                  premio_muestra_compite_nt( Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
@@ -2504,7 +2482,7 @@ insert into muestra
                  2
                  );
 
-insert into muestra 
+insert into muestra_compite
          values (3,
                  '01-01-2017',
                  NULL,
@@ -2512,7 +2490,7 @@ insert into muestra
                  3
                  );
 
-insert into muestra 
+insert into muestra_compite
          values (4,
                  '01-01-2017',
                  premio_muestra_compite_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
@@ -2520,7 +2498,7 @@ insert into muestra
                  4
                  );
 
-insert into muestra 
+insert into muestra_compite
          values (5,
                  '01-01-2017',
                  NULL,
@@ -2530,7 +2508,7 @@ insert into muestra
 /*terminan las muestras de el concurso 1 calendario 1*/
 
 /*cata_valoracion_vino para las muestras del calendario 1 del concurso 1*/
-insert into cata_valoracion_muestra_compite 
+insert into cata_valoracion_muestra_marca 
         values (1,
                 '02-01-2017',
                 valor_cata_valor_muestra_m_nt(valoracion('Structura',97,'Color rojo oscuro y profundo. Aromas y sabores a ciruelas, guindas confitadas, moras, trufas, grafito y especias. Vino complejo de mucho cuerpo y taninos redondos que aportan una textura sedosa. Gran equilibrio entre alcohol, acidez y fruta. Final muy prolongado. Exelente vino'),
@@ -2540,7 +2518,7 @@ insert into cata_valoracion_muestra_compite
                 1
                );
 
-insert into cata_valoracion_muestra_compite 
+insert into cata_valoracion_muestra_marca 
         values (2,
                 '02-01-2017',
                 valor_cata_valor_muestra_m_nt(valoracion('Entity Shiraz',95,'De cuerpo completo y con una gran variedad de frutos oscuros concentrados. Suculenta, equilibrada y largo sabor en la boca.')),
@@ -2549,7 +2527,7 @@ insert into cata_valoracion_muestra_compite
                 2
                );
 
-insert into cata_valoracion_muestra_compite 
+insert into cata_valoracion_muestra_marca 
         values (3,
                 '02-01-2017',
                 valor_cata_valor_muestra_m_nt(valoracion('Noble One',93,'Brillante medio dorado. Aromas gloriosos de membrillo, nectarina, ralladura de naranja y nuez de roble vanilense. Un banquete sensual de ricas frutas de hueso blanco, cítricos, un toque de mermelada y roble bellamente integrado. Una espiga picante de acidez equilibra la dulzura de este vino dando un toque de frescura al final.')),
@@ -2558,7 +2536,7 @@ insert into cata_valoracion_muestra_compite
                 3
                );
 
-insert into cata_valoracion_muestra_compite 
+insert into cata_valoracion_muestra_marca 
         values (4,
                 '02-01-2017',
                 valor_cata_valor_muestra_m_nt(valoracion('L Excellence',94,'Este Saint-Emilion es un trato absoluto con su sutil Mezcla de Merlot y Cabernet. L Excellence Clos des Menuts es un buen mantenimiento bien equilibrado y afrutado. Vino, con sutiles taninos.')),
@@ -2567,7 +2545,7 @@ insert into cata_valoracion_muestra_compite
                 4
                );
 
-insert into cata_valoracion_muestra_compite 
+insert into cata_valoracion_muestra_marca 
         values (5,
                 '02-01-2017',
                 valor_cata_valor_muestra_m_nt(valoracion('Roble',92,'Sabroso, afrutado, tostado con taninos redondos y buen final.')),
