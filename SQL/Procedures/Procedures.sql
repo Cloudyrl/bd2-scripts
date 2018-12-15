@@ -52,22 +52,22 @@ end pr_insertar_muestra_bodega;
 
 /
 
--- create or replace procedure pr_insertar_muestra_catador(
---     v_anada in date,
---     v_clave_marca in number,
---     v_clave_inscripcion in number
---     ) is 
--- begin
---   insert into muestra_compite values (
---      (select count(*)+1 from muestra_compite),
---      v_anada,
---      null,
---      v_clave_marca,
---      v_clave_inscripcion
---   );
--- end pr_insertar_muestra_catador;
+create or replace procedure pr_insertar_muestra_catador(
+    v_anada in date,
+    v_sumatoriaexperto in number,
+    v_clave_marca in number,
+    v_clave_jueces in number
+    ) is 
+begin
+  insert into muestra_catador values (
+     v_anada,
+     v_sumatoriaexperto,
+     v_clave_marca,
+     v_clave_jueces
+  );
+end pr_insertar_muestra_catador;
 
--- -- 
+-- 
 
 
 create or replace Procedure pr_inscripcionapr (
