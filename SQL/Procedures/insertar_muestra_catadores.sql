@@ -1,8 +1,13 @@
-
-      accept v_catador prompt "ingrese el id del catador : ";
-      select distinct i.clave as ClaveInscripcion,c.nombre as NombreConcurso, i.fecha_inscripcion as FechaInscipcion from catador_aprendiz apr, concurso c, calendario ca, inscripcion i where &v_catador = i.clave_catador_aprendiz and i.clave_calendario = ca.clave and c.clave = ca.clave_concurso;
-      accept v_inscripcion prompt "ingrese el id de la inscripcion : ";
-      select distinct m.clave,m.nombre from marca m , bodega b where m.clave_bodega = &v_bodega order by m.clave asc;
-      accept v_marca prompt "ingrese el id de la marca : ";
-      accept v_anada date prompt "ingrese la anada : ";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-      exec pr_insertar_muestra('&v_anada',&v_marca,&v_inscripcion);
+select clave, nombre from concurso where tipoconcurso = 'Catadores';
+accept v_concurso prompt 'ingrese el clave del concurso :';
+select clave, fechai as FechaInicial, fechaf as FechaFinal from calendario where clave_concurso = &v_concurso;
+accept v_calendario prompt 'ingrese el clave del calendario :';
+select c.clave,c.primer_nombre from catador_experto c, jueces J where j.clave_calendario = &v_calendario and j.clave_catador_experto = c.clave;
+accept v_juez prompt 'ingrese el id del juez :';
+select clave, nombre from bodega;
+accept v_bodega prompt 'inserte la clave de la bodega :';
+select clave,nombre from marca where clave_bodega = &v_bodega;
+accept v_marca prompt 'ingrese la clave de la marca :';
+accept v_anada date prompt 'ingrese la anada :';
+accept v_sumatoriaexperto prompt 'ingrese la sumatoria del experto :';
+exec pr_insertar_muestra_catador('&v_anada',&v_sumatoriaexperto,&v_marca,&v_juez); 
