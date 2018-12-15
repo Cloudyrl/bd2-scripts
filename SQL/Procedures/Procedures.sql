@@ -170,6 +170,20 @@ begin
 end pr_actualizar_preinscripcion;
 /
 
-
-
+create or replace procedure pr_insertar_historico_precio(
+  v_fecha in date,
+  v_precio in float,
+  v_cosecha in number,
+  v_presentacion number
+)is 
+begin
+  INSERT INTO historico_precio values (
+     (select count(*)+1 from historico_precio),
+     v_fecha,
+     v_precio,
+     v_presentacion,
+     v_cosecha
+  );
+end pr_insertar_historico_precio;
+/
 
