@@ -187,3 +187,21 @@ begin
 end pr_insertar_historico_precio;
 /
 
+create or replace procedure pr_insertar_cata_marcas(
+     v_fecha in date,
+     v_valor in number,
+     v_nombre in varchar2,
+     v_observacion in varchar2,
+     v_juez in number,
+     v_muestra in number
+)is 
+begin
+   insert into cata_valoracion_muestra_marca values(
+         (select count(*)+1 from cata_valoracion_muestra_marca),
+         v_fecha,
+         valor_cata_valor_muestra_m_nt(valoracion(v_nombre,v_valor,v_observacion)),
+         v_valor,
+         v_juez,
+         v_muestra
+   );
+end pr_insertar_cata_marcas;
