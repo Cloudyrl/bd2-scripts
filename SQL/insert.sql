@@ -2732,11 +2732,38 @@ insert into cata_valoracion_muestra_marca
 insert into cata_valoracion_muestra_marca 
         values (5,
                 '02-01-2017',
-                valor_cata_valor_muestra_m_nt(valoracion('Roble',92,'Sabroso, afrutado, tostado con taninos redondos y buen final.')),
+                valor_cata_valor_muestra_m_nt(valoracion('Legend Bordeaux Rougue',92,NULL)),
                 92,
                 1,
                 5
                );
+
+insert into cata_valoracion_muestra_marca 
+        values (6,
+                '02-01-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Luis Mora',90,NULL)),
+                90,
+                5,
+                6
+               );   
+
+insert into cata_valoracion_muestra_marca 
+        values (7,
+                '02-01-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Grand Tokay',92,NULL)),
+                92,
+                10,
+                7
+               ); 
+
+insert into cata_valoracion_muestra_marca 
+        values (8,
+                '02-01-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Vega Ibor Viura',93,NULL)),
+                93,
+                2,
+                8
+               );          
 /*termina cata_valoracion_vino para las muestras del calendario 1 del concurso 1*/
 
 insert into historico_precio values (
