@@ -205,3 +205,18 @@ begin
          v_muestra
    );
 end pr_insertar_cata_marcas;
+/
+
+create or replace procedure pr_insertar_valoracion_cata_m(
+    v_cata in number,
+    v_nombre in varchar2,
+    v_valor in number,
+    v_observacion in varchar2
+)is 
+begin
+   insert into the (select valoracion from cata_valoracion_muestra_marca where clave = v_cata) values (
+      valoracion(v_nombre,v_valor,v_observacion)
+   );
+   update cata_valoracion_muestra_marca set sumatoria = sumatoria + v_valor where clave = v_cata;
+end pr_insertar_valoracion_cata_m;
+/
