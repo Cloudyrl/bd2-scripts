@@ -2562,7 +2562,3 @@ insert into historico_precio values (
         1,
         1
 );
-
-
-
-
