@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Concurso" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select distinct m.nombre as Marca, to_char(mc.añada) as Añada, cla.nombre as Tipo_vino, val.sumatoria
+From Marca m, Bodega b, Muestra_catador mc, 
+cata_valor_aprendiz val, Inscripcion i, 
+calendario c,concurso co, vinedo v, variedad_uva vu, clasificacion cla
+where co.nombre = $P{Concurso} and 
+co.clave = c.clave_concurso and 
+c.clave = i.clave_calendario and 
+i.clave = val.clave_inscripcion and
+val.clave_muestra_catador = mc.añada and
+mc.clave_marca = m.clave and 
+m.clave_bodega = b.clave and 
+m.clave_clasificacion = cla.clave and 
+b.clave = v.clave_bodega and 
+vu.clave_vinedo = v.clave_propio and 
+val.clave_muestra_catador = mc.añada]]>
+	</queryString>
+	<field name="MARCA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="MARCA"/>
+	</field>
+	<field name="AÑADA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="AÑADA"/>
+	</field>
+	<field name="TIPO_VINO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TIPO_VINO"/>
+	</field>
+	<field name="SUMATORIA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="SUMATORIA"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="51" splitType="Stretch">
+			<textField>
+				<reportElement x="122" y="20" width="80" height="17" isRemoveLineWhenBlank="true" uuid="143718c5-a59b-4e57-aef0-53056bafbf25"/>
+				<textElement textAlignment="Center">
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MARCA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="225" y="20" width="80" height="17" isRemoveLineWhenBlank="true" uuid="ad0e9a0b-ce62-4ecb-8273-cbde8f0104a0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AÑADA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="20" width="80" height="17" isRemoveLineWhenBlank="true" uuid="eae8d664-3835-4baa-8e1a-c58f7f2d49d2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TIPO_VINO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="20" width="80" height="17" isRemoveLineWhenBlank="true" uuid="90ad0d2f-fea4-44c9-ad35-d24703960d48"/>
+				<textElement textAlignment="Center">
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SUMATORIA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

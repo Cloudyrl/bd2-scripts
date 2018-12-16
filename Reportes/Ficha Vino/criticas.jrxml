@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Vino" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select n.nombrecritica, n.tipovalor.valor as Puntaje, to_char(n.tipovalor.año,'YYYY') as Año
+From Marca m,
+table (m.criticas)n
+Where m.nombre = $P{Vino}]]>
+	</queryString>
+	<field name="NOMBRECRITICA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRECRITICA"/>
+	</field>
+	<field name="PUNTAJE" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="PUNTAJE"/>
+	</field>
+	<field name="AÑO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="AÑO"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="340" y="0" width="100" height="17" uuid="99313045-cade-4db0-9825-5c9e9d0efee3"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PUNTAJE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="120" y="0" width="120" height="17" uuid="e5181f53-26d6-460a-b4d8-e85ff5fd15bb"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRECRITICA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="26" y="0" width="74" height="20" isPrintInFirstWholeBand="true" uuid="d05041d6-e8ea-49b3-a4b5-1af6c6090a76"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Criticas:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="220" y="0" width="120" height="17" uuid="97f91629-9fc3-4bb8-83e1-71c76b7ad319"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AÑO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

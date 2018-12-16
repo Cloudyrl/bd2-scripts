@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Año Rankings" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select pd.valor, p.nombre, to_Char(pd.año,'YYYY') as Año
+From Pais_productor p, table(p.Produccioanual)pd
+Where to_char(pd.año,'YYYY')  = $P{Año Rankings} and rownum BETWEEN 0 and 3
+Order by pd.valor]]>
+	</queryString>
+	<field name="VALOR" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="VALOR"/>
+	</field>
+	<field name="NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
+	</field>
+	<field name="AÑO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="AÑO"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="50" y="12" width="150" height="20" uuid="7ba0ca76-eca7-4295-9082-0393c2264653"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="12" width="150" height="20" uuid="d156be55-f9d9-4f5a-91b0-82844afcd230"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AÑO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="12" width="150" height="20" uuid="9ead29bd-6657-403c-ac4f-8096b2bcee78"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VALOR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="430" y="12" width="49" height="20" uuid="55c3ca0e-161e-4402-8411-51a66d142e8c"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<text><![CDATA[hl]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

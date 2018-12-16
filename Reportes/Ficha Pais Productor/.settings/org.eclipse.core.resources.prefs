@@ -6,5 +6,7 @@ encoding/exportacionAno.jrxml=UTF-8
 encoding/importadores.jrxml=UTF-8
 encoding/mainReport.jrxml=UTF-8
 encoding/produccionAno.jrxml=UTF-8
+encoding/rankingProduccion.jrxml=UTF-8
+encoding/rankingSuperficie.jrxml=UTF-8
 encoding/regiones.jrxml=UTF-8
 encoding/superficie.jrxml=UTF-8

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Concurso" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select distinct cap.Primer_nombre || '  ' ||cap.Primer_apellido as catador, m.nombre as marca, to_char(co.año, 'YYYY') as Añada, p.nombre as premio, p.posicion, de.nombre as DO, to_char(ca.fechai, 'dd-mon-yyyy') as fecha
+From Bodega b, Marca m, Cosecha co, Historico_precio h, 
+vinedo v, denominacion_origen de, concurso c, calendario ca, catador_aprendiz cap, cata_valor_aprendiz cva,
+inscripcion i, muestra_catador mc, table(i.premio) p
+where c.nombre = $P{Concurso} and 
+cap.clave = i.clave_catador_aprendiz and
+c.clave = ca.clave_concurso and 
+i.clave = cva.clave_inscripcion and
+i.clave_calendario = ca.clave and
+mc.clave_marca = m.clave and 
+m.clave_bodega = b.clave and
+v.clave_bodega = b.clave and
+de.clave_vinedo = v.clave_propio
+order by p.posicion]]>
+	</queryString>
+	<field name="CATADOR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CATADOR"/>
+	</field>
+	<field name="MARCA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="MARCA"/>
+	</field>
+	<field name="AÑADA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="AÑADA"/>
+	</field>
+	<field name="PREMIO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PREMIO"/>
+	</field>
+	<field name="POSICION" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="POSICION"/>
+	</field>
+	<field name="DO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DO"/>
+	</field>
+	<field name="FECHA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FECHA"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="30" y="0" width="210" height="25" uuid="0156be09-2347-442e-84f9-19047320d985"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PREMIO}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="37">
+			<textField>
+				<reportElement x="10" y="1" width="190" height="17" uuid="dfc57ccf-ccd9-4eb1-856b-1b342d41371a"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CATADOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="0" width="120" height="17" uuid="e5181f53-26d6-460a-b4d8-e85ff5fd15bb"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MARCA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="0" width="120" height="17" uuid="97f91629-9fc3-4bb8-83e1-71c76b7ad319"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AÑADA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="1" width="100" height="17" uuid="99313045-cade-4db0-9825-5c9e9d0efee3"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

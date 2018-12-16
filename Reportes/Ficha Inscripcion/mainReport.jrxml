@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mainReport" pageWidth="595" pageHeight="1650" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eb624563-8f04-4ab7-bcc9-731113b2e4b8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="Concurso" class="java.lang.String"/>
+	<parameter name="Bodega" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[Select b.nombre
+From bodega b
+where b.nombre = $P{Bodega}]]>
+	</queryString>
+	<field name="NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="10" width="350" height="30" backcolor="#4DA4A3" uuid="c0354436-281b-4633-8364-37147972a9fe"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="Float" x="350" y="8" width="215" height="37" isPrintInFirstWholeBand="true" uuid="d4c730ce-82a6-4be2-b4e5-c271c9417a15"/>
+				<textElement>
+					<font fontName="Ink Free" size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ficha Inscripción]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band splitType="Stretch"/>
+		<band height="266">
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="-20" y="0" width="595" height="266" isPrintInFirstWholeBand="true" uuid="3e5178aa-a1ba-469b-80ee-b02c55b28c21"/>
+				<subreportParameter name="Bodega">
+					<subreportParameterExpression><![CDATA[$P{Bodega}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Concurso">
+					<subreportParameterExpression><![CDATA[$P{Concurso}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["datosConcursante.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="266">
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="-20" y="0" width="595" height="266" isPrintInFirstWholeBand="true" uuid="67f1128f-2697-41ab-a1df-885ad4906cea"/>
+				<subreportParameter name="Bodega">
+					<subreportParameterExpression><![CDATA[$P{Bodega}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Concurso">
+					<subreportParameterExpression><![CDATA[$P{Concurso}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["datosMuestras.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="30"/>
+	</detail>
+</jasperReport>
