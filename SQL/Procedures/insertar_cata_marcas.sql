@@ -9,5 +9,5 @@ accept v_juez prompt 'ingrese la clave del juez : ';
 accept v_fecha date prompt 'ingrese la fecha de la cata : ';
 accept v_nombre char prompt 'ingrese el nombre de la cata : ';
 accept v_valor prompt 'ingrese la valoracion : ';
-accept v_observacion prompt 'ingrese la observacion : ';
+accept v_observacion char prompt 'ingrese la observacion : ';
 exec pr_insertar_cata_marcas('&v_fecha',&v_valor,'&v_nombre','&v_observacion',&v_juez,&v_muestra);

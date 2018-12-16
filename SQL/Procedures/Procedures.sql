@@ -220,3 +220,37 @@ begin
    update cata_valoracion_muestra_marca set sumatoria = sumatoria + v_valor where clave = v_cata;
 end pr_insertar_valoracion_cata_m;
 /
+
+create or replace procedure pr_insertar_cata_catador(
+     v_fecha in date,
+     v_valor in number,
+     v_nombre in varchar2,
+     v_observacion in varchar2,
+     v_inscripcion in number,
+     v_muestra_catador in date
+)is 
+begin
+   insert into cata_valor_aprendiz values(
+         (select count(*)+1 from cata_valor_aprendiz),
+         v_fecha,
+         valoracion_cata_valor_apr_nt(valoracion(v_nombre,v_valor,v_observacion)),
+         v_valor,
+         v_inscripcion,
+         v_muestra_catador
+   );
+end pr_insertar_cata_catador;
+/
+
+create or replace procedure pr_insertar_valoracion_cata_c(
+    v_cata in number,
+    v_nombre in varchar2,
+    v_valor in number,
+    v_observacion in varchar2
+)is 
+begin
+   insert into the (select valoracion from cata_valor_aprendiz where clave = v_cata) values (
+      valoracion(v_nombre,v_valor,v_observacion)
+   );
+   update cata_valor_aprendiz set sumatoria = sumatoria + v_valor where clave = v_cata;
+end pr_insertar_valoracion_cata_c;
+/
