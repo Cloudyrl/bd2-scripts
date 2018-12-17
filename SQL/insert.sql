@@ -2660,12 +2660,66 @@ insert into inscripcion
                          4
                          );
 
+insert into inscripcion 
+                 values (29,
+                         '16-06-2017',
+                         Premio_inscripcion_nt(Premio('Grand Gold Medal','El premio Grand Gold Medal, lo recibirá el catador aprendiz que cuyas calificaciones a un vino sean iguales o muy cerca del puntaje que le dio un catador experto al mismo vino.','Trofeo',1500,1)),
+                         NULL,
+                         7,
+                         2
+                         );
+
+insert into inscripcion 
+                 values (30,
+                         '12-06-2017',
+                         Premio_inscripcion_nt(Premio('Gold Medal','Gold Medal es el premio que será entregado al catador aprendiz cuyo puntaje hacia un vino sea muy parecido al que le dio un catador experto.','Medalla',1000,2)),
+                         NULL,
+                         8,
+                         2
+                         );
+
+insert into inscripcion 
+                 values (31,
+                         '13-06-2017',
+                         Premio_inscripcion_nt(Premio('Gold','El premio Gold se le entregará  a un catador aprendiz cuya calificación a un vino se encuentre dentro del rango que le dio un catador experto al mismo vino.','Certificado',500,3)),
+                         NULL,
+                         1,
+                         2
+                         );
+
+insert into inscripcion 
+                 values (32,
+                         '01-01-2017',
+                         Premio_inscripcion_nt(Premio('Grand Gold Medal','El premio Grand Gold Medal, lo recibirá el catador aprendiz que cuyas calificaciones a un vino sean iguales o muy cerca del puntaje que le dio un catador experto al mismo vino.','Trofeo',1500,1)),
+                         NULL,
+                         6,
+                         4
+                         );
+
+insert into inscripcion 
+                 values (33,
+                         '03-01-2017',
+                         Premio_inscripcion_nt(Premio('Gold Medal','Gold Medal es el premio que será entregado al catador aprendiz cuyo puntaje hacia un vino sea muy parecido al que le dio un catador experto.','Medalla',1000,2)),
+                         NULL,
+                         3,
+                         4
+                         );
+
+insert into inscripcion 
+                 values (34,
+                         '02-01-2017',
+                         Premio_inscripcion_nt(Premio('Gold','El premio Gold se le entregará  a un catador aprendiz cuya calificación a un vino se encuentre dentro del rango que le dio un catador experto al mismo vino.','Certificado',500,3)),
+                         NULL,
+                         9,
+                         4
+                         );
+
 insert into cata_valor_aprendiz values (
     1,
     '20-06-2017',
     valoracion_cata_valor_apr_nt(valoracion('Reserva',90,NULL)),
     90,
-    5,
+    11,
     '01-01-2017'
 );
 
@@ -2674,7 +2728,7 @@ insert into cata_valor_aprendiz values (
     '29-06-2017',
     valoracion_cata_valor_apr_nt(valoracion('Reserva',91,NULL)),
     91,
-    6,
+    12,
     '01-01-2017'
 );
 
@@ -2683,7 +2737,7 @@ insert into cata_valor_aprendiz values (
     '12-06-2017',
     valoracion_cata_valor_apr_nt(valoracion('Reserva',93,NULL)),
     93,
-    7,
+    13,
     '01-01-2017'
 );
 
@@ -2692,7 +2746,7 @@ insert into cata_valor_aprendiz values (
     '19-07-2017',
     valoracion_cata_valor_apr_nt(valoracion('Reserva',92,NULL)),
     92,
-    8,
+    14,
     '01-01-2017'
 );
 
@@ -2701,7 +2755,7 @@ insert into cata_valor_aprendiz values (
     '01-01-2017',
     valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',94,NULL)),
     94,
-    13,
+    25,
     '01-02-2017'
 );
 
@@ -2710,7 +2764,7 @@ insert into cata_valor_aprendiz values (
     '02-01-2017',
     valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',92,NULL)),
     92,
-    14,
+    26,
     '01-02-2017'
 );
 
@@ -2719,7 +2773,7 @@ insert into cata_valor_aprendiz values (
     '05-01-2017',
     valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',90,NULL)),
     90,
-    15,
+    27,
     '01-02-2017'
 );
 
@@ -2728,7 +2782,61 @@ insert into cata_valor_aprendiz values (
     '08-01-2017',
     valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',91,NULL)),
     91,
-    16,
+    28,
+    '01-02-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    9,
+    '13-06-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Reserva',90,NULL)),
+    90,
+    29,
+    '01-01-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    10,
+    '21-06-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Reserva',90,NULL)),
+    90,
+    30,
+    '01-01-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    11,
+    '25-06-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Reserva',90,NULL)),
+    90,
+    31,
+    '01-01-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    12,
+    '07-01-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',91,NULL)),
+    91,
+    32,
+    '01-02-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    13,
+    '05-01-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',91,NULL)),
+    91,
+    33,
+    '01-02-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    14,
+    '01-01-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',91,NULL)),
+    91,
+    34,
     '01-02-2017'
 );
 
