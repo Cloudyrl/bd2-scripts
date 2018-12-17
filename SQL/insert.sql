@@ -1661,10 +1661,10 @@ Insert into Catador_experto values (
 
 Insert into Calendario values(
     1,
-    '01-05-2015',
-    '01-06-2015',
-    '05-04-2015',
-    '09-04-2015',
+    '01-05-2017',
+    '01-06-2017',
+    '05-04-2017',
+    '09-04-2017',
     'info@descorchados.com',
     Datos_direccion('Alboraya 23',NULL,46010,NULL,'Valencia'),
     Lugar('España','Valencia'),
@@ -1676,10 +1676,10 @@ Insert into Calendario values(
 
 Insert into Calendario values(
     2,
-    '20-07-2016',
-    '20-08-2016',
-    '28-06-2016',
-    '01-07-2016',
+    '20-07-2017',
+    '20-08-2017',
+    '28-06-2017',
+    '01-07-2017',
     'info@decanter.com',
     Datos_direccion(NULL,'Rivadavia',3060,NULL,'Buenos Aires'),
     Lugar('Argentina','Buenos Aires'),
@@ -1706,10 +1706,10 @@ Insert into Calendario values(
 
 Insert into Calendario values(
     4,
-    '22-08-2015',
-    '22-09-2015',
-    '04-08-2015',
-    '10-08-2015',
+    '22-01-2017',
+    '22-02-2017',
+    '04-01-2017',
+    '10-01-2017',
     'wineawards@gmail.com',
     Datos_direccion('86 Ugoa',NULL,2424,NULL,'Sydney'),
     Lugar('Australia','Sydney'),
@@ -1792,24 +1792,17 @@ Insert into Jueces values(
 );
 
 Insert into Muestra_catador values (
-    '01-01-2015',
+    '01-01-2017',
     91,
     18,
     10
 );
 
 Insert into Muestra_catador values (
-    '01-01-2016',
+    '01-02-2017',
     93,
-    19,
+    7,
     1
-);
-
-Insert into Muestra_catador values (
-    '01-01-2017',
-    93,
-    12,
-    2
 );
 
 Insert into Organizador values (
@@ -2412,7 +2405,6 @@ insert into catador_aprendiz
                               Publicaciones_catador_apr_va('Mi experiencia con los vinos','Mi prmera cata'),
                               4);
 
-/*Inscripcion de todas las bodegas al concurso 1en el calendario 1*/
 insert into inscripcion 
                  values (1,
                          '01-01-2016',
@@ -2422,11 +2414,9 @@ insert into inscripcion
                          1
                          );
 
-
-
 insert into inscripcion 
                  values (2,
-                         '01-01-2016',
+                         '01-04-2017',
                          Premio_inscripcion_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
                          4,
                          NULL,
@@ -2435,8 +2425,8 @@ insert into inscripcion
 
 insert into inscripcion 
                  values (3,
-                         '01-01-2016',
-                         premio_inscripcion_nt(premio(null,null,null,null,null)),
+                         '20-03-2017',
+                         Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
                          6,
                          NULL,
                          1
@@ -2445,8 +2435,8 @@ insert into inscripcion
 
 insert into inscripcion 
                  values (4,
-                         '01-01-2016',
-                         Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                         '29-03-2017',
+                         NULL,
                          8,
                          NULL,
                          1
@@ -2454,16 +2444,399 @@ insert into inscripcion
 
 insert into inscripcion 
                  values (5,
-                         '01-01-2016',
-                         premio_inscripcion_nt(premio(null,null,null,null,null)),
+                         '21-03-2017',
+                         Premio_inscripcion_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
+                         2,
+                         NULL,
+                         1
+                         );
+
+insert into inscripcion 
+                 values (6,
+                         '25-03-2017',
+                         Premio_inscripcion_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
+                         7,
+                         NULL,
+                         1
+                         );
+
+insert into inscripcion 
+                 values (7,
+                         '19-03-2017',
+                         Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                         3,
+                         NULL,
+                         1
+                         );
+
+insert into inscripcion 
+                 values (8,
+                         '22-03-2017',
+                         Premio_inscripcion_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
                          11,
                          NULL,
                          1
                          );
 
+insert into inscripcion 
+                 values (9,
+                         '24-03-2017',
+                         Premio_inscripcion_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
+                         12,
+                         NULL,
+                         1
+                         );
 
+insert into inscripcion 
+                 values (10,
+                         '30-03-2017',
+                         Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                         5,
+                         NULL,
+                         1
+                         );
 
-/*termina la inscripcion al calendario 1 del concurso 1*/
+insert into inscripcion 
+                 values (11,
+                         '15-06-2017',
+                         Premio_inscripcion_nt(Premio('Grand Gold Medal','El premio Grand Gold Medal, lo recibirá el catador aprendiz que cuyas calificaciones a un vino sean iguales o muy cerca del puntaje que le dio un catador experto al mismo vino.','Trofeo',1500,1)),
+                         NULL,
+                         3,
+                         2
+                         );
+
+insert into inscripcion 
+                 values (12,
+                         '20-06-2017',
+                         Premio_inscripcion_nt(Premio('Gold Medal','Gold Medal es el premio que será entregado al catador aprendiz cuyo puntaje hacia un vino sea muy parecido al que le dio un catador experto.','Medalla',1000,2)),
+                         NULL,
+                         10,
+                         2
+                         );
+
+insert into inscripcion 
+                 values (13,
+                         '10-06-2017',
+                         Premio_inscripcion_nt(Premio('Gold','El premio Gold se le entregará  a un catador aprendiz cuya calificación a un vino se encuentre dentro del rango que le dio un catador experto al mismo vino.','Certificado',500,3)),
+                         NULL,
+                         6,
+                         2
+                         );
+
+insert into inscripcion 
+                 values (14,
+                         '17-06-2017',
+                         NULL,
+                         NULL,
+                         11,
+                         2
+                         );
+
+insert into inscripcion 
+                 values (15,
+                         '05-07-2017',
+                         Premio_inscripcion_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
+                         9,
+                         NULL,
+                         3
+                         );
+
+insert into inscripcion 
+                 values (16,
+                         '10-07-2017',
+                         Premio_inscripcion_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
+                         2,
+                         NULL,
+                         3
+                         );
+
+insert into inscripcion 
+                 values (17,
+                         '20-07-2017',
+                        Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                         5,
+                         NULL,
+                         3
+                         );
+
+insert into inscripcion 
+                 values (18,
+                         '25-07-2017',
+                         NULL,
+                         12,
+                         NULL,
+                         3
+                         );
+
+insert into inscripcion 
+                 values (19,
+                         '15-07-2017',
+                         Premio_inscripcion_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
+                         6,
+                         NULL,
+                         3
+                         );
+
+insert into inscripcion 
+                 values (20,
+                         '12-07-2017',
+                         Premio_inscripcion_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
+                         1,
+                         NULL,
+                         3
+                         );
+
+insert into inscripcion 
+                 values (21,
+                         '13-07-2017',
+                         Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                         7,
+                         NULL,
+                         3
+                         );
+
+insert into inscripcion 
+                 values (22,
+                         '23-07-2017',
+                         Premio_inscripcion_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
+                         4,
+                         NULL,
+                         3
+                         );
+
+insert into inscripcion 
+                 values (23,
+                         '25-07-2017',
+                         Premio_inscripcion_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
+                         8,
+                         NULL,
+                         3
+                         );
+
+insert into inscripcion 
+                 values (24,
+                         '11-07-2017',
+                         Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                         3,
+                         NULL,
+                         3
+                         );
+
+insert into inscripcion 
+                 values (25,
+                         '01-01-2017',
+                         Premio_inscripcion_nt(Premio('Grand Gold Medal','El premio Grand Gold Medal, lo recibirá el catador aprendiz que cuyas calificaciones a un vino sean iguales o muy cerca del puntaje que le dio un catador experto al mismo vino.','Trofeo',1500,1)),
+                         NULL,
+                         12,
+                         4
+                         );
+
+insert into inscripcion 
+                 values (26,
+                         '02-01-2017',
+                         Premio_inscripcion_nt(Premio('Gold Medal','Gold Medal es el premio que será entregado al catador aprendiz cuyo puntaje hacia un vino sea muy parecido al que le dio un catador experto.','Medalla',1000,2)),
+                         NULL,
+                         1,
+                         4
+                         );
+
+insert into inscripcion 
+                 values (27,
+                         '03-01-2017',
+                         Premio_inscripcion_nt(Premio('Gold','El premio Gold se le entregará  a un catador aprendiz cuya calificación a un vino se encuentre dentro del rango que le dio un catador experto al mismo vino.','Certificado',500,3)),
+                         NULL,
+                         11,
+                         4
+                         );
+
+insert into inscripcion 
+                 values (28,
+                         '03-01-2017',
+                         NULL,
+                         NULL,
+                         8,
+                         4
+                         );
+
+insert into inscripcion 
+                 values (29,
+                         '16-06-2017',
+                         Premio_inscripcion_nt(Premio('Grand Gold Medal','El premio Grand Gold Medal, lo recibirá el catador aprendiz que cuyas calificaciones a un vino sean iguales o muy cerca del puntaje que le dio un catador experto al mismo vino.','Trofeo',1500,1)),
+                         NULL,
+                         7,
+                         2
+                         );
+
+insert into inscripcion 
+                 values (30,
+                         '12-06-2017',
+                         Premio_inscripcion_nt(Premio('Gold Medal','Gold Medal es el premio que será entregado al catador aprendiz cuyo puntaje hacia un vino sea muy parecido al que le dio un catador experto.','Medalla',1000,2)),
+                         NULL,
+                         8,
+                         2
+                         );
+
+insert into inscripcion 
+                 values (31,
+                         '13-06-2017',
+                         Premio_inscripcion_nt(Premio('Gold','El premio Gold se le entregará  a un catador aprendiz cuya calificación a un vino se encuentre dentro del rango que le dio un catador experto al mismo vino.','Certificado',500,3)),
+                         NULL,
+                         1,
+                         2
+                         );
+
+insert into inscripcion 
+                 values (32,
+                         '01-01-2017',
+                         Premio_inscripcion_nt(Premio('Grand Gold Medal','El premio Grand Gold Medal, lo recibirá el catador aprendiz que cuyas calificaciones a un vino sean iguales o muy cerca del puntaje que le dio un catador experto al mismo vino.','Trofeo',1500,1)),
+                         NULL,
+                         6,
+                         4
+                         );
+
+insert into inscripcion 
+                 values (33,
+                         '03-01-2017',
+                         Premio_inscripcion_nt(Premio('Gold Medal','Gold Medal es el premio que será entregado al catador aprendiz cuyo puntaje hacia un vino sea muy parecido al que le dio un catador experto.','Medalla',1000,2)),
+                         NULL,
+                         3,
+                         4
+                         );
+
+insert into inscripcion 
+                 values (34,
+                         '02-01-2017',
+                         Premio_inscripcion_nt(Premio('Gold','El premio Gold se le entregará  a un catador aprendiz cuya calificación a un vino se encuentre dentro del rango que le dio un catador experto al mismo vino.','Certificado',500,3)),
+                         NULL,
+                         9,
+                         4
+                         );
+
+insert into cata_valor_aprendiz values (
+    1,
+    '20-06-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Reserva',90,NULL)),
+    90,
+    11,
+    '01-01-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    2,
+    '29-06-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Reserva',91,NULL)),
+    91,
+    12,
+    '01-01-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    3,
+    '12-06-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Reserva',93,NULL)),
+    93,
+    13,
+    '01-01-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    4,
+    '19-07-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Reserva',92,NULL)),
+    92,
+    14,
+    '01-01-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    5,
+    '01-01-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',94,NULL)),
+    94,
+    25,
+    '01-02-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    6,
+    '02-01-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',92,NULL)),
+    92,
+    26,
+    '01-02-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    7,
+    '05-01-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',90,NULL)),
+    90,
+    27,
+    '01-02-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    8,
+    '08-01-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',91,NULL)),
+    91,
+    28,
+    '01-02-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    9,
+    '13-06-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Reserva',90,NULL)),
+    90,
+    29,
+    '01-01-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    10,
+    '21-06-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Reserva',90,NULL)),
+    90,
+    30,
+    '01-01-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    11,
+    '25-06-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Reserva',90,NULL)),
+    90,
+    31,
+    '01-01-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    12,
+    '07-01-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',91,NULL)),
+    91,
+    32,
+    '01-02-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    13,
+    '05-01-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',91,NULL)),
+    91,
+    33,
+    '01-02-2017'
+);
+
+insert into cata_valor_aprendiz values (
+    14,
+    '01-01-2017',
+    valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',91,NULL)),
+    91,
+    34,
+    '01-02-2017'
+);
 
 /*Muestras para las incripciones del concurso 1 en el calendario 1*/
 insert into muestra_compite 
@@ -2485,7 +2858,7 @@ insert into muestra_compite
 insert into muestra_compite
          values (3,
                  '01-01-2017',
-                 premio_muestra_compite_nt(premio(null,null,null,null,null)),
+                 premio_muestra_compite_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
                  15,
                  3
                  );
@@ -2493,7 +2866,7 @@ insert into muestra_compite
 insert into muestra_compite
          values (4,
                  '01-01-2017',
-                 premio_muestra_compite_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                 NULL,
                  10,
                  4
                  );
@@ -2501,26 +2874,147 @@ insert into muestra_compite
 insert into muestra_compite
          values (5,
                  '01-01-2017',
-                 premio_muestra_compite_nt(premio(null,null,null,null,null)),
-                 19,
+                 premio_muestra_compite_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
+                 5,
                  5
                  );
+
+insert into muestra_compite
+         values (6,
+                 '01-01-2017',
+                 premio_muestra_compite_nt( Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
+                 6,
+                 6
+                 );
+
+insert into muestra_compite
+         values (7,
+                 '01-01-2017',
+                 premio_muestra_compite_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                 4,
+                 7
+                 );
+
+insert into muestra_compite
+         values (8,
+                 '01-01-2017',
+                 premio_muestra_compite_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
+                 19,
+                 8
+                 );
+
+insert into muestra_compite
+         values (9,
+                 '01-01-2017',
+                 premio_muestra_compite_nt( Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
+                 20,
+                 9
+                 );
+
+insert into muestra_compite
+         values (10,
+                 '01-01-2017',
+                 premio_muestra_compite_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                 14,
+                 10
+                 );
+
+insert into muestra_compite
+         values (11,
+                 '01-01-2017',
+                 premio_muestra_compite_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
+                 8,
+                 15
+                 );
+
+insert into muestra_compite
+         values (12,
+                 '01-01-2017',
+                 premio_muestra_compite_nt( Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
+                 5,
+                 16
+                 );
+
+insert into muestra_compite
+         values (13,
+                 '01-01-2017',
+                 premio_muestra_compite_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                 13,
+                 17
+                 );
+
+insert into muestra_compite
+         values (14,
+                 '01-01-2017',
+                 NULL,
+                 20,
+                 18
+                 );
+
+insert into muestra_compite
+         values (15,
+                 '01-01-2017',
+                 premio_muestra_compite_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
+                 15,
+                 19
+                 );
+
+insert into muestra_compite
+         values (16,
+                 '01-01-2017',
+                 premio_muestra_compite_nt( Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
+                 2,
+                 20
+                 );
+
+insert into muestra_compite
+         values (17,
+                 '01-01-2017',
+                 premio_muestra_compite_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                 7,
+                 21
+                 );
+
+insert into muestra_compite
+         values (18,
+                 '01-01-2017',
+                 premio_muestra_compite_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
+                 11,
+                 22
+                 );
+
+insert into muestra_compite
+         values (19,
+                 '01-01-2017',
+                 premio_muestra_compite_nt( Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
+                 10,
+                 23
+                 );
+
+insert into muestra_compite
+         values (20,
+                 '01-01-2017',
+                 premio_muestra_compite_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                 3,
+                 24
+                 );
+
 /*terminan las muestras de el concurso 1 calendario 1*/
 
 /*cata_valoracion_vino para las muestras del calendario 1 del concurso 1*/
 insert into cata_valoracion_muestra_marca 
         values (1,
-                '02-01-2017',
+                '02-03-2017',
                 valor_cata_valor_muestra_m_nt(valoracion('Structura',97,'Color rojo oscuro y profundo. Aromas y sabores a ciruelas, guindas confitadas, moras, trufas, grafito y especias. Vino complejo de mucho cuerpo y taninos redondos que aportan una textura sedosa. Gran equilibrio entre alcohol, acidez y fruta. Final muy prolongado. Exelente vino'),
                 valoracion('Structura',95,'Color rojo oscuro . Aromas y sabores a ciruelas, guindas confitadas, moras, trufas, grafito y especias. Vino complejo de mucho cuerpo y taninos redondos que aportan una textura sedosa. Gran equilibrio entre alcohol, acidez y fruta. Final muy prolongado. Exelente vino')),
-                96,
+                192,
                 1,
                 1
                );
 
 insert into cata_valoracion_muestra_marca 
         values (2,
-                '02-01-2017',
+                '10-03-2017',
                 valor_cata_valor_muestra_m_nt(valoracion('Entity Shiraz',95,'De cuerpo completo y con una gran variedad de frutos oscuros concentrados. Suculenta, equilibrada y largo sabor en la boca.')),
                 95,
                 1,
@@ -2529,7 +3023,7 @@ insert into cata_valoracion_muestra_marca
 
 insert into cata_valoracion_muestra_marca 
         values (3,
-                '02-01-2017',
+                '07-03-2017',
                 valor_cata_valor_muestra_m_nt(valoracion('Noble One',93,'Brillante medio dorado. Aromas gloriosos de membrillo, nectarina, ralladura de naranja y nuez de roble vanilense. Un banquete sensual de ricas frutas de hueso blanco, cítricos, un toque de mermelada y roble bellamente integrado. Una espiga picante de acidez equilibra la dulzura de este vino dando un toque de frescura al final.')),
                 93,
                 1,
@@ -2538,21 +3032,156 @@ insert into cata_valoracion_muestra_marca
 
 insert into cata_valoracion_muestra_marca 
         values (4,
-                '02-01-2017',
+                '05-04-2017',
                 valor_cata_valor_muestra_m_nt(valoracion('L Excellence',94,'Este Saint-Emilion es un trato absoluto con su sutil Mezcla de Merlot y Cabernet. L Excellence Clos des Menuts es un buen mantenimiento bien equilibrado y afrutado. Vino, con sutiles taninos.')),
-                93,
+                94,
                 1,
                 4
                );
 
 insert into cata_valoracion_muestra_marca 
         values (5,
-                '02-01-2017',
-                valor_cata_valor_muestra_m_nt(valoracion('Roble',92,'Sabroso, afrutado, tostado con taninos redondos y buen final.')),
-                92,
-                1,
+                '01-04-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Luis Mora',90,NULL)),
+                90,
+                5,
                 5
                );
+
+insert into cata_valoracion_muestra_marca 
+        values (6,
+                '03-04-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Les Tourelles de Longueville',92,NULL)),
+                92,
+                5,
+                6
+               );
+
+insert into cata_valoracion_muestra_marca 
+        values (7,
+                '04-04-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Alaris',95,NULL)),
+                95,
+                5,
+                7
+               );
+
+insert into cata_valoracion_muestra_marca 
+        values (8,
+                '05-04-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Roble',95,NULL)),
+                95,
+                8,
+                8
+               );
+
+insert into cata_valoracion_muestra_marca 
+        values (9,
+                '11-03-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Vega Ibor Viura',94,NULL)),
+                94,
+                8,
+                9
+               );
+
+insert into cata_valoracion_muestra_marca 
+        values (10,
+                '13-03-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Master Muscat',94,NULL)),
+                94,
+                8,
+                10
+               );
+
+insert into cata_valoracion_muestra_marca 
+        values (11,
+                '02-01-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Legend Bordeaux Rougue',62,NULL)),
+                92,
+                1,
+                11
+               );
+
+insert into cata_valoracion_muestra_marca 
+        values (12,
+                '27-06-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Luis Mora',60,NULL)),
+                90,
+                5,
+                12
+               );   
+
+insert into cata_valoracion_muestra_marca 
+        values (13,
+                '28-06-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Grand Tokay',62,NULL)),
+                92,
+                10,
+                13
+               ); 
+
+insert into cata_valoracion_muestra_marca 
+        values (14,
+                '26-06-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Vega Ibor Viura',63,NULL)),
+                93,
+                2,
+                14
+               );  
+
+insert into cata_valoracion_muestra_marca 
+        values (15,
+                '29-06-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Noble One',63,NULL)),
+                93,
+                2,
+                15
+               ); 
+
+insert into cata_valoracion_muestra_marca 
+        values (16,
+                '22-06-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Coleccion Privada',64,NULL)),
+                95,
+                9,
+                16
+               );  
+
+insert into cata_valoracion_muestra_marca 
+        values (17,
+                '28-06-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Les Griffon Pichon Baron',62,NULL)),
+                94,
+                9,
+                17
+               ); 
+
+insert into cata_valoracion_muestra_marca 
+        values (18,
+                '20-06-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Plexux',60,NULL)),
+                90,
+                6,
+                18
+               ); 
+
+insert into cata_valoracion_muestra_marca 
+        values (19,
+                '25-06-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('L Excellence',62,NULL)),
+                92,
+                6,
+                19
+               );    
+
+insert into cata_valoracion_muestra_marca 
+        values (20,
+                '30-06-2017',
+                valor_cata_valor_muestra_m_nt(valoracion('Medalla',65,NULL)),
+                95,
+                2,
+                20
+               );       
 /*termina cata_valoracion_vino para las muestras del calendario 1 del concurso 1*/
 
 insert into historico_precio values (
@@ -2562,7 +3191,3 @@ insert into historico_precio values (
         1,
         1
 );
-
-
-
-

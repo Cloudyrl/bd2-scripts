@@ -1,4 +1,5 @@
-
+    Select nombre From Marca;
+    /
     accept v_nombre char prompt "Ingrese el nombre del vino: ";
     accept v_nombre_critica char prompt "Ingrese el nombre de la critica: ";
     accept v_fecha_critica date prompt "Ingrese la fecha de la critica 'dd-mm-yyy': ";
