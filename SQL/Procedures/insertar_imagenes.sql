@@ -1,0 +1,20 @@
+
+exec pr_insertar_imagen_vino('Structura', 'Structura');
+exec pr_insertar_imagen_vino('Coleccion Privada', 'Coleccion Privada');
+exec pr_insertar_imagen_vino('Medalla', 'Medalla');
+exec pr_insertar_imagen_vino('Luis Mora', 'Luis Mora');
+exec pr_insertar_imagen_vino('Les Tourelles de Longueville', 'Les Tourelles de Longueville');
+exec pr_insertar_imagen_vino('Les Griffon Pichon Baron', 'Les Griffon Pichon Baron');
+exec pr_insertar_imagen_vino('Legende Bordeaux Rougue', 'Legende Bordeaux Rougue');
+exec pr_insertar_imagen_vino('Carruades de Lafite', 'Carruades de Lafite');
+exec pr_insertar_imagen_vino("LExcellence", 'L Excellence');
+exec pr_insertar_imagen_vino('Plexux', 'Plexux');
+exec pr_insertar_imagen_vino('Entity Shiraz', 'Entity Shiraz');
+exec pr_insertar_imagen_vino('Grand Tokay', 'Grand Tokay');
+exec pr_insertar_imagen_vino('Master Muscat', 'Master Muscat');
+exec pr_insertar_imagen_vino('Noble One', 'Noble One');
+exec pr_insertar_imagen_vino('Crianza', 'Crianza');
+exec pr_insertar_imagen_vino('Verdejo', 'Verdejo');
+exec pr_insertar_imagen_vino('Reserva', 'Reserva');
+exec pr_insertar_imagen_vino('Roble', 'Roble');
+exec pr_insertar_imagen_vino('Vega Ibor Viura', 'Vega Ibor Viura');

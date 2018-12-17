@@ -1,0 +1,21 @@
+select clave,nombre from concurso;
+accept v_concurso prompt 'ingrese la clave del concurso : ';
+accept v_fechai date prompt 'ingrese la fecha inicial del concurso : ';
+accept v_fechaf date prompt 'ingrese la fecha final del concurso : ';
+accept v_fechaliminscripcion date prompt 'ingrese la fecha limite de inscripcion : ';
+accept v_fechalimmuestra date prompt 'ingrese la fecha limite de inscripcion de muestras: ';
+accept v_emailenvioinscripcion char prompt 'ingrese el email de inscripcion : ';
+accept v_calle char prompt 'ingrese la calle de envio de muestras : ';
+accept v_avenida char prompt 'ingrese la avenida de envio de muestras : ';
+accept v_codigo_postal prompt 'ingrese el codigo postal : ';
+accept v_urbanizacion char prompt 'ingrese la urbanizacion de envio de muestras : ';
+accept v_ciudad char prompt 'ingrese la ciudad de envio de muestras : ';
+accept v_pais char prompt 'ingrese la pais donde se realizara el concurso : ';
+accept v_ciudad_r char prompt 'ingrese la ciudad donde se realizara el concurso : ';
+accept v_cantmuestras char prompt 'ingrese la cantidad de muestras : ';
+accept v_valor prompt 'ingrese el costo del concurso : ';
+accept v_condiciondepago char prompt 'ingrese la condicion de pago : ';
+accept v_nombre_unidadmonetaria char prompt 'ingrese el nombre de la unidad monetario : ';
+accept v_unidadmonetaria char prompt 'ingrese el simbolo de la unidad monetaria : ';
+
+exec pr_insertar_calendario( '&v_fechai','&v_fechaf','&v_fechaliminscripcion','&v_fechalimmuestra','&v_emailenvioinscripcion','&v_calle','&v_avenida','&v_codigo_postal','&v_urbanizacion','&v_ciudad','&v_pais','&v_ciudad_r','&v_cantmuestras',&v_valor,'&v_condiciondepago','&v_nombre_unidadmonetaria','&v_unidadmonetaria',&v_concurso);

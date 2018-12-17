@@ -201,7 +201,7 @@ Create Table Denominacion_origen (
     Nombre Varchar2(50) Not Null,
     Descripcion Varchar2(500),
     Clave_region Integer Not Null,
-    Clave_variedad_uva Integer Not Null,
+    Clave_variedad_uva Integer,
     Clave_vinedo Integer Not Null,
     Constraint pk_denominacion_origen PRIMARY KEY(Clave)
 );
@@ -414,8 +414,8 @@ Create Table Inscripcion (
     Clave Integer Not Null,
     Fecha_inscripcion Date Not Null,
     Premio Premio_inscripcion_nt,
-    Clave_bodega Integer Not Null,
-    Clave_catador_aprendiz Integer Not Null,
+    Clave_bodega Integer,
+    Clave_catador_aprendiz Integer,
     Clave_calendario Integer Not Null,
     Constraint pk_inscripcion PRIMARY KEY(Clave)
 )
@@ -443,7 +443,7 @@ Create Table Muestra_catador (
 
 Create Table Variedad_uva (
     Clave Integer Not Null,
-    Nombre Nombre_variedad_uva_va ,
+    Nombre Nombre_variedad_uva_va,
     Descripcion Varchar2(50),
     Tipodeuva Varchar2(50) Not Null,
     Clave_vinedo Integer Not Null,
@@ -455,3 +455,9 @@ Create Table Vinedo (
     Clave_bodega Integer Not Null,
     Constraint pk_vinedo PRIMARY KEY(Clave_propio)
 ); 
+
+CREATE OR REPLACE directory image_dir AS 'C:\Users\Annemarie\Desktop\bd2-scripts\Imagenes Vinos\Imagenes Vinos';
+--CREATE OR REPLACE directory image_dir AS 'C:\Users\Cloudy\Desktop\db2-scripts\bd2-scripts\Imagenes Vinos\Imagenes Vinos';
+--Para correrlo si les dice "insufficient privileges" corran los siguientes comando en SQLplus 
+--"connect system/manager as SYSDBA;" y "grant create any directory to hr;" vuelven a correr el 
+--crear directorio y se los deberia crear
