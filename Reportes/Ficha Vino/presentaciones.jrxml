@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Vino" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select distinct p.tipo, p.unidadesencaja, to_char(h.año,'YYYY') as AñoI, (to_char(h.año,'YYYY')+ventanaconsumo(m.ventana_de_consumo)) as AñoF
+from marca m, presentacion p, historico_precio h
+where m.nombre = $P{Vino}]]>
+	</queryString>
+	<field name="TIPO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TIPO"/>
+	</field>
+	<field name="UNIDADESENCAJA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="UNIDADESENCAJA"/>
+	</field>
+	<field name="AÑOI" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="AÑOI"/>
+	</field>
+	<field name="AÑOF" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="AÑOF"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="36" y="10" width="160" height="25" isPrintInFirstWholeBand="true" uuid="97b74be3-8c12-4989-8c30-2d4c6f19e108"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ventana de Consumo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="187" y="10" width="80" height="25" isRemoveLineWhenBlank="true" uuid="d945b239-d99e-4e80-a49d-00d0cd091853"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AÑOI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="267" y="10" width="80" height="25" isRemoveLineWhenBlank="true" uuid="4db7ab1a-ebd2-48b7-8b6e-c22527b21a1e"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AÑOF}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="244" y="9" width="20" height="20" isRemoveLineWhenBlank="true" uuid="1e4f8f6c-d75b-4310-bcf4-9fd1c5831707"/>
+				<textElement>
+					<font fontName="&#xD;&#xA;Ink Free" size="14"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="30">
+			<textField>
+				<reportElement x="165" y="5" width="80" height="25" isRemoveLineWhenBlank="true" uuid="e7301598-2dee-43ea-8691-7f4f94a00e6a"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TIPO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="35" y="5" width="130" height="25" isPrintInFirstWholeBand="true" uuid="aef7263a-9a6d-4e66-9442-57f452217cd2"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Presentaciones:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="243" y="5" width="80" height="25" isRemoveLineWhenBlank="true" uuid="e7a108aa-7e3a-498e-9fa4-a7694a9fbc0a"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{UNIDADESENCAJA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

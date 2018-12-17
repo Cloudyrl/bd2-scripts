@@ -4,16 +4,17 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
 	<parameter name="Pais" class="java.lang.String"/>
+	<parameter name="Año Rankings" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[Select p.nombre, p.descripcion
 From pais_productor p
 where p.nombre = $P{Pais}]]>
 	</queryString>
-	<field name="DESCRIPCION" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="DESCRIPCION"/>
-	</field>
 	<field name="NOMBRE" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
+	</field>
+	<field name="DESCRIPCION" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DESCRIPCION"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -184,9 +185,65 @@ where p.nombre = $P{Pais}]]>
 				<subreportExpression><![CDATA["importadores.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
-		<band height="140">
+		<band height="83">
+			<rectangle>
+				<reportElement x="-20" y="0" width="595" height="83" backcolor="#4DA4A3" uuid="81e4ca74-816f-4ccc-b655-237634e31edf"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="93" y="18" width="369" height="47" uuid="e58692c7-0e2e-4d03-b671-81d0452c2d0d"/>
+				<textElement>
+					<font fontName="Ink Free" size="33" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ranking por Superficie]]></text>
+			</staticText>
+		</band>
+		<band height="50">
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="-22" y="0" width="595" height="50" uuid="f1f51335-fdcf-4b29-a96b-76a516adb16e"/>
+				<subreportParameter name="Pais">
+					<subreportParameterExpression><![CDATA[$P{Pais}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Año Rankings">
+					<subreportParameterExpression><![CDATA[$P{Año Rankings}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["rankingSuperficie.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="83">
+			<rectangle>
+				<reportElement x="-20" y="0" width="595" height="83" backcolor="#4DA4A3" uuid="6fc7b9f5-eb6c-436f-9967-bddaf2048c3e"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="93" y="18" width="369" height="47" uuid="8f263a96-f855-49d7-a75c-2aa0da546dac"/>
+				<textElement>
+					<font fontName="Ink Free" size="33" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ranking por Producción]]></text>
+			</staticText>
+		</band>
+		<band height="50">
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="-22" y="0" width="595" height="50" uuid="e16e9e34-b5b9-48e9-95d3-0513adc75e0f"/>
+				<subreportParameter name="Pais">
+					<subreportParameterExpression><![CDATA[$P{Pais}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Año Rankings">
+					<subreportParameterExpression><![CDATA[$P{Año Rankings}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["rankingProduccion.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="120">
 			<image>
-				<reportElement x="220" y="10" width="120" height="120" uuid="3217c453-0463-419f-86e8-1f9e7fe9d4ae"/>
+				<reportElement x="220" y="0" width="120" height="120" uuid="3217c453-0463-419f-86e8-1f9e7fe9d4ae"/>
 				<imageExpression><![CDATA["Images/vino.png"]]></imageExpression>
 			</image>
 		</band>

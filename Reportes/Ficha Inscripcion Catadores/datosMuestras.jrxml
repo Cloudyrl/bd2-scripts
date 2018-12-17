@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="1500" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="Bodega" class="java.lang.String"/>
+	<parameter name="Concurso" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select b.nombre as Bodega, m.nombre as Marca, to_char(mc.añada,'YYYY') as Añada, m.color, m.tipo_tapon, m.contacto_madera, m.grado_de_alcohol, m.acidez_total, h.precio, pd.valor, p.nombre as Pais, p.unidadmonetaria.simbolo, costo.cantmuestras, cla.nombre as Clasificacion
+From Bodega b, Concurso c, Calendario ca,Inscripcion i, Pais_productor p, Muestra_compite mc, Marca m, table(ca.costo) costo, historico_precio h, table(m.produccionaño) pd, clasificacion cla
+Where C.nombre = $P{Concurso} and
+c.clave = ca.clave_concurso and 
+c.clave = i.clave_calendario and
+i.clave_bodega = b.clave and 
+b.clave_pais_productor = p.clave
+and b.nombre = $P{Bodega} and
+i.clave = mc.clave_inscripcion and 
+mc.clave_marca = m.clave and 
+mc.añada = pd.año and 
+m.clave_clasificacion = cla.clave]]>
+	</queryString>
+	<field name="BODEGA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="BODEGA"/>
+	</field>
+	<field name="MARCA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="MARCA"/>
+	</field>
+	<field name="AÑADA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="AÑADA"/>
+	</field>
+	<field name="COLOR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="COLOR"/>
+	</field>
+	<field name="TIPO_TAPON" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TIPO_TAPON"/>
+	</field>
+	<field name="CONTACTO_MADERA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CONTACTO_MADERA"/>
+	</field>
+	<field name="GRADO_DE_ALCOHOL" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="GRADO_DE_ALCOHOL"/>
+	</field>
+	<field name="ACIDEZ_TOTAL" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="ACIDEZ_TOTAL"/>
+	</field>
+	<field name="PRECIO" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="PRECIO"/>
+	</field>
+	<field name="VALOR" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="VALOR"/>
+	</field>
+	<field name="PAIS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PAIS"/>
+	</field>
+	<field name="UNIDADMONETARIA.SIMBOLO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="UNIDADMONETARIA.SIMBOLO"/>
+	</field>
+	<field name="CANTMUESTRAS" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="CANTMUESTRAS"/>
+	</field>
+	<field name="CLASIFICACION" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CLASIFICACION"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="911" splitType="Stretch">
+			<rectangle>
+				<reportElement x="5" y="111" width="265" height="30" backcolor="#9DCECF" uuid="86280c30-c3a7-45ec-9256-9cd08c440ee5"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="30" y="114" width="240" height="25" isPrintInFirstWholeBand="true" uuid="e0db0b1e-b5f8-404f-94bd-cbfd8bd50c83"/>
+				<textElement>
+					<font fontName="Ink Free" size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción de muestras]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="155" width="180" height="25" isPrintInFirstWholeBand="true" uuid="17f44fa6-0230-4820-9c44-0dfb6327b742"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nombre del Vino/ Marca:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="360" y="155" width="180" height="25" isPrintInFirstWholeBand="true" uuid="1eda29ec-effa-4241-9aa5-1b932814507b"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Añada:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="214" width="519" height="25" isPrintInFirstWholeBand="true" uuid="38c54f21-50fe-42a0-896d-4717dc395346"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Indicación Geográfica (País):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="277" width="100" height="25" isPrintInFirstWholeBand="true" uuid="7b9195c4-2e03-4771-bc44-9568a2ca6ee5"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Color del vino:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="342" width="310" height="25" isPrintInFirstWholeBand="true" uuid="c820b05b-d862-4539-ba8d-d20ffe548673"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Variedades:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="20" y="184" width="309" height="20" backcolor="#9DCECF" uuid="de6e7981-73b0-4a15-bd12-ecd2d9f4026c"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="364" y="184" width="176" height="20" backcolor="#9DCECF" uuid="6add5a96-dd18-4fbd-8d70-5dbe9ad97475"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="20" y="244" width="519" height="20" backcolor="#9DCECF" uuid="88092ba3-d41d-4589-a01b-b1ec3d21b34e"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="20" y="306" width="130" height="20" backcolor="#9DCECF" uuid="ca885435-704e-4538-804c-c0e637d41106"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="101" y="370" width="229" height="170" backcolor="#9DCECF" uuid="79d7fcff-2dcf-4c95-83aa-82740fa25795"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="27" y="308" width="126" height="17" uuid="9ec523f0-10b5-44e6-a068-0de45bafae4b"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="26" y="186" width="290" height="17" uuid="3c5d5f93-c5e4-477e-bfb6-e19630d1e181"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MARCA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="246" width="500" height="17" uuid="c81b713f-7455-4bb0-9aae-97c8bfdd3772"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAIS}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="5" y="17" width="230" height="30" backcolor="#9DCECF" uuid="b45ed9ac-ff68-4a40-b461-9b2eb4799f55"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="30" y="20" width="205" height="25" isPrintInFirstWholeBand="true" uuid="6f6dad23-7f4d-469f-9158-feaeb185f95f"/>
+				<textElement>
+					<font fontName="Ink Free" size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inscripción Muestras]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="50" width="525" height="20" isPrintInFirstWholeBand="true" uuid="4ce00c5d-e720-4c64-a423-a8c9bf18e503"/>
+				<textElement>
+					<font fontName="Ink Free" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[El concursante inscribe un total de             muetras en el Concurso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="70" width="525" height="41" isPrintInFirstWholeBand="true" uuid="a3cd088e-d623-4591-9e91-1bc0995ef084"/>
+				<textElement>
+					<font fontName="Ink Free" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Las muestras inscritas a las especificaciones en el apartado Descripción de las muestras de esta ficha de inscripción y a los resultados expresados en los correspondientes boletines de análisis. ]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="210" y="51" width="40" height="19" backcolor="#9DCECF" uuid="85ec1eaf-fe68-4aee-8dab-e3b690c3f12d"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="177" y="277" width="100" height="25" isPrintInFirstWholeBand="true" uuid="8bea3bd1-e653-41ad-b8a6-cbf23f5f468b"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tipo de Vino:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="177" y="306" width="130" height="20" backcolor="#9DCECF" uuid="6b944c49-171a-42f0-941c-7f91dbc6b809"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="383" y="186" width="126" height="17" uuid="0db1aa8a-0756-4f82-ac9d-3c96bc8f56d1"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AÑADA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="343" y="277" width="100" height="25" isPrintInFirstWholeBand="true" uuid="5ae4170f-1c80-499f-b770-ed7f9c255d1a"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tipo de tapón:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="343" y="306" width="130" height="20" backcolor="#9DCECF" uuid="16fc7800-1b38-4c92-9de2-a396bef9a65d"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="351" y="308" width="126" height="17" uuid="afcbf4e9-5ca7-4fde-a8e3-6a7ae2c75e25"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TIPO_TAPON}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="22" y="551" width="207" height="25" isPrintInFirstWholeBand="true" uuid="96d6b8ec-2d76-4751-a153-5b03724d859b"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Contacto con Madera (Y/N):]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="158" y="580" width="52" height="20" backcolor="#9DCECF" uuid="5984d827-e98a-487b-bc1f-6fc6fed057b5"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="220" y="551" width="58" height="25" isPrintInFirstWholeBand="true" uuid="5e9001b9-f9e7-4f11-af16-af99fe36f3eb"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Alc %:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="220" y="580" width="58" height="20" backcolor="#9DCECF" uuid="2ffe04bc-9f93-4a0e-8b57-8c54aa314e8d"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="293" y="552" width="114" height="25" isPrintInFirstWholeBand="true" uuid="829e7fb9-b252-49aa-8726-af1519cbe5f0"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Azucares (g/l):]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="293" y="581" width="101" height="20" backcolor="#9DCECF" uuid="198d5d89-8203-40cc-aec7-02f99eff71fc"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="409" y="552" width="58" height="25" isPrintInFirstWholeBand="true" uuid="95e31021-52ba-4051-a3ba-7d21732db0a5"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[PVP:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="409" y="581" width="58" height="20" backcolor="#9DCECF" uuid="83b2f933-c347-471a-8781-3c4553d66973"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="481" y="552" width="72" height="25" isPrintInFirstWholeBand="true" uuid="70d12883-4439-425b-b58b-72adf555804a"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Producción:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="481" y="581" width="72" height="20" backcolor="#9DCECF" uuid="0dca8547-6fad-4977-813d-6fbbd9470803"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="174" y="583" width="28" height="17" uuid="55dc9506-f65d-4f1d-87ab-f4b57fe651bd"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CONTACTO_MADERA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="232" y="583" width="48" height="17" uuid="7535d98b-cc10-4d06-b01e-361e1eb5ae0e"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GRADO_DE_ALCOHOL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="318" y="583" width="68" height="17" uuid="be39baed-891d-40aa-b5bf-f5f1f949bf25"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ACIDEZ_TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="414" y="583" width="48" height="17" uuid="947a54ae-fd7c-47e8-8b2a-6ada5cbc24aa"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PRECIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="488" y="583" width="62" height="17" uuid="c75a07d2-3c27-4739-b3b0-e3c3444e48aa"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VALOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="218" y="50" width="32" height="17" uuid="db6e9050-601a-4f78-b07f-4137c3321757"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CANTMUESTRAS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="50" width="216" height="20" uuid="36d528d6-5fe1-45b7-a355-cec588582834"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Concurso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="309" width="126" height="17" uuid="ae94bfbc-6b15-4242-bb31-ec30ae663639"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CLASIFICACION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="455" y="583" width="20" height="17" uuid="54e85ee4-67a1-44e0-a17e-d4e3415b36ce"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{UNIDADMONETARIA.SIMBOLO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="540" y="582" width="18" height="20" isPrintInFirstWholeBand="true" uuid="b37d6908-9012-4a92-9b9e-6b34df792be0"/>
+				<textElement>
+					<font fontName="Ink Free" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[hl]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="6" y="643" width="230" height="30" backcolor="#9DCECF" uuid="45ebedc3-cd90-426b-9062-5b6116ba596c"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="31" y="646" width="205" height="25" isPrintInFirstWholeBand="true" uuid="3fbb73d0-e4c5-447f-bbd6-58f8020079a7"/>
+				<textElement>
+					<font fontName="Ink Free" size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inscripción Muestras]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="21" y="676" width="525" height="20" isPrintInFirstWholeBand="true" uuid="aa131758-fbec-4b3e-8519-ec388a84a190"/>
+				<textElement>
+					<font fontName="Ink Free" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[El concursante declara que son verdaderos los datos incluidos en esta ficha de inscripción.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="394" y="696" width="216" height="20" uuid="0fb2f82c-4cb3-44e7-a9bb-f404bcbda191"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Concurso}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="696" width="525" height="20" isPrintInFirstWholeBand="true" uuid="a717890b-3812-4efe-b02d-5b45554bc6c3"/>
+				<textElement>
+					<font fontName="Ink Free" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[El concursante declara conocer y aceptar el reglamento del Concurso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="716" width="525" height="20" isPrintInFirstWholeBand="true" uuid="d5869ec9-437c-45c4-b149-b65473a28d9c"/>
+				<textElement>
+					<font fontName="Ink Free" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[El concursante reconoce y acepta el juicio que emiten los jurados del Concurso]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="21" y="736" width="216" height="20" uuid="7f93f19c-3fee-456a-bd6b-cb8c1f35358b"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Concurso}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="21" y="776" width="169" height="20" isPrintInFirstWholeBand="true" uuid="149f15ca-2a00-440f-b36a-3b993e3d0eb4"/>
+				<textElement>
+					<font fontName="Ink Free" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Firma y Sello del Concursante:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="190" y="776" width="152" height="50" backcolor="#9DCECF" uuid="5baeed53-6751-4fda-92e6-7f9d3795c6fa"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="360" y="776" width="152" height="50" backcolor="#9DCECF" uuid="fb545ce4-ce97-49e9-8798-1f8040b19075"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<image>
+				<reportElement x="220" y="776" width="151" height="50" uuid="7cae294b-595b-477f-ac30-33472cdcb942"/>
+				<imageExpression><![CDATA["Images/Firma.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="392" y="762" width="91" height="90" uuid="782a449e-b9bb-467b-843a-07599c720e22"/>
+				<imageExpression><![CDATA["Images/Sello.png"]]></imageExpression>
+			</image>
+			<subreport>
+				<reportElement x="101" y="358" width="228" height="170" uuid="ca663027-0f26-493a-8fac-5bf7d55c5837"/>
+				<subreportParameter name="Bodega">
+					<subreportParameterExpression><![CDATA[$P{Bodega}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["variedades.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

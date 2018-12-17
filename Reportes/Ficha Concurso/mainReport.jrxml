@@ -5,7 +5,7 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
 	<parameter name="Concurso" class="java.lang.String"/>
 	<queryString language="SQL">
-		<![CDATA[select c.nombre, c.tipoconcurso, c.tipocata ,c.caracteristicas, co.valor, to_char(ca.fechai,'DD-MM-YY') as fechai
+		<![CDATA[select c.nombre, c.tipoconcurso, c.tipocata ,c.caracteristicas, co.valor, to_char(ca.fechai,'DD-Mon-YY') as fechai
 from concurso c, calendario ca,
 table(ca.costo) co
 where nombre = $P{Concurso} and c.clave = ca.clave_concurso]]>
@@ -77,7 +77,7 @@ where nombre = $P{Concurso} and c.clave = ca.clave_concurso]]>
 				<text><![CDATA[Tipo Concurso:]]></text>
 			</staticText>
 			<textField>
-				<reportElement isPrintRepeatedValues="false" x="107" y="30" width="444" height="20" uuid="2618bc16-51b5-4eb4-8485-4048ecfabffb"/>
+				<reportElement isPrintRepeatedValues="false" x="107" y="30" width="444" height="20" isRemoveLineWhenBlank="true" uuid="2618bc16-51b5-4eb4-8485-4048ecfabffb"/>
 				<textElement>
 					<font fontName="Ink Free" size="12"/>
 				</textElement>
@@ -127,7 +127,7 @@ where nombre = $P{Concurso} and c.clave = ca.clave_concurso]]>
 		</band>
 		<band height="42">
 			<textField>
-				<reportElement isPrintRepeatedValues="false" x="241" y="12" width="129" height="20" uuid="6de2900a-6c5c-48df-88a7-1b9a0842886f"/>
+				<reportElement isPrintRepeatedValues="false" x="241" y="12" width="129" height="20" isRemoveLineWhenBlank="true" uuid="6de2900a-6c5c-48df-88a7-1b9a0842886f"/>
 				<textElement>
 					<font fontName="Ink Free" size="12"/>
 				</textElement>
@@ -171,6 +171,74 @@ where nombre = $P{Concurso} and c.clave = ca.clave_concurso]]>
 				<reportElement x="340" y="10" width="40" height="40" uuid="1988b71d-cbec-4e3c-a442-8aea9b69fa46"/>
 				<imageExpression><![CDATA["Images/money.png"]]></imageExpression>
 			</image>
+		</band>
+		<band height="93">
+			<rectangle>
+				<reportElement x="-20" y="0" width="595" height="83" backcolor="#4DA4A3" uuid="6c80751e-4cd9-4c5c-a593-7c4fd3a0e313"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="193" y="17" width="201" height="50" uuid="7b98aceb-2e92-4d17-a313-48aad9df712b"/>
+				<textElement>
+					<font fontName="Ink Free" size="37"/>
+				</textElement>
+				<text><![CDATA[Muestras]]></text>
+			</staticText>
+		</band>
+		<band height="182">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="31" y="5" width="64" height="20" isPrintInFirstWholeBand="true" uuid="1a2a846e-620e-470c-a947-952d4ca37453"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bodega]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="245" y="5" width="50" height="20" isPrintInFirstWholeBand="true" uuid="211ea37b-5ed3-4b41-8909-2a13d862e2fa"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Añada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="135" y="5" width="64" height="20" isPrintInFirstWholeBand="true" uuid="06510ae3-e4ab-4466-b7ab-411aa1b718e8"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="335" y="5" width="80" height="20" isPrintInFirstWholeBand="true" uuid="be1a665d-45c5-4d92-beea-b1a6db39f980"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Vino]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="445" y="5" width="80" height="20" isPrintInFirstWholeBand="true" uuid="5f7aa615-c012-4b51-98cc-dab3b641b0e4"/>
+				<textElement>
+					<font fontName="Ink Free" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sumatoria]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="-20" y="25" width="595" height="156" uuid="61cb5c68-f8b9-4f62-a85b-ff2b881edab4"/>
+				<subreportParameter name="Concurso">
+					<subreportParameterExpression><![CDATA[$P{Concurso}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["muestrasVinos.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="-20" y="26" width="595" height="156" uuid="bf0778f7-3de0-4adc-b65f-cf0d4c6cc54e"/>
+				<subreportParameter name="Concurso">
+					<subreportParameterExpression><![CDATA[$P{Concurso}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["muestrasCatadores.jasper"]]></subreportExpression>
+			</subreport>
 		</band>
 	</detail>
 </jasperReport>

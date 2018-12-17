@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Title" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf7a9fc1-d230-4889-9fb4-966394944e58">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Concurso" class="java.lang.String"/>
+	<parameter name="Primer Nombre Catador" class="java.lang.String"/>
+	<parameter name="Segundo Nombre Catador" class="java.lang.String"/>
+	<parameter name="Primer Apellido Catador" class="java.lang.String"/>
+	<parameter name="Segundo Apellido Catador" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select cata.Primer_nombre || ' ' ||cata.Segundo_nombre ||' ' || cata.Primer_apellido || ' ' || cata.segundo_apellido as Catador, p.nombre as Pais,  cata.datoscontacto.direccion.calle as Calle, cata.datoscontacto.direccion.codigo_postal as codPostal, cata.datoscontacto.direccion.ciudad as ciudad, t.codigo_area as numarea,t.codigo_internacional as numInt, t.numero as num, to_char(i.fecha_inscripcion, 'DD-Mon-YYYY')
+From catador_aprendiz cata, Concurso c, Calendario ca,Inscripcion i, Pais_productor p 
+cross join table(cata.datoscontacto.telefonos) t
+Where C.nombre = $P{Concurso} and
+c.clave = ca.clave_concurso and 
+c.clave = i.clave_calendario and
+i.clave_catador_aprendiz = cata.clave and 
+cata.Primer_nombre = $P{Primer Nombre Catador} and
+cata.Segundo_nombre = $P{Segundo Nombre Catador} and
+cata.Primer_apellido = $P{Primer Apellido Catador} and
+cata.Segundo_apellido = $P{Segundo Apellido Catador} and
+cata.clave_pais_productor = p.clave]]>
+	</queryString>
+	<field name="CATADOR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CATADOR"/>
+	</field>
+	<field name="PAIS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PAIS"/>
+	</field>
+	<field name="CALLE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CALLE"/>
+	</field>
+	<field name="CODPOSTAL" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="CODPOSTAL"/>
+	</field>
+	<field name="CIUDAD" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CIUDAD"/>
+	</field>
+	<field name="NUMAREA" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="NUMAREA"/>
+	</field>
+	<field name="NUMINT" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="NUMINT"/>
+	</field>
+	<field name="NUM" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="NUM"/>
+	</field>
+	<field name="TO_CHAR(I.FECHA_INSCRIPCION,&apos;DD-MON-YYYY&apos;)" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label">
+			<![CDATA[TO_CHAR(I.FECHA_INSCRIPCION,'DD-MON-YYYY')]]>
+		</property>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="367" splitType="Stretch">
+			<rectangle>
+				<reportElement x="5" y="67" width="230" height="30" backcolor="#9DCECF" uuid="2e4a6dbe-0f80-477a-b24c-e44d16e6761c"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="30" y="70" width="180" height="25" isPrintInFirstWholeBand="true" uuid="4e0d7809-af93-4170-9aad-7a7d9eb78950"/>
+				<textElement>
+					<font fontName="Ink Free" size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Datos Concursante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="111" width="180" height="25" isPrintInFirstWholeBand="true" uuid="116668f7-f234-41a4-a091-b0a13562591f"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nombre Catador:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="360" y="111" width="180" height="25" isPrintInFirstWholeBand="true" uuid="05809351-2939-48d3-9e20-3f4b430df9a8"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[CIF:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="170" width="519" height="25" isPrintInFirstWholeBand="true" uuid="c202c16e-6403-43de-979f-e52a0168237e"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Calle:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="254" y="233" width="180" height="25" isPrintInFirstWholeBand="true" uuid="9d2abd4b-3b9b-4d29-a2a9-8acb3afe3337"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Población:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="233" width="180" height="25" isPrintInFirstWholeBand="true" uuid="ed690499-e75c-4dfc-bfbb-f104fa97c790"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Codigo Postal:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="20" y="296" width="180" height="25" isPrintInFirstWholeBand="true" uuid="f0e4a1db-f093-47bf-9276-28ada5deecca"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[País:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="254" y="296" width="180" height="25" isPrintInFirstWholeBand="true" uuid="1fe0dee9-1cfd-4552-83c6-6fb26d58ed53"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Telefono:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="20" y="140" width="309" height="20" backcolor="#9DCECF" uuid="f97d1311-e156-47ab-a6e2-9cdc98497106"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="364" y="140" width="176" height="20" backcolor="#9DCECF" uuid="cc59ea2f-9b8c-4770-81d3-abd811822eda"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="20" y="200" width="519" height="20" backcolor="#9DCECF" uuid="d38017ce-c00a-4284-8344-b964dc974098"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="20" y="262" width="180" height="20" backcolor="#9DCECF" uuid="c84fbcd8-35c6-4824-8172-e05e6b91a9d1"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="254" y="262" width="284" height="20" backcolor="#9DCECF" uuid="02c8279f-da77-4d9b-b594-555ba08bc17a"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="20" y="325" width="180" height="20" backcolor="#9DCECF" uuid="a8a06f23-5ce6-451a-96b4-e47d2feb281d"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="254" y="325" width="284" height="20" backcolor="#9DCECF" uuid="23366b79-fb97-4229-b9b7-458c993068b8"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="24" y="327" width="170" height="17" uuid="cb3fed73-5647-45ac-b2f8-ec8986b95d78"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAIS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="258" y="327" width="80" height="17" uuid="34b33029-2075-49ca-b3ba-6908d2fc20fa"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NUMAREA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="328" width="80" height="17" uuid="707fb8d9-a25f-4c8a-b567-65c75ab9f355"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NUMINT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="317" y="328" width="80" height="17" uuid="0d08a32e-cd2c-4b55-99b8-5983f191bb33"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NUM}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="264" width="170" height="17" uuid="2fa55819-327f-4155-bcf0-0df483339053"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CODPOSTAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="258" y="264" width="266" height="17" uuid="5c7b468a-c51d-42ce-b5e9-3dde3677857a"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CIUDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="24" y="142" width="290" height="17" uuid="96dc214f-394f-46f8-a8b3-83435eea8c26"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CATADOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="202" width="500" height="17" uuid="57bca1ed-6ee0-494d-a725-17ed98ace826"/>
+				<textElement>
+					<font fontName="Ink Free" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CALLE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="1" y="0" width="519" height="25" isPrintInFirstWholeBand="true" uuid="79898d90-9fc1-4e43-a3f6-ce70a6cc8408"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fecha de la Inscripción:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="168" y="0" width="182" height="25" uuid="e2df2d8b-4267-46c8-aaa2-9e96a0876624"/>
+				<textElement>
+					<font fontName="Ink Free" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TO_CHAR(I.FECHA_INSCRIPCION,'DD-MON-YYYY')}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="1" y="25" width="519" height="25" isPrintInFirstWholeBand="true" uuid="ab6e7385-766e-4a32-b2d3-56e3f5a47d0f"/>
+				<textElement>
+					<font fontName="Ink Free" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Concurso:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="27" width="454" height="25" uuid="58f097b1-35ce-48fd-b500-d2ad77820397"/>
+				<textElement>
+					<font fontName="Ink Free" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Concurso}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
