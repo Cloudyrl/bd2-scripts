@@ -294,3 +294,41 @@ begin
        );
 end pr_insertar_escala_concurso;
 /
+
+create or replace procedure pr_insertar_calendario( 
+  v_fechai in date,
+  v_fechaf in date,
+  v_fechaliminscripcion in date,
+  v_fechalimmuestra in date,
+  v_emailenvioinscripcion in varchar2,
+  v_calle in varchar2,
+  v_avenida in varchar2,
+  v_codigo_postal in number,
+  v_urbanizacion in varchar2,
+  v_ciudad in varchar2,
+  v_pais in varchar2,
+  v_ciudad_r in varchar2,
+  v_cantmuestras in number,
+  v_valor in number,
+  v_condiciondepago in varchar2,
+  v_nombre_unidadmonetaria in varchar2,
+  v_unidadmonetaria in varchar2,
+  v_concurso in number
+)is
+begin
+  insert into calendario values(
+    (select count(*)+1 from calendario),
+    v_fechai,
+    v_fechaf,
+    v_fechaliminscripcion,
+    v_fechalimmuestra,
+    v_emailenvioinscripcion,
+    datos_direccion(v_calle,v_avenida,v_codigo_postal,v_urbanizacion,v_ciudad),
+    lugar(v_pais,v_ciudad_r),
+    costo_calendario_nt(costo(v_cantmuestras,v_valor,v_pais)),
+    v_condiciondepago,
+    unidadmonetaria_calendario_nt(unidadmonetaria(v_nombre_unidadmonetaria,v_unidadmonetaria)),
+    v_concurso
+  );
+end pr_insertar_calendario;
+/
