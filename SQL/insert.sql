@@ -2436,7 +2436,7 @@ insert into inscripcion
 insert into inscripcion 
                  values (3,
                          '01-01-2016',
-                         NULL,
+                         premio_inscripcion_nt(premio(null,null,null,null,null)),
                          6,
                          NULL,
                          1
@@ -2455,7 +2455,7 @@ insert into inscripcion
 insert into inscripcion 
                  values (5,
                          '01-01-2016',
-                         NULL,
+                         premio_inscripcion_nt(premio(null,null,null,null,null)),
                          11,
                          NULL,
                          1
@@ -2485,7 +2485,7 @@ insert into muestra_compite
 insert into muestra_compite
          values (3,
                  '01-01-2017',
-                 NULL,
+                 premio_muestra_compite_nt(premio(null,null,null,null,null)),
                  15,
                  3
                  );
@@ -2501,7 +2501,7 @@ insert into muestra_compite
 insert into muestra_compite
          values (5,
                  '01-01-2017',
-                 NULL,
+                 premio_muestra_compite_nt(premio(null,null,null,null,null)),
                  19,
                  5
                  );
