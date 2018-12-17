@@ -1,4 +1,4 @@
-select nombre, clave from bodega;
+      select nombre, clave from bodega;
       accept v_bodega prompt "Ingrese el ID de la bodega : ";
       select distinct i.clave as ClaveInscripcion,c.nombre as NombreConcurso, ca.fechai as FechaInicial, ca.fechaf as FechaFinal, i.fecha_inscripcion as FechaInscipcion from bodega b, concurso c, calendario ca, inscripcion i where &v_bodega = i.clave_bodega and i.clave_calendario = ca.clave and c.clave = ca.clave_concurso order by i.clave asc;
       accept v_inscripcion prompt "Ingrese el ID de la inscripcion : ";

@@ -2414,8 +2414,6 @@ insert into inscripcion
                          1
                          );
 
-
-
 insert into inscripcion 
                  values (2,
                          '01-04-2017',

@@ -1,3 +1,5 @@
+Select nombre from Marca;
+/
 accept v_nombre_img char prompt "Ingrese el nombre de la imagen (Formato .png): ";
 accept v_nombre_vino char prompt "Ingrese el nombre del vino: ";
     

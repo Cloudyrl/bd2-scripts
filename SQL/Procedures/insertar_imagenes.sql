@@ -1,8 +1,8 @@
 
 exec pr_insertar_imagen_vino('Structura', 'Structura');
-exec pr_insertar_imagen_vino('cpblend', 'Coleccion Privada');
+exec pr_insertar_imagen_vino('Coleccion Privada', 'Coleccion Privada');
 exec pr_insertar_imagen_vino('Medalla', 'Medalla');
-exec pr_insertar_imagen_vino('malbec', 'Luis Mora');
+exec pr_insertar_imagen_vino('Luis Mora', 'Luis Mora');
 exec pr_insertar_imagen_vino('Les Tourelles de Longueville', 'Les Tourelles de Longueville');
 exec pr_insertar_imagen_vino('Les Griffon Pichon Baron', 'Les Griffon Pichon Baron');
 exec pr_insertar_imagen_vino('Legende Bordeaux Rougue', 'Legende Bordeaux Rougue');

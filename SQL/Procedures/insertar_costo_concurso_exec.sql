@@ -1,3 +1,5 @@
+Select nombre From Concurso;
+/
 accept v_nombre char prompt "Ingrese el nombre del concurso: ";
 accept v_cant_muestras prompt "Ingrese la cantidad de muestras: ";
 accept v_valor prompt "Ingrese el costo de la muestra: ";

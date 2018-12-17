@@ -456,7 +456,8 @@ Create Table Vinedo (
     Constraint pk_vinedo PRIMARY KEY(Clave_propio)
 ); 
 
-CREATE OR REPLACE directory image_dir AS 'C:\Users\Cloudy\Desktop\db2-scripts\bd2-scripts\Imagenes Vinos\Imagenes Vinos';
+CREATE OR REPLACE directory image_dir AS 'C:\Users\Annemarie\Desktop\bd2-scripts\Imagenes Vinos\Imagenes Vinos';
+--CREATE OR REPLACE directory image_dir AS 'C:\Users\Cloudy\Desktop\db2-scripts\bd2-scripts\Imagenes Vinos\Imagenes Vinos';
 --Para correrlo si les dice "insufficient privileges" corran los siguientes comando en SQLplus 
 --"connect system/manager as SYSDBA;" y "grant create any directory to hr;" vuelven a correr el 
 --crear directorio y se los deberia crear
