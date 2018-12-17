@@ -13,7 +13,7 @@ begin
   insert into inscripcion values (
       (select count(*)+1 from inscripcion),
       v_fecha,
-      null,
+       premio_inscripcion_nt(premio(null,null,null,null,null)),
       null,
       v_clave_catador,
       v_clave_concurso
@@ -22,7 +22,7 @@ begin
     insert into inscripcion values (
       (select count(*)+1 from inscripcion),
       v_fecha,
-      null,
+      premio_inscripcion_nt(premio(null,null,null,null,null)),
       v_clave_bodega,
       null,
       v_clave_concurso
@@ -44,7 +44,7 @@ begin
   insert into muestra_compite values (
      (select count(*)+1 from muestra_compite),
      v_anada,
-     null,
+     premio_muestra_compite_nt(premio(null,null,null,null,null)),
      v_clave_marca,
      v_clave_inscripcion
   );
@@ -67,7 +67,7 @@ begin
   );
 end pr_insertar_muestra_catador;
 
--- 
+/
 
 
 create or replace Procedure pr_inscripcionapr (
@@ -243,4 +243,54 @@ begin
    );
    update cata_valor_aprendiz set sumatoria = sumatoria + v_valor where clave = v_cata;
 end pr_insertar_valoracion_cata_c;
+/
+
+create or replace procedure pr_insertar_concurso(
+   v_nombre in varchar2,
+   v_tipo_concurso in varchar2,
+   v_tipo_cata in varchar2,
+   v_nacional in varchar2,
+   v_caracteristicas in varchar2
+)is
+begin
+  insert into concurso values (
+    (select count(*)+1 from concurso),
+    v_nombre,
+    v_tipo_concurso,
+    v_tipo_cata,
+    v_nacional,
+    v_caracteristicas,
+    premio_concurso_nt(premio(null,null,null,null,null)),
+    escala_concurso_nt(escala(null,null,null,null))
+  );
+end pr_insertar_concurso;
+/
+
+create or replace procedure pr_insertar_premio_concurso(
+  v_concurso in number,
+  v_nombre in varchar2,
+  v_descripcion in varchar2,
+  v_tipo in varchar2,
+  v_premioenmoneda in number,
+  v_posicion in number
+)is 
+begin
+       insert into the (select premios from concurso where clave = v_concurso) values (
+         Premio(v_nombre,v_descripcion,v_tipo,v_premioenmoneda,v_posicion)
+       );
+end pr_insertar_premio_concurso;
+/
+
+create or replace procedure pr_insertar_escala_concurso(
+  v_concurso in number,
+  v_elemento in varchar2,
+  v_valori in number,
+  v_valorf in number,
+  v_clasificacion in varchar2
+)is 
+begin
+       insert into the (select escalas from concurso where clave = v_concurso) values (
+         Escala(v_elemento,v_valori,v_valorf,v_clasificacion)
+       );
+end pr_insertar_escala_concurso;
 /
