@@ -115,3 +115,39 @@ create or replace procedure pr_bodegas_aporte_produccion(v_fecha in date) is
           VALUES (i.nombre,i.pais,(i.produccion-i.exportacion),v_fecha);
         END LOOP;
 end pr_bodegas_aporte_produccion;
+
+
+
+
+create or replace procedure pr_tranformacion(v_fecha in date ) is 
+begin
+  insert into Tiempo_intermedia values ((select count(id) from Tiempo_intermedia)+1,v_fecha,to_date(EXTRACT(year from v_fecha)-1,'yyyy'));
+   hechos_exportadores_mundiales(v_fecha);
+end pr_tranformacion;
+
+
+
+create or replace procedure hechos_exportadores_mundiales(v_fecha in date) is 
+ y integer;
+ id_tiempo number;
+ pos1 varchar2,
+ pos2 varchar2,
+ pos3 varchar2
+ begin
+     select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha);
+     y := 1;
+     FOR x IN (select nombre,cantidad from exportadores_mundiales where extract(year from fecha) = extract(year from v_fecha) and rownum <= 3 order by cantidad DESC)
+    LOOP
+        if (y=1) then
+        pos1 := x.nombre;
+        elsif(y=2) then 
+        pos2 := x.nombre;
+        else 
+        pos3 := x.nombre;
+        end if;
+        y:= y + 1;
+    END LOOP;
+    INSERT INTO Hechos_vinos_catados_inter (id_tiempo,top3exportadoresmundiales_p1,top3exportadoresmundiales_p2,top3exportadoresmundiales_p3)
+        VALUES (id_tiempo,pos1,pos2,pos3);
+end hechos_exportadores_mundiales;
+
