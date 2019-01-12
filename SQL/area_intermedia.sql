@@ -34,14 +34,7 @@ create table marcasporpais_produccion(
    cantidad integer,
    Fecha date   
 );
-create table marcasporpais_produccion(
-   marca varchar2 (50),
-   pais varchar2 (20),
-   continente varchar2(20),
-   cantidad integer,
-   Fecha date   
-);
-create table Bodegas_produccion(
+create table Bodegas_aporte_produccion(
    nombre varchar2(20),
    pais varchar2 (20),
    cantidad integer,
@@ -97,17 +90,6 @@ create or replace procedure pr_denominacion_criticas(v_fecha in date) is
 end pr_denominacion_criticas;
 
 create or replace procedure pr_marcasporpais_produccion(v_fecha in date) is 
- v_promedio float;
- begin
-         FOR i IN (select distinct nombre from denominacion_origen)
-         LOOP
-          select Round(avg(c.tipovalor.valor),3) into v_promedio from marca m ,bodega b,vinedo v,denominacion_origen de, table (m.criticas) c where de.nombre = i.nombre and  m.clave_bodega = b.clave and v.clave_bodega = b.clave and de.clave_vinedo = v.clave_propio  and EXTRACT (year from c.tipovalor.año) =EXTRACT(year from v_fecha);
-          INSERT INTO denominacion_criticas (nombre,cantidad,fecha)
-          VALUES (i.nombre,v_promedio,v_fecha);
-        END LOOP;
-end pr_denominacion_criticas;
-
-create or replace procedure pr_marcasporpais_produccion(v_fecha in date) is 
  begin
         FOR i IN (select p.nombre as pais ,m.nombre as marca,c.valor from pais_productor p,marca m,bodega b, table (m.PRODUCCIONAÑO) c where p.clave = b.clave_pais_productor and b.clave = m.clave_bodega and EXTRACT(year from c.año) =EXTRACT(year from v_fecha))
          LOOP
@@ -125,11 +107,11 @@ create or replace procedure pr_marcasporpais_produccion(v_fecha in date) is
         END LOOP;
 end pr_marcasporpais_produccion;
 
-create or replace procedure pr_Bodegas_produccion(v_fecha in date) is 
+create or replace procedure pr_bodegas_aporte_produccion(v_fecha in date) is 
  begin
-        FOR i IN (select p.nombre as pais ,b.nombre,c.valor from pais_productor p,bodega b, table (b.produccioanual) c where p.clave = b.clave_pais_productor and EXTRACT(year from c.año) =EXTRACT(year from v_fecha))
+        FOR i IN (select p.nombre as pais ,b.nombre,c.valor as produccion,sum(e.tipovalor.valor) as exportacion from pais_productor p,bodega b, table (b.produccioanual)c ,table (b.exportacionanual) e where p.clave = b.clave_pais_productor and  EXTRACT( year from c.año) = EXTRACT(year from v_fecha) and EXTRACT( year from e.tipovalor.año) = EXTRACT(year from v_fecha) group by p.nombre, b.nombre, c.valor)
          LOOP
-          INSERT INTO Bodegas_produccion(nombre,pais,cantidad,fecha)
-          VALUES (i.nombre,i.pais,i.valor,v_fecha);
+          INSERT INTO Bodegas_aporte_produccion(nombre,pais,cantidad,fecha)
+          VALUES (i.nombre,i.pais,(i.produccion-i.exportacion),v_fecha);
         END LOOP;
-end pr_Bodegas_produccion;
+end pr_bodegas_aporte_produccion;
