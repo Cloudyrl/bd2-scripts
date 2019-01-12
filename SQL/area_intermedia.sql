@@ -38,6 +38,13 @@ create table marcasporpais_produccion(
    Fecha date   
 );
 
+create table marcasporcontinente_produccion(
+   marca varchar2 (50),
+   continente varchar2(20),
+   cantidad integer,
+   Fecha date   
+);
+
 create table Bodegas_produccion(
    nombre varchar2(20),
    pais varchar2 (20),
@@ -110,60 +117,69 @@ create or replace procedure pr_Bodegas_produccion(v_fecha in date) is
         END LOOP;
 end pr_Bodegas_produccion;
 
-create table Hechos_vinos_catados_intermedia(
-    top3denominacionorigen_criticas_posicion1 varchar2 (50),
-    top3denominacionorigen_criticas_posicion2 varchar2 (50),
-    top3denominacionorigen_criticas_posicion3 varchar2 (50),
-    top3productoresmundiales_posicion1 varchar2 (50),
-    top3productoresmundiales_posicion2 varchar2 (50),
-    top3productoresmundiales_posicion3 varchar2 (50),
-    top3exportadoresmundiales_posicion1 varchar2(50),
-    top3exportadoresmundiales_posicion2 varchar2(50),
-    top3exportadoresmundiales_posicion3 varchar2(50),
-    top3marcasporpais_premios_posicion1 varchar2(50),
-    top3marcasporpais_premios_posicion2 varchar2(50),
-    top3marcasporpais_premios_posicion3 varchar2(50),
-    top5marcasporpais_posicion1 varchar2(50),
-    top5marcasporpais_posicion2 varchar2(50),
-    top5marcasporpais_posicion3 varchar2(50),
-    top5marcasporpais_posicion4 varchar2(50),
-    top5marcasporpais_posicion5 varchar2(50),
-    top5marcasporcontinente_posicion1 varchar2(50),
-    top5marcasporcontinente_posicion2 varchar2(50),
-    top5marcasporcontinente_posicion3 varchar2(50),
-    top5marcasporcontinente_posicion4 varchar2(50),
-    top5marcasporcontinente_posicion5 varchar2(50),
-    top2bodegas_posicion1 varchar2(50),
-    top2bodegas_posicion2 varchar2(50),
-    %crecimientoproduccionpais float,
-    %crecimientoportipodeconcurso float,
-    id_tiempo number,
-    id_pais number,
-    id_tipo_concurso number
+create table Hechos_vinos_catados_inter(
+    top3do_criticas_p1 varchar2 (50),
+    top3do_criticas_p2 varchar2 (50),
+    top3do_criticas_p3 varchar2 (50),
+    top3productoresmundiales_p1 varchar2 (50),
+    top3productoresmundiales_p2 varchar2 (50),
+    top3productoresmundiales_p3 varchar2 (50),
+    top3exportadoresmundiales_p1 varchar2(50),
+    top3exportadoresmundiales_p2 varchar2(50),
+    top3exportadoresmundiales_p3 varchar2(50),
+    top3marcasporpais_premios_p1 varchar2(50),
+    top3marcasporpais_premios_p2 varchar2(50),
+    top3marcasporpais_premios_p3 varchar2(50),
+    top5marcasporpais_p1 varchar2(50),
+    top5marcasporpais_p2 varchar2(50),
+    top5marcasporpais_p3 varchar2(50),
+    top5marcasporpais_p4 varchar2(50),
+    top5marcasporpais_p5 varchar2(50),
+    top5marcasporcontinente_p1 varchar2(50),
+    top5marcasporcontinente_p2 varchar2(50),
+    top5marcasporcontinente_p3 varchar2(50),
+    top5marcasporcontinente_p4 varchar2(50),
+    top5marcasporcontinente_p5 varchar2(50),
+    top2bodegas_p1 varchar2(50),
+    top2bodegas_p2 varchar2(50),
+    crecimientoproduccionpais float,
+    crecimientoportipodeconcurso float,
+    id_tiempo integer,
+    id_pais integer,
+    id_tipo_concurso integer
 );
 
 create table Tiempo_intermedia(
-    id number,
+    id integer,
     año date,
     bienio date,
-    Constraint pk_tiempo PRIMARY KEY(id)
+    Constraint pk_tiempo_intermedia PRIMARY KEY(id)
 );
 
 create table Pais_intermedia(
-    id number,
+    id integer,
     nombre varchar2(50),
     continente varchar2(50),
     fechacreacion date,
-    Constraint pk_pais PRIMARY KEY(id)
+    Constraint pk_pais_intermedia PRIMARY KEY(id)
 );
 
 create table Tipo_concurso_intermedia(
-    id number,
+    id integer,
     nombre varchar(50),
     fechacreacion date,
-    Constraint pk_tipo_concurso PRIMARY KEY(id)
+    Constraint pk_tipo_concurso_intermedia PRIMARY KEY(id)
 );
 
-Alter Table Hechos_vinos_catados_intermedia ADD FOREIGN KEY (Clave_tiempo) references Tiempo_intermedia (id) ON DELETE CASCADE;
-Alter Table Hechos_vinos_catados_intermedia ADD FOREIGN KEY (Clave_pais) references Pais_intermedia (id) ON DELETE CASCADE;
-Alter Table Hechos_vinos_catados_intermedia ADD FOREIGN KEY (Clave_tipo_concurso) references Tipo_concurso_intermedia (id) ON DELETE CASCADE;
+Alter Table Hechos_vinos_catados_inter ADD FOREIGN KEY (Clave_tiempo) references Tiempo_intermedia (id) ON DELETE CASCADE;
+Alter Table Hechos_vinos_catados_inter ADD FOREIGN KEY (Clave_pais) references Pais_intermedia (id) ON DELETE CASCADE;
+Alter Table Hechos_vinos_catados_inter ADD FOREIGN KEY (Clave_tipo_concurso) references Tipo_concurso_intermedia (id) ON DELETE CASCADE;
+
+create or replace procedure pr_pais_intermedia() is 
+ begin
+        FOR i IN (select p.nombre, p.continente from pais_productor p)
+         LOOP
+          INSERT INTO Pais_intermedia
+          VALUES ((select count(id) from pais_intermedia)+1,i.nombre,i.continente,sysdate);
+        END LOOP;
+end pr_pais_intermedia;
