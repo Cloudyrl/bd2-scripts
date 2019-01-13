@@ -524,11 +524,3 @@ create or replace procedure hechos_marcas_continente(v_fecha in date) is
         y:= 1;
    end loop;
  end hechos_marcas_continente;
-
- create table marcasporcontinente_produccion(
-   marca varchar2 (50),
-   pais varchar(20),
-   continente varchar2(20),
-   cantidad integer,
-   Fecha date   
-);
