@@ -242,6 +242,7 @@ begin
    hechos_bodegas_aporte(v_fecha);
    hechos_denominacion_critica(v_fecha);
    hechos_crecimiento_pais(v_fecha);
+   hechos_marcas_continente(v_fecha);
 end pr_tranformacion;
 
 create or replace procedure hechos_exportadores_mundiales(v_fecha in date) is 
@@ -486,3 +487,48 @@ create or replace procedure hechos_crecimiento_pais(v_fecha in date) is
         VALUES (crecimiento,id_pais,id_tiempo);
     END LOOP;
 end hechos_crecimiento_pais;
+
+create or replace procedure hechos_marcas_continente(v_fecha in date) is 
+ y integer;
+ id_tiempo integer;
+ id_pais integer;
+ pos1 varchar2(50);
+ pos2 varchar2(50);
+ pos3 varchar2(50);
+ pos4 varchar2(50);
+ pos5 varchar2(50);
+ id_continente integer;
+ begin
+   y:=1;
+   select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha);
+   for x in (select distinct continente from pais_intermedia)
+   loop
+      select p.id into id_continente from pais_intermedia p where p.continente = x.continente and rownum <= 1;
+     for i in (select marca, cantidad from marcasporcontinente_produccion where continente = x.continente and rownum <=5 order by cantidad DESC)
+     loop
+         if (y=1) then
+            pos1 := i.marca;
+            elsif(y=2) then 
+            pos2 := i.marca;
+            elsif(y=3) then
+            pos3 := i.marca;
+            elsif(y=4) then
+            pos4 := i.marca;
+            else
+            pos5 := i.marca;
+            end if;
+         y:= y + 1;
+     end loop;
+        INSERT INTO hechos_vinos_catados_inter (id_tiempo,id_pais,top5marcasporcontinente_p1 ,top5marcasporcontinente_p2 ,top5marcasporcontinente_p3 ,top5marcasporcontinente_p4 ,top5marcasporcontinente_p5)
+        VALUES (id_tiempo,id_continente,pos1,pos2,pos3,pos4,pos5);
+        y:= 1;
+   end loop;
+ end hechos_marcas_continente;
+
+ create table marcasporcontinente_produccion(
+   marca varchar2 (50),
+   pais varchar(20),
+   continente varchar2(20),
+   cantidad integer,
+   Fecha date   
+);
