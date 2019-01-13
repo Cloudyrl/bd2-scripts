@@ -1403,7 +1403,11 @@ VALUES
 
   -- https://www.uvinum.es/vino-bekaa/chateau-heritage-vinoix-50cl-2013
   /
+<<<<<<< HEAD
     INSERT INTO MARCA_VINO VALUES
+=======
+    INSERT INTO MARCA VALUES
+>>>>>>> e25e13916d6298275b89ca4569f02b67e64a37b4
    (39,
    'Vinoix', 
    'Cada uno de los viñedos especialmente seleccionados se cosechó, fermentó y maduró por separado, y cada viñedo proporcionó su propio carácter único, lo que contribuyó a la riqueza y complejidad de este vino. Madurado en 37% de barricas nuevas de roble francés, 62% en barricas de uno y dos años y 25% sin cocción para conservar los sabores de frutas jóvenes en la mezcla.',
