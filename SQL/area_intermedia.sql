@@ -53,11 +53,29 @@ create table Bodegas_aporte_produccion(
    Fecha date   
 );
 
-create table crecimiento_pais_bienio{
+create table crecimiento_pais(
     nombre varchar2(50),
     cantidad float,
     Fecha date
-}
+);
+
+create table crecimiento_pais_bienio(
+    nombre varchar2(50),
+    cantidad float,
+    Fecha date
+);
+
+create table crecimiento_concurso(
+    nombre varchar2(50),
+    cantidad float,
+    Fecha date
+);
+
+create table crecimiento_concurso_bienio(
+    nombre varchar2(50),
+    cantidad float,
+    Fecha date
+);
 
 create or replace procedure pr_productores_mundiales(v_fecha in date) is 
  begin
@@ -133,7 +151,6 @@ end pr_bodegas_aporte_produccion;
 
 create or replace procedure pr_crecimiento_pais(v_fecha in date) is 
  y integer;
- id_tiempo integer;
  pais varchar2(20);
  produccion float;
  produccion_ant float;
@@ -141,7 +158,6 @@ create or replace procedure pr_crecimiento_pais(v_fecha in date) is
  cantidad float;
  num_paises integer;
  begin
-     select id into id_tiempo from tiempo_intermedia where extract(year from bienio) = EXTRACT(year from v_fecha) and extract(year from año) = (extract(year from v_fecha)-1);
      select count(id) into num_paises from Pais_intermedia;
      For t IN (select id from Pais_intermedia p where rownum <= num_paises)
      LOOP
@@ -159,10 +175,107 @@ create or replace procedure pr_crecimiento_pais(v_fecha in date) is
         select p.nombre into pais from pais_intermedia p where p.id = id_pais;
 
         cantidad := (((produccion - produccion_ant)*100)/produccion_ant);
-        INSERT INTO crecimiento_pais_bienio (nombre,cantidad,fecha)
+        INSERT INTO crecimiento_pais (nombre,cantidad,fecha)
         VALUES (pais,cantidad,v_fecha);
     END LOOP;
 end pr_crecimiento_pais;
+
+create or replace procedure pr_crecimiento_pais_bienio(v_fecha in date) is 
+ y integer;
+ pais varchar2(20);
+ produccion float;
+ produccion_ant float;
+ id_pais integer;
+ cantidad float;
+ num_paises integer;
+ begin
+     select count(id) into num_paises from Pais_intermedia;
+     For t IN (select id from Pais_intermedia p where rownum <= num_paises)
+     LOOP
+        y := 1;
+        id_pais := t.id;
+
+        select c.valor into produccion from pais_productor p, table (p.produccioanual)c, pais_intermedia pi
+                  where EXTRACT( year from c.año) = extract(year from v_fecha) and
+                  pi.id = id_pais and pi.nombre = p.nombre;
+
+        select c.valor into produccion_ant from pais_productor p, table (p.produccioanual)c, pais_intermedia pi
+                  where EXTRACT( year from c.año) = (extract(year from v_fecha)-2) and
+                  pi.id = id_pais and pi.nombre = p.nombre;
+
+        select p.nombre into pais from pais_intermedia p where p.id = id_pais;
+
+        cantidad := (((produccion - produccion_ant)*100)/produccion_ant);
+        INSERT INTO crecimiento_pais_bienio (nombre,cantidad,fecha)
+        VALUES (pais,cantidad,v_fecha);
+    END LOOP;
+end pr_crecimiento_pais_bienio;
+
+create or replace procedure pr_crecimiento_concurso(v_fecha in date) is 
+ y integer;
+ concurso varchar2(20);
+ num_ins float;
+ num_ins_ant float;
+ id_tipo_concurso integer;
+ cantidad float;
+ num_tipos integer;
+ begin
+     select count(id) into num_tipos from tipo_concurso_intermedia;
+     For t IN (select id from tipo_concurso_intermedia where rownum <= num_tipos)
+     LOOP
+        y := 1;
+        id_tipo_concurso := t.id;
+
+        select count(i.clave) into num_ins from inscripcion i, concurso c, calendario ca, tipo_concurso_intermedia h
+                  where i.clave_calendario = ca.clave and 
+                  c.clave = ca.clave_concurso and c.tipoconcurso = h.nombre and 
+                  h.id = id_tipo_concurso and extract(year from ca.fechai) = extract(year from v_fecha);
+
+        select count(i.clave) into num_ins_ant from inscripcion i, concurso c, calendario ca, tipo_concurso_intermedia h
+                  where i.clave_calendario = ca.clave and 
+                  c.clave = ca.clave_concurso and c.tipoconcurso = h.nombre and 
+                  h.id = id_tipo_concurso and extract(year from ca.fechai) = extract(year from v_fecha)-1;
+
+        select p.nombre into concurso from tipo_concurso_intermedia p where p.id = id_tipo_concurso;
+
+        cantidad := (((num_ins - num_ins_ant)*100)/num_ins_ant);
+        INSERT INTO crecimiento_concurso (nombre,cantidad,fecha)
+        VALUES (concurso,cantidad,v_fecha);
+    END LOOP;
+end pr_crecimiento_concurso;
+
+create or replace procedure pr_crecimiento_concurso_bienio(v_fecha in date) is 
+ y integer;
+ concurso varchar2(20);
+ num_ins float;
+ num_ins_ant float;
+ id_tipo_concurso integer;
+ cantidad float;
+ num_tipos integer;
+ begin
+     select count(id) into num_tipos from tipo_concurso_intermedia;
+     For t IN (select id from tipo_concurso_intermedia where rownum <= num_tipos)
+     LOOP
+        y := 1;
+        id_tipo_concurso := t.id;
+
+        select count(i.clave) into num_ins from inscripcion i, concurso c, calendario ca, tipo_concurso_intermedia h
+                  where i.clave_calendario = ca.clave and 
+                  c.clave = ca.clave_concurso and c.tipoconcurso = h.nombre and 
+                  h.id = id_tipo_concurso and extract(year from ca.fechai) = extract(year from v_fecha);
+
+        select count(i.clave) into num_ins_ant from inscripcion i, concurso c, calendario ca, tipo_concurso_intermedia h
+                  where i.clave_calendario = ca.clave and 
+                  c.clave = ca.clave_concurso and c.tipoconcurso = h.nombre and 
+                  h.id = id_tipo_concurso and extract(year from ca.fechai) = extract(year from v_fecha)-2;
+
+        select p.nombre into concurso from tipo_concurso_intermedia p where p.id = id_tipo_concurso;
+
+        cantidad := (((num_ins - num_ins_ant)*100)/num_ins_ant);
+        INSERT INTO crecimiento_concurso_bienio (nombre,cantidad,fecha)
+        VALUES (concurso,cantidad,v_fecha);
+    END LOOP;
+end pr_crecimiento_concurso_bienio;
 
 create table Hechos_vinos_catados_inter(
     top3do_criticas_p1 varchar2 (50),
@@ -234,9 +347,19 @@ create or replace procedure pr_pais_intermedia is
         END LOOP;
 end pr_pais_intermedia;
 
+create or replace procedure pr_tipo_concurso_inte is 
+ begin
+        FOR i IN (select distinct tipoconcurso from concurso )
+         LOOP
+          INSERT INTO tipo_concurso_intermedia
+          VALUES ((select count(id) from tipo_concurso_intermedia)+1,i.tipoconcurso,sysdate);
+        END LOOP;
+end pr_tipo_concurso_inte;
+
 create or replace procedure pr_tranformacion(v_fecha in date ) is 
 begin
-  insert into Tiempo_intermedia values ((select count(id) from Tiempo_intermedia)+1,v_fecha,to_date(EXTRACT(year from v_fecha)-1,'yyyy'));
+  insert into Tiempo_intermedia values ((select count(id) from Tiempo_intermedia)+1,v_fecha,null);
+  insert into Tiempo_intermedia values ((select count(id) from Tiempo_intermedia)+1 ,to_date(extract(year from v_fecha)-2,'dd-mm-yyyy') ,v_fecha)
    hechos_exportadores_mundiales(v_fecha);
    hechos_productores_mundiales(v_fecha);
    hechos_marcas_por_pais(v_fecha);
@@ -245,6 +368,9 @@ begin
    hechos_bodegas_aporte(v_fecha);
    hechos_denominacion_critica(v_fecha);
    hechos_crecimiento_pais(v_fecha);
+   hechos_crecimiento_pais_bienio(v_fecha);
+   hechos_crecimiento_concurso(v_fecha);
+   hechos_crecimiento_concurso_bi(v_fecha);
 end pr_tranformacion;
 
 create or replace procedure hechos_exportadores_mundiales(v_fecha in date) is 
@@ -254,7 +380,7 @@ create or replace procedure hechos_exportadores_mundiales(v_fecha in date) is
  pos2 varchar2(20);
  pos3 varchar2(20);
  begin
-     select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha);
+     select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha) and bienio is null;
      y := 1;
      FOR x IN (select nombre,cantidad from exportadores_mundiales where extract(year from fecha) = extract(year from v_fecha) and rownum <= 3 order by cantidad DESC)
     LOOP
@@ -278,7 +404,7 @@ create or replace procedure hechos_productores_mundiales(v_fecha in date) is
  pos2 varchar2(20);
  pos3 varchar2(20);
  begin
-     select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha);
+     select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha) and bienio is null;
      y := 1;
      FOR x IN (select nombre,cantidad from productores_mundiales where extract(year from fecha) = extract(year from v_fecha) and rownum <= 3 order by cantidad DESC)
     LOOP
@@ -307,7 +433,7 @@ create or replace procedure hechos_marcas_por_pais(v_fecha in date) is
  pos4 varchar2(50);
  pos5 varchar2(50);
  begin
-     select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha);
+     select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha) and bienio is null;
      select count(id) into num_paises from Pais_intermedia;
      z := 1;
      For t IN (select id from Pais_intermedia p where rownum <= num_paises)
@@ -347,7 +473,7 @@ create or replace procedure hechos_marcas_por_criticas(v_fecha in date) is
  pos2 varchar2(50);
  pos3 varchar2(50);
  begin
-     select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha);
+     select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha) and bienio is null;
      select count(id) into num_paises from Pais_intermedia;
      z := 1;
      For t IN (select id from Pais_intermedia p where rownum <= num_paises)
@@ -383,7 +509,7 @@ create or replace procedure hechos_marcas_por_premios(v_fecha in date) is
  pos2 varchar2(50);
  pos3 varchar2(50);
  begin
-     select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha);
+     select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha) and bienio is null;
      select count(id) into num_paises from Pais_intermedia;
      z := 1;
      For t IN (select id from Pais_intermedia p where rownum <= num_paises)
@@ -418,7 +544,7 @@ create or replace procedure hechos_bodegas_aporte(v_fecha in date) is
  pos1 varchar2(50);
  pos2 varchar2(50);
  begin
-     select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha);
+     select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha) and bienio is null;
      select count(id) into num_paises from Pais_intermedia;
      z := 1;
      For t IN (select id from Pais_intermedia p where rownum <= num_paises)
@@ -449,7 +575,7 @@ create or replace procedure hechos_denominacion_critica(v_fecha in date) is
  pos2 varchar2(20);
  pos3 varchar2(20);
  begin
-     select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha);
+     select id into id_tiempo from tiempo_intermedia where extract(year from año) = EXTRACT(year from v_fecha) and bienio is null;
      y := 1;
      FOR x IN (select nombre,cantidad from denominacion_criticas 
                where extract(year from fecha) = extract(year from v_fecha) and rownum <= 3 order by cantidad DESC)
@@ -474,7 +600,30 @@ create or replace procedure hechos_crecimiento_pais(v_fecha in date) is
  crecimiento float;
  num_paises integer;
  begin
-     select id into id_tiempo from tiempo_intermedia where extract(year from bienio) = EXTRACT(year from v_fecha) and extract(year from año) = (extract(year from v_fecha)-1);
+     select id into id_tiempo from tiempo_intermedia where extract(year from año) = (extract(year from v_fecha)) and bienio is null;
+     select count(id) into num_paises from Pais_intermedia;
+     For t IN (select id from Pais_intermedia p where rownum <= num_paises)
+     LOOP
+        y := 1;
+        id_pais := t.id;
+
+        select c.cantidad into crecimiento from crecimiento_pais c, pais_intermedia pi
+                  where EXTRACT( year from c.fecha) = extract(year from v_fecha) and
+                  pi.id = id_pais and pi.nombre = c.nombre;
+
+        INSERT INTO hechos_vinos_catados_inter (crecimientoproduccionpais,id_pais,id_tiempo)
+        VALUES (crecimiento,id_pais,id_tiempo);
+    END LOOP;
+end hechos_crecimiento_pais;
+
+create or replace procedure hechos_crecimiento_pais_bienio(v_fecha in date) is 
+ y integer;
+ id_tiempo integer;
+ id_pais integer;
+ crecimiento float;
+ num_paises integer;
+ begin
+     select id into id_tiempo from tiempo_intermedia where extract(year from bienio) = EXTRACT(year from v_fecha) and extract(year from año) = (extract(year from v_fecha)-2);
      select count(id) into num_paises from Pais_intermedia;
      For t IN (select id from Pais_intermedia p where rownum <= num_paises)
      LOOP
@@ -488,4 +637,50 @@ create or replace procedure hechos_crecimiento_pais(v_fecha in date) is
         INSERT INTO hechos_vinos_catados_inter (crecimientoproduccionpais,id_pais,id_tiempo)
         VALUES (crecimiento,id_pais,id_tiempo);
     END LOOP;
-end hechos_crecimiento_pais;
+end hechos_crecimiento_pais_bienio;
+
+create or replace procedure hechos_crecimiento_concurso(v_fecha in date) is 
+ y integer;
+ id_tiempo integer;
+ id_tipo_concurso integer;
+ crecimiento float;
+ num_tipos integer;
+ begin
+     select id into id_tiempo from tiempo_intermedia where extract(year from año) = (extract(year from v_fecha)) and bienio is null;
+     select count(id) into num_tipos from tipo_concurso_intermedia;
+     For t IN (select id from tipo_concurso_intermedia where rownum <= num_tipos)
+     LOOP
+        y := 1;
+        id_tipo_concurso := t.id;
+
+        select c.cantidad into crecimiento from crecimiento_concurso c, tipo_concurso_intermedia ti
+                  where EXTRACT( year from c.fecha) = extract(year from v_fecha) and
+                  ti.id = id_tipo_concurso and ti.nombre = c.nombre;
+
+        INSERT INTO hechos_vinos_catados_inter (crecimientoportipodeconcurso,id_tipo_concurso,id_tiempo)
+        VALUES (crecimiento,id_tipo_concurso,id_tiempo);
+    END LOOP;
+end hechos_crecimiento_concurso;
+
+create or replace procedure hechos_crecimiento_concurso_bi(v_fecha in date) is 
+ y integer;
+ id_tiempo integer;
+ id_tipo_concurso integer;
+ crecimiento float;
+ num_tipos integer;
+ begin
+     select id into id_tiempo from tiempo_intermedia where extract(year from bienio) = EXTRACT(year from v_fecha) and extract(year from año) = (extract(year from v_fecha)-2);
+     select count(id) into num_tipos from tipo_concurso_intermedia;
+     For t IN (select id from tipo_concurso_intermedia where rownum <= num_tipos)
+     LOOP
+        y := 1;
+        id_tipo_concurso := t.id;
+
+        select c.cantidad into crecimiento from crecimiento_concurso_bienio c, tipo_concurso_intermedia ti
+                  where EXTRACT( year from c.fecha) = extract(year from v_fecha) and
+                  ti.id = id_tipo_concurso and ti.nombre = c.nombre;
+
+        INSERT INTO hechos_vinos_catados_inter (crecimientoportipodeconcurso,id_tipo_concurso,id_tiempo)
+        VALUES (crecimiento,id_tipo_concurso,id_tiempo);
+    END LOOP;
+end hechos_crecimiento_concurso_bi;
