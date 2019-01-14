@@ -480,22 +480,6 @@ insert into Presentacion values (
     303
 );
 
-insert into Historico_precio values (
-    310,
-    '01-01-2016',
-    55,2,
-    304,
-    314
-);
-
-insert into Historico_precio values (
-    311
-    '01-01-2017', 
-    67.35,
-    304,
-    313
-);
-
 -------------------------------------------------------------------------------------------------------------------------
 
 insert into Region values (
