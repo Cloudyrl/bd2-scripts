@@ -359,7 +359,7 @@ end pr_tipo_concurso_inte;
 create or replace procedure pr_tranformacion(v_fecha in date ) is 
 begin
   insert into Tiempo_intermedia values ((select count(id) from Tiempo_intermedia)+1,v_fecha,null);
-  insert into Tiempo_intermedia values ((select count(id) from Tiempo_intermedia)+1 ,to_date(extract(year from v_fecha)-2,'dd-mm-yyyy') ,v_fecha)
+  insert into Tiempo_intermedia values ((select count(id) from Tiempo_intermedia)+1 ,concat('01-01-',extract(year from v_fecha)-2) ,v_fecha);
    hechos_exportadores_mundiales(v_fecha);
    hechos_productores_mundiales(v_fecha);
    hechos_marcas_por_pais(v_fecha);
