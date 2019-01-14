@@ -553,7 +553,6 @@ VALUES
      1);
 
   /* Kollwentz chardonnay Tatschler 2008
-
   Esto es como un buen chablis joven: mineral, con tonos de gis y 
   la fruta en segundo plano, con registros a citricos. Sorprende 
   la pureza y precision de su expresion frutal en boca, que discurre 
@@ -594,15 +593,12 @@ VALUES
   -- BODEGA Weinlaubenhof Kracher:
 
   /* Kracher Trockenbeerenauslese Grande Cuvée Nº10 1998
-
      Al ser un "nouvelle vague" se fermenta en barricas nuevas de roble
-
   Sin duda Alois Kracher es un viticultor portentoso.
   Este vino es una delicia. Color ambar,brillante con aromas de 
     miel,frutas en compota,higos pasificados,...La boca es fresca 
     con acidez suficiente,tacto fabuloso,denso,muy 
     largo,envolvente,tapiza toda la boca de un nectar muy elegante.
-
     Amarillo cobrizo color miel. Sensación visual de mucho peso, 
     parece un PX de añada. Mucha potencia y complejidad aromática, mieles,
     cítricos, botrytis. En boca no le veo esa falta de acidez que ve 
@@ -683,7 +679,6 @@ VALUES
   -- BODEGA Schloss Gobelsburg:
 
  /* Schloss Gobelsburg Grüner Veltliner Tradition 2003
-
  El vino fermenta sin control de temperatura en 
  tinas de roble de Manhartsberg de 25 hl. 
  Trasegado cada 3-4 meses y embotellado a los 18 meses.*/
@@ -725,7 +720,6 @@ VALUES
   -- BODEGA Santa Rita:
 
   /* Bougainville
-
    En la nariz es un vino que muestra gran elegancia, 
   con vivos aromas de frutos negros en equilibrio con especias dulces, 
   además de matices de tierra y humo mezclados con notas balsámicas propias 
@@ -772,14 +766,11 @@ VALUES
      2);
 
 /* Medalla Real
-
   Rojo violáceo limpio y brillante. Aromas a guinda, murta, grosella roja 
   y clavo de olor. En boca es de acidez media-alta, 
   taninos suaves y bien integrados, jugoso.
-
   Maridaje: Carnes Rojas, Quesos.
   Procedencia: Maipo
-
 */
 
   -- LINKS DE INFORMACION
@@ -821,7 +812,6 @@ VALUES
   -- BODEGA Erasmo:
 
   /*Erasmo Cabernet Merlot
-
   Valle del Maule, Valle Central - Rappel
   Cabernet Sauvignon, Syrah, Merlot, Cabernet franc, 
   Vino tinto, Envejecido en roble, 75 cl
@@ -834,7 +824,6 @@ VALUES
   Trás una guarda de un año en barricas de roble francés y una crianza 
   en botella durante otros 12 meses, se completa el ciclo de producción 
   de este vino tinto del Valle del Maule, no filtrado y hecho a mano.
-
   */
 
     -- LINKS DE INFORMACION
@@ -878,7 +867,6 @@ VALUES
   
   Valle del Maule, Valle Central - Rappel
     Torontel, Vino de postre, Envejecido en roble, 37.5 cl
-
     Erasmo Late Harvest “Torontel” es la cuarta cosecha de este novedoso 
     vino que ha sido obtenido de viejas parras de Torontel de más 60 años 
     del secano Maulino. El conjunto del terroir y microclima de Caliboro, 
@@ -886,7 +874,6 @@ VALUES
     pasión y el cuidado artesanal de cada racimo, alcanzan un punto de 
     equilibrio que solamente se puede lograr dejando la naturaleza seguir 
     su curso.
-
     Es un vino blanco dulce exuberante, equilibrado, ligeramente aromático,
     que proviene de un viñedo de 60 años de cultivo seco y de bajo rendimiento 
     en Caliboro, en el Valle del Maule de Chile, a 155 millas al sur de Santiago.
@@ -931,12 +918,10 @@ VALUES
   -- BODEGA Casas del bosque:
 
   /*Gran Bosque Cabernet Sauvignon
-
   Intenso rojo rubí en color, este vino ofrece en nariz un aroma 
   a cereza negra, nuez moscada y granos de expreso con un toque 
   de romero. En boca un marco de taninos tensos y elegantes da 
   paso a sabores de cassis, tabaco y zarza.
-
   Alcohol: 14.5%
   pH: 3.58
   Total Acidity: 6.2 g/L
@@ -944,7 +929,6 @@ VALUES
   Volatile Acidity: 0.60 g/L
   Maridaje: Carnes rojas magras.
   Packaging: 1 vino envuelto en papel seda en baúl de madera.
-
   */
 
   -- LINKS DE INFORMACION
@@ -986,7 +970,6 @@ VALUES
   -- BODEGA Domaine des Muses:
 
   /* Fendant Classique
-
   A menudo se piensa que Fendant es la uva característica de Suiza, 
   pero cuando no se elabora con cuidado puede ser bastante floja y 
   poco interesante. Robert's, sin embargo, está hecho con precisión 
@@ -995,7 +978,6 @@ VALUES
   comienzan la comida y la terminan con fendante, o la sirven con aperitivos,
   raclette o pescado de río, o como dice Marcel, "¡perfectos para el après 
   ski o après travail!"
-
     Estos vinos son muy limpios y afrutados, 
     fáciles de beber y muy agradables.
     
@@ -1092,21 +1074,18 @@ VALUES
   /*
   
   White wine from Valais, Switzerland
-
   Tiempo de almacenamiento: 1 - 4 años
   Condiciones ideales de almacenamiento: 
   Temperatura de almacenamiento 10 ° C-14 ° C.
   Humedad 60% -80%
   Protección de la luz
   Posición horizontal Sin vibracion
-
   Categoría: Una variedad de uva
   Las uvas Sylvaner
   Tipo: Seco
   Contenido: Fácil
   alcohol 13.8%
   Capacidad: 75 cl
-
   */
 
     -- LINKS DE INFORMACION
@@ -1152,13 +1131,11 @@ VALUES
   20 días de maceración en depósitos de acero; Después de la fermentación 
   alcohólica, el vino se vierte en barricas de roble de 750 litros. 
   Envejecimiento: en barricas de roble Allier tostado medio durante 22 meses.
-
   El Merlot Riserva Oro se produce solo en los años en que 
   las uvas recolectadas se presentan con una calidad excepcional 
   y grados de calidad superiores a la media. En nariz hay mucha fruta 
   en particular de cereza, dulzura, vainilla. Es complejo En boca es 
   cálido, fresco, tánico y suave. Equilibrado y armonioso.
-
    Se come con Comidas importantes, carnes rojas o de caza, pastas 
    y quesos añejos.
   */
@@ -1207,7 +1184,6 @@ VALUES
   dejando espacio para una boca llena y una densa estructura tánica.
   
   Esta mezcla es ideal para carnes rojas, aves y quesos a la parrilla.
-
   */
 
   -- https://www.maison-blanche.ch/maison-blanche-nos-crus
@@ -1261,7 +1237,6 @@ VALUES
   Interesante vino libanés. Complejo nariz salvaje de frutos rojos,
   hojas y animales. El paladar es ligero y refrescante. 90 puntos, 
   buen esfuerzo.
-
   */
 
   -- https://www.vivino.com/ksara-le-prieure/w/1668182?year=2005
@@ -1300,14 +1275,12 @@ VALUES
   
   Concurso Internacional de Vinos Madrid, 2012: Bacchus De Plata
   International Wine Challenge, 2012: Commended
-
   Grape/Blend:
   Rare Red Blend
   Food Suggestion:
   Lamb
   Wine Style:
   Red - Savory and Classic
-
   */
 
     -- https://www.wine-searcher.com/find/ksara+rsrv+du+couvent+bekaa+valley+lebanon/2010
@@ -1343,19 +1316,14 @@ VALUES
     2);
 
   /*
-
   Color: Amarillo pálido con reflejos verdosos.
-
   Aroma: Fresco y elegante de perfumado aroma, exquisitas notas 
   frutales de manzana verde y piña.
-
   Gusto: En boca se muestra redondo y fresco, con un delicado 
   equilibrio gracias a su fina estructura ácida y una gran personalidad.
-
   Es un vino indicado para platos ligeros o de arroces, mariscos y pescados. 
   Se recomienda servir entre 4 º y 6 º C, y consumir durante el año de su 
   elaboración.
-
   */
 
   -- http://www.maset.com/blanc-de-blancs-maset-del-lleo-2.html
@@ -1394,7 +1362,6 @@ VALUES
   -- BODEGA Château Heritage:
 
   /* Vinoix 50cl 2013 
-
   Château Heritage ha elaborado este Château Heritage Vinoix 50cl 2013
   (13,83€), un vino dulce de Bekaa con racimos de 2013 y posee un grado 
   alcohólico de 20º. Un vino dulce valorado con 3 puntos sobre 5 según 
@@ -1439,7 +1406,6 @@ VALUES
     Maridaje: Cocina especiada , Pato , foie, quesos de pasta cruda prensada
     Consumo sugerido: 2016 - 2031
         Temperatura óptima para servirlo: De 12 a 14 ºC
-
     */
 
     -- https://www.bullmet.com/vinos/chateau-musar-blanco-2007
@@ -1850,7 +1816,7 @@ insert into inscripcion
 /
 insert into inscripcion 
   values (36,
-  '13-12-2018',
+  '13-01-2017',
   Premio_inscripcion_nt(premio('Bachus de Oro','Premio otorgado para el segundo catador','Medalla',200,2)),
   NULL,
   14,
@@ -1859,7 +1825,7 @@ insert into inscripcion
 /
 insert into inscripcion 
   values (37,
-  '15-12-2018',
+  '15-01-2017',
   Premio_inscripcion_nt(premio('Bachus de Plata','Para el tercer catador','Medalla',100,3)),
   NULL,
   15,
@@ -1974,25 +1940,206 @@ INSERT INTO jueces VALUES (23,8,11);
 
   /*********************** MUESTRAS VINO ***************************/
   Insert into muestra_compite values (
-   21,
+   421,
    '01-04-2017',
-   premio_muestra_compite_nt(premio('Gran Bodegaswine de Oro','Los mejores vinos del concurso','Medalla',1,900)),
+   premio_muestra_compite_nt(premio('Gran Bodegaswine de Oro','Los mejores vinos del concurso','Medalla',900,1),
+                             premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3)
+   ),
    21,
    41
   );
+
   Insert into muestra_compite values (
    22,
    '01-04-2017',
-   premio_muestra_compite_nt(premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',2,200)),
+   premio_muestra_compite_nt(premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3)
+   ),
    27,
    42
   );
+
   Insert into muestra_compite values (
    23,
    '01-04-2017',
-   premio_muestra_compite_nt(premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',3,100)),
+   premio_muestra_compite_nt(premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Gran Bodegaswine de Oro','Los mejores vinos del concurso','Medalla',900,1),
+                             premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2)
+   ),
    31,
    43
+  );
+
+Insert into muestra_compite values (
+   24,
+   '01-04-2017',
+   premio_muestra_compite_nt(premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3)
+   ),
+   22,
+   41
+  );
+
+Insert into muestra_compite values (
+   25,
+   '01-04-2017',
+   premio_muestra_compite_nt(premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Gran Bodegaswine de Oro','Los mejores vinos del concurso','Medalla',900,1)
+   ),
+   23,
+   42
+  );
+
+  Insert into muestra_compite values (
+   26,
+   '01-04-2017',
+   premio_muestra_compite_nt(premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3)
+   ),
+   24,
+   41
+  );
+
+Insert into muestra_compite values (
+   27,
+   '01-04-2017',
+   premio_muestra_compite_nt(premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2)
+   ),
+   26,
+   43
+  );
+
+Insert into muestra_compite values (
+   28,
+   '01-04-2017',
+   premio_muestra_compite_nt(premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),         
+                             premio('Gran Bodegaswine de Oro','Los mejores vinos del concurso','Medalla',900,1)
+   ),
+   27,
+   42
+  );
+
+Insert into muestra_compite values (
+   29,
+   '01-04-2017',
+   premio_muestra_compite_nt(premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Gran Bodegaswine de Oro','Los mejores vinos del concurso','Medalla',900,1)
+   ),
+   28,
+   42
+  );
+
+Insert into muestra_compite values (
+   30,
+   '01-04-2017',
+   premio_muestra_compite_nt(premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Gran Bodegaswine de Oro','Los mejores vinos del concurso','Medalla',900,1)
+   ),
+   29,
+   43
+  );
+
+Insert into muestra_compite values (
+   31,
+   '01-04-2017',
+   premio_muestra_compite_nt(premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),         
+                             premio('Gran Bodegaswine de Oro','Los mejores vinos del concurso','Medalla',900,1)
+   ),
+   32,
+   41
+  );
+
+Insert into muestra_compite values (
+   32,
+   '01-04-2017',
+   premio_muestra_compite_nt(premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3)
+   ),
+   32,
+   42
+  );
+
+Insert into muestra_compite values (
+   33,
+   '01-04-2017',
+   premio_muestra_compite_nt(premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2)
+   ),
+   33,
+   43
+  );
+
+Insert into muestra_compite values (
+   34,
+   '01-04-2017',
+   premio_muestra_compite_nt(premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),         
+                             premio('Gran Bodegaswine de Oro','Los mejores vinos del concurso','Medalla',900,1)
+   ),
+   34,
+   42
+  );
+
+Insert into muestra_compite values (
+   35,
+   '01-04-2017',
+   premio_muestra_compite_nt(premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Gran Bodegaswine de Oro','Los mejores vinos del concurso','Medalla',900,1)
+   ),
+   36,
+   41
+  );
+
+Insert into muestra_compite values (
+   36,
+   '01-04-2017',
+   premio_muestra_compite_nt(premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Gran Bodegaswine de Oro','Los mejores vinos del concurso','Medalla',900,1),
+                             premio('Bodegaswine de Oro','Para los vinos de excelente calidad','Medalla',200,2)
+   ),
+   37,
+   41
+  );
+
+Insert into muestra_compite values (
+   337,
+   '01-04-2017',
+   premio_muestra_compite_nt(premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3)
+   ),
+   39,
+   41
+  );
+
+Insert into muestra_compite values (
+   37,
+   '01-04-2017',
+   premio_muestra_compite_nt(premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3),
+                             premio('Bodegaswine de Plata','Para los vinos muy buenos','Medalla',100,3)
+   ),
+   39,
+   41
   );
 
   Insert into cata_valoracion_muestra_marca 
@@ -2003,6 +2150,7 @@ INSERT INTO jueces VALUES (23,8,11);
     19,
     21
   );   
+
   Insert into cata_valoracion_muestra_marca 
     values (22,
     '30-06-2017',
