@@ -1301,6 +1301,26 @@ Insert into Concurso values (
 );
 
 Insert into Concurso values (
+    310,
+    'Wine Awards',
+    'Vino',
+    'Varietal',
+    'Y',
+    'Wine Awards es un concurso en donde se puntuará uno o más vinos relacionándolos con una gran variedad de otros vinos.',
+    Premio_concurso_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1),
+                       Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2),
+                       Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)
+    ),
+    Escala_concurso_nt(Escala(NULL,26,30,'Excelente'),
+                       Escala(NULL,10,15,'Muy Bien'),
+                       Escala(NULL,100,109,'Bien'),
+                       Escala(NULL,110,119,'Correcto'),
+                       Escala(NULL,120,129,'Regular'),
+                       Escala(NULL,130,139,'Defectuoso')
+    )
+);
+
+Insert into Concurso values (
     2,
     'Decanter',
     'Catadores',
@@ -1672,6 +1692,21 @@ Insert into Calendario values(
     NULL,
     Unidadmonetaria_calendario_nt(Unidadmonetaria('Euros','€')),
     1
+);
+
+Insert into Calendario values(
+    310,
+    '01-05-2016',
+    '01-06-2016',
+    '05-04-2016',
+    '09-04-2016',
+    'info@wineaward.com',
+    Datos_direccion('Miami beach','Collins Ave',33139,NULL,'Miami'),
+    Lugar('Estados Unidos','Miami'),
+    Costo_calendario_nt(Costo(3,400,'Estados Unidos')),
+    NULL,
+    Unidadmonetaria_calendario_nt(Unidadmonetaria('Dolar','$')),
+    310
 );
 
 Insert into Calendario values(
@@ -2412,6 +2447,15 @@ insert into inscripcion
                          1,
                          NULL,
                          1
+                         );
+
+insert into inscripcion 
+                 values (310,
+                         '01-01-2016',
+                         Premio_inscripcion_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
+                         1,
+                         NULL,
+                         310
                          );
 
 insert into inscripcion 

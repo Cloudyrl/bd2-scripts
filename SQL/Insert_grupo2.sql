@@ -141,22 +141,6 @@ insert into Presentacion values (
     351
 );
 
-insert into Historico_precio values (
-    302,
-    '01-01-2016',
-    200,
-    351,
-    351
-);
-
-insert into Historico_precio values (
-    303,
-    '01-01-2017',
-    210,
-    351, 
-    351
-);
-
 ------------------------------------------------------------------------------------------------
 
 insert into Pais_productor values (
@@ -438,21 +422,6 @@ insert into Presentacion values (
     301
 );
 
-insert into Historico_precio values (
-    306
-    '01-01-2016', 
-    139.99,
-    302,
-    302
-);
-
-insert into Historico_precio values (
-    307,
-    '01-01-2017',
-    195.99,
-    302,
-    301
-);
 
 insert into Marca values (
     303,
