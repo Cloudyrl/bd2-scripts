@@ -619,18 +619,25 @@ begin
 end pr_tranformacion;
 /
 
-/
-
 create or replace procedure pr_inicio_area_i(v_fecha in date ) is 
 begin
+   pr_exportadores_mundiales(v_fecha);
+   pr_productores_mundiales(v_fecha);
+   pr_marcasporpais_produccion(v_fecha);
+   pr_marcasporpais_criticas(v_fecha);
+   pr_marcasporconti_produccion(v_fecha);
    pr_bodegas_aporte_produccion(v_fecha);
    pr_denominacion_criticas(v_fecha);
-   pr_exportadores_mundiales(v_fecha);
-   pr_marcasporconti_produccion(v_fecha);
-   pr_marcasporpais_criticas(v_fecha);
+   if (extract(year from v_fecha) = '2017') then 
+   pr_crecimiento_pais(v_fecha);
    pr_marcasporpais_premios(v_fecha);
-   pr_marcasporpais_produccion(v_fecha);
-   pr_productores_mundiales(v_fecha);
+   pr_crecimiento_concurso(v_fecha);
+   pr_crecimiento_concurso_bienio(v_fecha);
+   pr_crecimiento_pais_bienio(v_fecha);
+   elsif (extract(year from v_fecha) = '2016') then 
+   pr_crecimiento_pais(v_fecha);
+   pr_crecimiento_concurso(v_fecha);
+   end if;
 end pr_inicio_area_i;
 /
 

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mainReport" pageWidth="595" pageHeight="300" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eb624563-8f04-4ab7-bcc9-731113b2e4b8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<parameter name="Año" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select nombre, cantidad
+from (
+select e.nombre, e.cantidad
+from hechos_vinos_catados h, tiempo t, exportadores_mundiales e 
+where (h.top3productoresmundiales_p1 is not null 
+or h.top3exportadoresmundiales_p2 is not null
+or h.top3exportadoresmundiales_p3 is not null) 
+and h.id_tiempo = t.id
+and (extract(year from t.año) = $P{Año})
+and h.top3exportadoresmundiales_p1 = e.nombre
+and (extract(year from e.fecha) = $P{Año})
+union 
+select e.nombre, e.cantidad
+from hechos_vinos_catados h, tiempo t, exportadores_mundiales e
+where (h.top3exportadoresmundiales_p1 is not null 
+or h.top3exportadoresmundiales_p2 is not null
+or h.top3exportadoresmundiales_p3 is not null) 
+and h.id_tiempo = t.id
+and (extract(year from t.año) = $P{Año})
+and h.top3exportadoresmundiales_p2 = e.nombre
+and (extract(year from e.fecha) = $P{Año})
+union
+select e.nombre, e.cantidad
+from hechos_vinos_catados h, tiempo t, exportadores_mundiales e 
+where (h.top3exportadoresmundiales_p1 is not null 
+or h.top3exportadoresmundiales_p2 is not null
+or h.top3exportadoresmundiales_p3 is not null) 
+and h.id_tiempo = t.id
+and (extract(year from t.año) = $P{Año})
+and h.top3exportadoresmundiales_p3 = e.nombre
+and (extract(year from e.fecha) = $P{Año})
+)
+order by cantidad desc]]>
+	</queryString>
+	<field name="NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
+	</field>
+	<field name="CANTIDAD" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="CANTIDAD"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="103" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="-20" width="595" height="80" backcolor="#4DA4A3" uuid="c0354436-281b-4633-8364-37147972a9fe"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="-6" width="543" height="46" uuid="b807e26c-3221-4b4c-b05a-36ab3bd5a94a"/>
+				<textElement textAlignment="Center">
+					<font fontName="&#xD;&#xA;Ink Free" size="29" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Top 3 Exportadores Mundiales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="70" width="180" height="30" uuid="00483ac2-17df-4d0c-9fab-4c6e78433f5f"/>
+				<textElement>
+					<font fontName="&#xD;&#xA;Ink Free" size="22"/>
+				</textElement>
+				<text><![CDATA[País:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="70" width="253" height="30" uuid="cbcfcc6a-7119-4331-92c5-329455e86e67"/>
+				<textElement>
+					<font fontName="&#xD;&#xA;Ink Free" size="22"/>
+				</textElement>
+				<text><![CDATA[Cantidad Exportada:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-10" y="-13" width="60" height="30" uuid="be6d515f-13de-4e25-99c0-bcfca80ac6bd"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Año}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band splitType="Stretch"/>
+		<band height="40">
+			<textField>
+				<reportElement x="320" y="10" width="124" height="30" uuid="1daf0bcc-fe76-4213-8102-358076c925dc"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CANTIDAD}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="430" y="10" width="110" height="30" isRemoveLineWhenBlank="true" uuid="b7f5147e-b120-4e26-9f38-2056200ed12c"/>
+				<textElement>
+					<font fontName="&#xD;&#xA;Ink Free" size="19"/>
+				</textElement>
+				<text><![CDATA[hectolitros.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="10" width="124" height="30" uuid="2f1b7034-75ae-4a94-ada6-fb956795c3b3"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

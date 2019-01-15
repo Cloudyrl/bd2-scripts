@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mainReport" pageWidth="595" pageHeight="270" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eb624563-8f04-4ab7-bcc9-731113b2e4b8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<parameter name="Año" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select nombre, cantidad
+from (
+select d.nombre, d.cantidad
+from hechos_vinos_catados h, tiempo t, denominacion_criticas d 
+where (h.top3do_criticas_p1 is not null 
+or h.top3do_criticas_p2 is not null
+or h.top3do_criticas_p1 is not null) 
+and h.id_tiempo = t.id
+and (extract(year from t.año) = $P{Año})
+and h.top3do_criticas_p1 = d.nombre
+and (extract(year from d.fecha) = $P{Año})
+union 
+select d.nombre, d.cantidad
+from hechos_vinos_catados h, tiempo t, denominacion_criticas d 
+where (h.top3do_criticas_p1 is not null 
+or h.top3do_criticas_p2 is not null
+or h.top3do_criticas_p1 is not null) 
+and h.id_tiempo = t.id
+and (extract(year from t.año) = $P{Año})
+and h.top3do_criticas_p2 = d.nombre
+and (extract(year from d.fecha) = $P{Año})
+union
+select d.nombre, d.cantidad
+from hechos_vinos_catados h, tiempo t, denominacion_criticas d 
+where (h.top3do_criticas_p1 is not null 
+or h.top3do_criticas_p2 is not null
+or h.top3do_criticas_p1 is not null) 
+and h.id_tiempo = t.id
+and (extract(year from t.año) = $P{Año})
+and h.top3do_criticas_p3 = d.nombre
+and (extract(year from d.fecha) = $P{Año})
+)
+order by cantidad desc]]>
+	</queryString>
+	<field name="NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
+	</field>
+	<field name="CANTIDAD" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="CANTIDAD"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="93" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="-20" width="595" height="70" backcolor="#4DA4A3" uuid="c0354436-281b-4633-8364-37147972a9fe"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="-20" y="-6" width="590" height="46" uuid="b807e26c-3221-4b4c-b05a-36ab3bd5a94a"/>
+				<textElement textAlignment="Center">
+					<font fontName="&#xD;&#xA;Ink Free" size="29" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Top 3 Denominación de Origen Por Criticas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="63" width="180" height="30" uuid="b0d9a3d2-9480-433f-b8b7-e5ec0a1c827a"/>
+				<textElement>
+					<font fontName="&#xD;&#xA;Ink Free" size="22"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="62" width="180" height="30" uuid="4c659ea9-d3a7-4d99-b7d8-a41d95b2a40d"/>
+				<textElement>
+					<font fontName="&#xD;&#xA;Ink Free" size="22"/>
+				</textElement>
+				<text><![CDATA[Promedio:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band splitType="Stretch"/>
+		<band height="40">
+			<textField>
+				<reportElement x="50" y="10" width="124" height="30" uuid="1daf0bcc-fe76-4213-8102-358076c925dc"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="10" width="124" height="30" uuid="a43854d6-e0e7-4e4b-8f7a-afddcb0eb2de"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CANTIDAD}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

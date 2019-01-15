@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mainReport" pageWidth="595" pageHeight="500" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eb624563-8f04-4ab7-bcc9-731113b2e4b8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Dat"/>
+	<parameter name="Pais" class="java.lang.String"/>
+	<parameter name="Año" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select nombre_marca, promedio_critica
+from (
+select m.nombre_marca, m.promedio_critica
+from hechos_vinos_catados h, tiempo t, marcasporpais_criticas m, pais p 
+where (h.top3marcasporpais_criticas_p1 is not null 
+or h.top3marcasporpais_criticas_p2 is not null
+or h.top3marcasporpais_criticas_p3 is not null) 
+and h.id_tiempo = t.id
+and (extract(year from t.año) = $P{Año})
+and h.top3marcasporpais_criticas_p1 = m.nombre_marca
+and (extract(year from m.fecha) = $P{Año})
+and h.id_pais = p.id
+and p.nombre = $P{Pais}
+union 
+select m.nombre_marca, m.promedio_critica
+from hechos_vinos_catados h, tiempo t, marcasporpais_criticas m, pais p 
+where (h.top3marcasporpais_criticas_p1 is not null 
+or h.top3marcasporpais_criticas_p2 is not null
+or h.top3marcasporpais_criticas_p3 is not null) 
+and h.id_tiempo = t.id
+and (extract(year from t.año) = $P{Año})
+and h.top3marcasporpais_criticas_p2 = m.nombre_marca
+and (extract(year from m.fecha) = $P{Año})
+and h.id_pais = p.id
+and p.nombre = $P{Pais}
+union
+select m.nombre_marca, m.promedio_critica
+from hechos_vinos_catados h, tiempo t, marcasporpais_criticas m, pais p 
+where (h.top3marcasporpais_criticas_p1 is not null 
+or h.top3marcasporpais_criticas_p2 is not null
+or h.top3marcasporpais_criticas_p3 is not null) 
+and h.id_tiempo = t.id
+and (extract(year from t.año) = $P{Año})
+and h.top3marcasporpais_criticas_p3 = m.nombre_marca
+and (extract(year from m.fecha) = $P{Año})
+and h.id_pais = p.id
+and p.nombre = $P{Pais}
+)
+order by promedio_critica desc]]>
+	</queryString>
+	<field name="NOMBRE_MARCA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE_MARCA"/>
+	</field>
+	<field name="PROMEDIO_CRITICA" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="PROMEDIO_CRITICA"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="103" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="-20" width="595" height="123" backcolor="#4DA4A3" uuid="c0354436-281b-4633-8364-37147972a9fe"/>
+				<graphicElement>
+					<pen lineColor="rgba(0, 0, 0, 0.0)"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="92" y="44" width="371" height="52" uuid="db9319e6-4229-4710-a6df-937448dd1e86"/>
+				<textElement textAlignment="Center">
+					<font fontName="Ink Free" size="37" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Pais}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="-6" width="543" height="46" uuid="b807e26c-3221-4b4c-b05a-36ab3bd5a94a"/>
+				<textElement textAlignment="Center">
+					<font fontName="&#xD;&#xA;Ink Free" size="29" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Top 3 Marcas Por Criticas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band splitType="Stretch"/>
+		<band height="112">
+			<textField>
+				<reportElement x="2" y="8" width="551" height="40" uuid="06e9dd45-4f40-4d2b-aaf8-78f809a06717"/>
+				<textElement>
+					<font fontName="Ink Free" size="29"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE_MARCA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="112" y="60" width="180" height="30" uuid="b0d9a3d2-9480-433f-b8b7-e5ec0a1c827a"/>
+				<textElement>
+					<font fontName="&#xD;&#xA;Ink Free" size="22"/>
+				</textElement>
+				<text><![CDATA[Promedio:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="230" y="66" width="60" height="30" uuid="be6d515f-13de-4e25-99c0-bcfca80ac6bd"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Año}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="296" y="66" width="124" height="30" uuid="1daf0bcc-fe76-4213-8102-358076c925dc"/>
+				<textElement>
+					<font fontName="Ink Free" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PROMEDIO_CRITICA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="334" y="66" width="110" height="30" isRemoveLineWhenBlank="true" uuid="b7f5147e-b120-4e26-9f38-2056200ed12c"/>
+				<textElement>
+					<font fontName="&#xD;&#xA;Ink Free" size="19"/>
+				</textElement>
+				<text><![CDATA[%]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

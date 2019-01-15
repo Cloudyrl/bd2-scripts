@@ -168,7 +168,7 @@ Hechos_hist_bodega_nt(Hechos_hist('01-01-1993','La familia Cúneo, de origen ita
 'Elaborar vinos de la más alta calidad, buscando siempre la excelencia y ser referentes de la viticultura moderna con foco en clima frío en el Valle de Casablanca',
 'Casas del Bosque se preocupa por la consistencia y la calidad de los vinos. Lo que nos ha llevado a obtener múltiples reconocimientos otorgados por críticos cada vez más exigentes',
 Datos_contacto(Datos_direccion('Santiago de Chile',null,7550000,'Las Condes','Av Apoquindo 6550'),'info_cdb@casasdelbosque.cl','casasdelbosque.cl',Datos_contacto_telefono_va(Datos_telefono(56,224,806941)),Personal_contacto_va(Datos_persona_de_contacto('Juan','Cúneo','Presidente','jcuneo@casasdelbosque.cl'),Datos_persona_de_contacto('Giorgianna','Cúneo','Director','gcuneo@casasdelbosque.cl'))),
-Tipo_valor_bodega_nt(tipo_valor('01-01-2015',5334),tipo_valor('01-01-2016',5123,tipo_valor('01-01-2017',5443))),
+Tipo_valor_bodega_nt(tipo_valor('01-01-2015',5334),tipo_valor('01-01-2016',5123),tipo_valor('01-01-2017',5443)),
 Distribucion_exp_bodega_nt(Distribucion_exp(tipo_valor('01-01-2015',643),'Australia'),Distribucion_exp(tipo_valor('01-01-2016',300),'Venezuela'),Distribucion_exp(tipo_valor('01-01-2016',440),'Paraguay')),
 NULL,
 6
@@ -253,12 +253,12 @@ Hechos_hist_bodega_nt(Hechos_hist('01-01-1930','Con solo 20 años de edad, Gasto
 'Producir los mejores vinos de todo Líbano y ser reconocidos en Europa',
 Datos_contacto(Datos_direccion('Beirut',null,1100,'Achrafieh','Sopenco bldg'),'info@chateaumusar.com.lb','chateaumusar.com.lb',Datos_contacto_telefono_va(Datos_telefono(96,112,01828)),Personal_contacto_va(Datos_persona_de_contacto('Ronald','Hochar','Presidente','rhochar@chateaumusar.com.lb'),Datos_persona_de_contacto('Gaston','Hochar','Director','dtouma@chateaumusar.com.lb'))),
 Tipo_valor_bodega_nt(tipo_valor('01-01-2015',4877),tipo_valor('01-01-2016',2678),tipo_valor('01-01-2017',3644)),
-Distribucion_exp_bodega_nt(Distribucion_exp(tipo_valor('01-01-2015',1000),'Inglaterra'),Distribucion_exp(tipo_valor('01-01-2016',1000),'Holanda'),,Distribucion_exp(tipo_valor('01-01-2017',1230),'Peru')),
+Distribucion_exp_bodega_nt(Distribucion_exp(tipo_valor('01-01-2015',1000),'Inglaterra'),Distribucion_exp(tipo_valor('01-01-2016',1000),'Holanda'),Distribucion_exp(tipo_valor('01-01-2017',1230),'Peru')),
 null,
 8
 );
 /
-  Insert into Vinedo values(
+Insert into Vinedo values(
     13,
     13
 );
@@ -2140,16 +2140,7 @@ Insert into muestra_compite values (
    ),
    39,
    41
-  );
-
-  Insert into cata_valoracion_muestra_marca 
-    values (21,
-    '30-06-2017',
-    valor_cata_valor_muestra_m_nt(valoracion('Kollwentz chardonnay Gloria 2008',65,NULL)),
-    95,
-    19,
-    21
-  );   
+  ); 
 
   Insert into cata_valoracion_muestra_marca 
     values (22,
