@@ -816,7 +816,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('James Suckling', Tipo_valor('01-01-2018', 95)), Calificacion('Tim Atkin',Tipo_valor('01-01-2017', 93)),Calificacion('Stephen Tanzer',Tipo_valor('01-01-2017', 90))),
+Calificacion_marca_nt(Calificacion('James Suckling', Tipo_valor('01-01-2015', 95)),Calificacion('James Suckling', Tipo_valor('01-01-2016', 97)), Calificacion('Tim Atkin',Tipo_valor('01-01-2017', 93)),Calificacion('Stephen Tanzer',Tipo_valor('01-01-2017', 90))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',1000),Tipo_valor('01-01-2016',1345),Tipo_valor('01-01-2017',2600)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 200),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2016', 200), 'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2017', 250),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2015', 200),'Japon'),Distribucion_exp(Tipo_valor('01-01-2016', 200),'Japon'),Distribucion_exp(Tipo_valor('01-01-2017', 250),'Japon'),Distribucion_exp(Tipo_valor('01-01-2015', 190),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 200),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 250),'Hungria')),
 10,
@@ -840,7 +840,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('James Suckling', Tipo_valor('01-01-2018', 91)), Calificacion('Tim Atkin',Tipo_valor('01-01-2017', 90))),
+Calificacion_marca_nt(Calificacion('Tim Atkin',Tipo_valor('01-01-2015', 93)),Calificacion('James Suckling', Tipo_valor('01-01-2016', 91)),Calificacion('Tim Atkin',Tipo_valor('01-01-2016', 96)), Calificacion('Tim Atkin',Tipo_valor('01-01-2017', 90)),Calificacion('James Suckling', Tipo_valor('01-01-2017', 97))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',1000),Tipo_valor('01-01-2016',1500),Tipo_valor('01-01-2017',1250)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 100),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2016', 100), 'Holanda'),Distribucion_exp(Tipo_valor('01-01-2017', 50),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2015', 100),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 100),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 75),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 100),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 90),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 0),'Hungria')),
 12,
@@ -864,7 +864,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('Robert Parker', Tipo_valor('01-01-2016', 92)), Calificacion('Campbell Mattinson',Tipo_valor('01-01-2017', 90))),
+Calificacion_marca_nt(Calificacion('James Suckling', Tipo_valor('01-01-2015', 91)),Calificacion('Robert Parker', Tipo_valor('01-01-2016', 92)),Calificacion('Campbell Mattinson',Tipo_valor('01-01-2016', 90)), Calificacion('Campbell Mattinson',Tipo_valor('01-01-2017', 90)),Calificacion('Robert Parker', Tipo_valor('01-01-2016', 92))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',1000),Tipo_valor('01-01-2016',1690),Tipo_valor('01-01-2017',2000)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 250),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2016', 200), 'Holanda'),Distribucion_exp(Tipo_valor('01-01-2017', 300),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2015', 100),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 200),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 300),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 50),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2016', 300),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2017', 200),'Uruguay')),
 18,
@@ -888,7 +888,7 @@ Insert into Marca values (
 empty_blob(),
 'N',
 'Corcho',
-Calificacion_marca_nt(Calificacion('Tyson Stelzer', Tipo_valor('01-01-2016', 93)), Calificacion('Huon Hooke',Tipo_valor('01-01-2017', 92))),
+Calificacion_marca_nt(Calificacion('Huon Hooke',Tipo_valor('01-01-2015', 92)),Calificacion('Tyson Stelzer', Tipo_valor('01-01-2015', 93)),Calificacion('Tyson Stelzer', Tipo_valor('01-01-2016', 93)), Calificacion('Huon Hooke',Tipo_valor('01-01-2017', 92)),Calificacion('Tyson Stelzer', Tipo_valor('01-01-2017', 93))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',600),Tipo_valor('01-01-2016',720),Tipo_valor('01-01-2017',600)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 30),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2016', 50), 'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2017', 100),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2015', 100),'Japon'),Distribucion_exp(Tipo_valor('01-01-2016', 200),'Japon'),Distribucion_exp(Tipo_valor('01-01-2017', 300),'Japon'),Distribucion_exp(Tipo_valor('01-01-2015', 100),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2016', 200),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2017', 100),'Holanda')),
 16,
@@ -912,7 +912,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('Nick Stock', Tipo_valor('01-01-2016', 90)), Calificacion('Jeremy Oliver',Tipo_valor('01-01-2017', 90))),
+Calificacion_marca_nt(Calificacion('Nick Stock', Tipo_valor('01-01-2015', 90)),Calificacion('Nick Stock', Tipo_valor('01-01-2016', 90)),Calificacion('Jeremy Oliver',Tipo_valor('01-01-2016', 90)), Calificacion('Jeremy Oliver',Tipo_valor('01-01-2017', 90))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',450),Tipo_valor('01-01-2016',400),Tipo_valor('01-01-2017',490)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 20),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2016', 37), 'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2017', 25),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2015', 20),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 30),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 35),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 40),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 30),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 40),'Hungria')),
 12,
@@ -936,7 +936,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('Robert Parker', Tipo_valor('01-01-2012', 93)), Calificacion('Jeremy Oliver',Tipo_valor('01-01-2015', 91))),
+Calificacion_marca_nt(Calificacion('Robert Parker', Tipo_valor('01-01-2015', 93)), Calificacion('Jeremy Oliver',Tipo_valor('01-01-2015', 91)),Calificacion('Robert Parker', Tipo_valor('01-01-2016', 93)), Calificacion('Jeremy Oliver',Tipo_valor('01-01-2017', 91))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',2000),Tipo_valor('01-01-2016',2100),Tipo_valor('01-01-2017',1900)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 400),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2016', 400), 'Holanda'),Distribucion_exp(Tipo_valor('01-01-2017', 390),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2015', 500),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 550),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 540),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 520),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 530),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 500),'Hungria')),
 12,
@@ -960,7 +960,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('Nick Stock', Tipo_valor('01-01-2016', 92)), Calificacion('Jeremy Oliver',Tipo_valor('01-01-2017', 91))),
+Calificacion_marca_nt(Calificacion('Robert Parker', Tipo_valor('01-01-2015', 93)), Calificacion('Jeremy Oliver',Tipo_valor('01-01-2015', 91)),Calificacion('Nick Stock', Tipo_valor('01-01-2016', 92)), Calificacion('Jeremy Oliver',Tipo_valor('01-01-2017', 91))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',1350),Tipo_valor('01-01-2016',1350),Tipo_valor('01-01-2017',1350)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 220),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2016', 240), 'Holanda'),Distribucion_exp(Tipo_valor('01-01-2017', 300),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2015', 356),'Japon'),Distribucion_exp(Tipo_valor('01-01-2016', 325),'Japon'),Distribucion_exp(Tipo_valor('01-01-2017', 315),'Japon'),Distribucion_exp(Tipo_valor('01-01-2015', 310),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 352),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 380),'Hungria')),
 18,
@@ -984,7 +984,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('Nick Stock', Tipo_valor('01-01-2016', 93)), Calificacion('Robert Parker',Tipo_valor('01-01-2017', 91))),
+Calificacion_marca_nt(Calificacion('Robert Parker', Tipo_valor('01-01-2015', 93)), Calificacion('Jeremy Oliver',Tipo_valor('01-01-2016', 91)),Calificacion('Nick Stock', Tipo_valor('01-01-2016', 93)), Calificacion('Robert Parker',Tipo_valor('01-01-2017', 91))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',1360),Tipo_valor('01-01-2016',1400),Tipo_valor('01-01-2017',1370)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 620),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2016', 640), 'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2017', 670),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2015', 750),'Japon'),Distribucion_exp(Tipo_valor('01-01-2016', 725),'Japon'),Distribucion_exp(Tipo_valor('01-01-2017', 715),'Japon'),Distribucion_exp(Tipo_valor('01-01-2015', 310),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 450),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 480),'Hungria')),
 20,
@@ -1008,7 +1008,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('Robert Parker',Tipo_valor('01-01-2017', 91))),
+Calificacion_marca_nt(Calificacion('Robert Parker',Tipo_valor('01-01-2015', 91)),Calificacion('Robert Parker', Tipo_valor('01-01-2015', 93)), Calificacion('Jeremy Oliver',Tipo_valor('01-01-2016', 91)),Calificacion('Robert Parker',Tipo_valor('01-01-2017', 91))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',1800),Tipo_valor('01-01-2016',1800),Tipo_valor('01-01-2017',1820)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 420),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2016', 460), 'Holanda'),Distribucion_exp(Tipo_valor('01-01-2017', 465),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2015', 350),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 375),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 380),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 310),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 340),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 380),'Hungria')),
 20,
@@ -1032,7 +1032,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('Tyson Stelzer', Tipo_valor('01-01-2016', 93)), Calificacion('Huon Hooke',Tipo_valor('01-01-2017', 92))),
+Calificacion_marca_nt(Calificacion('Robert Parker',Tipo_valor('01-01-2015', 91)),Calificacion('Tyson Stelzer', Tipo_valor('01-01-2016', 93)),Calificacion('Huon Hooke',Tipo_valor('01-01-2016', 92)), Calificacion('Huon Hooke',Tipo_valor('01-01-2017', 92))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',3400),Tipo_valor('01-01-2016',3450),Tipo_valor('01-01-2017',3420)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 440),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2016', 440), 'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2017', 470),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2015', 380),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 425),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 435),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 510),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 520),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 580),'Hungria')),
 18,
@@ -1056,7 +1056,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('James Halliday', Tipo_valor('01-01-2017', 95)), Calificacion('Huon Hooke',Tipo_valor('01-01-2017', 92)), Calificacion('Mike Bennie',Tipo_valor('01-01-2016', 93))),
+Calificacion_marca_nt(Calificacion('James Halliday', Tipo_valor('01-01-2015', 95)),Calificacion('James Halliday', Tipo_valor('01-01-2017', 95)), Calificacion('Huon Hooke',Tipo_valor('01-01-2017', 92)), Calificacion('Mike Bennie',Tipo_valor('01-01-2016', 93))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',600),Tipo_valor('01-01-2016',900),Tipo_valor('01-01-2017',950)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 100),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2016', 100), 'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2017', 100),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2015', 50),'Japon'),Distribucion_exp(Tipo_valor('01-01-2016', 150),'Japon'),Distribucion_exp(Tipo_valor('01-01-2017', 150),'Japon'),Distribucion_exp(Tipo_valor('01-01-2015', 190),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 100),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 100),'Hungria')),
 15,
@@ -1080,7 +1080,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('James Halliday', Tipo_valor('01-01-2017', 97)), Calificacion('Campbell Mattinson',Tipo_valor('01-01-2017', 95)), Calificacion('Tim White',Tipo_valor('01-01-2016', 96))),
+Calificacion_marca_nt(Calificacion('Campbell Mattinson',Tipo_valor('01-01-2015', 95)), Calificacion('Tim White',Tipo_valor('01-01-2015', 96)),Calificacion('James Halliday', Tipo_valor('01-01-2017', 97)), Calificacion('Campbell Mattinson',Tipo_valor('01-01-2017', 95)), Calificacion('Tim White',Tipo_valor('01-01-2016', 96))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',2500),Tipo_valor('01-01-2016',2700),Tipo_valor('01-01-2017',3500)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 300),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2016', 300), 'Holanda'),Distribucion_exp(Tipo_valor('01-01-2017', 350),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2015', 240),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 300),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 320),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 430),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 450),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 430),'Hungria')),
 15,
@@ -1104,7 +1104,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('James Halliday', Tipo_valor('01-01-2017', 97))),
+Calificacion_marca_nt(Calificacion('Campbell Mattinson',Tipo_valor('01-01-2015', 95)),Calificacion('Campbell Mattinson',Tipo_valor('01-01-2017', 95)), Calificacion('Tim White',Tipo_valor('01-01-2016', 96)),Calificacion('James Halliday', Tipo_valor('01-01-2017', 97))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',5100),Tipo_valor('01-01-2016',5050),Tipo_valor('01-01-2017',6120)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 500),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2016', 540), 'Holanda'),Distribucion_exp(Tipo_valor('01-01-2017', 570),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2015', 300),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 325),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 340),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 210),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 220),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 280),'Hungria')),
 18,
@@ -1128,7 +1128,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('Lisa Perrotti-Brown', Tipo_valor('01-01-2017', 97)),Calificacion('Joe Czerwinsk', Tipo_valor('01-01-2017', 95))),
+Calificacion_marca_nt(Calificacion('Lisa Perrotti-Brown', Tipo_valor('01-01-2015', 97)),Calificacion('Joe Czerwinsk', Tipo_valor('01-01-2016', 95)),Calificacion('Campbell Mattinson',Tipo_valor('01-01-2016', 95)),Calificacion('Lisa Perrotti-Brown', Tipo_valor('01-01-2017', 97)),Calificacion('Joe Czerwinsk', Tipo_valor('01-01-2017', 95))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',1100),Tipo_valor('01-01-2016',1100),Tipo_valor('01-01-2017',1200)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 100),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2016', 90), 'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2017', 110),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2015', 340),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 370),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 340),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 10),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 50),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 40),'Hungria')),
 21,
@@ -1152,7 +1152,7 @@ Insert into Marca values (
 empty_blob(),
 'N',
 'Corcho',
-Calificacion_marca_nt(Calificacion('Nick Stock', Tipo_valor('01-01-2017', 97)),Calificacion('James Halliday', Tipo_valor('01-01-2017', 95))),
+Calificacion_marca_nt(Calificacion('Lisa Perrotti-Brown', Tipo_valor('01-01-2015', 97)),Calificacion('Joe Czerwinsk', Tipo_valor('01-01-2015', 95)),Calificacion('Nick Stock', Tipo_valor('01-01-2016', 97)),Calificacion('James Halliday', Tipo_valor('01-01-2017', 95))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',1050),Tipo_valor('01-01-2016',1100),Tipo_valor('01-01-2017',1150)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 400),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2016', 420), 'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2017', 430),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2015', 480),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 495),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 500),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 610),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 620),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 600),'Hungria')),
 21,
@@ -1176,7 +1176,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('Huon Hooke', Tipo_valor('01-01-2017', 95)),Calificacion('Chris Shanahan', Tipo_valor('01-01-2017', 92))),
+Calificacion_marca_nt(Calificacion('Chris Shanahan', Tipo_valor('01-01-2015', 92)),Calificacion('Huon Hooke', Tipo_valor('01-01-2016', 95)),Calificacion('Huon Hooke', Tipo_valor('01-01-2017', 95)),Calificacion('Chris Shanahan', Tipo_valor('01-01-2017', 92))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',4400),Tipo_valor('01-01-2016',4600),Tipo_valor('01-01-2017',5000)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 300),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2016', 290), 'Holanda'),Distribucion_exp(Tipo_valor('01-01-2017', 300),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2015', 340),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 370),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 350),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 150),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 140),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 140),'Hungria')),
 17,
@@ -1200,7 +1200,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('Robert Parker', Tipo_valor('01-01-2017', 91)),Calificacion('Michael Apstein', Tipo_valor('01-01-2017', 93))),
+Calificacion_marca_nt(Calificacion('Michael Apstein', Tipo_valor('01-01-2015', 93)),Calificacion('Robert Parker', Tipo_valor('01-01-2016', 91)),Calificacion('Michael Apstein', Tipo_valor('01-01-2016', 93)),Calificacion('Robert Parker', Tipo_valor('01-01-2017', 91)),Calificacion('Michael Apstein', Tipo_valor('01-01-2017', 93))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',2300),Tipo_valor('01-01-2016',2600),Tipo_valor('01-01-2017',2600)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 100),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2016', 50), 'Holanda'),Distribucion_exp(Tipo_valor('01-01-2017', 70),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2015', 70),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 90),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 100),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 110),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2016', 90),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2017', 100),'Uruguay')),
 15,
@@ -1224,7 +1224,7 @@ Insert into Marca values (
 empty_blob(),
 'N',
 'Corcho',
-Calificacion_marca_nt(Calificacion('Mike Bennie', Tipo_valor('01-01-2017', 93)),Calificacion('Tyson Stelzer', Tipo_valor('01-01-2017', 91))),
+Calificacion_marca_nt(Calificacion('Mike Bennie', Tipo_valor('01-01-2015', 93)),Calificacion('Michael Apstein', Tipo_valor('01-01-2016', 93)),Calificacion('Mike Bennie', Tipo_valor('01-01-2017', 93)),Calificacion('Tyson Stelzer', Tipo_valor('01-01-2017', 91))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',2200),Tipo_valor('01-01-2016',2400),Tipo_valor('01-01-2017',2400)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 540),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2016', 590), 'Holanda'),Distribucion_exp(Tipo_valor('01-01-2017', 570),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2015', 380),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 385),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 395),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 710),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2016', 720),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2017', 780),'Uruguay')),
 15,
@@ -1248,7 +1248,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('Nick Stock', Tipo_valor('01-01-2017', 94)),Calificacion('Josh Raynolds', Tipo_valor('01-01-2017', 93))),
+Calificacion_marca_nt(Calificacion('Josh Raynolds', Tipo_valor('01-01-2015', 93)),Calificacion('Nick Stock', Tipo_valor('01-01-2015', 94)),Calificacion('Josh Raynolds', Tipo_valor('01-01-2016', 93)),Calificacion('Nick Stock', Tipo_valor('01-01-2017', 94)),Calificacion('Josh Raynolds', Tipo_valor('01-01-2017', 93))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',2200),Tipo_valor('01-01-2016',2400),Tipo_valor('01-01-2017',2400)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 540),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2016', 550), 'Holanda'),Distribucion_exp(Tipo_valor('01-01-2017', 570),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2015', 390),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 450),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 455),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 410),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 420),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 480),'Hungria')),
 15,
@@ -1272,7 +1272,7 @@ Insert into Marca values (
 empty_blob(),
 'Y',
 'Corcho',
-Calificacion_marca_nt(Calificacion('Jeremy Oliver', Tipo_valor('01-01-2017', 91))),
+Calificacion_marca_nt(Calificacion('Josh Raynolds', Tipo_valor('01-01-2015', 93)),Calificacion('Nick Stock', Tipo_valor('01-01-2016', 94)),Calificacion('Josh Raynolds', Tipo_valor('01-01-2016', 93)),Calificacion('Jeremy Oliver', Tipo_valor('01-01-2017', 91))),
 Tipo_valor_marca_nt(Tipo_valor('01-01-2015',3500),Tipo_valor('01-01-2016',3500),Tipo_valor('01-01-2017',3900)),
 Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 230),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2016', 240), 'Holanda'),Distribucion_exp(Tipo_valor('01-01-2017', 270),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2015', 340),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 350),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 370),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 400),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 410),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 430),'Hungria')),
 12,
@@ -1362,7 +1362,7 @@ Insert into Concurso values (
 
 Insert into Concurso values (
     4,
-    'Catad’or Sheraton Wine Awards',
+    'Sheraton',
     'Catadores',
     NULL,
     'N',
@@ -1681,10 +1681,10 @@ Insert into Catador_experto values (
 
 Insert into Calendario values(
     1,
-    '01-05-2017',
-    '01-06-2017',
-    '05-04-2017',
-    '09-04-2017',
+    '01-05-2015',
+    '01-06-2015',
+    '05-04-2015',
+    '09-04-2015',
     'info@descorchados.com',
     Datos_direccion('Alboraya 23',NULL,46010,NULL,'Valencia'),
     Lugar('España','Valencia'),
@@ -1692,6 +1692,21 @@ Insert into Calendario values(
     NULL,
     Unidadmonetaria_calendario_nt(Unidadmonetaria('Euros','€')),
     1
+);
+
+Insert into Calendario values(
+    311,
+    '22-01-2015',
+    '22-02-2015',
+    '04-01-2015',
+    '10-01-2015',
+    'wineawards@gmail.com',
+    Datos_direccion('Tipuo Str. 4',NULL,11741,NULL,'Athenas'),
+    Lugar('Grecia','Athenas'),
+    Costo_calendario_nt(Costo(NULL,230,'Grecia')),
+    NULL,
+    Unidadmonetaria_calendario_nt(Unidadmonetaria('Euros','€')),
+    4
 );
 
 Insert into Calendario values(
@@ -1711,10 +1726,10 @@ Insert into Calendario values(
 
 Insert into Calendario values(
     2,
-    '20-07-2017',
-    '20-08-2017',
-    '28-06-2017',
-    '01-07-2017',
+    '20-07-2016',
+    '20-08-2016',
+    '28-06-2016',
+    '01-07-2016',
     'info@decanter.com',
     Datos_direccion(NULL,'Rivadavia',3060,NULL,'Buenos Aires'),
     Lugar('Argentina','Buenos Aires'),
@@ -2440,14 +2455,58 @@ insert into catador_aprendiz
                               Publicaciones_catador_apr_va('Mi experiencia con los vinos','Mi prmera cata'),
                               4);
 
+-----------------------Comienza 2015 ----------------------
+
 insert into inscripcion 
                  values (1,
-                         '01-01-2016',
+                         '01-01-2015',
                          Premio_inscripcion_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
-                         1,
+                         2,
                          NULL,
                          1
                          );
+
+insert into inscripcion 
+                 values (2,
+                         '01-04-2015',
+                         Premio_inscripcion_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
+                         5,
+                         NULL,
+                         1
+                         );
+
+insert into inscripcion 
+                 values (3,
+                         '20-03-2015',
+                         Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                         7,
+                         NULL,
+                         1
+                         );
+
+---------------------------Comienza Catadores---------------------
+
+insert into inscripcion 
+                 values (311,
+                         '15-12-2014',
+                         Premio_inscripcion_nt(Premio('Grand Gold Medal','El premio Grand Gold Medal, lo recibirá el catador aprendiz que cuyas calificaciones a un vino sean iguales o muy cerca del puntaje que le dio un catador experto al mismo vino.','Trofeo',1500,1)),
+                         NULL,
+                         2,
+                         311
+                         );
+
+insert into inscripcion 
+                 values (313,
+                         '10-01-2015',
+                         Premio_inscripcion_nt(Premio('Gold','El premio Gold se le entregará  a un catador aprendiz cuya calificación a un vino se encuentre dentro del rango que le dio un catador experto al mismo vino.','Certificado',500,3)),
+                         NULL,
+                         4,
+                         311
+                         );
+
+---------------Termina--------------------------
+
+--------------------Comienza 2016-----------------------
 
 insert into inscripcion 
                  values (310,
@@ -2459,99 +2518,64 @@ insert into inscripcion
                          );
 
 insert into inscripcion 
-                 values (2,
-                         '01-04-2017',
-                         Premio_inscripcion_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
-                         4,
-                         NULL,
-                         1
-                         );
-
-insert into inscripcion 
-                 values (3,
-                         '20-03-2017',
-                         Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
-                         6,
-                         NULL,
-                         1
-                         );
-
-
-insert into inscripcion 
-                 values (4,
-                         '29-03-2017',
-                         NULL,
-                         8,
-                         NULL,
-                         1
-                         );
-
-insert into inscripcion 
-                 values (5,
-                         '21-03-2017',
-                         Premio_inscripcion_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
-                         2,
-                         NULL,
-                         1
-                         );
-
-insert into inscripcion 
-                 values (6,
-                         '25-03-2017',
-                         Premio_inscripcion_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
-                         7,
-                         NULL,
-                         1
-                         );
-
-insert into inscripcion 
-                 values (7,
-                         '19-03-2017',
-                         Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
-                         3,
-                         NULL,
-                         1
-                         );
-
-insert into inscripcion 
-                 values (8,
-                         '22-03-2017',
-                         Premio_inscripcion_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
-                         11,
-                         NULL,
-                         1
-                         );
-
-insert into inscripcion 
-                 values (9,
-                         '24-03-2017',
+                 values (309,
+                         '20-04-2016',
                          Premio_inscripcion_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
                          12,
                          NULL,
-                         1
+                         310
                          );
 
 insert into inscripcion 
-                 values (10,
-                         '30-03-2017',
-                         Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
-                         5,
+                 values (308,
+                         '01-03-2016',
+                         Premio_inscripcion_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
+                         4,
                          NULL,
-                         1
+                         310
                          );
 
 insert into inscripcion 
-                 values (11,
-                         '15-06-2017',
+                 values (312,
+                         '24-03-2016',
+                         Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                         10,
+                         NULL,
+                         310
+                         );
+
+insert into inscripcion 
+                 values (314,
+                         '25-04-2016',
+                         Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                         6,
+                         NULL,
+                         310
+                         );
+
+insert into inscripcion 
+                 values (315,
+                         '30-05-2016',
+                         Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
+                         9,
+                         NULL,
+                         310
+                         );
+
+-----------------------Comienza Catadores ----------------------------
+
+insert into inscripcion 
+                 values (316,
+                         '15-06-2016',
                          Premio_inscripcion_nt(Premio('Grand Gold Medal','El premio Grand Gold Medal, lo recibirá el catador aprendiz que cuyas calificaciones a un vino sean iguales o muy cerca del puntaje que le dio un catador experto al mismo vino.','Trofeo',1500,1)),
                          NULL,
-                         3,
+                         5,
                          2
                          );
 
 insert into inscripcion 
-                 values (12,
-                         '20-06-2017',
+                 values (317,
+                         '20-06-2016',
                          Premio_inscripcion_nt(Premio('Gold Medal','Gold Medal es el premio que será entregado al catador aprendiz cuyo puntaje hacia un vino sea muy parecido al que le dio un catador experto.','Medalla',1000,2)),
                          NULL,
                          10,
@@ -2559,28 +2583,31 @@ insert into inscripcion
                          );
 
 insert into inscripcion 
-                 values (13,
-                         '10-06-2017',
+                 values (318,
+                         '10-06-2016',
                          Premio_inscripcion_nt(Premio('Gold','El premio Gold se le entregará  a un catador aprendiz cuya calificación a un vino se encuentre dentro del rango que le dio un catador experto al mismo vino.','Certificado',500,3)),
                          NULL,
-                         6,
+                         7,
                          2
                          );
 
 insert into inscripcion 
-                 values (14,
-                         '17-06-2017',
+                 values (319,
+                         '17-06-2016',
                          NULL,
                          NULL,
-                         11,
+                         12,
                          2
                          );
+-------------------Termina 2016----------------------------------
 
+
+----------------------Comienza 2017----------------------------
 insert into inscripcion 
                  values (15,
                          '05-07-2017',
                          Premio_inscripcion_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
-                         9,
+                         8,
                          NULL,
                          3
                          );
@@ -2589,7 +2616,7 @@ insert into inscripcion
                  values (16,
                          '10-07-2017',
                          Premio_inscripcion_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
-                         2,
+                         3,
                          NULL,
                          3
                          );
@@ -2598,7 +2625,7 @@ insert into inscripcion
                  values (17,
                          '20-07-2017',
                         Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
-                         5,
+                         4,
                          NULL,
                          3
                          );
@@ -2607,7 +2634,7 @@ insert into inscripcion
                  values (18,
                          '25-07-2017',
                          NULL,
-                         12,
+                         1,
                          NULL,
                          3
                          );
@@ -2616,7 +2643,7 @@ insert into inscripcion
                  values (19,
                          '15-07-2017',
                          Premio_inscripcion_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
-                         6,
+                         5,
                          NULL,
                          3
                          );
@@ -2625,7 +2652,7 @@ insert into inscripcion
                  values (20,
                          '12-07-2017',
                          Premio_inscripcion_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
-                         1,
+                         7,
                          NULL,
                          3
                          );
@@ -2634,7 +2661,7 @@ insert into inscripcion
                  values (21,
                          '13-07-2017',
                          Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
-                         7,
+                         9,
                          NULL,
                          3
                          );
@@ -2643,7 +2670,7 @@ insert into inscripcion
                  values (22,
                          '23-07-2017',
                          Premio_inscripcion_nt(Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)),
-                         4,
+                         6,
                          NULL,
                          3
                          );
@@ -2652,7 +2679,7 @@ insert into inscripcion
                  values (23,
                          '25-07-2017',
                          Premio_inscripcion_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
-                         8,
+                         2,
                          NULL,
                          3
                          );
@@ -2661,10 +2688,12 @@ insert into inscripcion
                  values (24,
                          '11-07-2017',
                          Premio_inscripcion_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)),
-                         3,
+                         10,
                          NULL,
                          3
                          );
+
+---------------------Comienza Catadores----------------------------
 
 insert into inscripcion 
                  values (25,
@@ -2703,33 +2732,6 @@ insert into inscripcion
                          );
 
 insert into inscripcion 
-                 values (29,
-                         '16-06-2017',
-                         Premio_inscripcion_nt(Premio('Grand Gold Medal','El premio Grand Gold Medal, lo recibirá el catador aprendiz que cuyas calificaciones a un vino sean iguales o muy cerca del puntaje que le dio un catador experto al mismo vino.','Trofeo',1500,1)),
-                         NULL,
-                         7,
-                         2
-                         );
-
-insert into inscripcion 
-                 values (30,
-                         '12-06-2017',
-                         Premio_inscripcion_nt(Premio('Gold Medal','Gold Medal es el premio que será entregado al catador aprendiz cuyo puntaje hacia un vino sea muy parecido al que le dio un catador experto.','Medalla',1000,2)),
-                         NULL,
-                         8,
-                         2
-                         );
-
-insert into inscripcion 
-                 values (31,
-                         '13-06-2017',
-                         Premio_inscripcion_nt(Premio('Gold','El premio Gold se le entregará  a un catador aprendiz cuya calificación a un vino se encuentre dentro del rango que le dio un catador experto al mismo vino.','Certificado',500,3)),
-                         NULL,
-                         1,
-                         2
-                         );
-
-insert into inscripcion 
                  values (32,
                          '01-01-2017',
                          Premio_inscripcion_nt(Premio('Grand Gold Medal','El premio Grand Gold Medal, lo recibirá el catador aprendiz que cuyas calificaciones a un vino sean iguales o muy cerca del puntaje que le dio un catador experto al mismo vino.','Trofeo',1500,1)),
@@ -2756,12 +2758,14 @@ insert into inscripcion
                          4
                          );
 
+-----------------Termina 2017 ---------------------------
+
 insert into cata_valor_aprendiz values (
     1,
     '20-06-2017',
     valoracion_cata_valor_apr_nt(valoracion('Reserva',90,NULL)),
     90,
-    11,
+    26,
     '01-01-2017'
 );
 
@@ -2770,7 +2774,7 @@ insert into cata_valor_aprendiz values (
     '29-06-2017',
     valoracion_cata_valor_apr_nt(valoracion('Reserva',91,NULL)),
     91,
-    12,
+    311,
     '01-01-2017'
 );
 
@@ -2779,7 +2783,7 @@ insert into cata_valor_aprendiz values (
     '12-06-2017',
     valoracion_cata_valor_apr_nt(valoracion('Reserva',93,NULL)),
     93,
-    13,
+    33,
     '01-01-2017'
 );
 
@@ -2788,7 +2792,7 @@ insert into cata_valor_aprendiz values (
     '19-07-2017',
     valoracion_cata_valor_apr_nt(valoracion('Reserva',92,NULL)),
     92,
-    14,
+    313,
     '01-01-2017'
 );
 
@@ -2797,7 +2801,7 @@ insert into cata_valor_aprendiz values (
     '01-01-2017',
     valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',94,NULL)),
     94,
-    25,
+    316,
     '01-02-2017'
 );
 
@@ -2806,7 +2810,7 @@ insert into cata_valor_aprendiz values (
     '02-01-2017',
     valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',92,NULL)),
     92,
-    26,
+    32,
     '01-02-2017'
 );
 
@@ -2815,7 +2819,7 @@ insert into cata_valor_aprendiz values (
     '05-01-2017',
     valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',90,NULL)),
     90,
-    27,
+    318,
     '01-02-2017'
 );
 
@@ -2833,7 +2837,7 @@ insert into cata_valor_aprendiz values (
     '13-06-2017',
     valoracion_cata_valor_apr_nt(valoracion('Reserva',90,NULL)),
     90,
-    29,
+    34,
     '01-01-2017'
 );
 
@@ -2842,7 +2846,7 @@ insert into cata_valor_aprendiz values (
     '21-06-2017',
     valoracion_cata_valor_apr_nt(valoracion('Reserva',90,NULL)),
     90,
-    30,
+    317,
     '01-01-2017'
 );
 
@@ -2851,7 +2855,7 @@ insert into cata_valor_aprendiz values (
     '25-06-2017',
     valoracion_cata_valor_apr_nt(valoracion('Reserva',90,NULL)),
     90,
-    31,
+    27,
     '01-01-2017'
 );
 
@@ -2860,7 +2864,7 @@ insert into cata_valor_aprendiz values (
     '07-01-2017',
     valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',91,NULL)),
     91,
-    32,
+    25,
     '01-02-2017'
 );
 
@@ -2869,11 +2873,11 @@ insert into cata_valor_aprendiz values (
     '05-01-2017',
     valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',91,NULL)),
     91,
-    33,
+    319,
     '01-02-2017'
 );
 
-insert into cata_valor_aprendiz values (
+/*insert into cata_valor_aprendiz values (
     14,
     '01-01-2017',
     valoracion_cata_valor_apr_nt(valoracion('Les Griffon Pichon Baron',91,NULL)),
@@ -2881,7 +2885,7 @@ insert into cata_valor_aprendiz values (
     34,
     '01-02-2017'
 );
-
+*/
 /*Muestras para las incripciones del concurso 1 en el calendario 1*/
 insert into muestra_compite 
          values (1,
@@ -2890,7 +2894,7 @@ insert into muestra_compite
                                            Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1),
                                            Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)
                                         ),
-                 1,
+                 5,
                  1
                  );
 
@@ -2902,7 +2906,7 @@ insert into muestra_compite
                                            Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2),
                                            Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)
                                         ),
-                 12,
+                 6,
                  2
                  );
 
@@ -2912,7 +2916,7 @@ insert into muestra_compite
                  premio_muestra_compite_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3),
                                            Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)
                                            ),
-                 15,
+                 13,
                  3
                  );
 
@@ -2920,8 +2924,8 @@ insert into muestra_compite
          values (4,
                  '01-01-2017',
                  premio_muestra_compite_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)),
-                 10,
-                 4
+                 2,
+                 310
                  );
 
 insert into muestra_compite
@@ -2931,8 +2935,8 @@ insert into muestra_compite
                                            Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1),
                                            Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)
                                           ),
-                 5,
-                 5
+                 20,
+                 309
                  );
 
 insert into muestra_compite
@@ -2941,8 +2945,8 @@ insert into muestra_compite
                  premio_muestra_compite_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2),
                                            Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)
                                         ),
-                 6,
-                 6
+                 12,
+                 308
                  );
 
 insert into muestra_compite
@@ -2952,8 +2956,8 @@ insert into muestra_compite
                                            Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3),
                                            Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)
                                         ),
-                 4,
-                 7
+                 16,
+                 312
                  );
 
 insert into muestra_compite
@@ -2963,8 +2967,8 @@ insert into muestra_compite
                                            Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3),
                                            Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)
                                         ),
-                 19,
-                 8
+                 15,
+                 314
                  );
 
 insert into muestra_compite
@@ -2975,8 +2979,8 @@ insert into muestra_compite
                                            Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1),
                                            Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)
                                         ),
-                 20,
-                 9
+                 9,
+                 315
                  );
 
 insert into muestra_compite
@@ -2986,8 +2990,8 @@ insert into muestra_compite
                                            Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3),
                                            Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)
                                         ),
-                 14,
-                 10
+                 10,
+                 15
                  );
 
 insert into muestra_compite
@@ -2997,8 +3001,8 @@ insert into muestra_compite
                                            Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3),
                                            Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)   
                                         ),
-                 8,
-                 15
+                 4,
+                 16
                  );
 
 insert into muestra_compite
@@ -3009,7 +3013,7 @@ insert into muestra_compite
                                            Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)
                                         ),
                  5,
-                 16
+                 309
                  );
 
 insert into muestra_compite
@@ -3019,7 +3023,7 @@ insert into muestra_compite
                                            Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3),
                                            Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)
                                         ),
-                 13,
+                 11,
                  17
                  );
 
@@ -3030,7 +3034,7 @@ insert into muestra_compite
                                            Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1),
                                            Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1)
                                         ),
-                 20,
+                 2,
                  18
                  );
 
@@ -3041,7 +3045,7 @@ insert into muestra_compite
                                            Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1),
                                            Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3)
                                         ),
-                 15,
+                 13,
                  19
                  );
 
@@ -3051,7 +3055,7 @@ insert into muestra_compite
                  premio_muestra_compite_nt(Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2),
                                            Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)
                                         ),
-                 2,
+                 7,
                  20
                  );
 
@@ -3062,7 +3066,7 @@ insert into muestra_compite
                                            Premio('Super Wine','El premio Super Wine, será entregado al vino que reciba por parte de los catadores las mejores calificaciones.','Trofeo',2000,1),
                                            Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)
                                         ),
-                 7,
+                 8,
                  21
                  );
 
@@ -3074,7 +3078,7 @@ insert into muestra_compite
                                            Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2),
                                            Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)
                                         ),
-                 11,
+                 15,
                  22
                  );
 
@@ -3085,7 +3089,7 @@ insert into muestra_compite
                                            Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2),
                                            Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)
                                         ),
-                 10,
+                 5,
                  23
                  );
 
@@ -3097,11 +3101,11 @@ insert into muestra_compite
                                            Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2),
                                            Premio('Good Wine','Good Wine es un premio que será entregado al vino que obtenga las segundas mejores calificaciones por parte de los catadores.','Medalla',1000,2)
                                         ),
-                 3,
+                 17,
                  24
                  );
 
-insert into muestra_compite
+/*insert into muestra_compite
          values (21,
                  '01-01-2017',
                  premio_muestra_compite_nt(Premio('Wine','Será entregado el premio Wine al vino que los catadores los terceros mejores puntajes.','Certificado',500,3),
@@ -3111,7 +3115,7 @@ insert into muestra_compite
                  17,
                  4
                  );
-
+*/
 /*terminan las muestras de el concurso 1 calendario 1*/
 
 /*cata_valoracion_vino para las muestras del calendario 1 del concurso 1*/

@@ -2,8 +2,8 @@ insert into Pais_productor values (
     304, 
     'Estados Unidos',  
     Superficie_ocupada_pais_nt(Tipo_valor('01-01-2015', 799),Tipo_valor('01-01-2016', 190),Tipo_valor('01-01-2017', 499)), 
-    Produccionanual_pais_nt(), 
-    Exportacionanual_pais_nt(), 
+    Produccionanual_pais_nt(Tipo_valor('01-01-2015', 12345),Tipo_valor('01-01-2016', 67891),Tipo_valor('01-01-2017', 11121)),
+    Exportacionanual_pais_nt(Distribucion_exp(Tipo_valor('01-01-2015', 31415),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2016', 16171), 'Holanda'),Distribucion_exp(Tipo_valor('01-01-2017', 81912),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2015', 21222),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 32425),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 2627),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 11040),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 11005),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 11000),'Hungria')),
     unidadMonetaria('Dolar', '$'), 
     'America',
     empty_blob(), 
@@ -31,8 +31,8 @@ insert into Bodega values (
         'https://es.opusonewinery.com/',
         Datos_contacto_telefono_va(Datos_telefono(18,00,2926787)),
         Personal_contacto_va(Datos_persona_de_contacto('John','Cena','Winemaker','johnc@opuswinery.com'))),
-    Tipo_valor_bodega_nt(),
-    Distribucion_exp_bodega_nt(),
+    Tipo_valor_bodega_nt(Tipo_valor('01-01-2015', 12345),Tipo_valor('01-01-2016', 67890), Tipo_valor('01-01-2017',11121)),
+    Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2015',31415),'Estados Unidos'),Distribucion_exp(Tipo_valor('01-01-2016',16171),'Argentina'),Distribucion_exp(Tipo_valor('01-01-2017',81920),'Chile')),
     NULL,
     304
 );
@@ -123,12 +123,14 @@ insert into Marca values (
     empty_blob(),
     'N',
     'Corcho',
-    Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2014',98)),
-                          Calificacion('James Suckling', Tipo_valor('01-01-2014', 98)),
-                          Calificacion('Wine Spectator', Tipo_valor('01-01-2014',93))
+    Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2015',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2015', 98)),
+                          Calificacion('Wine Spectator', Tipo_valor('01-01-2016',93)),
+                          Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2016',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2017', 98))
                         ),
-    Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 26654), Tipo_valor('01-01-2017',23432)),
-    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',23432),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',23432),'Mexico')),
+    Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 25744),Tipo_valor('01-01-2016', 26654), Tipo_valor('01-01-2017',23432)),
+    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',11278),'Suiza'),Distribucion_exp(Tipo_valor('01-01-2016',23432),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',23432),'Mexico')),
     18,
     351,
     15
@@ -147,8 +149,8 @@ insert into Pais_productor values (
     301,
     'Portugal',
     Superficie_ocupada_pais_nt(Tipo_valor('01-01-2015',199),Tipo_valor('01-01-2016',190),Tipo_valor('01-01-2017',199)),
-    Produccionanual_pais_nt(),
-    Exportacionanual_pais_nt(),
+    Produccionanual_pais_nt(Tipo_valor('01-01-2015', 25262),Tipo_valor('01-01-2016', 72829),Tipo_valor('01-01-2017', 30313)),
+    Exportacionanual_pais_nt(Distribucion_exp(Tipo_valor('01-01-2015', 23334),'Argentina'),Distribucion_exp(Tipo_valor('01-01-2016', 35363), 'Argentina'),Distribucion_exp(Tipo_valor('01-01-2017', 73839),'Argentina'),Distribucion_exp(Tipo_valor('01-01-2015', 40414),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 24344),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 45464),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 74849),'Bolivia'),Distribucion_exp(Tipo_valor('01-01-2016', 50515),'Bolivia'),Distribucion_exp(Tipo_valor('01-01-2017', 25354),'Bolivia')),
     Unidadmonetaria('Euro','€'),
     'Europa',
     empty_blob(),
@@ -177,8 +179,8 @@ insert into Bodega values (
                     Datos_contacto_telefono_va(Datos_telefono(35,12,79652619)),
                     Personal_contacto_va(Datos_persona_de_contacto('José','Menezes','Winemaker','douro@companhiadasquintas.pt'))
     ),
-    Tipo_valor_bodega_nt(),
-    Distribucion_exp_bodega_nt(),
+    Tipo_valor_bodega_nt(Tipo_valor('01-01-2015', 12345),Tipo_valor('01-01-2016', 67890), Tipo_valor('01-01-2017',11121)),
+    Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2015',31415),'Estados Unidos'),Distribucion_exp(Tipo_valor('01-01-2016',16171),'Argentina'),Distribucion_exp(Tipo_valor('01-01-2017',81920),'Chile')),
     NULL,
     301
 );
@@ -379,9 +381,14 @@ insert into Marca values (
     empty_blob(),
     'Y',
     'Corcho',
-    NULL,
-    Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 15348),Tipo_valor('01-01-2017',15500)),
-    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',5116),'Estados Unidos'),
+    Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2015',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2016', 98)),
+                          Calificacion('Wine Spectator', Tipo_valor('01-01-2017',93)),
+                          Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2016',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2017', 98))
+                        ),
+    Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 15678),Tipo_valor('01-01-2016', 15348),Tipo_valor('01-01-2017',15500)),
+    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',5116),'Estados Unidos'),
                               Distribucion_exp(Tipo_valor('01-01-2016',2000),'Venezuela'),
                               Distribucion_exp(Tipo_valor('01-01-2017',6400),'Alemania'),
                               Distribucion_exp(Tipo_valor('01-01-2017',3200),'Estados Unidos')
@@ -439,11 +446,16 @@ insert into Marca values (
     empty_blob(),
     'N',
     'Corcho',
-    Calificacion_marca_nt(Calificacion('Wine Enthusiast Magazine', tipo_valor('01-01-2015', 88))),
-    Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 58500),Tipo_valor('01-01-2017', 63500)),
-    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016', 25500),'Canada'),
+    Calificacion_marca_nt(Calificacion('Wine Enthusiast Magazine', tipo_valor('01-01-2015', 88)),
+                          Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2015',98)),
+                          Calificacion('Wine Spectator', Tipo_valor('01-01-2016',93)),
+                          Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2017',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2017', 98))
+                        ),
+    Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 78906),Tipo_valor('01-01-2016', 58500),Tipo_valor('01-01-2017', 63500)),
+    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015', 25500),'Canada'),
                               Distribucion_exp(Tipo_valor('01-01-2016', 9800),'Chile'),
-                              Distribucion_exp(Tipo_valor('01-01-2017', 30000),'Canada'),
+                              Distribucion_exp(Tipo_valor('01-01-2016', 30000),'Canada'),
                               Distribucion_exp(Tipo_valor('01-01-2017',20000),'Chile')
                             ),
     5,
@@ -503,8 +515,8 @@ insert into Bodega values (
                    Datos_contacto_telefono_va(Datos_telefono(35,12,68657552)),
                    Personal_contacto_va(Datos_persona_de_contacto('Joaquim','Mendes','Winemaker','farizoa@companhiadasquintas.pt'))
     ),
-    Tipo_valor_bodega_nt(),
-    Distribucion_exp_bodega_nt(),
+    Tipo_valor_bodega_nt(Tipo_valor('01-01-2015', 21222),Tipo_valor('01-01-2016', 32425), Tipo_valor('01-01-2017',26272)),
+    Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2015',82930),'Francia'),Distribucion_exp(Tipo_valor('01-01-2016',31323),'Suiza'),Distribucion_exp(Tipo_valor('01-01-2017',53637),'Mexico')),
     null,
     301
 );
@@ -589,9 +601,13 @@ insert into Marca values (
     empty_blob(),
     'Y',
     'Plastico',
-    NULL,
-    Tipo_valor_marca_nt(Tipo_valor('01-01-2016',26500),Tipo_valor('01-01-2017',34250)),
-    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',6400),'Alemania'),
+    Calificacion_marca_nt(Calificacion('James Suckling', Tipo_valor('01-01-2015', 98)),
+                          Calificacion('Wine Spectator', Tipo_valor('01-01-2016',93)),
+                          Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2016',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2017', 98))
+                        ),
+    Tipo_valor_marca_nt(Tipo_valor('01-01-2015',89785),Tipo_valor('01-01-2016',26500),Tipo_valor('01-01-2017',34250)),
+    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',6400),'Alemania'),
                               Distribucion_exp(Tipo_valor('01-01-2016',3600),'Suecia'),
                               Distribucion_exp(Tipo_valor('01-01-2017',18350),'Suecia'),
                               Distribucion_exp(Tipo_valor('01-01-2017',6000),'Brasil')
@@ -628,8 +644,8 @@ insert into Bodega values (
                    Datos_contacto_telefono_va(Datos_telefono(35,12,91934257)),
                    NULL
     ),
-    Tipo_valor_bodega_nt(),
-    Distribucion_exp_bodega_nt(),
+    Tipo_valor_bodega_nt(Tipo_valor('01-01-2015', 38394),Tipo_valor('01-01-2016', 41424), Tipo_valor('01-01-2017',34445)),
+    Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2015',46474),'Alemania'),Distribucion_exp(Tipo_valor('01-01-2016',84950),'Venezuela'),Distribucion_exp(Tipo_valor('01-01-2017',51525),'Colombia')),
     null,
     301
 );
@@ -686,11 +702,16 @@ insert into Marca values (
     empty_blob(),
     'Y',
     'Plastico',
-    Calificacion_marca_nt(),
-    Tipo_valor_marca_nt(Tipo_valor('01-01-2016',87500),Tipo_valor('01-01-2017',120300)),
-    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-216',38000),'Italia'),
-                              Distribucion_exp(Tipo_valor('01-01-2016',24500),'Japon'),
-                              Distribucion_exp(Tipo_valor('01-01-2017',60350),'China'),
+    Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2015',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2016', 98)),
+                          Calificacion('Wine Spectator', Tipo_valor('01-01-2016',93)),
+                          Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2017',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2017', 98))
+                        ),
+    Tipo_valor_marca_nt(Tipo_valor('01-01-2015',79095),Tipo_valor('01-01-2016',87500),Tipo_valor('01-01-2017',120300)),
+    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',38000),'Italia'),
+                              Distribucion_exp(Tipo_valor('01-01-2015',24500),'Japon'),
+                              Distribucion_exp(Tipo_valor('01-01-2016',60350),'China'),
                               Distribucion_exp(Tipo_valor('01-01-2017',24250),'Japon')
                             ),
     4,
@@ -719,8 +740,8 @@ insert into Bodega values (
                    Datos_contacto_telefono_va(Datos_telefono(80,07,075789)),
                    Personal_contacto_va(Datos_persona_de_contacto('John','Wick','Winemaker','johnc@josephphelps.com'))
                 ),
-    Tipo_valor_bodega_nt(),
-    Distribucion_exp_bodega_nt(),
+    Tipo_valor_bodega_nt(Tipo_valor('01-01-2015', 35455),Tipo_valor('01-01-2016', 56575), Tipo_valor('01-01-2017',85960)),
+    Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2015',61626),'Rusia'),Distribucion_exp(Tipo_valor('01-01-2016',36465),'Suecia'),Distribucion_exp(Tipo_valor('01-01-2017',66676),'Mexico')),
     null,
     304
 );
@@ -837,9 +858,9 @@ insert into Marca values (
     empty_blob(),
     'N',
     'Corcho',
-    Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', tipo_valor('01-01-2015', 91)),Calificacion('Jeb Dunnuck', tipo_valor('01-01-2015', 93)),Calificacion('Wine Spectator', tipo_valor('01-01-2015', 92))),
-    Tipo_valor_marca_nt(Tipo_valor('01-01-2016',261354),Tipo_valor('01-01-2017',362235)),
-    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',3432),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',13432),'Mexico')),
+    Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', tipo_valor('01-01-2015', 91)),Calificacion('Jeb Dunnuck', tipo_valor('01-01-2015', 93)),Calificacion('Wine Spectator', tipo_valor('01-01-2016', 92)),Calificacion('Jeb Dunnuck', tipo_valor('01-01-2016', 93)),Calificacion('Wine Spectator', tipo_valor('01-01-2016', 92))),
+    Tipo_valor_marca_nt(Tipo_valor('01-01-2015',1000),Tipo_valor('01-01-2016',1500),Tipo_valor('01-01-2017',1250)),
+    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',1542),'Alemania'),Distribucion_exp(Tipo_valor('01-01-2016',3432),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',13432),'Mexico')),
     18,
     352,
     15
@@ -908,9 +929,9 @@ insert into Marca values (
     empty_blob(),
     'N',
     'Corcho',
-    Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', tipo_valor('01-01-2015', 97)),Calificacion('James Suckling', tipo_valor('01-01-2015', 96)),Calificacion('Connoisseurs Guide to California Wine', tipo_valor('01-01-2015', 97))),
-    Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 16654),Tipo_valor('01-01-2017', 76225)),
-    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',3432),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',2332),'Mexico')),
+    Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', tipo_valor('01-01-2015', 97)),Calificacion('James Suckling', tipo_valor('01-01-2016', 96)),Calificacion('Connoisseurs Guide to California Wine', tipo_valor('01-01-2016', 97)),Calificacion('James Suckling', Tipo_valor('01-01-2017', 98))),
+    Tipo_valor_marca_nt(Tipo_valor('01-01-2015',79095),Tipo_valor('01-01-2016',87500),Tipo_valor('01-01-2017',120300)),
+    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',7665),'Alemania'),Distribucion_exp(Tipo_valor('01-01-2016',3432),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',2332),'Mexico')),
     24,
     352,
     17
@@ -978,9 +999,9 @@ insert into Marca values (
     empty_blob(),
     'N',
     'Corcho',
-    Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', tipo_valor('01-01-2015', 90)),Calificacion('James Suckling', tipo_valor('01-01-2015', 91)),Calificacion('Connoisseurs Guide to California Wine', tipo_valor('01-01-2015', 89))),
-    Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 92654),Tipo_valor('01-01-2017', 88225)),
-    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',3132),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',3032),'Mexico')),
+    Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', tipo_valor('01-01-2015', 90)),Calificacion('Robert Parker Wine Advocate', tipo_valor('01-01-2016', 90)),Calificacion('James Suckling', tipo_valor('01-01-2016', 91)),Calificacion('Connoisseurs Guide to California Wine', tipo_valor('01-01-2017', 89))),
+    Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 79808),Tipo_valor('01-01-2016', 92654),Tipo_valor('01-01-2017', 88225)),
+    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',39832),'Argentina'),Distribucion_exp(Tipo_valor('01-01-2016',3132),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',3032),'Mexico')),
     21,
     352,
     3
@@ -1054,8 +1075,8 @@ insert into Bodega values (
                    Datos_contacto_telefono_va(Datos_telefono(70,79,332332)),
                    Personal_contacto_va(Datos_persona_de_contacto('Ben','Shapiro','Winemaker','bshapiro@ravenswoodwinery.com'))
                 ),
-    Tipo_valor_bodega_nt(),
-    Distribucion_exp_bodega_nt(),
+    Tipo_valor_bodega_nt(Tipo_valor('01-01-2015', 76869),Tipo_valor('01-01-2016', 70717), Tipo_valor('01-01-2017',27374)),
+    Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2015',75767),'Francia'),Distribucion_exp(Tipo_valor('01-01-2016',77879),'Suiza'),Distribucion_exp(Tipo_valor('01-01-2017',80818),'Colombia')),
     null,
     304
 );
@@ -1112,9 +1133,13 @@ insert into Marca values (
     empty_blob(),
     'N',
     'Corcho',
-    Calificacion_marca_nt(Calificacion('Connoisseurs Guide to California Wine', tipo_valor('01-01-2015', 89))),
-    Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 12654),Tipo_valor('01-01-2017', 98225)),
-    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',93432),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',53432),'Mexico')),
+    Calificacion_marca_nt(Calificacion('Connoisseurs Guide to California Wine', tipo_valor('01-01-2015', 89)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2015', 98)),
+                          Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2016',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2017', 98))
+    ),
+    Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 23891),Tipo_valor('01-01-2016', 12654),Tipo_valor('01-01-2017', 98225)),
+    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',87980),'Francia'),Distribucion_exp(Tipo_valor('01-01-2016',93432),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',53432),'Mexico')),
     20,
     353,
     5
@@ -1183,9 +1208,14 @@ insert into Marca values (
     empty_blob(),
     'Y',
     'Corcho',
-    NULL,
-    Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 42654),Tipo_valor('01-01-2017', 68225)),
-    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',3436),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',2349),'Mexico')),
+    Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2016',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2015', 98)),
+                          Calificacion('Wine Spectator', Tipo_valor('01-01-2017',93)),
+                          Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2016',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2017', 98))
+                        ),
+    Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 7239),Tipo_valor('01-01-2016', 42654),Tipo_valor('01-01-2017', 68225)),
+    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',8086),'Colombia'),Distribucion_exp(Tipo_valor('01-01-2016',3436),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',2349),'Mexico')),
     19,
     353,
     6
@@ -1243,8 +1273,8 @@ insert into Pais_productor values (
     302, 
     'Sudafrica', 
     Superficie_ocupada_pais_nt(Tipo_valor('01-01-2015', 245),Tipo_valor('01-01-2016', 790),Tipo_valor('01-01-2017',699)),
-    Produccionanual_pais_nt(),
-    Exportacionanual_pais_nt(),
+    Produccionanual_pais_nt(Tipo_valor('01-01-2015', 85960),Tipo_valor('01-01-2016', 616263),Tipo_valor('01-01-2017', 64656)),
+    Exportacionanual_pais_nt(Distribucion_exp(Tipo_valor('01-01-2015', 66768),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2016', 697071), 'Holanda'),Distribucion_exp(Tipo_valor('01-01-2017', 72737),'Holanda'),Distribucion_exp(Tipo_valor('01-01-2015', 47576),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2016', 77787),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017', 98081),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2015', 82838),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 48586),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 88899),'Hungria')),
     Unidadmonetaria('Rand Sudafricano', 'R'),
     'Africa', 
     empty_blob(),
@@ -1264,8 +1294,8 @@ insert into Bodega values (
                    Datos_contacto_telefono_va(Datos_telefono(27,08,32355748)),
                    Personal_contacto_va(Datos_persona_de_contacto('David','Nel','Sales','steele.nel@gmail.com'))
                 ),
-    Tipo_valor_bodega_nt(),
-    Distribucion_exp_bodega_nt(),
+    Tipo_valor_bodega_nt(Tipo_valor('01-01-2015', 28384),Tipo_valor('01-01-2016', 85868), Tipo_valor('01-01-2017',78889)),
+    Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2015',90919),'Francia'),Distribucion_exp(Tipo_valor('01-01-2016',29394),'Suiza'),Distribucion_exp(Tipo_valor('01-01-2017',95969),'Mexico')),
     NULL,
     302
 );
@@ -1288,9 +1318,14 @@ insert into Marca values (
     empty_blob(),
     'Y',
     'Corcho',
-    Calificacion_marca_nt(),
-    Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 95733),Tipo_valor('01-01-2017', 23938)),
-    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',3932),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',9343),'Mexico')),
+    Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2017',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2016', 98)),
+                          Calificacion('Wine Spectator', Tipo_valor('01-01-2016',93)),
+                          Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2015',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2017', 98))
+                        ),
+    Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 68798),Tipo_valor('01-01-2016', 95733),Tipo_valor('01-01-2017', 23938)),
+    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',8980),'Libano'),Distribucion_exp(Tipo_valor('01-01-2016',3932),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',9343),'Mexico')),
     9,
     354,
     12
@@ -1314,9 +1349,14 @@ insert into Marca values (
     empty_blob(),
     'Y',
     'Corcho',
-    Calificacion_marca_nt(),
-    Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 92189),Tipo_valor('01-01-2017', 27136)),
-    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',9432),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',7432),'Mexico')),
+    Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2015',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2017', 98)),
+                          Calificacion('Wine Spectator', Tipo_valor('01-01-2016',93)),
+                          Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2016',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2017', 98))
+                        ),
+    Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 80945),Tipo_valor('01-01-2016', 92189),Tipo_valor('01-01-2017', 27136)),
+    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',2324),'Rusia'),Distribucion_exp(Tipo_valor('01-01-2016',9432),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',7432),'Mexico')),
     11,
     354,
     12
@@ -1340,9 +1380,15 @@ insert into Marca values (
     empty_blob(),
     'Y',
     'Aluminio',
-    Calificacion_marca_nt(Calificacion('TREVE RING', tipo_valor('01-01-2015', 92))),
-    Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 12112),Tipo_valor('01-01-2017', 3267)),
-    Distribucion_exp_marca_nt(),
+    Calificacion_marca_nt(Calificacion('TREVE RING', tipo_valor('01-01-2015', 92)),
+                          Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2015',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2015', 98)),
+                          Calificacion('Wine Spectator', Tipo_valor('01-01-2016',93)),
+                          Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2016',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2017', 98))
+    ),
+    Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 53948),Tipo_valor('01-01-2016', 12112),Tipo_valor('01-01-2017', 3267)),
+    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',2324),'Rusia'),Distribucion_exp(Tipo_valor('01-01-2016',9432),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',7432),'Mexico')),
     8,
     354,
     12
@@ -1361,8 +1407,8 @@ insert into Marca values (
                      Datos_contacto_telefono_va(Datos_telefono(28,31,21097)),
                      Personal_contacto_va(Datos_persona_de_contacto('Holly','Bellingham','Spokesman','holly@bellinghamturner.com'))
       ),
-      Tipo_valor_bodega_nt(Tipo_valor('01-01-2016', 600000),Tipo_valor('01-01-2017',660000)),
-      Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2016', 440000),'Japon'),Distribucion_exp(Tipo_valor('01-01-2017', 360000),'India')),
+      Tipo_valor_bodega_nt(Tipo_valor('01-01-2015', 79899),Tipo_valor('01-01-2016', 600000),Tipo_valor('01-01-2017',660000)),
+      Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2015',10010),'Argentina'),Distribucion_exp(Tipo_valor('01-01-2016', 440000),'Japon'),Distribucion_exp(Tipo_valor('01-01-2017', 360000),'India')),
       NULL,
       302
   );
@@ -1383,9 +1429,9 @@ insert into Marca values (
     empty_blob(),
     'Y',
     'Corcho',
-    Calificacion_marca_nt(Calificacion('ProWein', tipo_valor('01-01-2015', 85)),Calificacion('ProWein', tipo_valor('01-01-2016', 84))),
-    Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 5000),Tipo_valor('01-01-2017', 4800)),
-    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',789),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',856),'India')),
+    Calificacion_marca_nt(Calificacion('ProWein', tipo_valor('01-01-2015', 85)),Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2016',98)),Calificacion('ProWein', tipo_valor('01-01-2016', 84)),Calificacion('ProWein', tipo_valor('01-01-2017', 84))),
+    Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 82739),Tipo_valor('01-01-2016', 5000),Tipo_valor('01-01-2017', 4800)),
+    Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',237),'Suiza'),Distribucion_exp(Tipo_valor('01-01-2016',789),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',856),'India')),
     28,
     3104,
     1
@@ -1397,8 +1443,8 @@ insert into Pais_productor values (
     303,
     'Grecia',
     Superficie_ocupada_pais_nt(Tipo_valor('01-01-2015', 876),Tipo_valor('01-01-2016', 452),Tipo_valor('01-01-2017', 657)),
-    Produccionanual_pais_nt(),
-    Exportacionanual_pais_nt(),
+    Produccionanual_pais_nt(Tipo_valor('01-01-2015', 91778),Tipo_valor('01-01-2016', 914984),Tipo_valor('01-01-2017', 915197)),
+    Exportacionanual_pais_nt(Distribucion_exp(Tipo_valor('01-01-2015', 10010),'Alemania'),Distribucion_exp(Tipo_valor('01-01-2016', 110210), 'Alemania'),Distribucion_exp(Tipo_valor('01-01-2017', 410510),'Alemania'),Distribucion_exp(Tipo_valor('01-01-2015', 610710),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2016', 81091),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2017', 201211),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2015', 123124),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2016', 135126),'Hungria'),Distribucion_exp(Tipo_valor('01-01-2017', 129201),'Hungria')),
     Unidadmonetaria('Euro', '€'),
     'Europa',
     empty_blob(),
@@ -1418,8 +1464,8 @@ insert into Bodega values (
                        Datos_contacto_telefono_va(Datos_telefono(30,69,85161414)),
                        Personal_contacto_va(Datos_persona_de_contacto('Heracles','The Great','Hero','TheGreatGreekHero@gmail.com'))
                     ),
-        Tipo_valor_bodega_nt(Tipo_valor('01-01-2016', 330000),Tipo_valor('01-01-2017', 280000)),
-        Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2016', 280000),'Francia'),Distribucion_exp(Tipo_valor('01-01-2017', 250000),'Colombia')),
+        Tipo_valor_bodega_nt(Tipo_valor('01-01-2015', 11021),Tipo_valor('01-01-2016', 330000),Tipo_valor('01-01-2017', 280000)),
+        Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2015',31041),'Francia'),Distribucion_exp(Tipo_valor('01-01-2016', 280000),'Francia'),Distribucion_exp(Tipo_valor('01-01-2017', 250000),'Colombia')),
         NULL,
         303
     );
@@ -1440,9 +1486,14 @@ insert into Bodega values (
         empty_blob(),
         'Y',
         'Corcho',
-        Calificacion_marca_nt(),
-        Tipo_valor_marca_nt(),
-        Distribucion_exp_marca_nt(),
+        Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2017',98)),
+                              Calificacion('James Suckling', Tipo_valor('01-01-2017', 98)),
+                              Calificacion('Wine Spectator', Tipo_valor('01-01-2015',93)),
+                              Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2016',98)),
+                              Calificacion('James Suckling', Tipo_valor('01-01-2016', 98))
+                        ),
+        Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 11021),Tipo_valor('01-01-2016', 330000),Tipo_valor('01-01-2017', 280000)),
+        Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',31041),'Rumania'),Distribucion_exp(Tipo_valor('01-01-2016', 280000),'Francia'),Distribucion_exp(Tipo_valor('01-01-2017', 250000),'Colombia')),
         12,
         3101,
         1
@@ -1464,7 +1515,12 @@ insert into Bodega values (
         empty_blob(),
         'Y',
         'Corcho',
-        Calificacion_marca_nt(),
+        Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2016',97)),
+                              Calificacion('James Suckling', Tipo_valor('01-01-2016', 90)),
+                              Calificacion('Wine Spectator', Tipo_valor('01-01-2017',93)),
+                              Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2016',98)),
+                              Calificacion('James Suckling', Tipo_valor('01-01-2017', 92))
+                        ),
         Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 2189),Tipo_valor('01-01-2017', 2136)),
         Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',800),'Estados Unidos'),Distribucion_exp(Tipo_valor('01-01-2017',486),'Inglaterra')),
         16,
@@ -1488,9 +1544,9 @@ insert into Bodega values (
         empty_blob(),
         'Y',
         'Corcho',
-        Calificacion_marca_nt(Calificacion('Semeli Aetheria White', tipo_valor('01-01-2016', 82)),Calificacion('Semeli Aetheria White', tipo_valor('01-01-2017', 87))),
-        Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 8050),Tipo_valor('01-01-2017',2140)),
-        Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',650),'Rumania'),Distribucion_exp(Tipo_valor('01-01-2017',952),'Alemania')),
+        Calificacion_marca_nt(Calificacion('Semeli Aetheria White', tipo_valor('01-01-2015', 87)),Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2016',98)),Calificacion('Semeli Aetheria White', tipo_valor('01-01-2016', 82)),Calificacion('Semeli Aetheria White', tipo_valor('01-01-2017', 87))),
+        Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 3492),Tipo_valor('01-01-2016', 8050),Tipo_valor('01-01-2017',2140)),
+        Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',322),'India'),Distribucion_exp(Tipo_valor('01-01-2016',650),'Rumania'),Distribucion_exp(Tipo_valor('01-01-2017',952),'Alemania')),
         300,
         3101,
         2
@@ -1509,8 +1565,8 @@ insert into Bodega values (
                      Datos_contacto_telefono_va(Datos_telefono(23,32,051100)),
                      Personal_contacto_va(Datos_persona_de_contacto('Yiannis','Boutaris','President','YBwhines@gmail.com'))
                     ),
-      Tipo_valor_bodega_nt(Tipo_valor('01-01-2016', 520000),Tipo_valor('01-01-2017', 650000)),
-      Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2015', 560000),'Rusia'),Distribucion_exp(Tipo_valor('01-01-2016', 300000),'Mexico')),
+      Tipo_valor_bodega_nt(Tipo_valor('01-01-2015', 51061),Tipo_valor('01-01-2016', 520000),Tipo_valor('01-01-2017', 650000)),
+      Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2015', 560000),'Rusia'),Distribucion_exp(Tipo_valor('01-01-2016', 300000),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017',71081),'Colombia')),
       NULL,
       303
   );
@@ -1531,9 +1587,14 @@ insert into Bodega values (
       empty_blob(),
       'Y',
       'Corcho',
-      Calificacion_marca_nt(),
-      Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 7100),Tipo_valor('01-01-2017', 7200)),
-      Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',5600),'España'),Distribucion_exp(Tipo_valor('01-01-2017',5300),'Mexico')),
+    Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2015',88)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2015', 98)),
+                          Calificacion('Wine Spectator', Tipo_valor('01-01-2016',93)),
+                          Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2016',80)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2017', 98))
+                        ),
+      Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 6899),Tipo_valor('01-01-2016', 7100),Tipo_valor('01-01-2017', 7200)),
+      Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',7909),'España'),Distribucion_exp(Tipo_valor('01-01-2016',5600),'España'),Distribucion_exp(Tipo_valor('01-01-2017',5300),'Mexico')),
       12,
       3102,
       15
@@ -1555,9 +1616,14 @@ insert into Bodega values (
       empty_blob(),
       'Y',
       'Corcho',
-      Calificacion_marca_nt(),
-      Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 3000),Tipo_valor('01-01-2017', 4253)),
-      Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',950),'Belgica'),Distribucion_exp(Tipo_valor('01-01-2017',782),'China')),
+     Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2017',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2015', 79)),
+                          Calificacion('Wine Spectator', Tipo_valor('01-01-2016',93)),
+                          Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2015',86)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2017', 91))
+                        ),
+      Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 7854),Tipo_valor('01-01-2016', 3000),Tipo_valor('01-01-2017', 4253)),
+      Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',980),'Uruguay'),Distribucion_exp(Tipo_valor('01-01-2016',950),'Belgica'),Distribucion_exp(Tipo_valor('01-01-2017',782),'China')),
       120,
       3102,
       15
@@ -1579,9 +1645,9 @@ insert into Bodega values (
       empty_blob(),
       'Y',
       'Corcho',
-      Calificacion_marca_nt(Calificacion('Whine tasting institute', tipo_valor('01-01-2016', 92)),Calificacion('Whine tasting institute', tipo_valor('01-01-2017', 95))),
-      Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 7099),Tipo_valor('01-01-2017', 2130)),
-      Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',650),'Prusia'),Distribucion_exp(Tipo_valor('01-01-2017',952),'Suecia')),
+      Calificacion_marca_nt(Calificacion('James Suckling', Tipo_valor('01-01-2015', 98)),Calificacion('Whine tasting institute', tipo_valor('01-01-2016', 92)),Calificacion('Whine tasting institute', tipo_valor('01-01-2016', 95)),Calificacion('Whine tasting institute', tipo_valor('01-01-2017', 95))),
+      Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 6870),Tipo_valor('01-01-2016', 7099),Tipo_valor('01-01-2017', 2130)),
+      Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',6864),'Rumania'),Distribucion_exp(Tipo_valor('01-01-2016',650),'Prusia'),Distribucion_exp(Tipo_valor('01-01-2017',952),'Suecia')),
       36,
       3102,
       2
@@ -1600,8 +1666,8 @@ insert into Bodega values (
                      Datos_contacto_telefono_va(Datos_telefono(21,06,605200)),
                      Personal_contacto_va(Datos_persona_de_contacto('Roxanne','Masta','Chief Secretary','ktimatsa@gmail.com'))
       ),
-      Tipo_valor_bodega_nt(Tipo_valor('01-01-2016', 600000),Tipo_valor('01-01-2017', 660000)),
-      Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2015', 360000),'India'),Distribucion_exp(Tipo_valor('01-01-2016', 250000),'Alemania')),
+      Tipo_valor_bodega_nt(Tipo_valor('01-01-2015', 81091),Tipo_valor('01-01-2016', 600000),Tipo_valor('01-01-2017', 660000)),
+      Distribucion_exp_bodega_nt(Distribucion_exp(Tipo_valor('01-01-2015', 360000),'India'),Distribucion_exp(Tipo_valor('01-01-2016', 250000),'Alemania'),Distribucion_exp(Tipo_valor('01-01-2017',10111),'Colombia')),
       null,
       303
   );
@@ -1624,9 +1690,14 @@ insert into Bodega values (
       empty_blob(),
       'Y',
       'Corcho',
-      Calificacion_marca_nt(),
-      Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 7100),Tipo_valor('01-01-2017', 7200)),
-      Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',5600),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017',5300),'Portugal')),
+       Calificacion_marca_nt(Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2015',80)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2015', 97)),
+                          Calificacion('Wine Spectator', Tipo_valor('01-01-2016',83)),
+                          Calificacion('Robert Parker Wine Advocate', Tipo_valor('01-01-2016',98)),
+                          Calificacion('James Suckling', Tipo_valor('01-01-2017', 94))
+                        ),
+      Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 6790),Tipo_valor('01-01-2016', 7100),Tipo_valor('01-01-2017', 7200)),
+      Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',7890),'Colombia'),Distribucion_exp(Tipo_valor('01-01-2016',5600),'Mexico'),Distribucion_exp(Tipo_valor('01-01-2017',5300),'Portugal')),
       13,
       3103,
       2
@@ -1648,9 +1719,9 @@ insert into Bodega values (
       empty_blob(),
       'Y',
       'Corcho',
-      Calificacion_marca_nt(Calificacion('ProWein', tipo_valor('01-01-2015', 91)),Calificacion('ProWein', tipo_valor('01-01-2016', 95))),
-      Tipo_valor_marca_nt(Tipo_valor('01-01-2016', 4000),Tipo_valor('01-01-2017', 4300)),
-      Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2016',850),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',860),'India')),
+      Calificacion_marca_nt(Calificacion('ProWein', tipo_valor('01-01-2015', 91)),Calificacion('ProWein', tipo_valor('01-01-2016', 95)),Calificacion('ProWein', tipo_valor('01-01-2017', 95)),Calificacion('James Suckling', Tipo_valor('01-01-2017', 98))),
+      Tipo_valor_marca_nt(Tipo_valor('01-01-2015', 68685),Tipo_valor('01-01-2016', 4000),Tipo_valor('01-01-2017', 4300)),
+      Distribucion_exp_marca_nt(Distribucion_exp(Tipo_valor('01-01-2015',6764),'Prusia'),Distribucion_exp(Tipo_valor('01-01-2016',850),'Portugal'),Distribucion_exp(Tipo_valor('01-01-2017',860),'India')),
       24,
       3103,
       2
