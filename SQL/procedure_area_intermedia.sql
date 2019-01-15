@@ -619,6 +619,21 @@ begin
 end pr_tranformacion;
 /
 
+/
+
+create or replace procedure pr_inicio_area_i(v_fecha in date ) is 
+begin
+   pr_bodegas_aporte_produccion(v_fecha);
+   pr_denominacion_criticas(v_fecha);
+   pr_exportadores_mundiales(v_fecha);
+   pr_marcasporconti_produccion(v_fecha);
+   pr_marcasporpais_criticas(v_fecha);
+   pr_marcasporpais_premios(v_fecha);
+   pr_marcasporpais_produccion(v_fecha);
+   pr_productores_mundiales(v_fecha);
+end pr_inicio_area_i;
+/
+
 create or replace procedure pr_tabla_de_hechos is 
 begin 
     insert into tiempo select * from tiempo_intermedia where id not in (select id from tiempo);

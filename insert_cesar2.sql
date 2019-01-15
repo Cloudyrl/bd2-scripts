@@ -1,4 +1,4 @@
-﻿--*************************************************PAISES************************************************************
+--*************************************************PAISES************************************************************
 insert into Pais_productor values(
 5,
 'Austria',
@@ -284,11 +284,6 @@ Insert into Vinedo values(
 );
 /
 Insert into Vinedo values(
-    18,
-    18
-);
-/
-Insert into Vinedo values(
     19,
     19
 );
@@ -313,10 +308,6 @@ Insert into Vinedo values(
     23
 );
 /
-Insert into Vinedo values(
-    24,
-    24
-);
 
 INSERT INTO COSECHA VALUES (13,'01-01-2015','B',13);
 /
@@ -328,8 +319,6 @@ INSERT INTO COSECHA VALUES (16, '01-01-2015','MB',16);
 /
 INSERT INTO COSECHA VALUES (17, '01-01-2015','MB',17);
 /
-INSERT INTO COSECHA VALUES (18, '01-01-2015','E',18);
-/
 INSERT INTO COSECHA VALUES (19, '01-01-2015','E',19);
 /
 INSERT INTO COSECHA VALUES (20, '01-01-2015','B',20);
@@ -339,8 +328,6 @@ INSERT INTO COSECHA VALUES (21, '01-01-2015','B',21);
 INSERT INTO COSECHA VALUES (22, '01-01-2015','B',22);
 /
 INSERT INTO COSECHA VALUES (23, '01-01-2015','MB',23);
-/
-INSERT INTO COSECHA VALUES (24, '01-01-2015','B',24);
 /
 INSERT INTO COSECHA VALUES (25, '01-01-2016','B',13);
 /
@@ -352,8 +339,6 @@ INSERT INTO COSECHA VALUES (28, '01-01-2016','B',16);
 /
 INSERT INTO COSECHA VALUES (29, '01-01-2016','MB',17);
 /
-INSERT INTO COSECHA VALUES (30, '01-01-2016','E',18);
-/
 INSERT INTO COSECHA VALUES (31,'01-01-2016','B',19);
 /
 INSERT INTO COSECHA VALUES (32, '01-01-2016','MB',20);
@@ -363,8 +348,6 @@ INSERT INTO COSECHA VALUES (33, '01-01-2016','B',21);
 INSERT INTO COSECHA VALUES (34, '01-01-2016','E',22);
 /
 INSERT INTO COSECHA VALUES (35, '01-01-2016','B',23);
-/
-INSERT INTO COSECHA VALUES (36, '01-01-2016','MB',24);
 /
 INSERT INTO COSECHA VALUES (37, '01-01-2017','MB',13);
 /
@@ -376,8 +359,6 @@ INSERT INTO COSECHA VALUES (40, '01-01-2017','B',16);
 /
 INSERT INTO COSECHA VALUES (41, '01-01-2017','E',17);
 /
-INSERT INTO COSECHA VALUES (42, '01-01-2017','MB',18);
-/
 INSERT INTO COSECHA VALUES (43, '01-01-2017','B',19);
 /
 INSERT INTO COSECHA VALUES (44, '01-01-2017','MB',20);
@@ -387,8 +368,6 @@ INSERT INTO COSECHA VALUES (45, '01-01-2017','E',21);
 INSERT INTO COSECHA VALUES (46, '01-01-2017','B',22);
 /
 INSERT INTO COSECHA VALUES (47, '01-01-2017','MB',23);
-/
-INSERT INTO COSECHA VALUES (48, '01-01-2017','MB',24);
 /
 Insert into Variedad_uva values (
     21,
@@ -431,14 +410,6 @@ Insert into Variedad_uva values (
 );
 
 Insert into Variedad_uva values (
-    26,
-    Nombre_variedad_uva_va('Cabernet Franc','Cabernet Sauv', 'Merlot'),
-    NULL,
-    'Tinto',
-    18
-);
-
-Insert into Variedad_uva values (
     27,
     Nombre_variedad_uva_va('Cabernet Sauv', 'Merlot'),
     NULL,
@@ -478,13 +449,7 @@ Insert into Variedad_uva values (
     23
 );
 
-Insert into Variedad_uva values (
-    32,
-    Nombre_variedad_uva_va('Shiraz'),
-    NULL,
-    'Tinto',
-    24
-);
+
 
 
 /
@@ -498,10 +463,6 @@ Insert into Variedad_uva values (
   /
   INSERT INTO Denominacion_origen VALUES(25,'Valle del Maipo',null,12,25,23);
   /
-  INSERT INTO Denominacion_origen VALUES(26,'Navarra',null,12,26,18);
-  /
-  INSERT INTO Denominacion_origen VALUES(27,'Rioja',null,14,27,24);
-  /
   INSERT INTO Denominacion_origen VALUES(28,'Valle del Maule',null,13,28,20);
   /
   INSERT INTO Denominacion_origen VALUES(29,'Chanpagne',null,15,29,15);
@@ -509,8 +470,6 @@ Insert into Variedad_uva values (
   INSERT INTO Denominacion_origen VALUES(30,'Coastal',null,16,30,16);
   /
   INSERT INTO Denominacion_origen VALUES(31,'Rueda',null,17,31,19);
-  /
-  INSERT INTO Denominacion_origen VALUES(32,'Borde',null,17,32,19);
   /
 
 
@@ -1676,12 +1635,6 @@ insert into PRESENTACION values (65,'Caja',3,29);
 /
 insert into PRESENTACION values (66,'Caja',6,29);
 /
-insert into PRESENTACION values (67,'Botella',null,30);
-/
-insert into PRESENTACION values (68,'Caja',3,30);
-/
-insert into PRESENTACION values (69,'Caja',6,30);
-/
 insert into PRESENTACION values (70,'Botella',null,31);
 /
 insert into PRESENTACION values (71,'Caja',3,31);
@@ -1735,12 +1688,6 @@ insert into PRESENTACION values (94,'Botella',null,39);
 insert into PRESENTACION values (95,'Caja',3,39);
 /
 insert into PRESENTACION values (96,'Caja',6,39);
-/
-insert into PRESENTACION values (97,'Botella',null,40);
-/
-insert into PRESENTACION values (98,'Caja',3,40);
-/
-insert into PRESENTACION values (99,'Caja',6,40);
 /
 
 
@@ -2214,15 +2161,7 @@ insert into cata_valor_aprendiz values (
     36,
     '01-04-2017'
   );
-
-insert into cata_valor_aprendiz values (
-    21,
-    '05-03-2017',
-    valoracion_cata_valor_apr_nt(valoracion('Kollwentz chardonnay Tatschler 2008',90,NULL)),
-    91,
-    37,
-    '01-04-2017'
-  );
+  
 -- segundo concurso
   insert into cata_valor_aprendiz values (
     22,
