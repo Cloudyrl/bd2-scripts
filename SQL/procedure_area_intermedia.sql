@@ -621,6 +621,7 @@ end pr_tranformacion;
 
 create or replace procedure pr_inicio_area_i(v_fecha in date ) is 
 begin
+   insert into pais_intermedia select clave, nombre, continente, sysdate from pais_productor where clave not in (select id from pais_intermedia);
    pr_exportadores_mundiales(v_fecha);
    pr_productores_mundiales(v_fecha);
    pr_marcasporpais_produccion(v_fecha);
@@ -645,6 +646,32 @@ create or replace procedure pr_tabla_de_hechos is
 begin 
     insert into tiempo select * from tiempo_intermedia where id not in (select id from tiempo);
     insert into pais select * from pais_intermedia where id not in (select id from pais);
+    insert into tipo_concurso select * from tipo_concurso_intermedia where id not in (select id from tipo_concurso);
     insert into hechos_vinos_catados select * from hechos_vinos_catados_inter where id_tiempo not in (select id_tiempo from hechos_vinos_catados);
 end pr_tabla_de_hechos;
+/
+
+create or replace procedure pr_delete_at is 
+begin 
+    delete from denominacion_criticas;
+    delete from productores_mundiales;
+    delete from exportadores_mundiales;
+    delete from marcasporpais_criticas;
+    delete from marcasporpais_premios;
+    delete from marcasporpais_produccion;
+    delete from marcasporcontinente_produccion;
+    delete from Bodegas_aporte_produccion;
+    delete from crecimiento_pais;
+    delete from crecimiento_pais_bienio;
+    delete from crecimiento_concurso;
+    delete from crecimiento_concurso_bienio;
+    delete from Hechos_vinos_catados_inter;
+    delete from Tiempo_intermedia;
+    delete from Pais_intermedia;
+    delete from Tipo_concurso_intermedia;
+    delete from Hechos_vinos_catados;
+    delete from Tiempo;
+    delete from Pais;
+    delete from Tipo_concurso;
+end pr_delete_at;
 /
